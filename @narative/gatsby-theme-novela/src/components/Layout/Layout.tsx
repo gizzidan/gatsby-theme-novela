@@ -5,7 +5,6 @@ import { useColorMode } from 'theme-ui';
 import NavBar from '@components/NavBar';
 
 import NavigationFooter from '@components/Navigation/Navigation.Footer';
-import NavigationHeader from '@components/Navigation/Navigation.Header';
 import ArticlesContextProvider from '../../sections/articles/Articles.List.Context';
 
 import { globalStyles } from '@styles';

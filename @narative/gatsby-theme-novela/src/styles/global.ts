@@ -26,7 +26,7 @@ export const globalStyles = css`
     font-family: "Arg";
     font-weight: 400;
     font-style: normal;
-    src: url("@narative/gatsby-theme-novela/src/static/Aaargh-webfont.woff") format("woff");
+    src: url("../../static/Aaargh-webfont.woff") format("woff");
   }
 
 
