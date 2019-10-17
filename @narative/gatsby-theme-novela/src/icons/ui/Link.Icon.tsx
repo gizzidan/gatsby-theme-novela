@@ -2,7 +2,7 @@ import React from "react";
 
 const LinkIcon = ({ fill }) => (
   <svg
-    width="24"
+    width="22"
     height="20"
     viewBox="0 0 24 20"
     fill="none"

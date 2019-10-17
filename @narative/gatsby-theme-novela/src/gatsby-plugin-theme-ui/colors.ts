@@ -5,9 +5,10 @@ export default {
 
   primary: "#000",
   secondary: "#73737D",
-  grey: "#73737D",
+  grey: "#6a6c6f",
+  navbar: "#3d3f43",
   background: "#fafafa",
-  accent: "#6166DC",
+  accent: "#DC6170",
   hover: "rgba(0, 0, 0, 0.07)",
   gradient: "linear-gradient(180deg, rgba(217, 219, 224, 0) 0%, #D9DBE0 100%)",
   articleText: "#08080B",
@@ -21,14 +22,15 @@ export default {
   inputBackground: "rgba(0, 0, 0, 0.05)",
   modes: {
     dark: {
-      grey: "#73737D",
+      grey: "#d2d2d3",
+      navbar: "#d2d2d3",
       primary: "#fff",
       secondary: "#fff",
       accent: "#E9DAAC",
-      background: "#111216",
+      background: "#161a23",
       hover: "rgba(255, 255, 255, 0.07)",
       gradient:
-        "linear-gradient(180deg, #111216 0%, rgba(66, 81, 98, 0.36) 100%)",
+        "linear-gradient(180deg, #161a23 0%, rgba(66, 81, 98, 0.36) 100%)",
       articleText: "#fff",
       track: "rgba(255, 255, 255, 0.3)",
       progress: "#fff",

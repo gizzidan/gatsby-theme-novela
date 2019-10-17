@@ -22,6 +22,14 @@ export const globalStyles = css`
     font-style: normal;
   }
 
+  @font-face {
+    font-family: "Arg";
+    font-weight: 400;
+    font-style: normal;
+    src: url("@narative/gatsby-theme-novela/src/static/Aaargh-webfont.woff") format("woff");
+  }
+
+
   *,
   *:before,
   *:after {
@@ -44,9 +52,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
-      "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
-      "Arial", sans-serif;
+    font-family: "Arg";
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Global } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useColorMode } from 'theme-ui';
+import NavBar from '@components/NavBar';
 
 import NavigationFooter from '@components/Navigation/Navigation.Footer';
 import NavigationHeader from '@components/Navigation/Navigation.Header';
@@ -29,7 +30,7 @@ function Layout({ children }: LayoutProps) {
     <ArticlesContextProvider>
       <Container>
         <Global styles={globalStyles} />
-        <NavigationHeader />
+        <NavBar />
         {children}
         <NavigationFooter />
       </Container>

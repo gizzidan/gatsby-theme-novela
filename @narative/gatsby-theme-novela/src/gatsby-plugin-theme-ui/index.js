@@ -1,7 +1,6 @@
 import merge from 'lodash/merge';
-
-import colors from './colors';
-import tags from './tags';
+import colors from './colors.ts';
+import tags from './tags.ts';
 
 const breakpoints = [
   ['phone_small', 320],
@@ -14,10 +13,13 @@ const breakpoints = [
 ];
 
 const fonts = {
-  serif: "'Merriweather', Georgia, Serif",
-  sansSerif:
-    "'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
+  serif: 'Ubuntu',
+  sansSerif: 'Arg',
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
+};
+
+const fontSizes = {
+  p: `20px`,
 };
 
 const colorModeTransition =
@@ -29,6 +31,7 @@ export default merge({
   colorModeTransition,
   colors,
   fonts,
+  fontSizes,
   breakpoints,
   tags,
 });

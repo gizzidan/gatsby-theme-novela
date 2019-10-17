@@ -272,8 +272,8 @@ const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 21px;
-  font-family: ${p => p.theme.fonts.serif};
+  font-size: 25px;
+  font-family: ${p => p.theme.fonts.sansSerif};
   margin-bottom: ${p =>
     p.hasOverflow && p.gridLayout === "tiles" ? "35px" : "10px"};
   transition: color 0.3s ease-in-out;
@@ -301,7 +301,7 @@ const Excerpt = styled.p<{
   gridLayout: string;
 }>`
   ${limitToTwoLines};
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 10px;
   color: ${p => p.theme.colors.grey};
   display: ${p => (p.hasOverflow && p.gridLayout === "tiles" ? "none" : "box")};
@@ -324,10 +324,10 @@ const Excerpt = styled.p<{
 `;
 
 const MetaData = styled.div`
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   color: ${p => p.theme.colors.grey};
-  opacity: 0.33;
+  opacity: 0.83;
 
   ${mediaqueries.phablet`
     max-width: 100%;

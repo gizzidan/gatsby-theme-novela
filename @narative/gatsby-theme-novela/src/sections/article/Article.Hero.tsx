@@ -111,7 +111,7 @@ const Header = styled.header`
 
 const HeroHeading = styled(Headings.h1)`
   font-size: 48px;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   margin-bottom: 25px;
   font-weight: bold;
   line-height: 1.32;

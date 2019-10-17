@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
+
 const Paragraph = styled.p`
-  line-height: 1.756;
-  font-size: 18px;
+  line-height: 33px;
+  font-size: ${p => p.theme.fontSizes.p};
   color: ${p => p.theme.colors.articleText};
   font-family: ${p => p.theme.fonts.sansSerif};
   transition: ${p => p.theme.colorModeTransition};

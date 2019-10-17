@@ -163,12 +163,11 @@ const BackArrowIconContainer = styled.div`
   `}
 `;
 
+
 const NavContainer = styled.div`
-  position: relative;
   z-index: 100;
-  padding-top: 100px;
+  padding-top: 10px;
   display: flex;
-  justify-content: space-between;
 
   ${mediaqueries.desktop_medium`
     padding-top: 50px;
@@ -208,24 +207,28 @@ const LogoLink = styled(Link)<{ back: string }>`
   }
 `;
 
-const NavControls = styled.div`
+export const NavControls = styled.div`
+  padding-top: 8px;
   position: relative;
   display: flex;
   align-items: center;
+  position: absolute;
+	display: flex;
+	right: 20px;
 
   ${mediaqueries.phablet`
     right: -5px;
   `}
 `;
 
-const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
+export const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
   position: absolute;
   padding: 4px 13px;
   background: ${p => (p.isDark ? "#000" : "rgba(0,0,0,0.1)")};
   color: ${p => (p.isDark ? "#fff" : "#000")};
   border-radius: 5px;
   font-size: 14px;
-  top: -35px;
+  top: 50px;
   opacity: ${p => (p.hasCopied ? 1 : 0)};
   transform: ${p => (p.hasCopied ? "translateY(-3px)" : "none")};
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -245,8 +248,8 @@ const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
   }
 `;
 
-const IconWrapper = styled.button<{ isDark: boolean }>`
-  opacity: 0.5;
+export const IconWrapper = styled.button<{ isDark: boolean }>`
+  opacity: 0.6;
   position: relative;
   border-radius: 5px;
   width: 40px;
@@ -255,7 +258,7 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease;
-  margin-left: 30px;
+  margin-left: 10px;
 
   &:hover {
     opacity: 1;
@@ -286,10 +289,10 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
 `;
 
 // This is based off a codepen! Much appreciated to: https://codepen.io/aaroniker/pen/KGpXZo
-const MoonOrSun = styled.div<{ isDark: boolean }>`
+export const MoonOrSun = styled.div<{ isDark: boolean }>`
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   border: ${p => (p.isDark ? "4px" : "2px")} solid
     ${p => p.theme.colors.primary};
@@ -338,12 +341,12 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
   }
 `;
 
-const MoonMask = styled.div<{ isDark: boolean }>`
+export const MoonMask = styled.div<{ isDark: boolean }>`
   position: absolute;
-  right: -1px;
-  top: -8px;
-  height: 24px;
-  width: 24px;
+  right: 1px;
+  top: -6px;
+  height: 22px;
+  width: 22px;
   border-radius: 50%;
   border: 0;
   background: ${p => p.theme.colors.background};
@@ -361,3 +364,4 @@ const Hidden = styled.span`
   visibility: hidden;
   overflow: hidden;
 `;
+
