@@ -12,6 +12,7 @@ const GatsbyFluid_withWebp = `
   sizes
 `;
 
+
 module.exports.local = {
   articles: `{
     articles: allArticle(
@@ -25,6 +26,7 @@ module.exports.local = {
           secret
           title
           author
+          slogan
           date(formatString: "MMMM Do, YYYY")
           dateForSEO: date
           timeToRead

@@ -13,9 +13,14 @@ const breakpoints = [
 ];
 
 const fonts = {
-  serif: 'Ubuntu',
-  sansSerif: 'Arg',
+  serif: 'Untitled Serif',
+  sansSerif: 'Untitled',
+  funHeader: 'Larish Alte',
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
+};
+
+const fontWeights = {
+  slogan: `500`,
 };
 
 const fontSizes = {
@@ -31,6 +36,7 @@ export default merge({
   colorModeTransition,
   colors,
   fonts,
+  fontWeights,
   fontSizes,
   breakpoints,
   tags,

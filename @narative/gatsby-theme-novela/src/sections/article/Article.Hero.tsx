@@ -9,6 +9,7 @@ import { IArticle, IAuthor } from '@types';
 
 import ArticleAuthors from './Article.Authors';
 
+
 interface ArticleHeroProps {
   article: IArticle;
   authors: IAuthor[];
@@ -23,7 +24,11 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
   return (
     <Hero>
       <Header>
+        <Slogan>
+            {article.slogan}
+        </Slogan>
         <HeroHeading>{article.title}</HeroHeading>
+        <HeroExcerpt>{article.excerpt}</HeroExcerpt>
         <HeroSubtitle hasCoAUthors={hasCoAUthors}>
           <ArticleAuthors authors={authors} />
           <ArticleMeta hasCoAUthors={hasCoAUthors}>
@@ -44,7 +49,30 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
 
 export default ArticleHero;
 
-const Hero = styled.div`
+const Slogan = styled("p")`
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: ${p => p.theme.fontWeights.slogan};
+  margin-bottom: 10px;
+  color: ${p => p.theme.colors.accent};
+
+  ${mediaqueries.desktop`
+    display: -webkit-box;
+  `}
+
+  ${mediaqueries.phablet`
+    margin-bottom; 15px;
+  `}
+
+  ${mediaqueries.phablet`
+    max-width: 100%;
+    padding:  0 20px;
+    margin-bottom: 20px;
+    -webkit-line-clamp: 3;
+  `}
+`;
+
+const Hero = styled.div`'
   ${p => mediaqueries.phablet`
     &::before {
       content: "";
@@ -85,7 +113,7 @@ const Header = styled.header`
   z-index: 10;
   margin:100px auto 120px;
   padding-left: 68px;
-  max-width: 749px;
+  max-width: 1000px;
 
   ${mediaqueries.desktop`
     padding-left: 53px;
@@ -110,11 +138,27 @@ const Header = styled.header`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 48px;
+  font-size: 50px;
+  font-family: ${p => p.theme.fonts.funHeader};
+  margin-bottom: 35px;
+  line-height: 1.15;
+  text-transform: uppercase;
+
+  ${mediaqueries.tablet`
+    margin-bottom: 20px;
+    font-size: 36px;
+  `}
+
+  ${mediaqueries.phablet`
+    font-size: 32px;
+  `}
+`;
+
+const HeroExcerpt = styled("p")`
+  font-size: 22px;
   font-family: ${p => p.theme.fonts.sansSerif};
-  margin-bottom: 25px;
-  font-weight: bold;
-  line-height: 1.32;
+  margin-bottom: 40px;
+  line-height: 1.4;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;

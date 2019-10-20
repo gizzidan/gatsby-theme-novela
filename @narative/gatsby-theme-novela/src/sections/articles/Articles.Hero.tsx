@@ -27,7 +27,8 @@ const authorQuery = graphql`
   }
 `;
 
-function ArticlesHero({ authors }: IAuthor) {
+
+function ArticlesHero({ authors }: IAuthor){
   const { gridLayout = 'tiles', hasSetGridLayout, setGridLayout } = useContext(
     GridLayoutContext,
   );
@@ -37,18 +38,17 @@ function ArticlesHero({ authors }: IAuthor) {
   const tilesIsActive = hasSetGridLayout && gridLayout === 'tiles';
   const featuredAuthor = authors.find(author => author.featured);
 
+  
+
   if (!featuredAuthor) {
     throw new Error(`
       No featured Author found.
-      Please ensure you have at least featured Author.
+      Please ensure you have at least one featured Author.
   `);
   }
 
   return (
     <Section relative id="Articles__Hero">
-      <HeadingContainer style={{ maxWidth: `${hero.maxWidth}px` }}>
-        <HeroHeading dangerouslySetInnerHTML={{ __html: hero.heading }} />
-      </HeadingContainer>
       <SubheadingContainer>
         <Bio author={featuredAuthor} />
         <GridControlsContainer>
@@ -79,6 +79,7 @@ function ArticlesHero({ authors }: IAuthor) {
 export default ArticlesHero;
 
 const SubheadingContainer = styled.div`
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -119,8 +120,9 @@ const HeadingContainer = styled.div`
 `;
 
 const HeroHeading = styled.h1`
+  font-family: ${p => p.theme.fonts.funHeader};
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 52px;
   line-height: 1.15;
   color: ${p => p.theme.colors.primary};

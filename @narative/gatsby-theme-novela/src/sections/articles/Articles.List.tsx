@@ -25,7 +25,7 @@ import { GridLayoutContext } from "./Articles.List.Context";
  * [LONG]
  */
 
-interface ArticlesListProps {
+export interface ArticlesListProps {
   articles: IArticle[];
   alwaysShowAllDetails?: boolean;
 }
@@ -96,24 +96,22 @@ const ListItem = ({ article, narrow }: ArticlesListItemProps) => {
   return (
     <ArticleLink to={article.slug} data-a11y="false">
       <Item gridLayout={gridLayout}>
+        
         <ImageContainer narrow={narrow} gridLayout={gridLayout}>
           {hasHeroImage ? <Image src={imageSource} /> : <ImagePlaceholder />}
         </ImageContainer>
-        <div>
+        <TextContainer>
+          <Slogan>
+            {article.slogan}
+          </Slogan>
           <Title dark hasOverflow={hasOverflow} gridLayout={gridLayout}>
             {article.title}
           </Title>
-          <Excerpt
-            narrow={narrow}
-            hasOverflow={hasOverflow}
-            gridLayout={gridLayout}
-          >
-            {article.excerpt}
-          </Excerpt>
+          
           <MetaData>
             {article.date} · {article.timeToRead} min read
           </MetaData>
-        </div>
+        </TextContainer>
       </Item>
     </ArticleLink>
   );
@@ -146,10 +144,38 @@ const showDetails = css`
   }
 `;
 
+const TextContainer = styled("div")`
+  padding: 30px 0px 30px 0px;
+`
+const Slogan = styled("p")`
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: ${p => p.theme.fontWeights.slogan};
+  margin-bottom: 10px;
+  color: ${p => p.theme.colors.accent};
+
+  ${mediaqueries.desktop`
+    display: -webkit-box;
+  `}
+
+  ${mediaqueries.phablet`
+    margin-bottom; 15px;
+  `}
+
+  ${mediaqueries.phablet`
+    max-width: 100%;
+    padding:  0 20px;
+    margin-bottom: 20px;
+    -webkit-line-clamp: 3;
+  `}
+`;
+
+
 const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
   ${p => p.alwaysShowAllDetails && showDetails}
 `;
+
 
 const listTile = p => css`
   position: relative;
@@ -209,6 +235,7 @@ const listItemRow = p => css`
 
 const listItemTile = p => css`
   position: relative;
+  text-align: center;
 
   ${mediaqueries.tablet`
     margin-bottom: 60px;
@@ -242,14 +269,13 @@ const List = styled.div<{
 
 const Item = styled.div<{ gridLayout: string }>`
   ${p => (p.gridLayout === "rows" ? listItemRow : listItemTile)}
+  background-color: #fff;
+
 `;
 
 const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
   position: relative;
   height: ${p => (p.gridLayout === "tiles" ? "280px" : "220px")};
-  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, ${p => (p.narrow ? 0.22 : 0.3)}),
-    0 18px 36px -18px rgba(0, 0, 0, ${p => (p.narrow ? 0.25 : 0.33)});
-  margin-bottom: ${p => (p.gridLayout === "tiles" ? "30px" : 0)};
   transition: transform 0.3s var(--ease-out-quad),
     box-shadow 0.3s var(--ease-out-quad);
 
@@ -272,10 +298,11 @@ const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 25px;
+  font-size: 22px;
   font-family: ${p => p.theme.fonts.sansSerif};
-  margin-bottom: ${p =>
-    p.hasOverflow && p.gridLayout === "tiles" ? "35px" : "10px"};
+  font-weight: 500;
+  text-transform: none;
+  margin-bottom: 15px;
   transition: color 0.3s ease-in-out;
   ${limitToTwoLines};
 
@@ -301,9 +328,11 @@ const Excerpt = styled.p<{
   gridLayout: string;
 }>`
   ${limitToTwoLines};
-  font-size: 20px;
+  font-size: 15px;
+  line-height: 1.7;
   margin-bottom: 10px;
-  color: ${p => p.theme.colors.grey};
+  font-weight: 300;
+  color: ${p => p.theme.colors.primary};
   display: ${p => (p.hasOverflow && p.gridLayout === "tiles" ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};
 
@@ -325,9 +354,10 @@ const Excerpt = styled.p<{
 
 const MetaData = styled.div`
   font-weight: 400;
-  font-size: 16px;
-  color: ${p => p.theme.colors.grey};
-  opacity: 0.83;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: ${p => p.theme.colors.primary};
+  
 
   ${mediaqueries.phablet`
     max-width: 100%;

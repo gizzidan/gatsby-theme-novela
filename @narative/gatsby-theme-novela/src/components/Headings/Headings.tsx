@@ -9,7 +9,7 @@ import mediaqueries from "@styles/media";
  */
 
 const commonStyles = p => css`
-  font-weight: bold;
+  font-weight: 400;
   color: ${p.theme.colors.primary};
   font-family: ${p.theme.fonts.sansSerif};
 `;
@@ -31,7 +31,7 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-size: 32px;
+  font-size: 36px;
   line-height: 1.333;
   ${commonStyles};
 
