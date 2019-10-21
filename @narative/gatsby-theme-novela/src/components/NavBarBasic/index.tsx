@@ -10,8 +10,6 @@ import {IconWrapper, MoonOrSun, MoonMask, ToolTip}
 import { copyToClipboard, } from "@utils";
 import Logo from "@components/Logo";
 import LogoBack from "@components/Logo/LogoBack";
-import { Container, BgContainer, LogoContainer, LinkContainer, StyledLink, ToolContainer, Separator }
-    from "@components/NavBarBasic";
 
 function SharePageButton() {
     const [hasCopied, setHasCopied] = useState<boolean>(false);
@@ -69,10 +67,100 @@ function DarkModeToggle() {
   );
 }
 
+export const Container = styled("header")`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+  display: flex;
+  text-align: center;
+  transition: ${p => p.theme.colorModeTransition}, all 0.30s ease;
+`;
+
+export const BgContainer = styled("header")`
+  border-bottom: 1px solid;
+  border-color: ${a => a.theme.colors.lightGrey};
+  background-color: ${p => p.theme.colors.background};
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  transition: ${p => p.theme.colorModeTransition}, all 0.30s ease;
+`;
 
 
 
-export default class NavBar extends React.Component {
+
+
+export const LinkContainer = styled("div")`
+  z-index: 1000;
+  top: 50%;
+  transform: translate(0,-50%);
+  line-height: 0px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 22px;
+    ${mediaqueries.tablet`
+        display: none;
+      `}
+`;
+
+export const StyledLink = styled(Link)`
+    color: ${a => a.theme.colors.navbar};
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: 400;
+    transition: all 0.15s ease;
+
+    &:hover {
+        opacity: 0.6;
+        transition: all 0.15s ease;
+        
+    }
+`;
+
+export const ToolContainer = styled("div")`
+    z-index: 1000;
+    padding-left: 35px;
+    margin-top: 0px;
+    display: flex;
+`
+
+
+export const LogoContainer = styled(Link)`
+    z-index: 1000;
+    top: 100%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-39%,-50%);
+    transition: all 0.15s ease;
+    &:hover {
+        ${a => a.theme.colors.accent};
+        transition: all 0.15s ease;
+        
+    }
+`;
+
+export const Separator = styled("div")`
+    z-index: 1000;
+    font-size: 50px;
+    height: 59px;
+    border-left: 1px solid;
+    border-color: ${a => a.theme.colors.lightGrey};
+    position: absolute;
+    right: 130px;
+        ${mediaqueries.tablet`
+            display: none;
+        `}
+    
+`
+
+
+export default class NavBarBasic extends React.Component {
   state = {
     opacity: '0',
     reverse: '1'
@@ -93,28 +181,19 @@ export default class NavBar extends React.Component {
   render (){
     return (
       <Container>
-         <BgContainer style={{opacity: this.state.opacity}}/>
-         <LogoContainer 
-          style={{opacity: this.state.reverse}}
-          to="/"
-          data-a11y="false"
-          title="Navigate back to the homepage"
-          aria-label="Navigate back to the homepage">
-            <LogoBack/>
-          </LogoContainer>
+         <BgContainer/>
           <LogoContainer 
-          style={{opacity: this.state.opacity}}
           to="/"
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage">
             <Logo/>
           </LogoContainer>
-            <Separator style={{opacity: this.state.opacity}}></Separator>
-            <LinkContainer style={{opacity: this.state.opacity}} >
+            <Separator ></Separator>
+            <LinkContainer  >
                 <StyledLink to="/">Features</StyledLink>
                 <StyledLink to="/">About</StyledLink>
-                    <ToolContainer style={{opacity: this.state.opacity}}>
+                    <ToolContainer >
                         <SharePageButton />
                         <DarkModeToggle />
                     </ToolContainer>

@@ -57,6 +57,9 @@ const GridItem = ({
         <ImageContainer>
           <Image src={imageSource} />
         </ImageContainer>
+        <Slogan>
+           <p>{article.slogan}</p>
+         </Slogan>
         <Title dark hasOverflow={hasOverflow}>
           {article.title}
         </Title>
@@ -114,11 +117,35 @@ const Grid = styled.div<{ numberOfArticles: number }>`
   `}
 `;
 
+const Slogan = styled.p`
+  ${limitToTwoLines};
+  font-family: ${p => p.theme.fonts.slogan};
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-weight: ${p => p.theme.fontWeights.slogan};
+  text-transform: uppercase;
+  color: ${p => p.theme.colors.accent};
+
+
+  ${mediaqueries.desktop`
+    display: -webkit-box;
+  `}
+
+  ${mediaqueries.phablet`
+    font-size: 13px;
+    margin-bottom; 15px;
+    max-width: 100%;
+    padding:  0 20px;
+    margin-bottom: 10px;
+    -webkit-line-clamp: 2;
+  `}
+`;
+
 const ImageContainer = styled.div`
   position: relative;
   height: 280px;
-  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, ${p => (p.narrow ? 0.22 : 0.3)}),
-    0 18px 36px -18px rgba(0, 0, 0, ${p => (p.narrow ? 0.25 : 0.33)});
   margin-bottom: 30px;
   transition: transform 0.3s var(--ease-out-quad),
     box-shadow 0.3s var(--ease-out-quad);
@@ -158,7 +185,7 @@ const Title = styled(Headings.h3)`
   line-height: 1.4;
   margin-bottom: ${p => (p.hasOverflow ? "45px" : "10px")};
   color: ${p => p.theme.colors.primary};
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   transition: color 0.3s ease-in-out;
   ${limitToTwoLines};
 
@@ -176,7 +203,8 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   ${limitToTwoLines};
   font-size: 16px;
   margin-bottom: 10px;
-  color: ${p => p.theme.colors.grey};
+  font-weight: 300;
+  color: ${p => p.theme.colors.articleText};
   display: ${p => (p.hasOverflow ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};
 
@@ -197,10 +225,11 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
 `;
 
 const MetaData = styled.div`
-  font-weight: 600;
+  font-weight: 400;
+  font-family: ${p => p.theme.fonts.slogan};
   font-size: 16px;
-  color: ${p => p.theme.colors.grey};
-  opacity: 0.33;
+  font-style: italic;
+  color: ${p => p.theme.colors.articleText};
 
   ${mediaqueries.phablet`
     max-width: 100%;

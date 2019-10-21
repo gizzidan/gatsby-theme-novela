@@ -50,27 +50,8 @@ function ArticlesHero({ authors }: IAuthor){
   return (
     <Section relative id="Articles__Hero">
       <SubheadingContainer>
-        <Bio author={featuredAuthor} />
-        <GridControlsContainer>
-          <GridButton
-            onClick={() => setGridLayout('tiles')}
-            active={tilesIsActive}
-            data-a11y="false"
-            title="Show articles in Tile grid"
-            aria-label="Show articles in Tile grid"
-          >
-            <Icons.Tiles />
-          </GridButton>
-          <GridButton
-            onClick={() => setGridLayout('rows')}
-            active={!tilesIsActive}
-            data-a11y="false"
-            title="Show articles in Row grid"
-            aria-label="Show articles in Row grid"
-          >
-            <Icons.Rows />
-          </GridButton>
-        </GridControlsContainer>
+        
+        <Bio author={featuredAuthor} />     
       </SubheadingContainer>
     </Section>
   );
@@ -79,11 +60,11 @@ function ArticlesHero({ authors }: IAuthor){
 export default ArticlesHero;
 
 const SubheadingContainer = styled.div`
-  margin-top: 100px;
-  display: flex;
+  margin-top: 80px;
+  display: block;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 
   ${mediaqueries.desktop`
     margin-bottom: 80px;

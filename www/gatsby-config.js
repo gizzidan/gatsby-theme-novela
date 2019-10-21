@@ -1,8 +1,8 @@
 require("dotenv").config();
 
 const siteMetadata = {
-  title: `Novela by Narative`,
-  name: `Narative`,
+  title: `Shoreside News`,
+  name: `Shoreside`,
   siteUrl: `https://novela.narative.co`,
   description: `This is my description that will be used in the meta tags and important for search results`,
   hero: {

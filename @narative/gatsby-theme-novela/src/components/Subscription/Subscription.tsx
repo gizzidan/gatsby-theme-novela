@@ -100,7 +100,7 @@ const SubscriptionContainer = styled.div`
 const Content = styled.div`
   margin: 0 auto;
   width: 100%;
-  max-width: 640px;
+  max-width: 580px;
 
   ${mediaqueries.tablet`
     h3 {
@@ -186,18 +186,18 @@ const Input = styled.input<{ hasError: string }>`
 
 const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   position: absolute;
-  left: 306px;
-  top: 3px;
+  left: 309px;
+  top: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 161px;
-  height: 38px;
+  height: 45px;
   border: 1px solid
     ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
   color: ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
   background: ${p => (p.subscribed ? p.theme.colors.accent : "transparent")};
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 35px;
   letter-spacing: 0.42px;
   transition: border-color 0.2s var(--ease-in-out-quad),

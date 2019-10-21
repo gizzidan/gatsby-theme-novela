@@ -78,8 +78,6 @@ function NavigationHeader() {
             </button>
           ) : (
             <>
-              <SharePageButton />
-              <DarkModeToggle />
             </>
           )}
         </NavControls>
@@ -224,11 +222,11 @@ export const NavControls = styled.div`
 export const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
   position: absolute;
   padding: 4px 13px;
-  background: ${p => (p.isDark ? "#000" : "rgba(0,0,0,0.1)")};
-  color: ${p => (p.isDark ? "#fff" : "#000")};
+  background: ${p => (p.isDark ? "#fff" : "rgba(0,0,0,0.9)")};
+  color: ${p => (p.isDark ? "#000" : "#fff")};
   border-radius: 5px;
   font-size: 14px;
-  top: 50px;
+  top: 40px;
   opacity: ${p => (p.hasCopied ? 1 : 0)};
   transform: ${p => (p.hasCopied ? "translateY(-3px)" : "none")};
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -238,18 +236,18 @@ export const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -6px;
+    bottom: 25px;
     margin: 0 auto;
     width: 0;
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid ${p => (p.isDark ? "#000" : "rgba(0,0,0,0.1)")};
+    border-bottom: 6px solid ${p => (p.isDark ? "#fff" : "rgba(0,0,0,0.9)")};
   }
 `;
 
 export const IconWrapper = styled.button<{ isDark: boolean }>`
-  opacity: 0.6;
+  opacity: 1;
   position: relative;
   border-radius: 5px;
   width: 40px;
@@ -261,7 +259,7 @@ export const IconWrapper = styled.button<{ isDark: boolean }>`
   margin-left: 10px;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.6;
   }
 
   &[data-a11y="true"]:focus::after {

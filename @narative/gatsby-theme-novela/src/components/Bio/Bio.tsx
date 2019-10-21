@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import Image from '@components/Image';
 import { IAuthor } from '@types';
 
+
 function Bio({ author }: IAuthor) {
   return (
     <BioContainer>
@@ -18,13 +19,35 @@ function Bio({ author }: IAuthor) {
           <Image src={author.avatar.medium} />
         </BioAvatarInner>
       </BioAvatar>
-      <BioText dangerouslySetInnerHTML={{ __html: author.bio }} />
+      <TextContainer>
+        <BioLabel
+        style={{ marginBottom: '5px', }}>
+          Featured Author: <BioLink to={author.slug}>{author.name}</BioLink></BioLabel>
+        <BioText dangerouslySetInnerHTML={{ __html: author.bio }} />
+      </TextContainer>
     </BioContainer>
   );
 }
 
 export default Bio;
 
+const TextContainer = styled.div`
+  display: block;
+
+`
+
+const BioLabel = styled('h3')`
+  color: ${p => p.theme.colors.primary};
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'GT America Cond';
+`
+
+const BioLink = styled(Link)`
+  color: ${p => p.theme.colors.articleText};
+  border-bottom: 1px solid;
+  border-color: ${p => p.theme.colors.articleText};
+`
 const BioContainer = styled.div`
   display: flex;
   align-items: center;
@@ -77,10 +100,11 @@ const BioText = styled.p`
   max-width: 430px;
   font-size: 18px;
   line-height: 1.45;
-  color: ${p => p.theme.colors.grey};
+  font-weight: 300;
+  color: ${p => p.theme.colors.primary};
 
   a {
-    color: ${p => p.theme.colors.grey};
+    color: ${p => p.theme.colors.accent};
     text-decoration: underline;
   }
 `;

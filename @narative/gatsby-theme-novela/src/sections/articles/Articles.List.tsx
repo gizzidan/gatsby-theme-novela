@@ -102,12 +102,14 @@ const ListItem = ({ article, narrow }: ArticlesListItemProps) => {
         </ImageContainer>
         <TextContainer>
           <Slogan>
-            {article.slogan}
+            <p>{article.slogan}</p>
           </Slogan>
           <Title dark hasOverflow={hasOverflow} gridLayout={gridLayout}>
             {article.title}
           </Title>
-          
+          <Excerpt hasOverflow={hasOverflow} gridLayout={gridLayout} narrow={narrow}>
+            {article.excerpt}
+          </Excerpt>
           <MetaData>
             {article.date} · {article.timeToRead} min read
           </MetaData>
@@ -118,7 +120,7 @@ const ListItem = ({ article, narrow }: ArticlesListItemProps) => {
 };
 
 const wide = "1fr";
-const narrow = "457px";
+const narrow = "488px";
 
 const limitToTwoLines = css`
   text-overflow: ellipsis;
@@ -146,30 +148,40 @@ const showDetails = css`
 
 const TextContainer = styled("div")`
   padding: 30px 0px 30px 0px;
-`
-const Slogan = styled("p")`
-  font-size: 14px;
-  text-transform: uppercase;
+  ${mediaqueries.phablet`
+    padding: 20px 0px 20px 0px;
+  `}
+`;
+
+const Slogan = styled.p<{
+  hasOverflow: boolean;
+  narrow: boolean;
+  gridLayout: string;
+}>`
+  ${limitToTwoLines};
+  font-family: ${p => p.theme.fonts.sansSerif};
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-weight: ${p => p.theme.fontWeights.slogan};
-  margin-bottom: 10px;
+  text-transform: uppercase;
   color: ${p => p.theme.colors.accent};
+
 
   ${mediaqueries.desktop`
     display: -webkit-box;
   `}
 
   ${mediaqueries.phablet`
+    font-size: 13px;
     margin-bottom; 15px;
-  `}
-
-  ${mediaqueries.phablet`
     max-width: 100%;
     padding:  0 20px;
-    margin-bottom: 20px;
-    -webkit-line-clamp: 3;
+    margin-bottom: 10px;
+    -webkit-line-clamp: 2;
   `}
 `;
-
 
 const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
@@ -184,10 +196,10 @@ const listTile = p => css`
     ? `${narrow} ${wide}`
     : `${wide} ${narrow}`};
   grid-template-rows: 2;
-  column-gap: 30px;
+  column-gap: 40px;
 
   &:not(:last-child) {
-    margin-bottom: 75px;
+    margin-bottom: 30px;
   }
 
   ${mediaqueries.desktop_medium`
@@ -207,11 +219,11 @@ const listItemRow = p => css`
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 488px;
-  grid-column-gap: 96px;
+  grid-column-gap: 70px;
   grid-template-rows: 1;
   align-items: center;
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 
   ${mediaqueries.desktop`
     grid-column-gap: 24px;
@@ -227,15 +239,14 @@ const listItemRow = p => css`
   }
 
   ${mediaqueries.phablet`
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    margin-bottom: 30px;
+    
+    
   `}
 `;
 
 const listItemTile = p => css`
   position: relative;
-  text-align: center;
 
   ${mediaqueries.tablet`
     margin-bottom: 60px;
@@ -246,10 +257,9 @@ const listItemTile = p => css`
   }
 
   ${mediaqueries.phablet`
-    margin-bottom: 40px;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    margin-bottom: 30px;
+    
+    
   `}
 `;
 
@@ -269,8 +279,11 @@ const List = styled.div<{
 
 const Item = styled.div<{ gridLayout: string }>`
   ${p => (p.gridLayout === "rows" ? listItemRow : listItemTile)}
-  background-color: #fff;
-
+  text-align: left;
+  ${mediaqueries.phablet`
+   border-top-left-radius: 5px;
+   
+  `}
 `;
 
 const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
@@ -285,12 +298,12 @@ const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
 
   ${mediaqueries.tablet`
     height: 200px;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
   `}
 
   ${mediaqueries.phablet`
     overflow: hidden;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     box-shadow: none;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -298,16 +311,17 @@ const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 22px;
-  font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.2;
+  font-family: ${p => p.theme.fonts.serif};
+  font-weight: 400;
   text-transform: none;
-  margin-bottom: 15px;
+  margin-bottom: -15px;
   transition: color 0.3s ease-in-out;
   ${limitToTwoLines};
 
   ${mediaqueries.desktop`
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   `}
 
   ${mediaqueries.tablet`
@@ -315,9 +329,9 @@ const Title = styled(Headings.h2)`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 22px;  
-    padding: 30px 20px 0;
-    margin-bottom: 10px;
+    font-size: 20px;  
+    padding: 0px 20px 0;
+    margin-bottom: 0px;
     -webkit-line-clamp: 3;
   `}
 `;
@@ -329,39 +343,38 @@ const Excerpt = styled.p<{
 }>`
   ${limitToTwoLines};
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.618;
+  margin-top: 20px;
   margin-bottom: 10px;
   font-weight: 300;
   color: ${p => p.theme.colors.primary};
-  display: ${p => (p.hasOverflow && p.gridLayout === "tiles" ? "none" : "box")};
+  display: ${p => (p.gridLayout === "tiles" ? "box" : "none")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};
 
   ${mediaqueries.desktop`
     display: -webkit-box;
   `}
 
-  ${mediaqueries.phablet`
-    margin-bottom; 15px;
-  `}
 
   ${mediaqueries.phablet`
+    margin-bottom; 15px;
     max-width: 100%;
     padding:  0 20px;
-    margin-bottom: 20px;
     -webkit-line-clamp: 3;
   `}
 `;
 
 const MetaData = styled.div`
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
+  font-style: italic;
   color: ${p => p.theme.colors.primary};
   
 
   ${mediaqueries.phablet`
     max-width: 100%;
-    padding:  0 20px 30px;
+    padding:  10px 20px 10px;
   `}
 `;
 

@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { useColorMode } from "theme-ui";
 import mediaqueries from "@styles/media";
 
-const Logo = () => {
-  const [colorMode] = useColorMode();
-  const fill = colorMode === "dark" ? "#fff" : "#000";
+const LogoBack = () => {
+  const fill = "#fff";
   return (
     <LogoContainer>
       <svg width="100"
@@ -50,7 +48,7 @@ const Logo = () => {
   );
 };
 
-export default Logo;
+export default LogoBack;
 
 const LogoContainer = styled.div`
   .Logo__Mobile {

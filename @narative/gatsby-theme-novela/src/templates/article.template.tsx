@@ -8,6 +8,7 @@ import MDXRenderer from "@components/MDX";
 import Progress from "@components/Progress";
 import Section from "@components/Section";
 import Subscription from "@components/Subscription";
+import NavBarBasic from "@components/NavBarBasic";
 
 import mediaqueries from "@styles/media";
 import { debounce } from "@utils";
@@ -80,6 +81,7 @@ function Article({ pageContext, location }) {
 
   return (
     <Layout>
+      <NavBarBasic />
       <ArticleSEO article={article} authors={authors} location={location} />
       <ArticleHero article={article} authors={authors} />
       <ArticleAside contentHeight={contentHeight}>
@@ -120,8 +122,8 @@ const MobileControls = styled.div`
 
 const ArticleBody = styled.article`
   position: relative;
-  padding: 160px 0 35px;
-  padding-left: 68px;
+  padding: 30px 0 35px;
+  padding-left: 0px;
   transition: background 0.2s linear;
 
   ${mediaqueries.desktop`

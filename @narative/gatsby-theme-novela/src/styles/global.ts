@@ -5,13 +5,18 @@ import GCopernicusM from "www/static/fonts/Galaxie Copernicus/GalaxieCopernicus-
 import UntitledSerifRegular from "www/static/fonts/Untitled Serif/UntitledSerif-Regular.woff";
 import UntitledSerifBold from "www/static/fonts/Untitled Serif/UntitledSerif-Bold.woff";
 
-import UntitledLight from "www/static/fonts/Untitled Sans/UntitledSans-Light.woff";
-import UntitledRegular from "www/static/fonts/Untitled Sans/UntitledSans-Regular.woff";
-import UntitledMedium from "www/static/fonts/Untitled Sans/UntitledSans-Medium.woff";
+import UnionRegular from "www/static/fonts/Union/Union-Regular.otf";
+import UnionRegularItalic from "www/static/fonts/Union/Union-Italic.otf";
+import UnionBold from "www/static/fonts/Union/Union-BoldItalic.otf";
 
-import FoundersRegular from "www/static/fonts/Founders Grotesk/FoundersGrotesk-Regular.otf";
-import FoundersMedium from "www/static/fonts/Founders Grotesk/FoundersGrotesk-Medium.otf";
-import FoundersBold from "www/static/fonts/Founders Grotesk/FoundersGrotesk-Bold.otf";
+import FuturaLight from "www/static/fonts/Futura/Futura-Light.woff";
+import FuturaBook from "www/static/fonts/Futura/Futura-Book.woff";
+import FuturaMedium from "www/static/fonts/Futura/Futura-Medium.woff";
+
+import GTConReg from "www/static/fonts/GT America/GTAmerica-CondensedRegular.woff";
+import GTConRegItalic from "www/static/fonts/GT America/GTAmerica-CondensedRegularItalic.woff";
+import GTConMed from "www/static/fonts/GT America/GTAmerica-CondensedMedium.woff";
+
 
 import LarishAlte from "www/static/fonts/Larish Alte/LarishAlte-SemiBold.woff";
 
@@ -50,6 +55,46 @@ export const globalStyles = css`
     src: url(${GCopernicusM});
   }
 
+   /** Futura */
+  @font-face {
+    font-family: "Futura";
+    font-weight: 300;
+    font-style: normal;
+    src: url(${FuturaLight}) format("woff");
+  }
+  @font-face {
+    font-family: "Futura";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${FuturaBook}) format("woff");
+  }
+  @font-face {
+    font-family: "Futura";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${FuturaMedium}) format("woff");
+  }
+
+    /** GT America */
+  @font-face {
+    font-family: "GT America Cond";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${GTConReg}) format("woff");
+  }
+  @font-face {
+    font-family: "GT America Cond";
+    font-weight: 400;
+    font-style: italic;
+    src: url(${GTConRegItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "GT America Cond";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${GTConMed}) format("woff");
+  }
+
     /** Untitled Serif */
   @font-face {
     font-family: "Untitled Serif";
@@ -64,46 +109,25 @@ export const globalStyles = css`
     src: url(${UntitledSerifBold}) format("woff");
   }
 
-  /** Untitled Sans */
+  /** Union */
   @font-face {
-    font-family: "Untitled";
-    font-weight: 300;
-    font-style: normal;
-    src: url(${UntitledLight}) format("woff");
-  }
-  @font-face {
-    font-family: "Untitled";
+    font-family: "Union";
     font-weight: 400;
     font-style: normal;
-    src: url(${UntitledRegular}) format("woff");
+    src: url(${UnionRegular}) format("true-type");
   }
    @font-face {
-    font-family: "Untitled";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${UntitledMedium}) format("woff");
-  }
-
-  /** Founders Grotesk */
-  @font-face {
-    font-family: "Founders Grotesk";
+    font-family: "Union";
     font-weight: 400;
-    font-style: normal;
-    src: url(${FoundersRegular}) format("open-type");
+    font-style: italic;
+    src: url(${UnionRegularItalic}) format("true-type");
   }
    @font-face {
-    font-family: "Founders Grotesk";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${FoundersMedium}) format("open-type");
-  }
-  @font-face {
-    font-family: "Founders Grotesk";
+    font-family: "Union";
     font-weight: 700;
     font-style: normal;
-    src: url(${FoundersBold}) format("open-type");
+    src: url(${UnionBold}) format("true-type");
   }
-
 
   /** Larish Alte */
   @font-face {
@@ -143,7 +167,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "Untitled";
+    font-family: "Futura";
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

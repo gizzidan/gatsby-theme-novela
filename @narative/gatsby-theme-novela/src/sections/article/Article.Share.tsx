@@ -82,11 +82,11 @@ function ArticelShare() {
         let paddingOffset = 0;
 
         if (windowWidth > tablet) {
-          paddingOffset = 53;
+          paddingOffset = 0;
         }
 
         if (windowWidth > desktop) {
-          paddingOffset = 68;
+          paddingOffset = 0;
         }
 
         /**
@@ -96,8 +96,8 @@ function ArticelShare() {
          * the middle of the text area
          */
         const offset: { x: number; y: number } = {
-          x: height > 29 ? paragraphOffset + paddingOffset : x,
-          y: y - articleBox.y - 160,
+          x: height > 1000 ? paragraphOffset + paddingOffset : x,
+          y: y - articleBox.y - 50,
         };
 
         setPosition({
@@ -249,11 +249,11 @@ const MenuFloat = styled.div<{ isDark: boolean }>`
   width: ${MENU_WIDTH}px;
   height: ${MENU_HEIGHT}px;
   padding: 7px 11px 7px 19px;
-  color: ${p => p.theme.colors.grey};
+  color: ${p => p.theme.colors.secondary};
   background: ${p => (p.isDark ? "#fafafa" : "#000")};
   border-radius: 5px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   transition: left 75ms ease-out, right 75ms ease-out, background 200ms;
   animation: ${popUpwards} 200ms forwards;
 

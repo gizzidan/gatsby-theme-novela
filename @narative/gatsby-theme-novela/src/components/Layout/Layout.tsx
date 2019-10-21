@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { useColorMode } from 'theme-ui';
 import NavBar from '@components/NavBar';
 
+
 import NavigationFooter from '@components/Navigation/Navigation.Footer';
 import ArticlesContextProvider from '../../sections/articles/Articles.List.Context';
 
@@ -29,7 +30,7 @@ function Layout({ children }: LayoutProps) {
     <ArticlesContextProvider>
       <Container>
         <Global styles={globalStyles} />
-        <NavBar />
+        
         {children}
         <NavigationFooter />
       </Container>

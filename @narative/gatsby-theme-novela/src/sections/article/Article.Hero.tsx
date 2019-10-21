@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-
+import { Link } from 'gatsby';
 import Headings from '@components/Headings';
 import Image, { ImagePlaceholder } from '@components/Image';
-
+import { jsx } from 'theme-ui'
 import mediaqueries from '@styles/media';
 import { IArticle, IAuthor } from '@types';
 
@@ -16,7 +16,6 @@ interface ArticleHeroProps {
 }
 
 const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
-  const hasCoAUthors = authors.length > 1;
   const hasHeroImage =
     Object.keys(article.hero.full).length !== 0 &&
     article.hero.full.constructor === Object;
@@ -26,15 +25,10 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
       <Header>
         <Slogan>
             {article.slogan}
+            
         </Slogan>
         <HeroHeading>{article.title}</HeroHeading>
         <HeroExcerpt>{article.excerpt}</HeroExcerpt>
-        <HeroSubtitle hasCoAUthors={hasCoAUthors}>
-          <ArticleAuthors authors={authors} />
-          <ArticleMeta hasCoAUthors={hasCoAUthors}>
-            {article.date} · {article.timeToRead} min read
-          </ArticleMeta>
-        </HeroSubtitle>
       </Header>
       <HeroImage id="ArticleImage__Hero">
         {hasHeroImage ? (
@@ -43,14 +37,24 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
           <ImagePlaceholder />
         )}
       </HeroImage>
+      <Meta>
+      <HeroSubtitle>By: <StyledLink to={authors[0].slug}>{article.author}</StyledLink>
+            <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> {article.date}</HeroSubtitle>
+        </Meta>
     </Hero>
   );
 };
 
 export default ArticleHero;
 
+const StyledLink = styled(Link)`
+  color: ${p => p.theme.colors.articleText};
+  border-bottom: 1px solid;
+  border-color: ${p => p.theme.colors.articleText};
+`
 const Slogan = styled("p")`
-  font-size: 18px;
+  font-family: ${p => p.theme.fonts.slogan};
+  font-size: 16px;
   text-transform: uppercase;
   font-weight: ${p => p.theme.fontWeights.slogan};
   margin-bottom: 10px;
@@ -100,9 +104,7 @@ const Hero = styled.div`'
   `}
 `;
 
-const ArticleMeta = styled.div<{ hasCoAUthors: boolean }>`
-  margin-left: ${p => (p.hasCoAUthors ? '10px' : '0')};
-
+export const ArticleMeta = styled.div`
   ${mediaqueries.phablet`
     margin-left: 0;
   `}
@@ -111,9 +113,9 @@ const ArticleMeta = styled.div<{ hasCoAUthors: boolean }>`
 const Header = styled.header`
   position: relative;
   z-index: 10;
-  margin:100px auto 120px;
-  padding-left: 68px;
-  max-width: 1000px;
+  margin: 100px auto 50px;
+  
+  max-width: 680px;
 
   ${mediaqueries.desktop`
     padding-left: 53px;
@@ -137,12 +139,40 @@ const Header = styled.header`
   }
 `;
 
+const Meta = styled.div`
+  position: relative;
+  z-index: 10;
+  margin: 60px auto 10px;
+  max-width: 680px;
+
+  ${mediaqueries.desktop`
+    padding-left: 53px;
+    max-width: 507px;;
+  `}
+
+  ${mediaqueries.tablet`
+    padding-left: 0;
+    margin: 100px auto 70px;
+    max-width: 480px;
+  `}
+
+  ${mediaqueries.phablet`
+    margin: 170px auto 180px;
+    padding: 0 40px;
+  `}
+
+  @media screen and (max-height: 700px) {
+    margin: 100px auto;
+  }
+`;
+
 const HeroHeading = styled(Headings.h1)`
-  font-size: 50px;
-  font-family: ${p => p.theme.fonts.funHeader};
-  margin-bottom: 35px;
+  font-size: 42px;
+  font-family: ${p => p.theme.fonts.sansSerif};
+  margin-bottom: 40px;
   line-height: 1.15;
-  text-transform: uppercase;
+  text-transform: none;
+  font-weight: 500;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
@@ -159,6 +189,8 @@ const HeroExcerpt = styled("p")`
   font-family: ${p => p.theme.fonts.sansSerif};
   margin-bottom: 40px;
   line-height: 1.4;
+  color: ${p => p.theme.colors.articleText};
+  font-weight: 400;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
@@ -171,10 +203,9 @@ const HeroExcerpt = styled("p")`
 `;
 
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
-  position: relative;
-  display: flex;
-  font-size: 18px;
-  color: ${p => p.theme.colors.grey};
+  text-align: center;
+  font-size: 17px;
+  color: ${p => p.theme.colors.articleText};
 
   ${p => mediaqueries.phablet`
     font-size: 14px;
@@ -208,11 +239,10 @@ const HeroImage = styled.div`
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 944px;
+  max-width: 1100px;
   overflow: hidden;
   margin: 0 auto;
-  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.2),
-    0 18px 36px -18px rgba(0, 0, 0, 0.22);
+  
 
   ${mediaqueries.tablet`
     max-width: 100%;

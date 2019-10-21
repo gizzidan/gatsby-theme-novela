@@ -31,8 +31,9 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-size: 36px;
-  line-height: 1.333;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 500 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`
@@ -50,8 +51,9 @@ const h2 = styled.h2`
 `;
 
 const h3 = styled.h3`
-  font-size: 24px;
-  line-height: 1.45;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 500 !important;
   ${commonStyles};
 
   ${mediaqueries.tablet`

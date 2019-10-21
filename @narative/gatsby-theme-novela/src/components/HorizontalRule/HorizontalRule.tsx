@@ -4,7 +4,7 @@ import mediaqueries from "@styles/media";
 const HorizontalRule = styled.hr`
   position: relative;
   width: 100%;
-  max-width: 680px;
+  max-width: ${p => p.theme.widths.regular};
   margin: 50px auto;
   border: 0;
   height: 14.36px;

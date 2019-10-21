@@ -14,18 +14,24 @@ const breakpoints = [
 
 const fonts = {
   serif: 'Untitled Serif',
-  sansSerif: 'Untitled',
+  sansSerif: 'Futura',
+  slogan: 'GT America Cond',
   funHeader: 'Larish Alte',
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 
 const fontWeights = {
-  slogan: `500`,
+  slogan: `400`,
 };
 
 const fontSizes = {
   p: `20px`,
 };
+
+const widths = {
+  regular: `580px`,
+};
+
 
 const colorModeTransition =
   'background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad)';
@@ -38,6 +44,7 @@ export default merge({
   fonts,
   fontWeights,
   fontSizes,
+  widths,
   breakpoints,
   tags,
 });

@@ -2,7 +2,9 @@ import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
 const UnorderedList = styled.ul`
+  font-family: ${p => p.theme.fonts.serif};
   list-style: none;
+  list-style-type: disc;
   counter-reset: list;
   color: ${p => p.theme.colors.articleText};
   position: relative;
@@ -12,14 +14,14 @@ const UnorderedList = styled.ul`
   font-size: ${p => p.theme.fontSizes.p};
 
   width: 100%;
-  max-width: 680px;
+  max-width: ${p => p.theme.widths.regular};
 
   ${mediaqueries.desktop`
     max-width: 507px;
   `}
 
   ${mediaqueries.tablet`
-    max-width: 486px;
+    max-width: 440px;
     padding-left: 0px;
   `};
 
@@ -32,11 +34,11 @@ const UnorderedList = styled.ul`
     padding-bottom: 15px;
 
     ${mediaqueries.tablet`
-      padding-left: 30px;
+      padding-left: 10px;
     `};
 
     ${mediaqueries.phablet`
-      padding-left: 30px;
+      padding-left: 10px;
     `};
 
     p {
@@ -50,21 +52,7 @@ const UnorderedList = styled.ul`
     display: inline;
   }
 
-  li::before {
-    width: 3rem;
-    display: inline-block;
-    position: absolute;
-    color: ${p => p.theme.colors.articleText};
-  }
-
-  li::before {
-    content: "";
-    position: absolute;
-    left: -30px;
-    top: 8px;
-    height: 8px;
-    width: 8px;
-    background: ${p => p.theme.colors.articleText};
+  
 
     ${mediaqueries.tablet`
       left: 0;

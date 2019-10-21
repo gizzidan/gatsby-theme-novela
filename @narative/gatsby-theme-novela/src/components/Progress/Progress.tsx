@@ -43,6 +43,7 @@ const ProgressContainer = styled.div`
   position: relative;
   outline: none;
   user-select: none;
+  left: 0px;
 `;
 
 const Trackline = styled.div`
@@ -51,7 +52,7 @@ const Trackline = styled.div`
   flex-direction: column;
   height: calc(88vh - 40px);
   max-height: 425px;
-  width: 1px;
+  width: 2px;
   background-color: ${p => p.theme.colors.track};
   opacity: 0.6;
   overflow: hidden;
@@ -61,7 +62,7 @@ const ProgressLine = styled.div`
   position: absolute;
   height: 100%;
   top: -100%;
-  width: 1px;
+  width: 2px;
   background-color: ${p => p.theme.colors.progress};
   left: 0;
 `;

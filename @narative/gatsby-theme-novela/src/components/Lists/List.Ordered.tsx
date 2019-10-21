@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
 const OrderedList = styled.ol`
+  font-family: ${p => p.theme.fonts.serif};
   list-style: none;
   counter-reset: list;
   color: ${p => p.theme.colors.articleText};
@@ -12,7 +13,7 @@ const OrderedList = styled.ol`
   font-size: ${p => p.theme.fontSizes.p};
 
   width: 100%;
-  max-width: 680px;
+  max-width: ${p => p.theme.widths.regular};
 
   ${mediaqueries.desktop`
     max-width: 507px;
