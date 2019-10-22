@@ -14,7 +14,7 @@ const breakpoints = [
 
 const fonts = {
   serif: 'Untitled Serif',
-  sansSerif: 'Futura',
+  sansSerif: 'Apercu',
   slogan: 'GT America Cond',
   funHeader: 'Larish Alte',
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,

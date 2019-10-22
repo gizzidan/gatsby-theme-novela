@@ -203,6 +203,7 @@ const HeroExcerpt = styled("p")`
 `;
 
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
+  font-family: ${p => p.theme.fonts.sansSerif};
   text-align: center;
   font-size: 17px;
   color: ${p => p.theme.colors.articleText};

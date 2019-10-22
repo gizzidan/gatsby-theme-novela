@@ -25,7 +25,7 @@ function ArticlesPage({ location, pageContext }) {
       <SEO pathname={location.pathname} />
       <ArticlesHero authors={authors} />
       <Section narrow>
-        <Label>The Latest</Label>
+        
         
            <ArticlesList2 />
   

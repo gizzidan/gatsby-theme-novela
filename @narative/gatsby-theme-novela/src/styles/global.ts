@@ -12,11 +12,18 @@ import UnionBold from "www/static/fonts/Union/Union-BoldItalic.otf";
 import FuturaLight from "www/static/fonts/Futura/Futura-Light.woff";
 import FuturaBook from "www/static/fonts/Futura/Futura-Book.woff";
 import FuturaMedium from "www/static/fonts/Futura/Futura-Medium.woff";
+import FuturaMediumItalic from "www/static/fonts/Futura/Futura-Medium-Italic.woff";
+import FuturaLTMedium from "www/static/fonts/Futura/FuturaLT.woff";
+import FuturaLTMediumItalic from "www/static/fonts/Futura/Futura-Oblique.woff";
 
 import GTConReg from "www/static/fonts/GT America/GTAmerica-CondensedRegular.woff";
 import GTConRegItalic from "www/static/fonts/GT America/GTAmerica-CondensedRegularItalic.woff";
 import GTConMed from "www/static/fonts/GT America/GTAmerica-CondensedMedium.woff";
+import GTExtBlack from "www/static/fonts/GT America/GTAmerica-ExtendedBlack.woff";
 
+import Roslindale from "www/static/fonts/Roslindale/RoslindaleVariableDisplay-Regular.woff2";
+
+import Ogg from "www/static/fonts/Ogg/Ogg-Roman.woff";
 
 import LarishAlte from "www/static/fonts/Larish Alte/LarishAlte-SemiBold.woff";
 
@@ -55,6 +62,20 @@ export const globalStyles = css`
     src: url(${GCopernicusM});
   }
 
+   /** Roslindale */
+  @font-face {
+    font-family: "Roslindale";
+    src: url(${Roslindale}) format("woff2-variations");
+  }
+
+   /** Ogg */
+  @font-face {
+    font-family: "Ogg";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${Ogg}) format("true-type");
+  }
+
    /** Futura */
   @font-face {
     font-family: "Futura";
@@ -73,6 +94,24 @@ export const globalStyles = css`
     font-weight: 500;
     font-style: normal;
     src: url(${FuturaMedium}) format("woff");
+  }
+  @font-face {
+    font-family: "Futura LT";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${FuturaLTMedium}) format("woff");
+  }
+  @font-face {
+    font-family: "Futura";
+    font-weight: 500;
+    font-style: italic;
+    src: url(${FuturaMediumItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Futura LT";
+    font-weight: 500;
+    font-style: italic, oblique;
+    src: url(${FuturaLTMediumItalic}) format("woff");
   }
 
     /** GT America */
@@ -93,6 +132,12 @@ export const globalStyles = css`
     font-weight: 500;
     font-style: normal;
     src: url(${GTConMed}) format("woff");
+  }
+  @font-face {
+    font-family: "GT America Ext";
+    font-weight: 900;
+    font-style: normal;
+    src: url(${GTExtBlack}) format("woff");
   }
 
     /** Untitled Serif */
@@ -167,7 +212,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "Futura";
+    font-family: "Apercu";
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

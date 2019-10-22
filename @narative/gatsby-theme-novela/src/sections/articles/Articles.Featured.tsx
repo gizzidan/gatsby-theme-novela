@@ -9,7 +9,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        article(title: {eq: "Frank Ocean Releases New Music and Launches Series of Nightclub Events"}) {
+        article(title: {eq: "The Zombie Walk is Taking Over Asbury Park"}) {
           title
           date
           excerpt
@@ -48,7 +48,7 @@ export default Featured
 
 const FeaturedContainer = styled("section")`
   overflow: hidden;
-  height: 75vh;
+  height: 78vh;
   position: relative;
   margin: -61px auto 0px auto;
   &:hover, &:focus {
@@ -75,25 +75,24 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.5), rgba(5, 5, 5, 0.7));
+  background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.1), rgba(5, 5, 5, 0.7));
   width: 100%;
   height: 100%;
 `
 const TextContainer = styled("div") `
-  padding-top: 30px;
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   max-width: 800px;
   transform: translate(-50%,-50%);
   text-align: center;
 `
 const Title = styled("div")`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: "Apercu";
   color: white;
-  font-size: 52px;
+  font-size: 36px;
   line-height: 1.1;
-  text-transform: none;
+  text-transform: lowercase;
   padding-bottom: 25px;
   font-weight: 500;
 
@@ -113,7 +112,7 @@ const Excerpt = styled("div")`
   font-family: ${p => p.theme.fonts.sansSerif};
   font-weight: 300;
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.4;
 
 
