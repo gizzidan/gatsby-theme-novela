@@ -141,6 +141,17 @@
           "linkType": "Asset"
         },
         {
+          "id": "slogan",
+          "name": "Slogan",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
           "id": "excerpt",
           "name": "Excerpt",
           "type": "Symbol",

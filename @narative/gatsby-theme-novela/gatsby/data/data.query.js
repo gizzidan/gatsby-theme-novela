@@ -26,6 +26,7 @@ module.exports.local = {
           secret
           title
           author
+          category
           slogan
           date(formatString: "MMMM Do, YYYY")
           dateForSEO: date

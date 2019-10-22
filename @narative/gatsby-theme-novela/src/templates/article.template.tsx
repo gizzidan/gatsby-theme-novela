@@ -1,17 +1,17 @@
-import React, { useRef, useState, useEffect } from "react";
-import styled from "@emotion/styled";
-import throttle from "lodash/throttle";
-import { graphql, useStaticQuery } from "gatsby";
+import React, { useRef, useState, useEffect } from 'react';
+import styled from '@emotion/styled';
+import throttle from 'lodash/throttle';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import Layout from "@components/Layout";
-import MDXRenderer from "@components/MDX";
-import Progress from "@components/Progress";
-import Section from "@components/Section";
-import Subscription from "@components/Subscription";
-import NavBarBasic from "@components/NavBarBasic";
+import Layout from '@components/Layout';
+import MDXRenderer from '@components/MDX';
+import Progress from '@components/Progress';
+import Section from '@components/Section';
+import Subscription from '@components/Subscription';
+import NavBarBasic from '@components/NavBarBasic';
 
-import mediaqueries from "@styles/media";
-import { debounce } from "@utils";
+import mediaqueries from '@styles/media';
+import { debounce } from '@utils';
 
 import ArticleAside from "../sections/article/Article.Aside";
 import ArticleHero from "../sections/article/Article.Hero";
@@ -43,7 +43,7 @@ function Article({ pageContext, location }) {
   const results = useStaticQuery(siteQuery);
   const name = results.allSite.edges[0].node.siteMetadata.name;
 
-  const { article, authors, mailchimp, next } = pageContext;
+  const { article, authors, mailchimp, next, category } = pageContext;
 
   useEffect(() => {
     const calculateBodySize = throttle(() => {
@@ -58,7 +58,7 @@ function Article({ pageContext, location }) {
        */
       if (!hasCalculated) {
         const debouncedCalculation = debounce(calculateBodySize);
-        const $imgs = contentSection.querySelectorAll("img");
+        const $imgs = contentSection.querySelectorAll('img');
 
         $imgs.forEach($img => {
           // If the image hasn't finished loading then add a listener
@@ -83,7 +83,7 @@ function Article({ pageContext, location }) {
     <Layout>
       <NavBarBasic />
       <ArticleSEO article={article} authors={authors} location={location} />
-      <ArticleHero article={article} authors={authors} />
+      <ArticleHero article={article} authors={authors} category={category} />
       <ArticleAside contentHeight={contentHeight}>
         <Progress contentHeight={contentHeight} />
       </ArticleAside>

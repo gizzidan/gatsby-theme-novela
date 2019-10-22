@@ -8,6 +8,7 @@ import mediaqueries from '@styles/media';
 import { IArticle, IAuthor } from '@types';
 
 import ArticleAuthors from './Article.Authors';
+import ArticleCategory from './Article.Category';
 
 
 interface ArticleHeroProps {
@@ -39,7 +40,14 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
       </HeroImage>
       <Meta>
       <HeroSubtitle>By: <StyledLink to={authors[0].slug}>{article.author}</StyledLink>
-            <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> {article.date}</HeroSubtitle>
+            <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> {article.date}
+            <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> 
+            <StyledLink 
+              style={{ fontStyle: 'italic'}} 
+              to={"/category/" + article.category}>
+              {article.category}
+              </StyledLink>
+        </HeroSubtitle>
         </Meta>
     </Hero>
   );
@@ -51,6 +59,7 @@ const StyledLink = styled(Link)`
   color: ${p => p.theme.colors.articleText};
   border-bottom: 1px solid;
   border-color: ${p => p.theme.colors.articleText};
+  text-transform: capitalize;
 `
 const Slogan = styled("p")`
   font-family: ${p => p.theme.fonts.slogan};
@@ -205,7 +214,7 @@ const HeroExcerpt = styled("p")`
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   font-family: ${p => p.theme.fonts.sansSerif};
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   color: ${p => p.theme.colors.articleText};
 
   ${p => mediaqueries.phablet`

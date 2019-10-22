@@ -14,7 +14,7 @@ const ArticlesList2 = () => {
   const data = useStaticQuery(
     graphql`
       query { 
-        allArticle(sort: {fields: date, order: DESC}, limit: 8) {
+        allArticle(sort: {fields: date, order: DESC}, limit: 30) {
           edges {
             node {
               date(formatString: "MM-DD-YYYY")
@@ -23,6 +23,7 @@ const ArticlesList2 = () => {
               slug
               timeToRead
               title
+              category
               hero {
                 childImageSharp {
                   fluid(maxHeight: 300, maxWidth: 500, quality: 100) {
@@ -39,8 +40,7 @@ const ArticlesList2 = () => {
     return (
       <div 
       > 
-        <Label>
-          The Latest</Label>
+        <Label>The Latest</Label>
       <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
@@ -49,7 +49,7 @@ const ArticlesList2 = () => {
       }}> 
       
         {
-          data.allArticle.edges.map((item, i) => (
+          data.allArticle.edges.slice(0,8).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
@@ -88,7 +88,7 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allArticle.edges.map((item, i) => (
+          data.allArticle.edges.filter(c=>c.node.category == 'thoughts').slice(0,4).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
@@ -114,7 +114,7 @@ const ArticlesList2 = () => {
                   </Item>
               </div>
               
-            ) : (<div></div>)
+            ) : (<div style={{ display: 'none'}}></div>)
           ))
         }
         </StyledDiv>
@@ -127,8 +127,8 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allArticle.edges.map((item, i) => (
-            item.node.hero ? (
+          data.allArticle.edges.filter(c=>c.node.category == 'culture').slice(0,4).map((item, i) => (
+            item.node.category == 'culture' ? (
               <div key={i}>
                 <Item to={item.node.slug}>
                   <ImageContainer>
@@ -153,7 +153,7 @@ const ArticlesList2 = () => {
                   </Item>
               </div>
               
-            ) : (<div></div>)
+            ) : (<div style={{ display: 'none'}}></div>)
           ))
         }
         </StyledDiv>
@@ -166,8 +166,8 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allArticle.edges.map((item, i) => (
-            item.node.hero ? (
+          data.allArticle.edges.filter(c=>c.node.category == 'goings on').slice(0,4).map((item, i) => (
+            item.node.category == 'goings on' ? (
               <div key={i}>
                 <Item to={item.node.slug}>
                   <ImageContainer>
@@ -192,7 +192,7 @@ const ArticlesList2 = () => {
                   </Item>
               </div>
               
-            ) : (<div></div>)
+            ) : (<div style={{ display: 'none'}}></div>)
           ))
         }
         </StyledDiv>
@@ -213,7 +213,7 @@ const Label = styled.h2`
   color: ${p => p.theme.colors.primary};
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 110px;
+  font-size: 70px;
   letter-spacing: -0.005em;
   padding-bottom: 0px;
   text-align: center;

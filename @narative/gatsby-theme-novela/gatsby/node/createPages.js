@@ -13,6 +13,7 @@ const templates = {
   articles: path.resolve(templatesDirectory, 'articles.template.tsx'),
   article: path.resolve(templatesDirectory, 'article.template.tsx'),
   author: path.resolve(templatesDirectory, 'author.template.tsx'),
+  category: path.resolve(templatesDirectory, 'category.template.tsx'),
 };
 
 const query = require('../data/data.query');
@@ -51,6 +52,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     rootPath,
     basePath = '/',
     authorsPath = '/authors',
+    categoryPath = '/category',
     authorsPage = true,
     pageLength = 6,
     sources = {},
@@ -140,6 +142,17 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     https://github.com/narative/gatsby-theme-novela-example
   `);
   }
+  const category = articles.reduce((acc, article) => {
+    return [...acc, ...article.category];
+  }, []);
+
+  const uniquecategory = [...new Set(category)];
+
+  if (uniquecategory.length === 0 || uniquecategory.length === 0) {
+    throw new Error(`
+    You must have at least one Category to create category page.
+  `);
+  }
 
   /**
    * Once we've queried all our data sources and normalized them to the same structure
@@ -209,6 +222,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       context: {
         article,
         authors: authorsThatWroteTheArticle,
+        category: article.category,
         basePath,
         slug: article.slug,
         id: article.id,
@@ -249,4 +263,43 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       });
     });
   }
+  /**
+   * Creating main category pages example
+   *  /category/gatsby
+   * /category/gatsby/2
+   */
+  log('Creating', 'category pages');
+  uniquecategory.forEach(category => {
+    let allArticlesOfTheCategory;
+    try {
+      allArticlesOfTheCategory = articles.filter(article =>
+        article.category.includes(category),
+      );
+    } catch (error) {
+      throw new Error(`
+        We could not find the Articles for: "${category}".
+        Double check the category field is specified in your post and the name
+        matches a specified category.
+        Category name: ${category}
+        ${error}
+      `);
+    }
+    const path = slugify(category, categoryPath);
+
+    createPaginatedPages({
+      edges: allArticlesOfTheCategory,
+      pathPrefix: path,
+      createPage,
+      pageLength,
+      pageTemplate: templates.category,
+      buildPath: buildPaginatedPath,
+      context: {
+        category,
+        originalPath: path,
+        skip: pageLength,
+        limit: pageLength,
+      },
+    });
+  });
 };
+

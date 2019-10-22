@@ -699,7 +699,7 @@ This project is early in development and we are interested in creating an even m
 
 - Data sources such as Prismic, Sanity, Contentful, Netlify CMS, and others
 - Built in search with Algolia or similar
-- Tags, categories, and more
+- Tags, category, and more
 - More theme variations
 - More customization options
 
