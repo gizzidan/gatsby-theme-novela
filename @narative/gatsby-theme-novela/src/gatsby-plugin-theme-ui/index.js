@@ -21,7 +21,7 @@ const fonts = {
 };
 
 const fontWeights = {
-  slogan: `400`,
+  slogan: `500`,
 };
 
 const fontSizes = {

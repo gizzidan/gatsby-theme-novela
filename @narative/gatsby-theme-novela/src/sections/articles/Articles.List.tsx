@@ -103,6 +103,7 @@ const ListItem = ({ article, narrow }: ArticlesListItemProps) => {
         <TextContainer>
           <Slogan>
             <p>{article.slogan}</p>
+            <p>{article.category}</p>
           </Slogan>
           <Title dark hasOverflow={hasOverflow} gridLayout={gridLayout}>
             {article.title}

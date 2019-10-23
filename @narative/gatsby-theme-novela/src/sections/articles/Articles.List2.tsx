@@ -14,21 +14,23 @@ const ArticlesList2 = () => {
   const data = useStaticQuery(
     graphql`
       query { 
-        allArticle(sort: {fields: date, order: DESC}, limit: 30) {
+        allContentfulPost(sort: {fields: date, order: DESC}, limit: 30) {
           edges {
             node {
-              date(formatString: "MM-DD-YYYY")
+              date(formatString: "MMM DD")
               excerpt
               slogan
               slug
-              timeToRead
               title
-              category
+              category 
               hero {
-                childImageSharp {
-                  fluid(maxHeight: 300, maxWidth: 500, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
+                sizes(maxWidth: 500, maxHeight: 300, quality: 100) {
+                  ...GatsbyContentfulSizes_withWebp
+                 }  
+              }
+              body {
+                childMdx {
+                  timeToRead
                 }
               }
             }
@@ -38,30 +40,36 @@ const ArticlesList2 = () => {
     `
   )
     return (
-      <div 
-      > 
-        <Label>The Latest</Label>
+      <Container>
+        
+        <div style={{ 
+          position: 'relative',
+          display: 'flex',
+          }}>
+          <Label>The Latest ⌚️</Label><SeeAll to="/latest">See All →</SeeAll>
+        </div>
       <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
         gridGap: gap,
-      }}> 
-      
+      }}>
         {
-          data.allArticle.edges.slice(0,8).map((item, i) => (
+          data.allContentfulPost.edges.slice(0,8).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
+                
                   <ImageContainer>
                     <Image
-                      fluid={item.node.hero.childImageSharp.fluid}
+                      fluid={item.node.hero.sizes}
                     />
                   </ImageContainer>
                     <TextContainer>
-                      <Slogan>
+                    <Slogan>
                         <p>{item.node.slogan}</p>
                       </Slogan>
+
                       <Title>
                         {item.node.title}
                       </Title>
@@ -69,7 +77,7 @@ const ArticlesList2 = () => {
                         {item.node.excerpt}
                       </Excerpt>
                       <MetaData>
-                        {item.node.date} · {item.node.timeToRead} min read
+                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read
                       </MetaData>
                     </TextContainer>
                   </Item>
@@ -78,8 +86,14 @@ const ArticlesList2 = () => {
             ) : (<div></div>)
           ))
         }
-        </StyledDiv>  
-         <Label>Thoughts</Label>
+        </StyledDiv> 
+        <div style={{ 
+          position: 'relative',
+          display: 'flex',
+          }}>
+          <Label>Thoughts 🧠</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
+        </div>
+     
         <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
@@ -88,19 +102,21 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allArticle.edges.filter(c=>c.node.category == 'thoughts').slice(0,4).map((item, i) => (
+          data.allContentfulPost.edges.filter(c=>c.node.category == 'thoughts').slice(0,4).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
+            
                   <ImageContainer>
                     <Image
-                      fluid={item.node.hero.childImageSharp.fluid}
+                      fluid={item.node.hero.sizes}
                     />
                   </ImageContainer>
                     <TextContainer>
-                      <Slogan>
+                    <Slogan>
                         <p>{item.node.slogan}</p>
                       </Slogan>
+                     
                       <Title>
                         {item.node.title}
                       </Title>
@@ -108,7 +124,7 @@ const ArticlesList2 = () => {
                         {item.node.excerpt}
                       </Excerpt>
                       <MetaData>
-                        {item.node.date} · {item.node.timeToRead} min read
+                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read
                       </MetaData>
                     </TextContainer>
                   </Item>
@@ -118,7 +134,13 @@ const ArticlesList2 = () => {
           ))
         }
         </StyledDiv>
-         <Label>Culture</Label>
+        <div style={{ 
+          position: 'relative',
+          display: 'flex',
+          }}>
+          <Label>Culture 🎨</Label><SeeAll to='/category/culture'>See All →</SeeAll>
+        </div>
+         
         <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
@@ -127,19 +149,21 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allArticle.edges.filter(c=>c.node.category == 'culture').slice(0,4).map((item, i) => (
-            item.node.category == 'culture' ? (
+          data.allContentfulPost.edges.filter(c=>c.node.category == 'culture').slice(0,4).map((item, i) => (
+            item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
+
                   <ImageContainer>
                     <Image
-                      fluid={item.node.hero.childImageSharp.fluid}
+                      fluid={item.node.hero.sizes}
                     />
                   </ImageContainer>
                     <TextContainer>
-                      <Slogan>
+                    <Slogan>
                         <p>{item.node.slogan}</p>
                       </Slogan>
+                      
                       <Title>
                         {item.node.title}
                       </Title>
@@ -147,7 +171,7 @@ const ArticlesList2 = () => {
                         {item.node.excerpt}
                       </Excerpt>
                       <MetaData>
-                        {item.node.date} · {item.node.timeToRead} min read
+                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read
                       </MetaData>
                     </TextContainer>
                   </Item>
@@ -157,7 +181,12 @@ const ArticlesList2 = () => {
           ))
         }
         </StyledDiv>
-         <Label>Goings On</Label>
+        <div style={{ 
+          position: 'relative',
+          display: 'flex',
+          }}>
+          <Label>Goings On 🗞</Label><SeeAll to="/category/goings-on">See All →</SeeAll>
+        </div>
         <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
@@ -166,19 +195,21 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allArticle.edges.filter(c=>c.node.category == 'goings on').slice(0,4).map((item, i) => (
-            item.node.category == 'goings on' ? (
+          data.allContentfulPost.edges.filter(c=>c.node.category == 'goings on').slice(0,4).map((item, i) => (
+            item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
+         
                   <ImageContainer>
                     <Image
-                      fluid={item.node.hero.childImageSharp.fluid}
+                      fluid={item.node.hero.sizes}
                     />
                   </ImageContainer>
                     <TextContainer>
-                      <Slogan>
+                    <Slogan>
                         <p>{item.node.slogan}</p>
                       </Slogan>
+                      
                       <Title>
                         {item.node.title}
                       </Title>
@@ -186,7 +217,7 @@ const ArticlesList2 = () => {
                         {item.node.excerpt}
                       </Excerpt>
                       <MetaData>
-                        {item.node.date} · {item.node.timeToRead} min read
+                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read
                       </MetaData>
                     </TextContainer>
                   </Item>
@@ -197,7 +228,7 @@ const ArticlesList2 = () => {
         }
         </StyledDiv>
         
-      </div>
+      </Container>
         
       
     )
@@ -206,29 +237,45 @@ const ArticlesList2 = () => {
 export default ArticlesList2;
 
 const StyledDiv = styled.div`
-  
+
 `
+const Container = styled.section`
+  
+`;
+
+
+
 const Label = styled.h2`
-  font-family: "Larish Alte";
+  font-family: "Apercu";
   color: ${p => p.theme.colors.primary};
   font-weight: 500;
-  text-transform: uppercase;
-  font-size: 70px;
-  letter-spacing: -0.005em;
+  text-transform: none;
+  font-size: 28px;
+  letter-spacing: -0.03em;
   padding-bottom: 0px;
-  text-align: center;
-  margin-bottom: 5px;
+  text-align: left;
+  margin-bottom: 10px;
   ${mediaqueries.desktop`
     font-size: 38px;
     line-height: 1.2;
   `};
 
   ${mediaqueries.phablet`
-    font-size: 32px;
+    font-size: 28px;
+    font-weight: 500;
     line-height: 1.3;
   `};
 `;
 
+const SeeAll = styled(Link)`
+  text-align: right;
+  right: 0px;
+  position: absolute;
+  padding-top: 12px;
+  &:hover {
+    border-bottom: 1px solid;
+  }
+`
 const Item = styled(Link)`
   text-align: left;
   position: relative;
@@ -260,7 +307,7 @@ const Item = styled(Link)`
     height: 104%;
     border: 3px solid ${p => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
-    border-radius: 5px;
+    
   }
 
   ${mediaqueries.phablet`
@@ -291,15 +338,29 @@ const ImageContainer = styled.div`
     overflow: hidden;
     margin-bottom: 0px;
     box-shadow: none;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    
+  `}
+`;
+
+const MetaData = styled.div`
+
+  font-family: ${p => p.theme.fonts.slogan};
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-style: normal;
+  color: ${p => p.theme.colors.primary};
+  
+
+  ${mediaqueries.phablet`
+    max-width: 100%;
+    padding:  10px 0px 10px;
   `}
 `;
 
 const TextContainer = styled("div")`
-  background-color: ${p => p.theme.colors.card};
   position: relative;
-  padding: 30px 0px 10px 0px;
+  padding: 20px 0px 10px 0px;
   ${mediaqueries.phablet`
     padding: 20px 0px 20px 0px;
   `}
@@ -325,7 +386,6 @@ const Title = styled(Headings.h2)`
   line-height: 1.3;
   font-family: "${p => p.theme.fonts.sansSerif}";
   font-weight: 500;
-
   text-transform: none;
   margin-bottom: -10px;
   transition: color 0.3s ease-in-out;
@@ -340,8 +400,8 @@ const Title = styled(Headings.h2)`
 
   ${mediaqueries.phablet`
     font-size: 20px;  
-    padding: 0px 20px 0;
-    margin-bottom: 0px;
+    padding: 0px;
+    margin-bottom: -5px;
     -webkit-line-clamp: 3;
   `}
 `;
@@ -364,10 +424,9 @@ const Slogan = styled.p`
 
   ${mediaqueries.phablet`
     font-size: 13px;
-    margin-bottom; 15px;
     max-width: 100%;
-    padding:  0 20px;
-    margin-bottom: 10px;
+    padding:  0;
+    margin-bottom: 5px;
     -webkit-line-clamp: 2;
   `}
 `;
@@ -378,8 +437,8 @@ const Excerpt = styled.p`
   font-size: 15px;
   letter-spacing: -.005em;
   line-height: 1.618;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   font-weight: 300;
   color: ${p => p.theme.colors.primary};
 
@@ -389,26 +448,12 @@ const Excerpt = styled.p`
 
 
   ${mediaqueries.phablet`
-    margin-bottom; 15px;
+    margin-bottom: 10px;
     max-width: 100%;
-    padding:  0 20px;
+    padding:  0;
     -webkit-line-clamp: 2;
   `}
 `;
 
-const MetaData = styled.div`
 
-  font-family: ${p => p.theme.fonts.slogan};
-  font-weight: 400;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-style: italic;
-  color: ${p => p.theme.colors.primary};
-  
-
-  ${mediaqueries.phablet`
-    max-width: 100%;
-    padding:  10px 20px 10px;
-  `}
-`;
 

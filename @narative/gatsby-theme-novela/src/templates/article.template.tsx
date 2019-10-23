@@ -87,9 +87,7 @@ function Article({ pageContext, location }) {
       <ArticleAside contentHeight={contentHeight}>
         <Progress contentHeight={contentHeight} />
       </ArticleAside>
-      <MobileControls>
-        <ArticleControls />
-      </MobileControls>
+      
       <ArticleBody ref={contentSectionRef}>
         <MDXRenderer content={article.body}>
           <ArticleShare />
@@ -135,7 +133,7 @@ const ArticleBody = styled.article`
   `}
 
   ${mediaqueries.phablet`
-    padding: 60px 0;
+    padding: 0px 0;
   `}
 `;
 

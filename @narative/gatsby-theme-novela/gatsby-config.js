@@ -4,7 +4,7 @@ module.exports = ({
   contentAuthors = 'content/authors',
   contentPosts = 'content/posts',
   pathPrefix = '',
-  sources: { local, contentful } = { local: true, contentful: false },
+  sources: { local, contentful } = { local: false, contentful: true },
 }) => ({
   pathPrefix,
   mapping: {
@@ -67,6 +67,7 @@ module.exports = ({
                       guid: site.siteMetadata.siteUrl + edge.node.slug,
                       // custom_elements: [{ "content:encoded": edge.node.body }],
                       author: edge.node.author,
+                      category: edge.node.category,
                     };
                   });
               } else if (!local && contentful) {
@@ -81,6 +82,7 @@ module.exports = ({
                       guid: site.siteMetadata.siteUrl + edge.node.slug,
                       // custom_elements: [{ "content:encoded": edge.node.body }],
                       author: edge.node.author,
+                      category: edge.node.category,
                     };
                   });
               } else {
@@ -96,6 +98,7 @@ module.exports = ({
                       guid: site.siteMetadata.siteUrl + edge.node.slug,
                       // custom_elements: [{ "content:encoded": edge.node.body }],
                       author: edge.node.author,
+                      category: edge.node.category,
                     };
                   });
               }

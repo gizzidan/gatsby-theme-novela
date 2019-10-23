@@ -19,12 +19,15 @@ const Section = styled.section<{ narrow?: boolean }>`
           max-width: 527px;
         `
       : mediaqueries.tablet`
-          padding: 0 4rem;
+          padding: 0 1.618rem;
           max-width: 567px;
         `}
 
   ${mediaqueries.phablet`
     max-width: 100%;
+  `};
+  ${mediaqueries.phone_small`
+    padding: 0 10px;
   `};
 `;
 

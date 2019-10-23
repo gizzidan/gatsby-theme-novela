@@ -50,7 +50,6 @@ function ArticlesHero({ authors }: IAuthor){
   return (
     <Section relative id="Articles__Hero">
       <SubheadingContainer>
-        
         <Bio author={featuredAuthor} />     
       </SubheadingContainer>
     </Section>
@@ -60,11 +59,10 @@ function ArticlesHero({ authors }: IAuthor){
 export default ArticlesHero;
 
 const SubheadingContainer = styled.div`
-  margin-top: 80px;
-  display: block;
+  margin-top: 100px;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 
   ${mediaqueries.desktop`
     margin-bottom: 80px;
@@ -75,7 +73,10 @@ const SubheadingContainer = styled.div`
   `};
 
   ${mediaqueries.phablet`
-    display: none;
+    padding-left: 5vw;
+    max-width 100vw;
+    height: 22vh;
+    margin: 0px auto 0px auto;
   `};
 `;
 

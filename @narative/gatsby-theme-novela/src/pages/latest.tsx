@@ -4,32 +4,19 @@ import styled from "@emotion/styled";
 import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
-import Paginator from "@components/Navigation/Navigation.Paginator";
 import mediaqueries from "@styles/media";
-import NavBar from "@components/NavBar";
-
-import ArticlesFeatured from "../sections/articles/Articles.Featured";
-import ArticlesHero from "../sections/articles/Articles.Hero";
-import ArticlesList2 from "../sections/articles/Articles.List2";
+import NavBarBasic from "@components/NavBarBasic";
+import ArticlesFullList from "../sections/articles/Articles.Full.List";
 
 
 function ArticlesPage({ location, pageContext }) {
-  const articles = pageContext.group;
-  const authors = pageContext.additionalContext.authors;
 
   return (
     <Layout>
-      <NavBar />
-      <ArticlesFeatured />
-      <SEO pathname={location.pathname} />
-      <ArticlesHero authors={authors} />
-      
+      <NavBarBasic />
+      <SEO pathname={location.pathname} />     
         <Section>
-           <ArticlesList2 />
-  
-        <ArticlesPaginator show={pageContext.pageCount > 1}>
-          <Paginator {...pageContext} />
-        </ArticlesPaginator>
+           <ArticlesFullList />
         </Section>
       <ArticlesGradient />
     </Layout>

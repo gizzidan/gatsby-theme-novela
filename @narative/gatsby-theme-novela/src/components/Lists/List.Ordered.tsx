@@ -26,6 +26,7 @@ const OrderedList = styled.ol`
 
   ${mediaqueries.phablet`
     padding-left: 20px;
+    font-size: 18px;
   `};
 
   li {
@@ -38,6 +39,7 @@ const OrderedList = styled.ol`
 
     ${mediaqueries.phablet`
       padding-left: 30px;
+      font-size: 18px;
     `};
 
     p {
@@ -61,7 +63,7 @@ const OrderedList = styled.ol`
   li::before {
     counter-increment: list;
     content: counter(list) ".";
-    font-weight: 600;
+    font-weight: 400;
     position: absolute;
     left: -3rem;
     top: -0.3rem;

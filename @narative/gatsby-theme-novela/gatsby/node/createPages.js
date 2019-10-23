@@ -60,7 +60,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   } = themeOptions;
 
   // Defaulting to look at the local MDX files as sources.
-  const { local = true, contentful = false } = sources;
+  const { local = true, contentful = true } = sources;
 
   let authors;
   let articles;
@@ -301,5 +301,6 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       },
     });
   });
+  
 };
 

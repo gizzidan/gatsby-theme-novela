@@ -42,11 +42,11 @@ const h2 = styled.h2`
 
   ${mediaqueries.tablet`
     font-size: 24px;
-    line-height: 1.45;
+    line-height: 1.4;
   `};
 
   ${mediaqueries.phablet`
-    font-size: 22px;
+    font-size: 24px;
   `};
 `;
 

@@ -39,6 +39,13 @@ const siteMetadata = {
 
 const plugins = [
   {
+    resolve: 'gatsby-source-contentful',
+    options: {
+      spaceId: process.env.CONTENTFUL_SPACE_ID,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    },
+  },
+  {
     resolve: "@narative/gatsby-theme-novela",
     options: {
       contentPosts: "content/posts",
@@ -48,8 +55,8 @@ const plugins = [
       authorsPage: true,
       mailchimp: true,
       sources: {
-        local: true,
-        contentful: false,
+        local: false,
+        contentful: true,
       },
     },
   },

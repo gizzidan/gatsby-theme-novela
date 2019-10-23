@@ -79,9 +79,6 @@ const Slogan = styled("p")`
 
   ${mediaqueries.phablet`
     max-width: 100%;
-    padding:  0 20px;
-    margin-bottom: 20px;
-    -webkit-line-clamp: 3;
   `}
 `;
 
@@ -123,7 +120,6 @@ const Header = styled.header`
   position: relative;
   z-index: 10;
   margin: 100px auto 50px;
-  
   max-width: 680px;
 
   ${mediaqueries.desktop`
@@ -139,13 +135,10 @@ const Header = styled.header`
   `}
 
   ${mediaqueries.phablet`
-    margin: 170px auto 180px;
-    padding: 0 40px;
+    max-width: 90vw;
+    margin: 80px auto 30px;
+    padding: 0 px;
   `}
-
-  @media screen and (max-height: 700px) {
-    margin: 100px auto;
-  }
 `;
 
 const Meta = styled.div`
@@ -166,13 +159,9 @@ const Meta = styled.div`
   `}
 
   ${mediaqueries.phablet`
-    margin: 170px auto 180px;
-    padding: 0 40px;
+    margin: 50px auto 40px auto;
   `}
 
-  @media screen and (max-height: 700px) {
-    margin: 100px auto;
-  }
 `;
 
 const HeroHeading = styled(Headings.h1)`
@@ -189,7 +178,7 @@ const HeroHeading = styled(Headings.h1)`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 32px;
+    font-size: 34px;
   `}
 `;
 
@@ -203,11 +192,11 @@ const HeroExcerpt = styled("p")`
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
-    font-size: 36px;
+    font-size: 18px;
   `}
 
   ${mediaqueries.phablet`
-    font-size: 32px;
+    font-size: 18px;
   `}
 `;
 
@@ -218,7 +207,8 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   color: ${p => p.theme.colors.articleText};
 
   ${p => mediaqueries.phablet`
-    font-size: 14px;
+    padding: 0 4px;
+    font-size: 15px;
     flex-direction: column;
 
     ${p.hasCoAUthors &&
@@ -260,7 +250,7 @@ const HeroImage = styled.div`
 
   ${mediaqueries.phablet`
     margin: 0 auto;
-    width: calc(100vw - 40px);
+    width: 100vw;
     height: 220px;
 
     & > div {

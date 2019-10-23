@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 
 import Image from '@components/Image';
 import { IAuthor } from '@types';
+import mediaqueries from "@styles/media";
 
 
 function Bio({ author }: IAuthor) {
@@ -41,6 +42,12 @@ const BioLabel = styled('h3')`
   font-weight: 500;
   font-size: 18px;
   font-family: 'GT America Cond';
+  ${mediaqueries.phablet`
+    font-size: 18px;
+  `};
+  ${mediaqueries.phone_small`
+    font-size: 15px;
+  `};
 `
 
 const BioLink = styled(Link)`
@@ -52,7 +59,9 @@ const BioContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  left: -10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 `;
 
 const BioAvatar = styled.div`
@@ -99,9 +108,23 @@ const BioAvatarInner = styled.div`
 const BioText = styled.p`
   max-width: 430px;
   font-size: 18px;
-  line-height: 1.45;
+  line-height: 1.;
   font-weight: 300;
   color: ${p => p.theme.colors.primary};
+  ${mediaqueries.desktop`
+    
+  `};
+
+  ${mediaqueries.tablet`
+    m
+  `};
+
+  ${mediaqueries.phablet`
+    font-size: 16px;
+  `};
+  ${mediaqueries.phone_small`
+    font-size: 14px;
+  `};
 
   a {
     color: ${p => p.theme.colors.accent};

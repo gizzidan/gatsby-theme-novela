@@ -3,11 +3,13 @@ module.exports = ({ actions }) => {
     type Article implements Node {
       id: ID!
       slug: String!
+      slogan: String!
       title: String!
       date: Date! @dateformat
       author: String!
       excerpt(pruneLength: Int = 140): String!
       body: String!
+      category: [String!]!
       hero: File @fileByRelativePath
       timeToRead: Int
     }

@@ -99,7 +99,7 @@ const HeadingsCSS = css`
     margin: 25px auto 18px;
 
     ${mediaqueries.tablet`
-      margin: 30px auto 18px;
+      margin: 20px auto 10px;
     `};
   }
 

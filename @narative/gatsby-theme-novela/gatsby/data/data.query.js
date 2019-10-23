@@ -109,6 +109,8 @@ module.exports.contentful = {
           }
           excerpt
           title
+          slogan
+          category 
           slug
           secret
           date(formatString: "MMMM Do, YYYY")
