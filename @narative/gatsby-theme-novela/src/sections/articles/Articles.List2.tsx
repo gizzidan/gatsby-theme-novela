@@ -372,16 +372,26 @@ const TextContainer = styled("div")`
   `}
 `;
 
-const limitToTwoLines = css`
-  text-overflow: ellipsis;
-  overflow-wrap: normal;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  white-space: normal;
-  overflow: hidden;
+const Excerpt = styled.p`
+  font-family: ${p => p.theme.fonts.sansSerif};
+  ${limitToTwoLines};
+  font-size: 15px;
+  letter-spacing: -.005em;
+  line-height: 1.618;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  color: ${p => p.theme.colors.primary};
+
+  ${mediaqueries.desktop`
+    display: -webkit-box;
+  `}
+
 
   ${mediaqueries.phablet`
+    margin-bottom: 10px;
+    max-width: 100%;
+    padding:  0;
     -webkit-line-clamp: 2;
   `}
 `;
@@ -438,29 +448,18 @@ const Slogan = styled.p`
   `}
 `;
 
-const Excerpt = styled.p`
-  font-family: ${p => p.theme.fonts.sansSerif};
-  ${limitToTwoLines};
-  font-size: 15px;
-  letter-spacing: -.005em;
-  line-height: 1.618;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  font-weight: 300;
-  color: ${p => p.theme.colors.primary};
 
-  ${mediaqueries.desktop`
-    display: -webkit-box;
-  `}
-
+const limitToTwoLines = css`
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  white-space: normal;
+  overflow: hidden;
 
   ${mediaqueries.phablet`
-    margin-bottom: 10px;
-    max-width: 100%;
-    padding:  0;
     -webkit-line-clamp: 2;
   `}
 `;
-
-
 
