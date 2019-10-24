@@ -7,6 +7,19 @@ import Headings from "@components/Headings";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 
+const limitToTwoLines = css`
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  white-space: normal;
+  overflow: hidden;
+
+  ${mediaqueries.phablet`
+    -webkit-line-clamp: 2;
+  `}
+`;
 
 const ArticlesList2 = () => {
   const sectiongap = '60px';
@@ -236,6 +249,7 @@ const ArticlesList2 = () => {
 
 export default ArticlesList2;
 
+
 const StyledDiv = styled.div`
 
 `
@@ -381,7 +395,7 @@ const Excerpt = styled.p`
   margin-top: 15px;
   margin-bottom: 10px;
   font-weight: 300;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.primary} !important;
 
   ${mediaqueries.desktop`
     display: -webkit-box;
@@ -402,7 +416,7 @@ const Title = styled(Headings.h2)`
   line-height: 1.3;
   letter-spacing: -0.01em;
   font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 500;
+  font-weight: 500 !important;
   text-transform: none;
   margin-bottom: -10px;
   transition: color 0.3s ease-in-out;
@@ -449,17 +463,4 @@ const Slogan = styled.p`
 `;
 
 
-const limitToTwoLines = css`
-  text-overflow: ellipsis;
-  overflow-wrap: normal;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  white-space: normal;
-  overflow: hidden;
-
-  ${mediaqueries.phablet`
-    -webkit-line-clamp: 2;
-  `}
-`;
 
