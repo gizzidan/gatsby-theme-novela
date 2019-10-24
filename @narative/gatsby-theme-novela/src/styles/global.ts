@@ -16,6 +16,9 @@ import FuturaMediumItalic from "www/static/fonts/Futura/Futura-Medium-Italic.wof
 import FuturaLTMedium from "www/static/fonts/Futura/FuturaLT.woff";
 import FuturaLTMediumItalic from "www/static/fonts/Futura/Futura-Oblique.woff";
 
+import TerminaDemi from "www/static/fonts/Termina/Termina-Demi.woff";
+import TerminaMedium from "www/static/fonts/Termina/Termina-Medium.woff";
+
 import GTConReg from "www/static/fonts/GT America/GTAmerica-CondensedRegular.woff";
 import GTConRegItalic from "www/static/fonts/GT America/GTAmerica-CondensedRegularItalic.woff";
 import GTConMed from "www/static/fonts/GT America/GTAmerica-CondensedMedium.woff";
@@ -74,6 +77,20 @@ export const globalStyles = css`
     font-weight: 400;
     font-style: normal;
     src: url(${Ogg}) format("true-type");
+  }
+
+   /** Termina */
+   @font-face {
+    font-family: "Termina";
+    font-weight: 600;
+    font-style: normal;
+    src: url(${TerminaDemi}) format("woff");
+  }
+  @font-face {
+    font-family: "Termina";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${TerminaMedium}) format("woff");
   }
 
    /** Futura */

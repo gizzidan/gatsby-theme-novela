@@ -5,7 +5,7 @@ import Section from '@components/Section';
 import SEO from '@components/SEO';
 import Layout from '@components/Layout';
 import Paginator from '@components/Navigation/Navigation.Paginator';
-
+import NavBarBasic from '@components/NavBarBasic'
 import AuthorArticles from '../sections/author/Author.Articles';
 import CategoryHero from '../sections/category/Category.Hero';
 
@@ -14,6 +14,7 @@ function CategoryPage({ location, pageContext }) {
 
   return (
     <Layout>
+      <NavBarBasic />
       <SEO pathname={location.pathname} title={category} />
       <Section narrow>
         <CategoryHero category={category} />

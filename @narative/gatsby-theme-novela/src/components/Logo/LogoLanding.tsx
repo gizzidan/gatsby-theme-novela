@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
-const LogoBack = () => {
-  const fill = "#fff";
+const LogoLanding = () => {
+  const fill = "#000";
   return (
     <LogoContainer>
       <svg width="90"
@@ -48,7 +48,7 @@ const LogoBack = () => {
   );
 };
 
-export default LogoBack;
+export default LogoLanding;
 
 const LogoContainer = styled.div`
   .Logo__Mobile {

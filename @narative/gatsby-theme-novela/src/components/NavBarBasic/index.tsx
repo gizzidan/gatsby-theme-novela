@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from 'react'
 import { useState } from "react";
 import { Link } from 'gatsby';
 import styled from "@emotion/styled";
@@ -9,7 +9,18 @@ import {IconWrapper, MoonOrSun, MoonMask, ToolTip}
     from "@narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx";
 import { copyToClipboard, } from "@utils";
 import Logo from "@components/Logo";
-import LogoBack from "@components/Logo/LogoBack";
+import Menu from '@components/Menu';
+import Burger from '@components/Burger';
+
+function BurgerMenu () {
+  const [open, setOpen] = useState(false);
+  return (
+      <Fragment>
+        <Burger open={open} setOpen={setOpen}/>
+        <Menu open={open} setOpen={setOpen}/>
+      </Fragment>
+  ) 
+}
 
 function SharePageButton() {
     const [hasCopied, setHasCopied] = useState<boolean>(false);
@@ -71,7 +82,7 @@ export const Container = styled("header")`
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 60px;
+  height: 55px;
   display: flex;
   text-align: center;
   transition: ${p => p.theme.colorModeTransition}, all 0.30s ease;
@@ -103,7 +114,7 @@ export const LinkContainer = styled("div")`
   position: absolute;
   display: flex;
   align-items: center;
-  right: 22px;
+  left: 22px;
     ${mediaqueries.tablet`
         display: none;
       `}
@@ -113,7 +124,8 @@ export const StyledLink = styled(Link)`
     color: ${a => a.theme.colors.navbar};
     font-size: 18px;
     padding-left: 20px;
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: -0.01em;
     transition: all 0.15s ease;
 
     &:hover {
@@ -124,10 +136,13 @@ export const StyledLink = styled(Link)`
 `;
 
 export const ToolContainer = styled("div")`
+    top: 50%;
+    transform: translate(0,-50%);
+    position: absolute;
     z-index: 1000;
-    padding-left: 35px;
     margin-top: 0px;
     display: flex;
+    right: 15px;
 `
 
 
@@ -148,7 +163,7 @@ export const LogoContainer = styled(Link)`
 export const Separator = styled("div")`
     z-index: 1000;
     font-size: 50px;
-    height: 59px;
+    height: 54px;
     border-left: 1px solid;
     border-color: ${a => a.theme.colors.lightGrey};
     position: absolute;
@@ -189,15 +204,15 @@ export default class NavBarBasic extends React.Component {
           aria-label="Navigate back to the homepage">
             <Logo/>
           </LogoContainer>
+          <div> <BurgerMenu /></div>
             <Separator ></Separator>
-            <LinkContainer  >
-                <StyledLink to="/">Features</StyledLink>
-                <StyledLink to="/">About</StyledLink>
-                    <ToolContainer >
-                        <SharePageButton />
-                        <DarkModeToggle />
-                    </ToolContainer>
+            <LinkContainer >
+      
             </LinkContainer>
+            <ToolContainer >
+              <SharePageButton />
+               <DarkModeToggle />
+            </ToolContainer>
     </Container>
     )
   }

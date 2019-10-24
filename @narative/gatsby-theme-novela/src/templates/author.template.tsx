@@ -5,7 +5,7 @@ import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
 import Paginator from "@components/Navigation/Navigation.Paginator";
-
+import NavBarBasic from '@components/NavBarBasic'
 import AuthorHero from "../sections/author/Author.Hero";
 import AuthorArticles from "../sections/author/Author.Articles";
 
@@ -15,6 +15,7 @@ function ArticlesPage({ location, pageContext }) {
 
   return (
     <Layout>
+      <NavBarBasic />
       <SEO 
         pathname={location.pathname}
         title={author.name}

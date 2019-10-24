@@ -7,7 +7,7 @@ import Headings from "@components/Headings";
 import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
-const Subscription: React.FunctionComponent<{}> = () => {
+const LandingSub: React.FunctionComponent<{}> = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -43,13 +43,9 @@ const Subscription: React.FunctionComponent<{}> = () => {
       <SubscriptionContainer>
         <Content>
           <Heading>
-            Join our email list and get notified about new content
+            Join our email list and get notified when we launch
           </Heading>
-          <Text>
-            Be the first to receive our latest content with the ability to
-            opt-out at anytime. We promise to not spam your inbox or share your
-            email with any third parties.
-          </Text>
+          
           <Form onSubmit={handleSubmit} hasError={error}>
             <Input
               placeholder="your@email.com"
@@ -75,7 +71,7 @@ const Subscription: React.FunctionComponent<{}> = () => {
   );
 };
 
-export default Subscription;
+export default LandingSub;
 
 const SubscriptionContainer = styled.div`
   text-align: center;
@@ -143,7 +139,7 @@ const Form = styled.form<{ hasError: string }>`
     position: absolute;
     left: 45px;
     top: 10px;
-    color: ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
+    color: ${p => (p.hasError ? p.theme.colors.error : '#4824ea')};
 
     ${mediaqueries.tablet`
     left: 34px;
@@ -195,8 +191,8 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   width: 161px;
   height: 45px;
   border: 1px solid
-    ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
-  color: ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
+    ${p => (p.hasError ? p.theme.colors.error : '#4824ea')};
+  color: ${p => (p.hasError ? p.theme.colors.error : '#4824ea')};
   background: ${p => (p.subscribed ? p.theme.colors.accent : "transparent")};
   font-weight: 500;
   border-radius: 35px;
@@ -206,7 +202,7 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
 
   &:hover {
     background: ${p =>
-      p.hasError ? p.theme.colors.error : p.theme.colors.accent};
+      p.hasError ? p.theme.colors.error : '#4824ea'};
     color: ${p => p.theme.colors.background};
   }
 

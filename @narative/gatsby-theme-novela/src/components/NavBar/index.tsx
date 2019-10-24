@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from 'react'
 import { useState } from "react";
 import { Link } from 'gatsby';
 import styled from "@emotion/styled";
@@ -12,6 +12,19 @@ import Logo from "@components/Logo";
 import LogoBack from "@components/Logo/LogoBack";
 import { Container, BgContainer, LogoContainer, LinkContainer, StyledLink, ToolContainer, Separator }
     from "@components/NavBarBasic";
+import Burger from '@components/Burger';
+import Menu from '@components/Menu';
+
+
+function BurgerMenu () {
+  const [open, setOpen] = useState(false);
+  return (
+      <Fragment>
+        <Burger open={open} setOpen={setOpen}/>
+        <Menu open={open} setOpen={setOpen}/>
+      </Fragment>
+  ) 
+}
 
 function SharePageButton() {
     const [hasCopied, setHasCopied] = useState<boolean>(false);
@@ -70,12 +83,10 @@ function DarkModeToggle() {
 }
 
 
-
-
 export default class NavBar extends React.Component {
   state = {
     opacity: '0',
-    reverse: '1'
+    reverse: '1',
   }
 
   listenScrollEvent = e => {
@@ -89,10 +100,13 @@ export default class NavBar extends React.Component {
   componentDidMount() {
     window.addEventListener('scroll', this.listenScrollEvent)
   }
+  
 
   render (){
     return (
       <Container>
+        <div style={{ opacity: this.state.opacity }}>
+        </div>
          <BgContainer style={{opacity: this.state.opacity}}/>
          <LogoContainer 
           style={{opacity: this.state.reverse}}
@@ -110,15 +124,14 @@ export default class NavBar extends React.Component {
           aria-label="Navigate back to the homepage">
             <Logo/>
           </LogoContainer>
+          <div style={{opacity: this.state.opacity}}> <BurgerMenu /></div>
             <Separator style={{opacity: this.state.opacity}}></Separator>
             <LinkContainer style={{opacity: this.state.opacity}} >
-                <StyledLink to="/">Features</StyledLink>
-                <StyledLink to="/">About</StyledLink>
-                    <ToolContainer style={{opacity: this.state.opacity}}>
-                        <SharePageButton />
-                        <DarkModeToggle />
-                    </ToolContainer>
             </LinkContainer>
+            <ToolContainer style={{opacity: this.state.opacity}}>
+                <SharePageButton />
+                <DarkModeToggle />
+            </ToolContainer>
     </Container>
     )
   }

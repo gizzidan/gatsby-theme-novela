@@ -255,7 +255,7 @@ export const IconWrapper = styled.button<{ isDark: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   margin-left: 10px;
 
   &:hover {
@@ -276,8 +276,8 @@ export const IconWrapper = styled.button<{ isDark: boolean }>`
 
   ${mediaqueries.tablet`
     display: inline-flex;
-    transform: scale(0.708);
-    margin-left: 10px;
+    transform: scale(0.908);
+    margin-left: 2px;
 
 
     &:hover {

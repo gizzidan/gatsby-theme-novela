@@ -17,6 +17,7 @@ const fonts = {
   sansSerif: 'Apercu',
   slogan: 'GT America Cond',
   funHeader: 'Larish Alte',
+  header: "Termina",
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 

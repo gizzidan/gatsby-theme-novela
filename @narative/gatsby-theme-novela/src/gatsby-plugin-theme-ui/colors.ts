@@ -9,7 +9,7 @@ export default {
   lightGrey: "#e1e1e1",
   navbar: "#000",
   background: "#fff",
-  accent: "#EA2461",
+  accent: "#4824ea",
   hover: "rgba(0, 0, 0, 0.07)",
   gradient: "#fff",
   OGgradient: "linear-gradient(180deg, rgba(217, 219, 224, 0) 0%, #D9DBE0 100%)",

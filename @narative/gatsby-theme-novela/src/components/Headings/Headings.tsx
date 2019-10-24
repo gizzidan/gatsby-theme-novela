@@ -11,7 +11,6 @@ import mediaqueries from "@styles/media";
 const commonStyles = p => css`
   font-weight: 400;
   color: ${p.theme.colors.primary};
-  font-family: ${p.theme.fonts.sansSerif};
 `;
 
 const h1 = styled.h1`
@@ -31,9 +30,10 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
+  font-family: ${p => p.theme.fonts.header};
   font-size: 26px;
   line-height: 1.2;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`

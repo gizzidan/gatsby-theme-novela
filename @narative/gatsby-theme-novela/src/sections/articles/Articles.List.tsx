@@ -37,11 +37,8 @@ interface ArticlesListItemProps {
 
 function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
   if (!articles) return null;
-
-  const hasOnlyOneArticle = articles.length === 1;
-  const { gridLayout = "tiles", hasSetGridLayout, getGridLayout } = useContext(
-    GridLayoutContext,
-  );
+  const sectiongap = '60px';
+  const gap = '25px';
 
   /**
    * We're taking the flat array of articles [{}, {}, {}...]
@@ -55,60 +52,45 @@ function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
     return result;
   }, []);
 
-  useEffect(() => getGridLayout(), []);
 
   return (
-    <ArticlesListContainer
-      style={{ opacity: hasSetGridLayout ? 1 : 0 }}
-      alwaysShowAllDetails={alwaysShowAllDetails}
-    >
-      {articlePairs.map((ap, index) => {
-        const isEven = index % 2 !== 0;
-        const isOdd = index % 2 !== 1;
+    <div style={{
+      marginBottom: sectiongap, 
+      display: 'grid',
+      justifyItems: 'center',
+      gridTemplateColumns: '1fr',
+      gridGap: gap,
+  }}>
+      {articles.map((item, i) => {
 
         return (
-          <List
-            key={index}
-            gridLayout={gridLayout}
-            hasOnlyOneArticle={hasOnlyOneArticle}
-            reverse={isEven}
+          <div
+            key={i}
+            
           >
-            <ListItem article={ap[0]} narrow={isEven} />
-            <ListItem article={ap[1]} narrow={isOdd} />
-          </List>
+            <ListItem article={item}/>
+          </div>
         );
       })}
-    </ArticlesListContainer>
+    </div>
   );
 }
 
 export default ArticlesList;
 
-const ListItem = ({ article, narrow }: ArticlesListItemProps) => {
+const ListItem = ({ article }: ArticlesListItemProps) => {
   if (!article) return null;
 
-  const { gridLayout } = useContext(GridLayoutContext);
-  const hasOverflow = narrow && article.title.length > 35;
-  const imageSource = narrow ? article.hero.narrow : article.hero.regular;
-  const hasHeroImage =
-    Object.keys(imageSource).length !== 0 && imageSource.constructor === Object;
-
   return (
-    <ArticleLink to={article.slug} data-a11y="false">
-      <Item gridLayout={gridLayout}>
-        
-        <ImageContainer narrow={narrow} gridLayout={gridLayout}>
-          {hasHeroImage ? <Image src={imageSource} /> : <ImagePlaceholder />}
-        </ImageContainer>
+      <Item to={article.slug} data-a11y="false"> 
         <TextContainer>
           <Slogan>
             <p>{article.slogan}</p>
-            <p>{article.category}</p>
           </Slogan>
-          <Title dark hasOverflow={hasOverflow} gridLayout={gridLayout}>
+          <Title >
             {article.title}
           </Title>
-          <Excerpt hasOverflow={hasOverflow} gridLayout={gridLayout} narrow={narrow}>
+          <Excerpt>
             {article.excerpt}
           </Excerpt>
           <MetaData>
@@ -116,12 +98,9 @@ const ListItem = ({ article, narrow }: ArticlesListItemProps) => {
           </MetaData>
         </TextContainer>
       </Item>
-    </ArticleLink>
   );
 };
 
-const wide = "1fr";
-const narrow = "488px";
 
 const limitToTwoLines = css`
   text-overflow: ellipsis;
@@ -137,16 +116,6 @@ const limitToTwoLines = css`
   `}
 `;
 
-const showDetails = css`
-  p {
-    display: -webkit-box;
-  }
-
-  h2 {
-    margin-bottom: 10px;
-  }
-`;
-
 const TextContainer = styled("div")`
   padding: 30px 0px 30px 0px;
   ${mediaqueries.phablet`
@@ -154,17 +123,13 @@ const TextContainer = styled("div")`
   `}
 `;
 
-const Slogan = styled.p<{
-  hasOverflow: boolean;
-  narrow: boolean;
-  gridLayout: string;
-}>`
+const Slogan = styled.p`
   ${limitToTwoLines};
-  font-family: ${p => p.theme.fonts.sansSerif};
-  font-size: 12px;
+  font-family: ${p => p.theme.fonts.slogan};
+  font-size: 14px;
   line-height: 1.7;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
   color: ${p => p.theme.colors.accent};
@@ -176,230 +141,36 @@ const Slogan = styled.p<{
 
   ${mediaqueries.phablet`
     font-size: 13px;
-    margin-bottom; 15px;
     max-width: 100%;
-    padding:  0 20px;
-    margin-bottom: 10px;
+    padding:  0;
+    margin-bottom: 5px;
     -webkit-line-clamp: 2;
   `}
 `;
 
-const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
-  transition: opacity 0.25s;
-  ${p => p.alwaysShowAllDetails && showDetails}
-`;
 
-
-const listTile = p => css`
-  position: relative;
-  display: grid;
-  grid-template-columns: ${p.reverse
-    ? `${narrow} ${wide}`
-    : `${wide} ${narrow}`};
-  grid-template-rows: 2;
-  column-gap: 40px;
-
-  &:not(:last-child) {
-    margin-bottom: 30px;
-  }
-
-  ${mediaqueries.desktop_medium`
-    grid-template-columns: 1fr 1fr;
-  `}
-
-  ${mediaqueries.tablet`
-    grid-template-columns: 1fr;
-    
-    &:not(:last-child) {
-      margin-bottom: 0;
-    }
-  `}
-`;
-
-const listItemRow = p => css`
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 488px;
-  grid-column-gap: 70px;
-  grid-template-rows: 1;
-  align-items: center;
-  position: relative;
-  margin-bottom: 40px;
-
-  ${mediaqueries.desktop`
-    grid-column-gap: 24px;
-    grid-template-columns: 1fr 380px;
-  `}
-
-  ${mediaqueries.tablet`
-    grid-template-columns: 1fr;
-  `}
-
-  @media (max-width: 540px) {
-    background: ${p.theme.colors.card};
-  }
-
-  ${mediaqueries.phablet`
-    margin-bottom: 30px;
-    
-    
-  `}
-`;
-
-const listItemTile = p => css`
-  position: relative;
-
-  ${mediaqueries.tablet`
-    margin-bottom: 60px;
-  `}
-
-  @media (max-width: 540px) {
-    background: ${p.theme.colors.card};
-  }
-
-  ${mediaqueries.phablet`
-    margin-bottom: 30px;
-    
-    
-  `}
-`;
-
-// If only 1 article, dont create 2 rows.
-const listRow = p => css`
-  display: grid;
-  grid-template-rows: ${p.hasOnlyOneArticle ? "1fr" : "1fr 1fr"};
-`;
-
-const List = styled.div<{
-  reverse: boolean;
-  gridLayout: string;
-  hasOnlyOneArticle: boolean;
-}>`
-  ${p => (p.gridLayout === "tiles" ? listTile : listRow)}
-`;
-
-const Item = styled.div<{ gridLayout: string }>`
-  ${p => (p.gridLayout === "rows" ? listItemRow : listItemTile)}
+const Item = styled(Link)`
+  border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
   text-align: left;
-  ${mediaqueries.phablet`
-   border-top-left-radius: 5px;
-   
-  `}
-`;
-
-const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
-  position: relative;
-  height: ${p => (p.gridLayout === "tiles" ? "280px" : "220px")};
-  transition: transform 0.3s var(--ease-out-quad),
-    box-shadow 0.3s var(--ease-out-quad);
-
-  & > div {
-    height: 100%;
-  }
-
-  ${mediaqueries.tablet`
-    height: 200px;
-    margin-bottom: 10px;
-  `}
-
-  ${mediaqueries.phablet`
-    overflow: hidden;
-    margin-bottom: 0px;
-    box-shadow: none;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-  `}
-`;
-
-const Title = styled(Headings.h2)`
-  font-size: 28px;
-  line-height: 1.2;
-  font-family: ${p => p.theme.fonts.serif};
-  font-weight: 400;
-  text-transform: none;
-  margin-bottom: -15px;
-  transition: color 0.3s ease-in-out;
-  ${limitToTwoLines};
-
-  ${mediaqueries.desktop`
-    margin-bottom: 0px;
-  `}
-
-  ${mediaqueries.tablet`
-    font-size: 24px;  
-  `}
-
-  ${mediaqueries.phablet`
-    font-size: 20px;  
-    padding: 0px 20px 0;
-    margin-bottom: 0px;
-    -webkit-line-clamp: 3;
-  `}
-`;
-
-const Excerpt = styled.p<{
-  hasOverflow: boolean;
-  narrow: boolean;
-  gridLayout: string;
-}>`
-  ${limitToTwoLines};
-  font-size: 15px;
-  line-height: 1.618;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-weight: 300;
-  color: ${p => p.theme.colors.primary};
-  display: ${p => (p.gridLayout === "tiles" ? "box" : "none")};
-  max-width: ${p => (p.narrow ? "415px" : "515px")};
-
-  ${mediaqueries.desktop`
-    display: -webkit-box;
-  `}
-
-
-  ${mediaqueries.phablet`
-    margin-bottom; 15px;
-    max-width: 100%;
-    padding:  0 20px;
-    -webkit-line-clamp: 3;
-  `}
-`;
-
-const MetaData = styled.div`
-  font-weight: 400;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-style: italic;
-  color: ${p => p.theme.colors.primary};
-  
-
-  ${mediaqueries.phablet`
-    max-width: 100%;
-    padding:  10px 20px 10px;
-  `}
-`;
-
-const ArticleLink = styled(Link)`
   position: relative;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 450px;
   top: 0;
   left: 0;
-  border-radius: 5px;
   z-index: 1;
-  transition: transform 0.33s var(--ease-out-quart);
+  transition: all 0.28s var(--ease-out-quart);
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
-  &:hover ${ImageContainer}, &:focus ${ImageContainer} {
+  &:hover, &:focus {
     transform: translateY(-1px);
-    box-shadow: 0 50px 80px -20px rgba(0, 0, 0, 0.27),
-      0 30px 50px -30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px -20px rgba(0, 0, 0, 0.27),
+      0 10px 20px -20px rgba(0, 0, 0, 0.3);
   }
+
 
   &:hover h2,
   &:focus h2 {
-    color: ${p => p.theme.colors.accent};
+   
   }
 
   &[data-a11y="true"]:focus::after {
@@ -411,11 +182,12 @@ const ArticleLink = styled(Link)`
     height: 104%;
     border: 3px solid ${p => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
-    border-radius: 5px;
+    
   }
 
   ${mediaqueries.phablet`
-    &:hover ${ImageContainer} {
+    width: 90vw;
+    &:hover {
       transform: none;
       box-shadow: initial;
     }
@@ -423,5 +195,70 @@ const ArticleLink = styled(Link)`
     &:active {
       transform: scale(0.97) translateY(3px);
     }
+  `}
+`;
+
+const Title = styled(Headings.h2)`
+  font-size: 22px;
+  line-height: 1.3;
+  font-family: "${p => p.theme.fonts.sansSerif}";
+  font-weight: 500;
+  text-transform: none;
+  margin-bottom: -10px;
+  transition: color 0.3s ease-in-out;
+
+  ${mediaqueries.desktop`
+    margin-bottom: 0px;
+  `}
+
+  ${mediaqueries.tablet`
+    font-size: 24px;  
+  `}
+
+  ${mediaqueries.phablet`
+    font-size: 20px;  
+    padding: 0px;
+    margin-bottom: -5px;
+    -webkit-line-clamp: 3;
+  `}
+`;
+
+const Excerpt = styled.p`
+  font-family: ${p => p.theme.fonts.sansSerif};
+  ${limitToTwoLines};
+  font-size: 15px;
+  letter-spacing: -.005em;
+  line-height: 1.618;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: 300;
+  color: ${p => p.theme.colors.primary};
+
+  ${mediaqueries.desktop`
+    display: -webkit-box;
+  `}
+
+
+  ${mediaqueries.phablet`
+    margin-bottom: 10px;
+    max-width: 100%;
+    padding:  0;
+    -webkit-line-clamp: 2;
+  `}
+`;
+
+const MetaData = styled.div`
+
+  font-family: ${p => p.theme.fonts.slogan};
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-style: normal;
+  color: ${p => p.theme.colors.primary};
+  
+
+  ${mediaqueries.phablet`
+    max-width: 100%;
+    padding:  10px 0px 10px;
   `}
 `;

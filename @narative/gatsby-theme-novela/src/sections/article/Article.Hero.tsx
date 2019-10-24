@@ -44,7 +44,7 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
             <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> 
             <StyledLink 
               style={{ fontStyle: 'italic'}} 
-              to={"/category/" + article.category}>
+              to={"/category/" + article.category.toString().replace(/\s+/g, '-')}>
               {article.category}
               </StyledLink>
         </HeroSubtitle>
@@ -165,12 +165,12 @@ const Meta = styled.div`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 42px;
-  font-family: ${p => p.theme.fonts.sansSerif};
-  margin-bottom: 40px;
-  line-height: 1.15;
+  font-size: 36px;
+  font-family: "${p => p.theme.fonts.header}";
+  margin-bottom: 30px;
+  line-height: 1.3;
   text-transform: none;
-  font-weight: 500;
+  font-weight: 600;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;

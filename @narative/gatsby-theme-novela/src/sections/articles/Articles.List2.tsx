@@ -246,9 +246,9 @@ const Container = styled.section`
 
 
 const Label = styled.h2`
-  font-family: "Apercu";
+  font-family: "Termina";
   color: ${p => p.theme.colors.primary};
-  font-weight: 500;
+  font-weight: 600;
   text-transform: none;
   font-size: 28px;
   letter-spacing: -0.03em;
@@ -268,12 +268,18 @@ const Label = styled.h2`
 `;
 
 const SeeAll = styled(Link)`
+  font-family: ${p => p.theme.fonts.header};
   text-align: right;
   right: 0px;
+  color :${a => a.theme.colors.accent};
+  font-weight: 500;
   position: absolute;
   padding-top: 12px;
   &:hover {
     border-bottom: 1px solid;
+  }
+  &:visited {
+    color :${a => a.theme.colors.accent};
   }
 `
 const Item = styled(Link)`
@@ -384,7 +390,8 @@ const limitToTwoLines = css`
 const Title = styled(Headings.h2)`
   font-size: 21px;
   line-height: 1.3;
-  font-family: "${p => p.theme.fonts.sansSerif}";
+  letter-spacing: -0.01em;
+  font-family: ${p => p.theme.fonts.sansSerif};
   font-weight: 500;
   text-transform: none;
   margin-bottom: -10px;

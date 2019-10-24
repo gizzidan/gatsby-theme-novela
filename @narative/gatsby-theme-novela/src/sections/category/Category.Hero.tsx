@@ -1,39 +1,42 @@
 import React from 'react';
 import styled from '@emotion/styled';
-
 import mediaqueries from '@styles/media';
 
 const CategoryHero = ({ category }) => {
   return (
     <Hero>
-      <Heading>{category}</Heading>
+      <Label>{category}</Label>
     </Hero>
   );
 };
 
 export default CategoryHero;
 
-const Hero = styled.div`
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 35px auto 110px;
+const Hero = styled.section`
+  
 `;
 
-const Heading = styled.h1`
-  font-size: 38px;
-  font-family: ${p => p.theme.fonts.sansSerif};
+const Label = styled.h2`
   color: ${p => p.theme.colors.primary};
-  margin-bottom: 15px;
-  font-weight: 600;
+  -webkit-text-fill-color: white; 
+  -webkit-text-stroke: 1.3px ${p => p.theme.colors.primary};
+  font-family: "Apercu";
+  font-weight: 500;
   text-transform: capitalize;
-  ${mediaqueries.tablet`
-  `}
+  font-size: 150px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  margin: 20px 0px;
+  ${mediaqueries.desktop`
+    font-size: 100px;
+  `};
+
   ${mediaqueries.phablet`
-  `}
+    -webkit-text-stroke-width: 1px;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1.3;
+  `};
 `;
 
 const Subheading = styled.p`

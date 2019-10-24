@@ -27,7 +27,6 @@ const AuthorArticlesContainer = styled.div`
     rgba(249, 250, 252, 0) 91.01%
   );
   border-radius: 8px;
-  padding: 88px 98px;
   position: relative;
   z-index: 1;
 

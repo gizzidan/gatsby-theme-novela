@@ -87,13 +87,13 @@ const TextContainer = styled("div") `
   text-align: center;
 `
 const Title = styled("div")`
-  font-family: "Apercu";
+  font-family: ${p => p.theme.fonts.header};
   color: white;
-  font-size: 36px;
+  font-size: 34px;
   line-height: 1.1;
-  text-transform: lowercase;
+  text-transform: none;
   padding-bottom: 25px;
-  font-weight: 500;
+  font-weight: 600;
 
   ${mediaqueries.desktop`
     font-size: 38px;
