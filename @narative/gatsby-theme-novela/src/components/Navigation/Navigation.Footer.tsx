@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import Section from "@components/Section";
 import SocialLinks from "@components/SocialLinks";
-
+import LandingSub from "@components/LandingSub";
 import mediaqueries from "@styles/media";
 
 const siteQuery = graphql`
@@ -33,6 +33,7 @@ function Footer() {
       <FooterGradient />
       <Section narrow>
         <HoritzontalRule />
+        <LandingSub />
         <FooterContainer>
           <FooterText>
             © {new Date().getFullYear()} {name}

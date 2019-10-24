@@ -82,7 +82,7 @@ const plugins = [
     resolve: `gatsby-plugin-mailchimp`,
     options: {
       endpoint:
-        "https://narative.us19.list-manage.com/subscribe/post?u=65ef169332a03669b9538f6ef&amp;id=c55c426282",
+        "https://hauteboxnj.us17.list-manage.com/subscribe/post?u=aa0571043941b97edb1a7943d&amp;id=5273f08430",
     },
   },
 ];
