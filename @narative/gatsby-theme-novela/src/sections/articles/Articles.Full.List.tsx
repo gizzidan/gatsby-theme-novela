@@ -96,7 +96,7 @@ const Container = styled.section`
 const Label = styled.h2`
   color: ${p => p.theme.colors.primary};
   -webkit-text-fill-color: white; 
-  -webkit-text-stroke: 1.3px ${p => p.theme.colors.primary};
+  -webkit-text-stroke: 1.3px ${p => p.theme.colors.outline};
   font-family: "Apercu";
   font-weight: 500;
   text-transform: none;
@@ -212,7 +212,7 @@ const limitToTwoLines = css`
 const Title = styled(Headings.h2)`
   font-size: 22px;
   line-height: 1.3;
-  font-family: "${p => p.theme.fonts.sansSerif}";
+  font-family: ${p => p.theme.fonts.sansSerif};
   font-weight: 500;
   text-transform: none;
   margin-bottom: -10px;

@@ -437,7 +437,7 @@ const Title = styled(Headings.h2)`
   `}
 `;
 
-const Slogan = styled.p`
+const Slogan = styled.div`
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 14px;

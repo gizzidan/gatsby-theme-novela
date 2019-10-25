@@ -123,7 +123,7 @@ const TextContainer = styled("div")`
   `}
 `;
 
-const Slogan = styled.p`
+const Slogan = styled.div`
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 14px;
@@ -223,7 +223,7 @@ const Title = styled(Headings.h2)`
   `}
 `;
 
-const Excerpt = styled.p`
+const Excerpt = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
   ${limitToTwoLines};
   font-size: 15px;

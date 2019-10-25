@@ -18,8 +18,8 @@ const Hero = styled.section`
 
 const Label = styled.h2`
   color: ${p => p.theme.colors.primary};
-  -webkit-text-fill-color: white; 
-  -webkit-text-stroke: 1.3px ${p => p.theme.colors.primary};
+  -webkit-text-fill-color: ${p => p.theme.colors.background}; 
+  -webkit-text-stroke: 1.3px ${p => p.theme.colors.outline};
   font-family: "Apercu";
   font-weight: 500;
   text-transform: capitalize;
@@ -39,7 +39,7 @@ const Label = styled.h2`
   `};
 `;
 
-const Subheading = styled.p`
+const Subheading = styled.div`
   margin: 0 auto;
   max-width: 450px;
   color: ${p => p.theme.colors.grey};

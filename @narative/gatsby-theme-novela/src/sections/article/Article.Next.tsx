@@ -225,15 +225,18 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
 `;
 
 const MetaData = styled.div`
-  font-weight: 400;
+
   font-family: ${p => p.theme.fonts.slogan};
-  font-size: 16px;
-  font-style: italic;
-  color: ${p => p.theme.colors.articleText};
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-style: normal;
+  color: ${p => p.theme.colors.primary};
+  
 
   ${mediaqueries.phablet`
     max-width: 100%;
-    padding:  0 20px 30px;
+    padding:  10px 0px 10px;
   `}
 `;
 
