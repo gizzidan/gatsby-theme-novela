@@ -276,7 +276,7 @@ const Label = styled.h2`
 
   ${mediaqueries.phablet`
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.3;
   `};
 `;
@@ -378,7 +378,7 @@ const MetaData = styled.div`
   `}
 `;
 
-const TextContainer = styled("div")`
+const TextContainer = styled.div`
   position: relative;
   padding: 20px 0px 10px 0px;
   ${mediaqueries.phablet`
@@ -386,7 +386,7 @@ const TextContainer = styled("div")`
   `}
 `;
 
-const Excerpt = styled.p`
+const Excerpt = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
   ${limitToTwoLines};
   font-size: 15px;
