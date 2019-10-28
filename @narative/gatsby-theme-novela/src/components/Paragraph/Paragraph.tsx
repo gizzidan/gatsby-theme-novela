@@ -10,6 +10,7 @@ const Paragraph = styled.p`
   transition: ${p => p.theme.colorModeTransition};
   margin: 0 auto 42px;
   width: 100%;
+  font-weight: 300;
   max-width: 580px;
 
   b {

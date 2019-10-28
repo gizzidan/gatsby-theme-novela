@@ -85,7 +85,7 @@ const SubscriptionContainer = styled.div`
   flex-direction: column;
   padding: 64px 0 55px;
   margin: 10px auto 100px;
-  background: ${p => p.theme.colors.card};
+  background: ${p => p.theme.colors.cardMain};
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   z-index: 1;
 
@@ -192,6 +192,7 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 0px;
   width: 161px;
   height: 45px;
   border: 1px solid

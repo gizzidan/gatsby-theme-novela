@@ -65,16 +65,17 @@ const Slogan = styled("p")`
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 16px;
   text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   margin-bottom: 10px;
-  color: ${p => p.theme.colors.accent};
+  color: ${p => p.theme.colors.primary};
 
   ${mediaqueries.desktop`
     display: -webkit-box;
   `}
 
   ${mediaqueries.phablet`
-    margin-bottom; 15px;
+    margin-bottom: 15px;
   `}
 
   ${mediaqueries.phablet`
@@ -165,12 +166,12 @@ const Meta = styled.div`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 36px;
-  font-family: "${p => p.theme.fonts.header}";
-  margin-bottom: 30px;
-  line-height: 1.3;
+  font-size: 42px;
+  font-family: "Portrait";
+  margin-bottom: 20px;
+  line-height: 1.1;
   text-transform: none;
-  font-weight: 600;
+  font-weight: 400;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
@@ -184,9 +185,10 @@ const HeroHeading = styled(Headings.h1)`
 
 const HeroExcerpt = styled("p")`
   font-size: 22px;
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   margin-bottom: 40px;
-  line-height: 1.4;
+  line-height: 1.6;
+  font-style: italic;
   color: ${p => p.theme.colors.articleText};
   font-weight: 400;
 
@@ -201,9 +203,9 @@ const HeroExcerpt = styled("p")`
 `;
 
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: ${p => p.theme.colors.articleText};
 
   ${p => mediaqueries.phablet`

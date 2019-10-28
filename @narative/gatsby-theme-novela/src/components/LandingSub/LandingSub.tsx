@@ -183,13 +183,13 @@ const Input = styled.input<{ hasError: string }>`
 
 const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   position: absolute;
-  left: 363px;
-  top: 1px;
+  left: 364px;
+  top: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 161px;
-  height: 45px;
+  height: 46px;
   border: 1px solid
     ${p => (p.hasError ? p.theme.colors.error : '#4824ea')};
   color: ${p => (p.hasError ? p.theme.colors.error : '#4824ea')};
@@ -197,6 +197,7 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   font-weight: 500;
   border-radius: 35px;
   letter-spacing: 0.42px;
+  line-height: 0px;
   transition: border-color 0.2s var(--ease-in-out-quad),
     background 0.2s var(--ease-in-out-quad), color 0.2s var(--ease-in-out-quad);
 

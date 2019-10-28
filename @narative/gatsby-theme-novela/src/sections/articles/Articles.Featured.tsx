@@ -13,6 +13,7 @@ const Featured = () => {
           title
           date
           excerpt
+          category
           slug
           hero {
             sizes(quality: 100) {
@@ -30,12 +31,13 @@ const Featured = () => {
       <BgImg fluid={article.contentfulPost.hero.sizes} />
       <Overlay></Overlay>
       <TextContainer>
+        
         <Title>
           <p>{article.contentfulPost.title}</p>
         </Title>
         <Excerpt>
           <p>{article.contentfulPost.excerpt}</p>
-          <p style={{ fontSize: '40px',}}>&rarr;</p>
+          <p style={{ fontSize: '40px',}}><Arrow id="arrow">&rarr;</Arrow></p>
         </Excerpt>
       </TextContainer>
       </Link>
@@ -45,6 +47,10 @@ const Featured = () => {
 
 export default Featured
 
+const Arrow = styled.div`
+  transition: all 0.1s linear;
+  
+`
 const FeaturedContainer = styled("section")`
   overflow: hidden;
   height: 78vh;
@@ -74,26 +80,64 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.1), rgba(5, 5, 5, 0.7));
+  background-image: linear-gradient(to bottom, rgba(255, 198, 255, 0.4), rgba(8, 31, 76, 0.7));
   width: 100%;
   height: 100%;
 `
 const TextContainer = styled("div") `
   position: absolute;
-  top: 80%;
+  top: 79%;
   left: 50%;
   max-width: 800px;
   transform: translate(-50%,-50%);
   text-align: center;
+  transition: all 0.1s linear;
+  &:hover {
+    p {
+      color: #ffc6ff;
+    }
+    #arrow {
+      transform: translate(7px, 0);
+    }
+  }
+  ${mediaqueries.phablet`
+    top: 74%;
+  `}
 `
-const Title = styled("div")`
-  font-family: ${p => p.theme.fonts.header};
+const Category = styled.p`
+  font-family: ${p => p.theme.fonts.slogan};
+  font-size: 16px;
+  line-height: 1.7;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-weight: ${p => p.theme.fontWeights.slogan};
+  text-transform: uppercase;
   color: white;
-  font-size: 34px;
+
+
+  ${mediaqueries.desktop`
+    display: -webkit-box;
+  `}
+
+  ${mediaqueries.phablet`
+    font-size: 13px;
+    max-width: 100%;
+    padding:  0;
+    margin-bottom: 5px;
+    -webkit-line-clamp: 2;
+  `}
+`;
+
+const Title = styled("div")`
+  font-family: "Portrait";
+  color: white;
+  font-size: 50px;
   line-height: 1.1;
-  text-transform: none;
-  padding-bottom: 25px;
-  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  font-weight: 400;
+  transition: all 0.1s linear;
+
 
   ${mediaqueries.desktop`
     font-size: 38px;
@@ -101,17 +145,18 @@ const Title = styled("div")`
   `};
 
   ${mediaqueries.phablet`
-    width: 90vw;
-    font-size: 24px;
+    width: 93vw;
+    font-size: 30px;
     line-height: 1.3;
   `};
 `;
 
 const Excerpt = styled("div")`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   font-weight: 300;
+  font-style: italic;
   color: white;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.4;
 
 

@@ -39,15 +39,19 @@ const Hero = styled.section`
   width: 100vw;
   top: 0;
   left: 0;
-  background: #cedcfa;
+  background: #eeebfd;
+  padding: 0 10px;
 `
 
 const LogoContainer = styled.div`
     z-index: 1000;
-    top: 8%;
-    left: 50%;
+    display: flex;
+    align-items: center;
+    transform: translate(-40%);
+    left: 51%;
+    top: 20px;
+    margin: 0 auto;
     position: absolute;
-    transform: translate(-39%,-50%);
     transition: all 0.15s ease;
     &:hover {
         ${a => a.theme.colors.accent};
@@ -59,23 +63,35 @@ const LogoContainer = styled.div`
 const TextContainer = styled.div`
   position: relative;
   margin: 50vh auto;
-  width: 60%;
+  width: 800px;
   transform: translate(0%,-50%);
-  ${mediaqueries.phablet`
+  ${mediaqueries.desktop`
     width: 100%;
   `};
 `
 const Heading = styled.div`
   text-align: center;
-  font-size: 42px;
-  padding-bottom: 30px;
-  color: #4824ea;
-  font-family: "Termina";
-  font-weight: 600;
-  ${mediaqueries.phablet`
-    padding-bottom: 60px;
-    font-size: 32px;
+  font-size: 60px;
+  padding-bottom: 20px;
+  line-height: 1.3;
+  color: #1f1069;
+  font-family: "Portrait";
+  text-transform: none;
+  font-weight: 400;
+  ${mediaqueries.tablet`
+    padding-bottom: 30px;
+    font-size: 39px;
     line-height: 1.2;
+  `};
+  ${mediaqueries.phablet`
+    padding-bottom: 45px;
+    font-size: 30px;
+    line-height: 1.3;
+  `};
+  ${mediaqueries.phone_small`
+    padding-bottom: 40px;
+    font-size: 23px;
+    line-height: 1.3;
   `};
 `
 

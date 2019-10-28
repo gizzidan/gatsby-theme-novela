@@ -148,7 +148,7 @@ export const ToolContainer = styled("div")`
 
 export const LogoContainer = styled(Link)`
     z-index: 1000;
-    top: 100%;
+    top: 95%;
     left: 50%;
     position: absolute;
     transform: translate(-39%,-50%);

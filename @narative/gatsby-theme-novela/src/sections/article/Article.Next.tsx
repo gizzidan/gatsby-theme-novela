@@ -123,10 +123,11 @@ const Slogan = styled.p`
   font-size: 15px;
   line-height: 1.7;
   margin-top: 0px;
+  letter-spacing: 1px;
   margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
-  color: ${p => p.theme.colors.accent};
+  color: ${p => p.theme.colors.primary};
 
 
   ${mediaqueries.desktop`
@@ -137,7 +138,7 @@ const Slogan = styled.p`
     font-size: 13px;
     margin-bottom; 15px;
     max-width: 100%;
-    padding:  0 20px;
+    padding: 20px 0px 0px 0px;
     margin-bottom: 10px;
     -webkit-line-clamp: 2;
   `}
@@ -173,10 +174,9 @@ const Item = styled.div`
   position: relative;
 
   @media (max-width: 540px) {
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    background: ${p => p.theme.colors.card};
+    background: ${p => p.theme.colors.cardMain};
   }
 `;
 
@@ -185,7 +185,7 @@ const Title = styled(Headings.h3)`
   line-height: 1.4;
   margin-bottom: ${p => (p.hasOverflow ? "45px" : "10px")};
   color: ${p => p.theme.colors.primary};
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   transition: color 0.3s ease-in-out;
   ${limitToTwoLines};
 
@@ -193,7 +193,7 @@ const Title = styled(Headings.h3)`
     margin-bottom: 15px;
   `}
   ${mediaqueries.phablet`
-    padding: 30px 20px 0;
+    padding: 0px 0px 0;
     margin-bottom: 10px;
     -webkit-line-clamp: 3;
   `}
@@ -201,9 +201,10 @@ const Title = styled(Headings.h3)`
 
 const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   ${limitToTwoLines};
-  font-size: 16px;
+  font-size: 17px;
   margin-bottom: 10px;
   font-weight: 300;
+  font-style: italic;
   color: ${p => p.theme.colors.articleText};
   display: ${p => (p.hasOverflow ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};
@@ -218,8 +219,8 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
 
   ${mediaqueries.phablet`
     max-width: 100%;
-    padding:  0 20px;
-    margin-bottom: 20px;
+    padding:  0 0px;
+    margin-bottom: 10px;
     -webkit-line-clamp: 3;
   `}
 `;
@@ -228,8 +229,8 @@ const MetaData = styled.div`
 
   font-family: ${p => p.theme.fonts.slogan};
   font-weight: 500;
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 16px;
+  text-transform: none;
   font-style: normal;
   color: ${p => p.theme.colors.primary};
   

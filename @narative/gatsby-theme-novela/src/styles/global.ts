@@ -1,20 +1,26 @@
 import { css } from "@emotion/core";
 
-import GCopernicusM from "www/static/fonts/Galaxie Copernicus/GalaxieCopernicus-Medium.otf";
+import Portrait from "www/static/fonts/Portrait/Portrait-Regular2.woff";
+import PortraitItalic from "www/static/fonts/Portrait/Portrait-Regular2Italic.woff";
+import PortraitMedium from "www/static/fonts/Portrait/Portrait-Medium.woff";
+import PortraitBold from "www/static/fonts/Portrait/Portrait-Bold.woff";
 
 import UntitledSerifRegular from "www/static/fonts/Untitled Serif/UntitledSerif-Regular.woff";
 import UntitledSerifBold from "www/static/fonts/Untitled Serif/UntitledSerif-Bold.woff";
 
-import UnionRegular from "www/static/fonts/Union/Union-Regular.otf";
-import UnionRegularItalic from "www/static/fonts/Union/Union-Italic.otf";
-import UnionBold from "www/static/fonts/Union/Union-BoldItalic.otf";
+import SectraBook from "www/static/fonts/GT Sectra/GT-Sectra-Book.woff";
+import SectraBookItalic from "www/static/fonts/GT Sectra/GT-Sectra-Book-Italic.woff";
+import SectraRegular from "www/static/fonts/GT Sectra/GT-Sectra-Regular.woff";
+import SectraRegularItalic from "www/static/fonts/GT Sectra/GT-Sectra-Regular-Italic.woff";
+import SectraMedium from "www/static/fonts/GT Sectra/GT-Sectra-Medium.woff";
+import SectraMediumItalic from "www/static/fonts/GT Sectra/GT-Sectra-Medium-Italic.woff";
+import SectraBold from "www/static/fonts/GT Sectra/GT-Sectra-Bold.woff";
+import SectraBoldItalic from "www/static/fonts/GT Sectra/GT-Sectra-Bold-Italic.woff";
 
-import FuturaLight from "www/static/fonts/Futura/Futura-Light.woff";
-import FuturaBook from "www/static/fonts/Futura/Futura-Book.woff";
-import FuturaMedium from "www/static/fonts/Futura/Futura-Medium.woff";
-import FuturaMediumItalic from "www/static/fonts/Futura/Futura-Medium-Italic.woff";
-import FuturaLTMedium from "www/static/fonts/Futura/FuturaLT.woff";
-import FuturaLTMediumItalic from "www/static/fonts/Futura/Futura-Oblique.woff";
+import SectraFine from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Regular.woff";
+import SectraFineItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Regular-Italic.woff";
+
+import PressuraBold from "www/static/fonts/GT Pressura/gt-pressura-bold.woff";
 
 import TerminaDemi from "www/static/fonts/Termina/Termina-Demi.woff";
 import TerminaMedium from "www/static/fonts/Termina/Termina-Medium.woff";
@@ -24,13 +30,10 @@ import GTConRegItalic from "www/static/fonts/GT America/GTAmerica-CondensedRegul
 import GTConMed from "www/static/fonts/GT America/GTAmerica-CondensedMedium.woff";
 import GTExtBlack from "www/static/fonts/GT America/GTAmerica-ExtendedBlack.woff";
 
-import Roslindale from "www/static/fonts/Roslindale/RoslindaleVariableDisplay-Regular.woff2";
-
 import Ogg from "www/static/fonts/Ogg/Ogg-Roman.woff";
 
 import LarishAlte from "www/static/fonts/Larish Alte/LarishAlte-SemiBold.woff";
 
-import Value from "www/static/fonts/Value Serif/Value-Serif.woff";
 
 
 
@@ -57,18 +60,100 @@ export const globalStyles = css`
     font-style: normal;
   }
 
-  /** Galaxie Copernicus */
-  @font-face {
-    font-family: "G Copernicus";
-    font-weight: 500;
+   /** Portrait */
+   @font-face {
+    font-family: "Portrait";
+    font-weight: 400;
     font-style: normal;
-    src: url(${GCopernicusM});
+    src: url(${Portrait}) format("woff");
+  }
+  @font-face {
+    font-family: "Portrait";
+    font-weight: 400;
+    font-style: italic;
+    src: url(${PortraitItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Portrait";
+    font-weight: 600;
+    font-style: normal;
+    src: url(${PortraitMedium}) format("woff");
+  }
+  @font-face {
+    font-family: "Portrait";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${PortraitBold}) format("woff");
   }
 
-   /** Roslindale */
+    /** GT Pressura */
+    @font-face {
+    font-family: "Pressura";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${PressuraBold}) format("woff");
+  }
+
+   /** GT Sectra */
+   @font-face {
+    font-family: "Sectra";
+    font-weight: 300;
+    font-style: normal;
+    src: url(${SectraBook}) format("woff");
+  }
   @font-face {
-    font-family: "Roslindale";
-    src: url(${Roslindale}) format("woff2-variations");
+    font-family: "Sectra";
+    font-weight: 300;
+    font-style: italic;
+    src: url(${SectraBookItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${SectraRegular}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra";
+    font-weight: 400;
+    font-style: italic;
+    src: url(${SectraRegularItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${SectraMedium}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra";
+    font-weight: 500;
+    font-style: italic;
+    src: url(${SectraMediumItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${SectraBold}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra";
+    font-weight: 700;
+    font-style: italic;
+    src: url(${SectraBoldItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra Fine";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${SectraFine}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra Fine";
+    font-weight: 400;
+    font-style: italic;
+    src: url(${SectraFineItalic}) format("woff");
   }
 
    /** Ogg */
@@ -93,43 +178,7 @@ export const globalStyles = css`
     src: url(${TerminaMedium}) format("woff");
   }
 
-   /** Futura */
-  @font-face {
-    font-family: "Futura";
-    font-weight: 300;
-    font-style: normal;
-    src: url(${FuturaLight}) format("woff");
-  }
-  @font-face {
-    font-family: "Futura";
-    font-weight: 400;
-    font-style: normal;
-    src: url(${FuturaBook}) format("woff");
-  }
-  @font-face {
-    font-family: "Futura";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${FuturaMedium}) format("woff");
-  }
-  @font-face {
-    font-family: "Futura LT";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${FuturaLTMedium}) format("woff");
-  }
-  @font-face {
-    font-family: "Futura";
-    font-weight: 500;
-    font-style: italic;
-    src: url(${FuturaMediumItalic}) format("woff");
-  }
-  @font-face {
-    font-family: "Futura LT";
-    font-weight: 500;
-    font-style: italic, oblique;
-    src: url(${FuturaLTMediumItalic}) format("woff");
-  }
+  
 
     /** GT America */
   @font-face {
@@ -171,26 +220,6 @@ export const globalStyles = css`
     src: url(${UntitledSerifBold}) format("woff");
   }
 
-  /** Union */
-  @font-face {
-    font-family: "Union";
-    font-weight: 400;
-    font-style: normal;
-    src: url(${UnionRegular}) format("true-type");
-  }
-   @font-face {
-    font-family: "Union";
-    font-weight: 400;
-    font-style: italic;
-    src: url(${UnionRegularItalic}) format("true-type");
-  }
-   @font-face {
-    font-family: "Union";
-    font-weight: 700;
-    font-style: normal;
-    src: url(${UnionBold}) format("true-type");
-  }
-
   /** Larish Alte */
   @font-face {
     font-family: "Larish Alte";
@@ -199,13 +228,6 @@ export const globalStyles = css`
     src: url(${LarishAlte}) format("woff");
   }
 
-   /** Value Serif */
-   @font-face {
-    font-family: "Value Serif";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${Value}) format("woff");
-  }
 
   *,
   *:before,
@@ -229,7 +251,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "Apercu";
+    font-family: "Sectra";
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

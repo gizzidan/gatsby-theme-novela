@@ -6,18 +6,18 @@ const breakpoints = [
   ['phone_small', 320],
   ['phone', 376],
   ['phablet', 540],
-  ['tablet', 735],
+  ['tablet', 768],
   ['desktop', 1070],
   ['desktop_medium', 1280],
   ['desktop_large', 1440],
 ];
 
 const fonts = {
-  serif: 'Untitled Serif',
+  serif: 'Sectra',
   sansSerif: 'Apercu',
-  slogan: 'GT America Cond',
-  funHeader: 'Larish Alte',
-  header: "Termina",
+  slogan: 'Sectra',
+  funHeader: 'Termina',
+  header: "Pressura",
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 

@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
 const LogoLanding = () => {
-  const fill = "#000";
+  const fill = "#1f1069";
   return (
     <LogoContainer>
-      <svg width="90"
-        height="90" version="1.1" id="Layer_1" 
+      <svg width="85"
+        height="85" version="1.1" id="Layer_1" 
 	 viewBox="0 0 200 200">
 
 		<path d="M11.4,34.7c0.1-3.8-1.2-4.5-3.1-3.4c-1.5,0.8-2.9,2.4-3,4.2c0,1,0.2,1.4,1.1,1.8c1.3,0.4,4.9,1.2,6.2,3.1

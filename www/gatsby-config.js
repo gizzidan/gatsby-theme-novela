@@ -4,9 +4,9 @@ const siteMetadata = {
   title: `Shoreside News`,
   name: `Shoreside`,
   siteUrl: `https://novela.narative.co`,
-  description: `This is my description that will be used in the meta tags and important for search results`,
+  description: `Bringing Sanity to the Jersey Shore: Your Local Source`,
   hero: {
-    heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
+    heading: `Bringing Sanity to the Jersey Shore: Your Local Source`,
     maxWidth: 652,
   },
   social: [

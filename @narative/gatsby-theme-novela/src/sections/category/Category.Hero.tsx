@@ -18,10 +18,10 @@ const Hero = styled.section`
 
 const Label = styled.h2`
   color: ${p => p.theme.colors.primary};
-  -webkit-text-fill-color: ${p => p.theme.colors.background}; 
-  -webkit-text-stroke: 1.3px ${p => p.theme.colors.outline};
-  font-family: "Apercu";
-  font-weight: 500;
+  -webkit-text-fill-color: transparent; 
+  -webkit-text-stroke: 1.5px ${p => p.theme.colors.primary};
+  font-family: "Portrait";
+  font-weight: 600;
   text-transform: capitalize;
   font-size: 150px;
   letter-spacing: -0.03em;
@@ -33,7 +33,7 @@ const Label = styled.h2`
 
   ${mediaqueries.phablet`
     -webkit-text-stroke-width: 1px;
-    font-size: 50px;
+    font-size: 74px;
     font-weight: 500;
     line-height: 1.3;
   `};

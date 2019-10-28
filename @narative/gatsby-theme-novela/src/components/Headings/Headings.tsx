@@ -30,10 +30,10 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-family: ${p => p.theme.fonts.header};
-  font-size: 26px;
+  font-family: ${p => p.theme.fonts.serif};
+  font-size: 30px;
   line-height: 1.2;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`

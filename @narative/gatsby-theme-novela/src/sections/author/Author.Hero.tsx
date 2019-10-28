@@ -63,11 +63,11 @@ const HeroImage = styled.div`
 `;
 
 const Heading = styled.h1`
-  font-size: 36px;
-  font-family: "Termina";
+  font-size: 48px;
+  font-family: "Portrait";
   color: ${p => p.theme.colors.primary};
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: 400;
 
   ${mediaqueries.tablet`
   `}
@@ -81,7 +81,7 @@ const Subheading = styled.p`
   max-width: 450px;
   color: ${p => p.theme.colors.primary};
   font-size: 18px;
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   line-height: 1.4;
   text-align: center;
 

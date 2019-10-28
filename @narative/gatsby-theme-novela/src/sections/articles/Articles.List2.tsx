@@ -23,7 +23,7 @@ const limitToTwoLines = css`
 
 const ArticlesList2 = () => {
   const sectiongap = '60px';
-  const gap = '35px';
+  const gap = '25px';
   const data = useStaticQuery(
     graphql`
       query { 
@@ -260,12 +260,12 @@ const Container = styled.section`
 
 
 const Label = styled.h2`
-  font-family: "Termina";
+  font-family: "Portrait";
   color: ${p => p.theme.colors.primary};
-  font-weight: 600;
+  font-weight: 500;
   text-transform: none;
-  font-size: 28px;
-  letter-spacing: -0.03em;
+  font-style: italic;
+  font-size: 40px;
   padding-bottom: 0px;
   text-align: left;
   margin-bottom: 10px;
@@ -275,26 +275,31 @@ const Label = styled.h2`
   `};
 
   ${mediaqueries.phablet`
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 32px;
     line-height: 1.3;
   `};
 `;
 
 const SeeAll = styled(Link)`
-  font-family: ${p => p.theme.fonts.header};
+  font-family: ${p => p.theme.fonts.serif};
   text-align: right;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.2;
   right: 0px;
   color :${a => a.theme.colors.accent};
-  font-weight: 500;
+  font-weight: 400;
   position: absolute;
-  padding-top: 12px;
+  padding-top: 19px;
   &:hover {
     border-bottom: 1px solid;
   }
   &:visited {
     color :${a => a.theme.colors.accent};
   }
+  ${mediaqueries.phablet`
+    padding-top: 9px;
+  `};
 `
 const Item = styled(Link)`
   text-align: left;
@@ -363,18 +368,16 @@ const ImageContainer = styled.div`
 `;
 
 const MetaData = styled.div`
-
-  font-family: ${p => p.theme.fonts.slogan};
+  font-family: ${p => p.theme.fonts.serif};
   font-weight: 500;
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 16px;
   font-style: normal;
   color: ${p => p.theme.colors.primary};
   
 
   ${mediaqueries.phablet`
     max-width: 100%;
-    padding:  10px 0px 10px;
+    padding:  0px 0px 10px;
   `}
 `;
 
@@ -387,9 +390,10 @@ const TextContainer = styled.div`
 `;
 
 const Excerpt = styled.div`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   ${limitToTwoLines};
-  font-size: 15px;
+  font-size: 16px;
+  font-style: italic;
   letter-spacing: -.005em;
   line-height: 1.618;
   margin-top: 15px;
@@ -412,10 +416,10 @@ const Excerpt = styled.div`
 
 
 const Title = styled(Headings.h2)`
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1.3;
   letter-spacing: -0.01em;
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: "${p => p.theme.fonts.serif}";
   font-weight: 500 !important;
   text-transform: none;
   margin-bottom: -10px;
@@ -446,7 +450,8 @@ const Slogan = styled.div`
   margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
-  color: ${p => p.theme.colors.accent};
+  letter-spacing: 1px;
+  color: ${p => p.theme.colors.primary};
 
 
   ${mediaqueries.desktop`
