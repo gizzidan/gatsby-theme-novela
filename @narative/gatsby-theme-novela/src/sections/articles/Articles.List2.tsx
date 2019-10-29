@@ -47,6 +47,9 @@ const ArticlesList2 = () => {
                   timeToRead
                 }
               }
+              author {
+                name
+              }
             }
           }
         }
@@ -87,7 +90,7 @@ const ArticlesList2 = () => {
                         {item.node.excerpt}
                       </Excerpt>
                       <MetaData>
-                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read
+                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read 
                       </MetaData>
                     </TextContainer>
                   </ListItem>
@@ -100,7 +103,7 @@ const ArticlesList2 = () => {
         <div>
         <div style={{paddingBottom: '50px',}}>ad space</div>
         {
-          data.allContentfulPost.edges.slice(2,7).map((item, i) => (
+          data.allContentfulPost.edges.slice(1,7).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <SidebarItem to={item.node.slug}>

@@ -31,7 +31,7 @@ export default Menu;
 
 
 const Spacer = styled.span`
-  color: #edecf0;
+  color: #aa9bf5;
   font-family: "GT America";
   font-size: 20px;
   padding: 0px 10px 0px 10px;

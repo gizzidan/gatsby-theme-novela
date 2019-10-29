@@ -81,12 +81,12 @@ const Subheading = styled.p`
   max-width: 450px;
   color: ${p => p.theme.colors.primary};
   font-size: 18px;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   line-height: 1.4;
   text-align: center;
 
   ${mediaqueries.phablet`
-    font-size: 14px;
+    font-size: 16px;
   `}
 `;
 

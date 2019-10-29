@@ -203,7 +203,7 @@ const Title = styled(Headings.h2)`
   font-size: 22px;
   line-height: 1.3;
   font-family: ${p => p.theme.fonts.serif};
-  font-weight: 700;
+  font-weight: 700 !important;
   text-transform: none;
   margin-bottom: -10px;
   transition: color 0.3s ease-in-out;
@@ -227,7 +227,7 @@ const Title = styled(Headings.h2)`
 const Excerpt = styled.div`
   font-family: ${p => p.theme.fonts.serif};
   ${limitToTwoLines};
-  font-size: 16px;
+  font-size: 17px;
   font-style: italic;
   letter-spacing: -.005em;
   line-height: 1.618;

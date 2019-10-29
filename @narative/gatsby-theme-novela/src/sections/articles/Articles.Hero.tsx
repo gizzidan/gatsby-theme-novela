@@ -75,7 +75,7 @@ const SubheadingContainer = styled.div`
   ${mediaqueries.phablet`
     padding-left: 5vw;
     max-width 100vw;
-    height: 22vh;
+    height: 24vh;
     margin: 0px auto 0px auto;
   `};
 `;

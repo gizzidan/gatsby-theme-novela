@@ -83,8 +83,8 @@ const SubscriptionContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 64px 0 55px;
-  margin: 10px auto 100px;
+  padding: 55px 0 55px;
+  margin: 50px auto 80px;
   background: ${p => p.theme.colors.cardMain};
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   z-index: 1;

@@ -109,7 +109,7 @@ const BioText = styled.p`
   max-width: 430px;
   font-size: 18px;
   line-height: 1.;
-  font-weight: 300;
+  font-weight: 400;
   color: ${p => p.theme.colors.primary};
   ${mediaqueries.desktop`
     

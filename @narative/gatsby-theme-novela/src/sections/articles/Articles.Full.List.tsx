@@ -263,7 +263,7 @@ const Slogan = styled.p`
 const Excerpt = styled.p`
   font-family: ${p => p.theme.fonts.serif};
   ${limitToTwoLines};
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: -.005em;
   font-style: italic;
   line-height: 1.618;

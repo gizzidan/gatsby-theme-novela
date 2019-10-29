@@ -9,7 +9,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulPost(title: {eq: "Carol Rizzo and Rob Layne Win Neptune Township Committee Election Again"}) {
+        contentfulPost(title: {eq: "The Zombie Walk is Taking Over Asbury Park"}) {
           title
           date
           excerpt
@@ -80,7 +80,7 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(9, 9, 9, 0.2), rgba(9, 9, 9, 0.4));
+  background-image: linear-gradient(to bottom, rgba(9, 9, 9, 0.1), rgba(9, 9, 9, 0.8));
   width: 100%;
   height: 100%;
 `
@@ -157,7 +157,7 @@ const Title = styled("div")`
 
 const Excerpt = styled("div")`
   font-family: ${p => p.theme.fonts.serif};
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   color: white;
   font-size: 24px;
@@ -170,11 +170,11 @@ const Excerpt = styled("div")`
   `};
   ${mediaqueries.tablet`
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.4;
   `};
 
   ${mediaqueries.phablet`
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.4;
   `};
 `;

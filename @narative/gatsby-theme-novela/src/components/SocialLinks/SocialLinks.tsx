@@ -13,17 +13,11 @@ interface SocialLinksProps {
 }
 
 const icons = {
-  behance: Icons.Behance,
-  dribbble: Icons.Dribbble,
-  linkedin: Icons.LinkedIn,
   twitter: Icons.Twitter,
   facebook: Icons.Facebook,
   instagram: Icons.Instagram,
-  github: Icons.Github,
-  stackoverflow: Icons.Stackoverflow,
   youtube: Icons.YouTube,
   medium: Icons.Medium,
-  unsplash: Icons.Unsplash,
   patreon: Icons.Patreon,
   paypal: Icons.Paypal,
 };

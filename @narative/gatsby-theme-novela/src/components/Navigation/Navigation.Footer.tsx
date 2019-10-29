@@ -88,7 +88,7 @@ const FooterText = styled.div`
   `}
 
   ${mediaqueries.phablet`
-    margin: 120px auto 100px;
+    margin: 20px auto 30px;
   `}
 `;
 
