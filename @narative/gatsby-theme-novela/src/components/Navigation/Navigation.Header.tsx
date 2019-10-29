@@ -256,7 +256,7 @@ export const IconWrapper = styled.button<{ isDark: boolean }>`
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s ease;
-  margin-left: 10px;
+  margin-left: 9px;
 
   &:hover {
     opacity: 0.6;
@@ -277,7 +277,7 @@ export const IconWrapper = styled.button<{ isDark: boolean }>`
   ${mediaqueries.tablet`
     display: inline-flex;
     transform: scale(0.908);
-    margin-left: 2px;
+    margin-left: -4px;
 
 
     &:hover {
@@ -289,8 +289,8 @@ export const IconWrapper = styled.button<{ isDark: boolean }>`
 // This is based off a codepen! Much appreciated to: https://codepen.io/aaroniker/pen/KGpXZo
 export const MoonOrSun = styled.div<{ isDark: boolean }>`
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 21px;
+  height: 21px;
   border-radius: 50%;
   border: ${p => (p.isDark ? "4px" : "2px")} solid
     ${p => p.theme.colors.primary};
@@ -302,10 +302,10 @@ export const MoonOrSun = styled.div<{ isDark: boolean }>`
   &::before {
     content: "";
     position: absolute;
-    right: -9px;
-    top: -9px;
-    height: 24px;
-    width: 24px;
+    right: -10px;
+    top: -10px;
+    height: 22px;
+    width: 22px;
     border: 2px solid ${p => p.theme.colors.primary};
     border-radius: 50%;
     transform: translate(${p => (p.isDark ? "14px, -14px" : "0, 0")});
@@ -315,8 +315,8 @@ export const MoonOrSun = styled.div<{ isDark: boolean }>`
 
   &::after {
     content: "";
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     margin: -4px 0 0 -4px;
     position: absolute;
@@ -350,7 +350,7 @@ export const MoonMask = styled.div<{ isDark: boolean }>`
   background: ${p => p.theme.colors.background};
   transform: translate(${p => (p.isDark ? "14px, -14px" : "0, 0")});
   opacity: ${p => (p.isDark ? 0 : 1)};
-  transition: ${p => p.theme.colorModeTransition}, transform 0.45s ease;
+  transition: ${p => p.theme.colorModeTransition}, transform 0.25s ease;
 `;
 
 const Hidden = styled.span`

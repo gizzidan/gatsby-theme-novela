@@ -251,7 +251,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "Sectra";
+    font-family: "GT America";
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

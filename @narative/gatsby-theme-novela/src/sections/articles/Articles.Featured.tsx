@@ -80,7 +80,7 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(255, 198, 255, 0.4), rgba(8, 31, 76, 0.7));
+  background-image: linear-gradient(to bottom, rgba(9, 9, 9, 0.2), rgba(9, 9, 9, 0.4));
   width: 100%;
   height: 100%;
 `
@@ -94,14 +94,19 @@ const TextContainer = styled("div") `
   transition: all 0.1s linear;
   &:hover {
     p {
-      color: #ffc6ff;
+      color: #fff;
     }
     #arrow {
       transform: translate(7px, 0);
     }
   }
-  ${mediaqueries.phablet`
+  ${mediaqueries.tablet`
+    width: 80vw;
     top: 74%;
+  `}
+  ${mediaqueries.phablet`
+    width: 93vw;
+    top: 69%;
   `}
 `
 const Category = styled.p`
@@ -145,9 +150,8 @@ const Title = styled("div")`
   `};
 
   ${mediaqueries.phablet`
-    width: 93vw;
-    font-size: 30px;
-    line-height: 1.3;
+    font-size: 32px;
+    line-height: 1.2;
   `};
 `;
 
@@ -164,9 +168,13 @@ const Excerpt = styled("div")`
     font-size: 38px;
     line-height: 1.2;
   `};
+  ${mediaqueries.tablet`
+    font-size: 18px;
+    line-height: 1.6;
+  `};
 
   ${mediaqueries.phablet`
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
   `};
 `;

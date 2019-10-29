@@ -14,15 +14,15 @@ const breakpoints = [
 
 const fonts = {
   serif: 'Sectra',
-  sansSerif: 'Apercu',
-  slogan: 'Sectra',
+  sansSerif: 'GT America',
+  slogan: 'GT America',
   funHeader: 'Termina',
   header: "Pressura",
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 
 const fontWeights = {
-  slogan: `500`,
+  slogan: `400`,
 };
 
 const fontSizes = {

@@ -129,7 +129,7 @@ const ArticleBody = styled.article`
   `}
   
   ${mediaqueries.tablet`
-    padding: 70px 0 80px;
+    padding: 0px 0 0px;
   `}
 
   ${mediaqueries.phablet`

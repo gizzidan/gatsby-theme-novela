@@ -142,22 +142,35 @@ export const ToolContainer = styled("div")`
     z-index: 1000;
     margin-top: 0px;
     display: flex;
-    right: 15px;
+    left: 13px;
+    ${mediaqueries.tablet`
+      left: 13px;
+    `}
 `
 
 
 export const LogoContainer = styled(Link)`
-    z-index: 1000;
-    top: 95%;
+    z-index: 4000;
+    top: 50%;
     left: 50%;
+    font-family: "GT America";
+    font-size: 26px;
+    font-weight: 400;
+    color: ${a => a.theme.colors.primary};
     position: absolute;
-    transform: translate(-39%,-50%);
+    transform: translate(-50%,-50%);
     transition: all 0.15s ease;
     &:hover {
         ${a => a.theme.colors.accent};
         transition: all 0.15s ease;
         
     }
+    ${mediaqueries.tablet`
+      font-size: 22px;
+    `}
+    ${mediaqueries.phone_small`
+      font-size: 18px;
+    `}
 `;
 
 export const Separator = styled("div")`
@@ -167,7 +180,7 @@ export const Separator = styled("div")`
     border-left: 1px solid;
     border-color: ${a => a.theme.colors.lightGrey};
     position: absolute;
-    right: 130px;
+    right: 82px;
         ${mediaqueries.tablet`
             display: none;
         `}
@@ -202,10 +215,10 @@ export default class NavBarBasic extends React.Component {
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage">
-            <Logo/>
+           <p>Shoreside <span style={{ fontStyle: 'italic',}}>News</span></p>
           </LogoContainer>
           <div> <BurgerMenu /></div>
-            <Separator ></Separator>
+            
             <LinkContainer >
       
             </LinkContainer>

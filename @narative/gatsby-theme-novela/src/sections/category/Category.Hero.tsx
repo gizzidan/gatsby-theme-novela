@@ -26,7 +26,7 @@ const Label = styled.h2`
   font-size: 150px;
   letter-spacing: -0.03em;
   text-align: center;
-  margin: 20px 0px;
+  margin-top: 50px;
   ${mediaqueries.desktop`
     font-size: 100px;
   `};

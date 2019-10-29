@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { bool,func } from 'prop-types';
 import React from 'react';
+import mediaqueries from "@styles/media";
+
 
 const Burger = ({ open, setOpen }) => {
   return (
@@ -23,7 +25,7 @@ export default Burger;
 const StyledBurger = styled.button`
   position: absolute;
   top: 16px;
-  left: 22px;
+  right: 48px;
   display: flex;
   flex-direction: column;
   width: 10px;
@@ -32,6 +34,9 @@ const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   z-index: 5000;
+  ${mediaqueries.tablet`
+      right: 38px;
+    `}
 
   &:focus {
     outline: none;
@@ -41,9 +46,9 @@ const StyledBurger = styled.button`
     width: 25px;
     margin: 2.5px;
     height: 3px;
-    background: ${({ open }) => open ? '#fff' : p => p.theme.colors.primary};
+    background: ${({ open }) => open ? '#4524ea' : p => p.theme.colors.primary};
     border-radius: 10px;
-    transition: all 0.10s linear;
+    transition: all 0.20s linear;
     position: relative;
     transform-origin: 1px;
 

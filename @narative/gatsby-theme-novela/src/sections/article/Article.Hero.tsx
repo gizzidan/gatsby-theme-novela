@@ -63,22 +63,19 @@ const StyledLink = styled(Link)`
 `
 const Slogan = styled("p")`
   font-family: ${p => p.theme.fonts.slogan};
-  font-size: 16px;
+  font-size: 17px;
   text-transform: uppercase;
-  letter-spacing: 1px;
   font-weight: ${p => p.theme.fontWeights.slogan};
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   color: ${p => p.theme.colors.primary};
 
   ${mediaqueries.desktop`
-    display: -webkit-box;
+    
   `}
 
   ${mediaqueries.phablet`
     margin-bottom: 15px;
-  `}
-
-  ${mediaqueries.phablet`
+    font-size: 15px;
     max-width: 100%;
   `}
 `;
@@ -118,6 +115,7 @@ export const ArticleMeta = styled.div`
 `;
 
 const Header = styled.header`
+  text-align: center;
   position: relative;
   z-index: 10;
   margin: 100px auto 50px;
@@ -155,7 +153,7 @@ const Meta = styled.div`
 
   ${mediaqueries.tablet`
     padding-left: 0;
-    margin: 100px auto 70px;
+    margin: 50px auto 40px auto;
     max-width: 480px;
   `}
 
@@ -168,18 +166,18 @@ const Meta = styled.div`
 const HeroHeading = styled(Headings.h1)`
   font-size: 42px;
   font-family: "Portrait";
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   line-height: 1.1;
-  text-transform: none;
+  text-transform: uppercase;
   font-weight: 400;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
-    font-size: 36px;
+    font-size: 34px;
   `}
 
   ${mediaqueries.phablet`
-    font-size: 34px;
+    font-size: 30px;
   `}
 `;
 
@@ -203,10 +201,14 @@ const HeroExcerpt = styled("p")`
 `;
 
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   text-align: center;
   font-size: 18px;
   color: ${p => p.theme.colors.articleText};
+
+  ${mediaqueries.tablet`
+
+  `}
 
   ${p => mediaqueries.phablet`
     padding: 0 4px;

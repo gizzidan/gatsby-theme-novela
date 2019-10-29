@@ -6,6 +6,7 @@ import mediaqueries from "@styles/media";
 import Headings from "@components/Headings";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
+import Subscription from "@components/Subscription"
 
 const limitToTwoLines = css`
   text-overflow: ellipsis;
@@ -22,7 +23,7 @@ const limitToTwoLines = css`
 `;
 
 const ArticlesList2 = () => {
-  const sectiongap = '60px';
+  const sectiongap = '45px';
   const gap = '25px';
   const data = useStaticQuery(
     graphql`
@@ -61,17 +62,13 @@ const ArticlesList2 = () => {
           }}>
           <Label>The Latest ⌚️</Label><SeeAll to="/latest">See All →</SeeAll>
         </div>
-      <StyledDiv style={{
-        marginBottom: sectiongap, 
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-        gridGap: gap,
-      }}>
+      <Main>
+      <StyledDiv>
         {
-          data.allContentfulPost.edges.slice(0,8).map((item, i) => (
+          data.allContentfulPost.edges.slice(0,3).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
-                <Item to={item.node.slug}>
+                <ListItem to={item.node.slug}>
                 
                   <ImageContainer>
                     <Image
@@ -93,13 +90,31 @@ const ArticlesList2 = () => {
                         {item.node.date} · {item.node.body.childMdx.timeToRead} min read
                       </MetaData>
                     </TextContainer>
-                  </Item>
+                  </ListItem>
               </div>
               
             ) : (<div></div>)
           ))
         }
         </StyledDiv> 
+        <div>
+        <div style={{paddingBottom: '50px',}}>ad space</div>
+        {
+          data.allContentfulPost.edges.slice(2,7).map((item, i) => (
+            item.node.hero ? (
+              <div key={i}>
+                <SidebarItem to={item.node.slug}>
+                  <Slogan>{item.node.slogan}</Slogan>
+                  <Title>{item.node.title}</Title>
+                </SidebarItem>
+              </div>            
+            ) : (<div></div>)
+          ))
+        }
+        <div style={{paddingBottom: '50px',}}>ad space</div>
+        </div>
+        </Main>
+        <Subscription />
         <div style={{ 
           position: 'relative',
           display: 'flex',
@@ -249,26 +264,35 @@ const ArticlesList2 = () => {
 
 export default ArticlesList2;
 
-
+const Main = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: 1fr;
+  grid-gap: 80px;
+  
+  ${mediaqueries.tablet`
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+  `};
+`
 const StyledDiv = styled.div`
 
-`
+`;
 const Container = styled.section`
   
 `;
 
 
-
 const Label = styled.h2`
   font-family: "Portrait";
   color: ${p => p.theme.colors.primary};
-  font-weight: 500;
+  font-weight: 600;
   text-transform: none;
-  font-style: italic;
-  font-size: 40px;
+  font-style: normal;
+  font-size: 54px;
   padding-bottom: 0px;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   ${mediaqueries.desktop`
     font-size: 38px;
     line-height: 1.2;
@@ -281,10 +305,9 @@ const Label = styled.h2`
 `;
 
 const SeeAll = styled(Link)`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   text-align: right;
   font-size: 20px;
-  font-style: italic;
   line-height: 1.2;
   right: 0px;
   color :${a => a.theme.colors.accent};
@@ -301,15 +324,19 @@ const SeeAll = styled(Link)`
     padding-top: 9px;
   `};
 `
-const Item = styled(Link)`
-  text-align: left;
+
+const SidebarItem = styled(Link)`
+  border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
+  margin-bottom: 50px;
   position: relative;
   display: block;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transition: all 0.28s var(--ease-out-quart);
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  & img {
+    padding-bottom: 10px;
+  }
+  & h2 {
+    line-height: 1.2;
+    padding-bottom: 10px
+  }
 
   &:hover, &:focus {
     transform: translateY(-1px);
@@ -345,6 +372,53 @@ const Item = styled(Link)`
       transform: scale(0.97) translateY(3px);
     }
   `}
+`
+
+
+const Item = styled(Link)`
+  text-align: left;
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.28s var(--ease-out-quart);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  &:hover, &:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px -20px rgba(0, 0, 0, 0.27),
+      0 10px 20px -20px rgba(0, 0, 0, 0.3);
+  }
+
+
+  &:hover h2,
+  &:focus h2 {
+   
+  }
+
+  &[data-a11y="true"]:focus::after {
+    content: "";
+    position: absolute;
+    left: -1.5%;
+    top: -2%;
+    width: 103%;
+    height: 104%;
+    border: 3px solid ${p => p.theme.colors.accent};
+    background: rgba(255, 255, 255, 0.01);
+    
+  }
+  
+  ${mediaqueries.phablet`
+    &:hover {
+      transform: none;
+      box-shadow: initial;
+    }
+
+    &:active {
+      transform: scale(0.97) translateY(3px);
+    }
+  `}
 `;
 
 const ImageContainer = styled.div`
@@ -356,7 +430,7 @@ const ImageContainer = styled.div`
 
   ${mediaqueries.tablet`
     height: 200px;
-    margin-bottom: 10px;
+    margin-bottom: 120px;
   `}
 
   ${mediaqueries.phablet`
@@ -368,14 +442,17 @@ const ImageContainer = styled.div`
 `;
 
 const MetaData = styled.div`
-  font-family: ${p => p.theme.fonts.serif};
-  font-weight: 500;
-  font-size: 16px;
+  font-family: ${p => p.theme.fonts.sansSerif};
+  font-weight: 400;
+  font-size: 15px;
   font-style: normal;
   color: ${p => p.theme.colors.primary};
   
-
+  ${mediaqueries.tablet`
+    font-size: 17px;
+  `}
   ${mediaqueries.phablet`
+    font-size: 15px;
     max-width: 100%;
     padding:  0px 0px 10px;
   `}
@@ -396,17 +473,17 @@ const Excerpt = styled.div`
   font-style: italic;
   letter-spacing: -.005em;
   line-height: 1.618;
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 10px;
   font-weight: 300;
   color: ${p => p.theme.colors.primary} !important;
-
-  ${mediaqueries.desktop`
-    display: -webkit-box;
-  `}
-
+  
+  ${mediaqueries.tablet`
+    font-size: 18px;
+` }
 
   ${mediaqueries.phablet`
+    font-size: 15px;
     margin-bottom: 10px;
     max-width: 100%;
     padding:  0;
@@ -417,12 +494,12 @@ const Excerpt = styled.div`
 
 const Title = styled(Headings.h2)`
   font-size: 20px;
-  line-height: 1.3;
+  line-height: 1.25;
   letter-spacing: -0.01em;
-  font-family: "${p => p.theme.fonts.serif}";
-  font-weight: 500 !important;
+  font-family: "Sectra";
+  font-weight: 700 !important;
   text-transform: none;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
 
   ${mediaqueries.desktop`
@@ -431,12 +508,13 @@ const Title = styled(Headings.h2)`
 
   ${mediaqueries.tablet`
     font-size: 24px;  
+    margin-bottom: 10px;
   `}
 
   ${mediaqueries.phablet`
     font-size: 20px;  
     padding: 0px;
-    margin-bottom: -5px;
+    margin-bottom: 5px;
     -webkit-line-clamp: 3;
   `}
 `;
@@ -450,12 +528,15 @@ const Slogan = styled.div`
   margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
-  letter-spacing: 1px;
   color: ${p => p.theme.colors.primary};
 
 
   ${mediaqueries.desktop`
     display: -webkit-box;
+  `}
+
+  ${mediaqueries.tablet`
+    font-size: 16px;
   `}
 
   ${mediaqueries.phablet`
@@ -467,5 +548,83 @@ const Slogan = styled.div`
   `}
 `;
 
+const ListItem = styled(Link)`
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 35px;
+  margin-bottom: 55px;
+  position: relative;
+  transition: all 0.28s var(--ease-out-quart);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  & h2 {
+    font-size: 32px;
+  }
+  & ${MetaData} {
+    font-size: 17px !important;
+  }
+  & ${Excerpt} {
+    font-size: 18px !important;
+  }
+  & ${Slogan} {
+    font-size: 16px !important;
+  }
 
+  &:hover, &:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px -20px rgba(0, 0, 0, 0.27),
+      0 10px 20px -20px rgba(0, 0, 0, 0.3);
+  }
+
+
+  &:hover h2,
+  &:focus h2 {
+   
+  }
+
+  &[data-a11y="true"]:focus::after {
+    content: "";
+    position: absolute;
+    left: -1.5%;
+    top: -2%;
+    width: 103%;
+    height: 104%;
+    border: 3px solid ${p => p.theme.colors.accent};
+    background: rgba(255, 255, 255, 0.01);
+    
+  }
+  ${mediaqueries.tablet`
+    grid-gap: 0px;
+    grid-template-columns: 1fr;
+    & h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+   
+  `}
+  ${mediaqueries.phablet`
+    margin-bottom: 25px;
+    &:hover {
+      transform: none;
+      box-shadow: initial;
+    }
+    & h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    & ${MetaData} {
+      font-size: 15px !important;
+    }
+    & ${Excerpt} {
+      font-size: 15px !important;
+    }
+    & ${Slogan} {
+      font-size: 13px !important;
+    }
+
+    &:active {
+      transform: scale(0.97) translateY(3px);
+    }
+  `}
+`;
 

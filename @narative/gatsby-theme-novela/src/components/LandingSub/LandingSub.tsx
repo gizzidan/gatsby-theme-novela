@@ -81,7 +81,7 @@ const SubscriptionContainer = styled.div`
   flex-direction: column;
   padding: 64px 0 55px;
   margin: 10px auto 100px;
-  background: ${p => p.theme.colors.card};
+  background: white !important;
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   z-index: 1;
 
@@ -114,6 +114,7 @@ const Content = styled.div`
 `;
 
 const Heading = styled(Headings.h3)`
+  font-family: "Sectra";
   margin-bottom: 20px;
 
   ${mediaqueries.tablet`
@@ -122,6 +123,7 @@ const Heading = styled(Headings.h3)`
 `;
 
 const Text = styled.p`
+  font-family: "Sectra";
   margin: 0 auto 30px;
   color: ${p => p.theme.colors.grey};
   line-height: 1.75;

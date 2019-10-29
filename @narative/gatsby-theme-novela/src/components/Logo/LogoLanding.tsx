@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
 const LogoLanding = () => {
-  const fill = "#1f1069";
+  const fill = "#fff";
   return (
     <LogoContainer>
       <svg width="85"

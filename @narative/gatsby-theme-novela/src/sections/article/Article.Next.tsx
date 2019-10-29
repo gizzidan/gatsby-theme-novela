@@ -123,7 +123,6 @@ const Slogan = styled.p`
   font-size: 15px;
   line-height: 1.7;
   margin-top: 0px;
-  letter-spacing: 1px;
   margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
@@ -183,7 +182,7 @@ const Item = styled.div`
 const Title = styled(Headings.h3)`
   font-size: 22px;
   line-height: 1.4;
-  margin-bottom: ${p => (p.hasOverflow ? "45px" : "10px")};
+  margin-bottom: ${p => (p.hasOverflow ? "10px" : "5px")};
   color: ${p => p.theme.colors.primary};
   font-family: ${p => p.theme.fonts.serif};
   transition: color 0.3s ease-in-out;
@@ -201,10 +200,11 @@ const Title = styled(Headings.h3)`
 
 const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   ${limitToTwoLines};
-  font-size: 17px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  margin-bottom: 5px;
   font-weight: 300;
   font-style: italic;
+  font-family: ${p => p.theme.fonts.serif};
   color: ${p => p.theme.colors.articleText};
   display: ${p => (p.hasOverflow ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};
@@ -228,7 +228,7 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
 const MetaData = styled.div`
 
   font-family: ${p => p.theme.fonts.slogan};
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   text-transform: none;
   font-style: normal;

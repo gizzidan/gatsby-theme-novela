@@ -2,14 +2,14 @@ import React, { Fragment } from 'react'
 import { useState } from "react";
 import { Link } from 'gatsby';
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import mediaqueries from "@styles/media";
 import { useColorMode } from "theme-ui";
 import Icons from "@icons";
 import {IconWrapper, MoonOrSun, MoonMask, ToolTip} 
     from "@narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx";
 import { copyToClipboard, } from "@utils";
-import Logo from "@components/Logo";
-import LogoBack from "@components/Logo/LogoBack";
+
 import { Container, BgContainer, LogoContainer, LinkContainer, StyledLink, ToolContainer, Separator }
     from "@components/NavBarBasic";
 import Burger from '@components/Burger';
@@ -85,15 +85,17 @@ function DarkModeToggle() {
 
 export default class NavBar extends React.Component {
   state = {
+    color: 'transparent',
     opacity: '0',
+    logo: 'white',
     reverse: '1',
   }
 
   listenScrollEvent = e => {
     if (window.scrollY > 150) {
-      this.setState({opacity: '1', reverse: '0'})
+      this.setState({color: 'white', opacity: '1', logo: 'inherit', reverse: '0',})
     } else {
-      this.setState({opacity: '0', reverse: '1'})
+      this.setState({color: 'transparent', opacity: '0', logo: 'white', reverse: '1',})
     }
   }
 
@@ -105,27 +107,24 @@ export default class NavBar extends React.Component {
   render (){
     return (
       <Container>
-        <div style={{ opacity: this.state.opacity }}>
-        </div>
          <BgContainer style={{opacity: this.state.opacity}}/>
          <LogoContainer 
-          style={{opacity: this.state.reverse}}
+          style={{opacity: this.state.reverse, color: 'white'}}
           to="/"
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage">
-            <LogoBack/>
+            <p>Shoreside <span style={{ fontStyle: 'italic',}}>News</span></p>
           </LogoContainer>
-          <LogoContainer 
+         <LogoContainer 
           style={{opacity: this.state.opacity}}
           to="/"
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage">
-            <Logo/>
+            <p>Shoreside <span style={{ fontStyle: 'italic',}}>News</span></p>
           </LogoContainer>
           <div style={{opacity: this.state.opacity}}> <BurgerMenu /></div>
-            <Separator style={{opacity: this.state.opacity}}></Separator>
             <LinkContainer style={{opacity: this.state.opacity}} >
             </LinkContainer>
             <ToolContainer style={{opacity: this.state.opacity}}>

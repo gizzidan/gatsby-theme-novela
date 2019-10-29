@@ -18,12 +18,11 @@ function Welcome({ location }) {
       <SEO pathname={location.pathname} />     
       <Global styles={globalStyles} />
       <LogoContainer>
-        <LogoLanding />
+        <p>Shoreside <span style={{ fontStyle: 'italic',}}>News</span></p>
       </LogoContainer>
         <Hero>
           <TextContainer>
-            <Heading><p>Bringing Sanity to the Shore:<br></br></p>
-            <p>Your Local Source</p></Heading>  
+            <Heading><p>Bringing Sanity to the Shore: Your Local Source</p></Heading>  
             <LandingSub />
           </TextContainer>
         </Hero>
@@ -39,7 +38,9 @@ const Hero = styled.section`
   width: 100vw;
   top: 0;
   left: 0;
-  background: #eeebfd;
+  background: linear-gradient(to top right, rgba(63,61,76, 0.9), rgba(63,61,76, 0.9)), 
+              url("black.jpeg") no-repeat center center;
+  background-size: cover;
   padding: 0 10px;
 `
 
@@ -47,8 +48,12 @@ const LogoContainer = styled.div`
     z-index: 1000;
     display: flex;
     align-items: center;
-    transform: translate(-40%);
-    left: 51%;
+    transform: translate(-50%);
+    font-family: "GT America";
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    left: 50%;
     top: 20px;
     margin: 0 auto;
     position: absolute;
@@ -58,6 +63,12 @@ const LogoContainer = styled.div`
         transition: all 0.15s ease;
         
     }
+    ${mediaqueries.phablet`
+      font-size: 22px;
+    `};
+    ${mediaqueries.phone_small`
+      font-size: 18px;
+    `};
 `;
 
 const TextContainer = styled.div`
@@ -71,13 +82,15 @@ const TextContainer = styled.div`
 `
 const Heading = styled.div`
   text-align: center;
-  font-size: 60px;
-  padding-bottom: 20px;
-  line-height: 1.3;
-  color: #1f1069;
+  font-size: 68px;
+  padding-bottom: 10px;
+  line-height: 1.2;
+  color: #fff;
+  font-style: normal;
   font-family: "Portrait";
   text-transform: none;
   font-weight: 400;
+  
   ${mediaqueries.tablet`
     padding-bottom: 30px;
     font-size: 39px;
@@ -85,7 +98,7 @@ const Heading = styled.div`
   `};
   ${mediaqueries.phablet`
     padding-bottom: 45px;
-    font-size: 30px;
+    font-size: 36px;
     line-height: 1.3;
   `};
   ${mediaqueries.phone_small`

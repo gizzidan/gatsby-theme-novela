@@ -103,7 +103,7 @@ const Label = styled.h2`
   font-size: 150px;
   letter-spacing: -0.03em;
   text-align: center;
-  margin: 20px 0px;
+  margin-top: 50px;
   ${mediaqueries.desktop`
     font-size: 100px;
   `};
@@ -268,7 +268,7 @@ const Excerpt = styled.p`
   font-style: italic;
   line-height: 1.618;
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 5px !important;
   font-weight: 300;
   color: ${p => p.theme.colors.primary} !important;
 
@@ -286,12 +286,11 @@ const Excerpt = styled.p`
 `;
 
 export const MetaData = styled.div`
-
-  font-family: ${p => p.theme.fonts.serif};
-  font-weight: 500;
-  font-size: 16px;
+  font-family: ${p => p.theme.fonts.sansSerif};
+  font-weight: 400;
+  font-size: 15px;
   text-transform: none;
-  font-style: italic;
+  font-style: normal;
   color: ${p => p.theme.colors.primary};
   
 
