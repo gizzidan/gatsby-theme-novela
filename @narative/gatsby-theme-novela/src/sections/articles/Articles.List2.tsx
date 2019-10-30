@@ -4,6 +4,7 @@ import Image from 'gatsby-image';
 import { Link } from "gatsby";
 import mediaqueries from "@styles/media";
 import Headings from "@components/Headings";
+import Podcast from "@components/Podcast";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import Subscription from "@components/Subscription"
@@ -66,7 +67,7 @@ const ArticlesList2 = () => {
           <Label>The Latest ⌚️</Label><SeeAll to="/latest">See All →</SeeAll>
         </div>
       <Main>
-      <StyledDiv>
+      <LargeDiv>
         {
           data.allContentfulPost.edges.slice(0,3).map((item, i) => (
             item.node.hero ? (
@@ -99,7 +100,7 @@ const ArticlesList2 = () => {
             ) : (<div></div>)
           ))
         }
-        </StyledDiv> 
+        </LargeDiv> 
         <div>
         <div style={{paddingBottom: '50px',}}>ad space</div>
         {
@@ -107,6 +108,7 @@ const ArticlesList2 = () => {
             item.node.hero ? (
               <div key={i}>
                 <SidebarItem to={item.node.slug}>
+                  
                   <Slogan>{item.node.slogan}</Slogan>
                   <Title>{item.node.title}</Title>
                 </SidebarItem>
@@ -117,6 +119,7 @@ const ArticlesList2 = () => {
         <div style={{paddingBottom: '50px',}}>ad space</div>
         </div>
         </Main>
+        <Podcast />
         <Subscription />
         <div style={{ 
           position: 'relative',
@@ -258,7 +261,6 @@ const ArticlesList2 = () => {
           ))
         }
         </StyledDiv>
-        
       </Container>
         
       
@@ -269,15 +271,23 @@ export default ArticlesList2;
 
 const Main = styled.div`
   display: grid;
-  grid-template-columns: 1fr 250px;
+  grid-template-columns: 4fr 275px;
   grid-template-rows: 1fr;
-  grid-gap: 80px;
+  grid-gap: 100px;
   
   ${mediaqueries.tablet`
     grid-gap: 10px;
     grid-template-columns: 1fr;
   `};
 `
+const LargeDiv = styled.div`
+ 
+  ${mediaqueries.tablet`
+    padding-right: 0;
+    border-right: none;
+  `};
+`;
+
 const StyledDiv = styled.div`
 
 `;
@@ -500,7 +510,7 @@ const Title = styled(Headings.h2)`
   line-height: 1.25;
   letter-spacing: -0.01em;
   font-family: "Sectra";
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   text-transform: none;
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
@@ -567,7 +577,7 @@ const ListItem = styled(Link)`
     font-size: 17px !important;
   }
   & ${Excerpt} {
-    font-size: 18px !important;
+    font-size: 19px !important;
   }
   & ${Slogan} {
     font-size: 16px !important;

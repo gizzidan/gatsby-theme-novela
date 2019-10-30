@@ -85,7 +85,7 @@ export const Container = styled("header")`
   height: 55px;
   display: flex;
   text-align: center;
-  transition: ${p => p.theme.colorModeTransition}, all 0.30s ease;
+  transition: all 0.15s linear;
 `;
 
 export const BgContainer = styled("header")`
@@ -99,7 +99,7 @@ export const BgContainer = styled("header")`
   width: 100%;
   display: flex;
   text-align: center;
-  transition: ${p => p.theme.colorModeTransition}, all 0.30s ease;
+  transition: all 0.15s linear;
 `;
 
 

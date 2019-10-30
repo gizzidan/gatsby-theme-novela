@@ -28,7 +28,7 @@ export default {
   modes: {
     dark: {
       grey: "#d2d2d3",
-      lightGrey: "#7c7c7c",
+      lightGrey: "#393c43",
       darkGrey: "#b3b0c2",
       navbar: "#fff",
       primary: "#fff",

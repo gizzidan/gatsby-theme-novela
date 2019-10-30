@@ -203,7 +203,7 @@ const Title = styled(Headings.h2)`
   font-size: 22px;
   line-height: 1.3;
   font-family: ${p => p.theme.fonts.serif};
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   text-transform: none;
   margin-bottom: -10px;
   transition: color 0.3s ease-in-out;
