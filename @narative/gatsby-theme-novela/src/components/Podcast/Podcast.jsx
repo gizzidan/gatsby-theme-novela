@@ -26,7 +26,7 @@ const Podcast = () => {
     const data = useStaticQuery(
       graphql`
         query { 
-          allContentfulPost(sort: {fields: date, order: DESC}, limit: 7) {
+          allContentfulArticle(sort: {fields: date, order: DESC}, limit: 7) {
             edges {
               node {
                 date(fromNow: true)
@@ -65,7 +65,7 @@ const Podcast = () => {
               style={{ display: 'flex', overflowX: 'auto', paddingBottom: '15px'}}>
 
               {
-                data.allContentfulPost.edges.map((item, i) => (
+                data.allContentfulArticle.edges.map((item, i) => (
                   item.node.hero ? (
                     <div key={i}>
                       <Card to={item.node.slug}>

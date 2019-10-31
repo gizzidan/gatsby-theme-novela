@@ -14,7 +14,7 @@ const ArticlesFullList = () => {
   const data = useStaticQuery(
     graphql`
       query { 
-        allContentfulPost(sort: {fields: date, order: DESC}, limit: 32) {
+        allContentfulArticle(sort: {fields: date, order: DESC}, limit: 32) {
           edges {
             node {
               date(formatString: "MMM DD")
@@ -50,7 +50,7 @@ const ArticlesFullList = () => {
             gridGap: gap,
         }}>
         {
-          data.allContentfulPost.edges.map((item, i) => (
+          data.allContentfulArticle.edges.map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>  

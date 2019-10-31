@@ -9,7 +9,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulPost(title: {eq: "The Zombie Walk is Taking Over Asbury Park"}) {
+        contentfulArticle(title: {eq: "The Zombie Walk is Taking Over Asbury Park"}) {
           title
           date
           excerpt
@@ -27,16 +27,16 @@ const Featured = () => {
   )
   return (
     <FeaturedContainer>
-      <Link to={article.contentfulPost.slug}>
-      <BgImg fluid={article.contentfulPost.hero.sizes} />
+      <Link to={article.contentfulArticle.slug}>
+      <BgImg fluid={article.contentfulArticle.hero.sizes} />
       <Overlay></Overlay>
       <TextContainer>
         
         <Title>
-          <p>{article.contentfulPost.title}</p>
+          <p>{article.contentfulArticle.title}</p>
         </Title>
         <Excerpt>
-          <p>{article.contentfulPost.excerpt}</p>
+          <p>{article.contentfulArticle.excerpt}</p>
           <p style={{ fontSize: '40px',}}><Arrow id="arrow">&rarr;</Arrow></p>
         </Excerpt>
       </TextContainer>

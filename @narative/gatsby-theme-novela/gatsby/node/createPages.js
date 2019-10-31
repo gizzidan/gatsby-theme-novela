@@ -14,6 +14,7 @@ const templates = {
   article: path.resolve(templatesDirectory, 'article.template.tsx'),
   author: path.resolve(templatesDirectory, 'author.template.tsx'),
   category: path.resolve(templatesDirectory, 'category.template.tsx'),
+  tag: path.resolve(templatesDirectory, 'tag.template.tsx'),
 };
 
 const query = require('../data/data.query');
@@ -53,6 +54,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     basePath = '/',
     authorsPath = '/authors',
     categoryPath = '/category',
+    tagPath = '/tag',
     authorsPage = true,
     pageLength = 6,
     sources = {},
@@ -154,6 +156,18 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   `);
   }
 
+  const tags = articles.reduce((acc, article) => {
+    return [...acc, ...article.tags];
+  }, []);
+
+  const uniqueTags = [...new Set(tags)];
+
+  if (uniqueTags.length === 0 || uniqueTags.length === 0) {
+    throw new Error(`
+    You must have at least one Tag to create tag page.
+  `);
+  }
+
   /**
    * Once we've queried all our data sources and normalized them to the same structure
    * we can begin creating our pages. First, we'll want to create all main articles pages
@@ -223,6 +237,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
         article,
         authors: authorsThatWroteTheArticle,
         category: article.category,
+        tags: article.tags,
         basePath,
         slug: article.slug,
         id: article.id,
@@ -295,6 +310,45 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       buildPath: buildPaginatedPath,
       context: {
         category,
+        originalPath: path,
+        skip: pageLength,
+        limit: pageLength,
+      },
+    });
+  });
+
+    /**
+   * Creating main tag pages example
+   *  /tag/gatsby
+   * /tag/gatsby/2
+   */
+  log('Creating', 'tag pages');
+  uniqueTags.forEach(tag => {
+    let allArticlesOfTheTag;
+    try {
+      allArticlesOfTheTag = articles.filter(article =>
+        article.tags.includes(tag),
+      );
+    } catch (error) {
+      throw new Error(`
+        We could not find the Articles for: "${tag}".
+        Double check the tags field is specified in your post and the name
+        matches a specified tag.
+        Tag name: ${tag}
+        ${error}
+      `);
+    }
+    const path = slugify(tag, tagPath);
+
+    createPaginatedPages({
+      edges: allArticlesOfTheTag,
+      pathPrefix: path,
+      createPage,
+      pageLength,
+      pageTemplate: templates.tag,
+      buildPath: buildPaginatedPath,
+      context: {
+        tag,
         originalPath: path,
         skip: pageLength,
         limit: pageLength,

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import throttle from 'lodash/throttle';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import Layout from '@components/Layout';
 import MDXRenderer from '@components/MDX';
@@ -46,7 +46,7 @@ function Article({ pageContext, location }) {
   const results = useStaticQuery(siteQuery);
   const name = results.allSite.edges[0].node.siteMetadata.name;
 
-  const { article, authors, mailchimp, next, category } = pageContext;
+  const { article, authors, mailchimp, next, category, tags } = pageContext;
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: article.slug },
@@ -90,7 +90,7 @@ function Article({ pageContext, location }) {
     <Layout>
       <NavBarBasic />
       <ArticleSEO article={article} authors={authors} location={location} />
-      <ArticleHero article={article} authors={authors} category={category} />
+      <ArticleHero article={article} authors={authors} category={category} tags={tags} />
       <ArticleAside contentHeight={contentHeight}>
         <Progress contentHeight={contentHeight} />
       </ArticleAside>
@@ -101,6 +101,19 @@ function Article({ pageContext, location }) {
         </MDXRenderer>
        
         <BottomContainer>
+          <Tags>
+          <span style={{ fontWeight: '500' }}>Tags: </span>
+          {
+         article.tags.map((tag, i) => (
+            tag ? (
+              <div key={i}>
+                <Tag to={"/tag/" + tag.toString().replace(/\s+/g, '-')}>#{tag}</Tag>                 
+              </div>
+              
+            ) : (<div></div>)
+          ))
+        }
+          </Tags>
           <SocialContainer>
             <Twitter solid medium message="Checkout this article from Shoreside" link={window.location.href}/>
             <Facebook solid medium link={window.location.href}/>
@@ -206,7 +219,26 @@ const BottomContainer = styled.div`
 const SocialContainer = styled.div`
   align-items: center;
   justify-content: center;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
   margin: auto;
   display: flex;
+`
+const Tags = styled.div`
+  font-size: 17px;
+  color: ${p => p.theme.colors.primary};  
+  display: flex;
+  padding-bottom: 100px;
+  
+`
+const Tag = styled(Link)`
+  color: #131516 !important;
+  line-height: 0;
+  background: #e0e0e1;
+  padding: 4px 6px;
+  border-radius: 3px;
+  margin-left: 15px;
+  transition: all 0.04s linear;
+  &:hover {
+    opacity: 0.6;
+  }
 `

@@ -29,7 +29,7 @@ const ArticlesList2 = () => {
   const data = useStaticQuery(
     graphql`
       query { 
-        allContentfulPost(sort: {fields: date, order: DESC}, limit: 30) {
+        allContentfulArticle(sort: {fields: date, order: DESC}, limit: 30) {
           edges {
             node {
               date(formatString: "MMM DD")
@@ -69,7 +69,7 @@ const ArticlesList2 = () => {
       <Main>
       <LargeDiv>
         {
-          data.allContentfulPost.edges.slice(0,3).map((item, i) => (
+          data.allContentfulArticle.edges.slice(0,3).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <ListItem to={item.node.slug}>
@@ -104,7 +104,7 @@ const ArticlesList2 = () => {
         <div>
         <div style={{paddingBottom: '50px',}}>ad space</div>
         {
-          data.allContentfulPost.edges.slice(1,7).map((item, i) => (
+          data.allContentfulArticle.edges.slice(1,7).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <SidebarItem to={item.node.slug}>
@@ -136,7 +136,7 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allContentfulPost.edges.filter(c=>c.node.category == 'thoughts').slice(0,4).map((item, i) => (
+          data.allContentfulArticle.edges.filter(c=>c.node.category == 'thoughts').slice(0,4).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
@@ -183,7 +183,7 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allContentfulPost.edges.filter(c=>c.node.category == 'culture').slice(0,4).map((item, i) => (
+          data.allContentfulArticle.edges.filter(c=>c.node.category == 'culture').slice(0,4).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
@@ -229,7 +229,7 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allContentfulPost.edges.filter(c=>c.node.category == 'goings on').slice(0,4).map((item, i) => (
+          data.allContentfulArticle.edges.filter(c=>c.node.category == 'goings on').slice(0,4).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>

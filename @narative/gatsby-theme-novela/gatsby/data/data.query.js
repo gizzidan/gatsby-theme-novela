@@ -27,6 +27,7 @@ module.exports.local = {
           title
           author
           category
+          tags
           slogan
           date(formatString: "MMMM Do, YYYY")
           dateForSEO: date
@@ -98,7 +99,7 @@ module.exports.local = {
 
 module.exports.contentful = {
   articles: `{
-    articles: allContentfulPost(sort: {fields: [date, title], order: DESC}, limit: 1000) {
+    articles: allContentfulArticle(sort: {fields: [date, title], order: DESC}, limit: 1000) {
       edges {
         node {
           body {
@@ -110,7 +111,8 @@ module.exports.contentful = {
           excerpt
           title
           slogan
-          category 
+          category
+          tags
           slug
           secret
           date(formatString: "MMMM Do, YYYY")
