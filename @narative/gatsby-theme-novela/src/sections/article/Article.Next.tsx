@@ -200,7 +200,7 @@ const Title = styled(Headings.h3)`
 
 const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   ${limitToTwoLines};
-  font-size: 16px;
+  font-size: 17px;
   margin-bottom: 5px;
   font-weight: 300;
   font-style: italic;

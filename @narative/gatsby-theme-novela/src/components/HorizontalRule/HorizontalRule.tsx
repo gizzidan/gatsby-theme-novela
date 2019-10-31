@@ -4,8 +4,8 @@ import mediaqueries from "@styles/media";
 const HorizontalRule = styled.hr`
   position: relative;
   width: 100%;
-  max-width: ${p => p.theme.widths.regular};
-  margin: 50px auto;
+  max-width: 630px;
+  margin: 8px auto 50px auto;
   border: 0;
   height: 14.36px;
   background-image: url("${p =>

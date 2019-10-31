@@ -164,7 +164,7 @@ const Meta = styled.div`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 42px;
+  font-size: 43px;
   font-family: "Portrait";
   margin-bottom: 25px;
   line-height: 1.1;

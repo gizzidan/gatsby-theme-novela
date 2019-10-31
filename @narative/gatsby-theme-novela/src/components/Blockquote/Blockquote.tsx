@@ -7,6 +7,8 @@ const Blockquote = styled.blockquote`
   color: ${p => p.theme.colors.articleText};
   font-family: ${p => p.theme.fonts.serif};
   font-style: italic;
+  border-left: 1px solid ${p => p.theme.colors.accent};
+  
 
   ${mediaqueries.tablet`
     margin: 10px auto 35px;
@@ -14,14 +16,14 @@ const Blockquote = styled.blockquote`
 
   & > p {
     font-family: ${p => p.theme.fonts.serif};
-    max-width: 880px !important;
-    padding-right: 100px;
+    max-width: 630px !important;
     padding-bottom: 0;
+    padding-left: 30px;
     width: 100%;
     margin: 0 auto;
-    font-size: 36px;
-    line-height: 1.32;
-    font-weight: bold;
+    font-size: 21px;
+    line-height: 1.618;
+    font-weight: 400;
 
     ${mediaqueries.tablet`
       font-size: 26px;

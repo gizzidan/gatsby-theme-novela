@@ -5,7 +5,8 @@ import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import mediaqueries from "@styles/media";
 import { useStaticQuery, graphql } from "gatsby"
-import { Container } from 'theme-ui';
+import ScrollContainer from 'react-indiana-drag-scroll'
+
 
 const limitToTwoLines = css`
   text-overflow: ellipsis;
@@ -22,8 +23,6 @@ const limitToTwoLines = css`
 `;
 
 const Podcast = () => {
-    const sectiongap = '45px';
-    const gap = '25px';
     const data = useStaticQuery(
       graphql`
         query { 
@@ -58,32 +57,38 @@ const Podcast = () => {
       return (
         <PodcastContainer>
           <Header>Checkout Our Podcasts</Header>
-          <CardContainer>
+          
+            <ScrollContainer 
+              nativeMobileScroll='true'
+              hideScrollbars='false'
+              horizontal='true' 
+              style={{ display: 'flex', overflowX: 'auto', paddingBottom: '15px'}}>
 
-            {
-              data.allContentfulPost.edges.map((item, i) => (
-                item.node.hero ? (
-                  <div key={i}>
-                    <Card>
-                    <div style={{ display: 'flex'}}>
-                      <PodcastImageContainer>
-                        <Image fixed={item.node.hero.fixed}></Image>
-                      </PodcastImageContainer>
-                      <div>
-                        <PodcastTitle>{item.node.title}</PodcastTitle>
-                        <PodcastMeta>{item.node.date}</PodcastMeta>
+              {
+                data.allContentfulPost.edges.map((item, i) => (
+                  item.node.hero ? (
+                    <div key={i}>
+                      <Card to={item.node.slug}>
+                      <div style={{ display: 'flex'}}>
+                        <PodcastImageContainer>
+                          <Image fixed={item.node.hero.fixed}></Image>
+                        </PodcastImageContainer>
+                        <div>
+                          <PodcastTitle>{item.node.title}</PodcastTitle>
+                          <PodcastMeta>{item.node.date}</PodcastMeta>
+                        </div>
                       </div>
+                        
+                          <PodcastExcerpt>{item.node.excerpt}</PodcastExcerpt>
+                        
+                      </Card>
                     </div>
-                      
-                        <PodcastExcerpt>{item.node.excerpt}</PodcastExcerpt>
-                      
-                    </Card>
-                  </div>
-                  
-                ) : (<div style={{ display: 'none'}}></div>)
-              ))
-            }
-          </CardContainer>
+                    
+                  ) : (<div style={{ display: 'none'}}></div>)
+                ))
+              }
+            </ScrollContainer>
+
         </PodcastContainer>
     )
 }
@@ -110,15 +115,8 @@ const Header = styled.h2`
   font-style: italic;
 `
 
-const CardContainer = styled.section`
-  background-color: transparent;
-  display: flex;
-  width: 100%;
-  min-height: 200px;
-  overflow-x: auto;
-  
-`
-const Card = styled.div`
+const Card = styled(Link)`
+  color: ${p => p.theme.colors.primary} !important;
   display: block;
   margin-right: 20px;
   margin-top: 20px;

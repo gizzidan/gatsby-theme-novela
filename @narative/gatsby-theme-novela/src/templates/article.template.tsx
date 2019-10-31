@@ -19,6 +19,9 @@ import ArticleControls from "../sections/article/Article.Controls";
 import ArticlesNext from "../sections/article/Article.Next";
 import ArticleSEO from "../sections/article/Article.SEO";
 import ArticleShare from "../sections/article/Article.Share";
+import { DiscussionEmbed } from 'disqus-react'
+import { Twitter,Facebook,Mail,Reddit } from 'react-social-sharing'
+
 
 const siteQuery = graphql`
   {
@@ -44,6 +47,10 @@ function Article({ pageContext, location }) {
   const name = results.allSite.edges[0].node.siteMetadata.name;
 
   const { article, authors, mailchimp, next, category } = pageContext;
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: article.slug },
+  }
 
   useEffect(() => {
     const calculateBodySize = throttle(() => {
@@ -92,6 +99,16 @@ function Article({ pageContext, location }) {
         <MDXRenderer content={article.body}>
           <ArticleShare />
         </MDXRenderer>
+       
+        <BottomContainer>
+          <SocialContainer>
+            <Twitter solid medium message="Checkout this article from Shoreside" link={window.location.href}/>
+            <Facebook solid medium link={window.location.href}/>
+            <Mail solid medium subject="Checkout this article from Shoreside" link={window.location.href}/>
+            <Reddit solid medium link={window.location.href}/>
+          </SocialContainer>
+          <DiscussionEmbed {...disqusConfig}/>
+        </BottomContainer>
       </ArticleBody>
       {mailchimp && article.subscription && <Subscription />}
       {next.length > 0 && (
@@ -178,3 +195,18 @@ const FooterNext = styled.h3`
 const FooterSpacer = styled.div`
   margin-bottom: 65px;
 `;
+
+const BottomContainer = styled.div`
+  width: 630px;
+  margin: 10px auto;
+  ${mediaqueries.phablet`
+    max-width: 100%;
+  `};
+`
+const SocialContainer = styled.div`
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 70px;
+  margin: auto;
+  display: flex;
+`

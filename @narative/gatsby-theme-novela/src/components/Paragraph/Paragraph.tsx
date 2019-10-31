@@ -3,7 +3,7 @@ import mediaqueries from "@styles/media";
 
 
 const Paragraph = styled.p`
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: ${p => p.theme.fontSizes.p};
   color: ${p => p.theme.colors.articleText};
   font-family: ${p => p.theme.fonts.sansSerif};
@@ -11,7 +11,7 @@ const Paragraph = styled.p`
   margin: 0 auto 42px;
   width: 100%;
   font-weight: 400;
-  max-width: 580px;
+  max-width: 630px;
 
   b {
     font-weight: 800;

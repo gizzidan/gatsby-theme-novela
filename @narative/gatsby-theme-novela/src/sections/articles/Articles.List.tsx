@@ -132,7 +132,6 @@ const Slogan = styled.div`
   margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
-  letter-spacing: 1px;
   color: ${p => p.theme.colors.primary};
 
 

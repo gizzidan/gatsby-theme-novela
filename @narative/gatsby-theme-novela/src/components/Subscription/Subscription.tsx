@@ -84,7 +84,7 @@ const SubscriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 55px 0 55px;
-  margin: 50px auto 80px;
+  margin: 65px auto 70px;
   background: ${p => p.theme.colors.cardMain};
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   z-index: 1;
@@ -189,13 +189,13 @@ const Input = styled.input<{ hasError: string }>`
 const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   position: absolute;
   left: 363px;
-  top: 1px;
+  top: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 0px;
   width: 161px;
-  height: 45px;
+  height: 46px;
   border: 1px solid
     ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
   color: ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};

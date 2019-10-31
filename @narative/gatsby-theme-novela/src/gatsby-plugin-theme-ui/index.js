@@ -26,7 +26,7 @@ const fontWeights = {
 };
 
 const fontSizes = {
-  p: `20px`,
+  p: `19px`,
 };
 
 const widths = {
