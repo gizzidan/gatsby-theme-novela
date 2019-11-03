@@ -9,7 +9,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "The Zombie Walk is Taking Over Asbury Park"}) {
+        contentfulArticle(title: {eq: "It is Our Moral Duty to Boo The President"}) {
           title
           date
           excerpt

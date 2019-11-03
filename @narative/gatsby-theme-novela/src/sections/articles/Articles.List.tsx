@@ -38,7 +38,7 @@ interface ArticlesListItemProps {
 function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
   if (!articles) return null;
   const sectiongap = '60px';
-  const gap = '25px';
+  const gap = '30px';
 
   /**
    * We're taking the flat array of articles [{}, {}, {}...]
@@ -117,7 +117,7 @@ const limitToTwoLines = css`
 `;
 
 const TextContainer = styled("div")`
-  padding: 30px 0px 30px 0px;
+  padding: 0px 0px 30px 0px;
   ${mediaqueries.phablet`
     padding: 20px 0px 20px 0px;
   `}
@@ -126,7 +126,7 @@ const TextContainer = styled("div")`
 const Slogan = styled.div`
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   margin-top: 0px;
   margin-bottom: 5px;
@@ -154,7 +154,7 @@ const Item = styled(Link)`
   text-align: left;
   position: relative;
   display: block;
-  width: 450px;
+  width: 550px;
   top: 0;
   left: 0;
   z-index: 1;
@@ -199,7 +199,7 @@ const Item = styled(Link)`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 22px;
+  font-size: 26px;
   line-height: 1.3;
   font-family: ${p => p.theme.fonts.serif};
   font-weight: 500 !important;
@@ -226,7 +226,7 @@ const Title = styled(Headings.h2)`
 const Excerpt = styled.div`
   font-family: ${p => p.theme.fonts.serif};
   ${limitToTwoLines};
-  font-size: 17px;
+  font-size: 18px;
   font-style: italic;
   letter-spacing: -.005em;
   line-height: 1.618;

@@ -10,7 +10,7 @@ import { css } from "@emotion/core";
 
 const ArticlesFullList = () => {
   const sectiongap = '60px';
-  const gap = '25px';
+  const gap = '30px';
   const data = useStaticQuery(
     graphql`
       query { 
@@ -24,7 +24,7 @@ const ArticlesFullList = () => {
               title
               category 
               hero {
-                sizes(maxWidth: 500, maxHeight: 300, quality: 100) {
+                sizes(maxWidth: 600, maxHeight: 400, quality:100) {
                   ...GatsbyContentfulSizes_withWebp
                  }  
               }
@@ -54,6 +54,7 @@ const ArticlesFullList = () => {
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>  
+                 
                     <TextContainer>
                     <Slogan>
                         <p>{item.node.slogan}</p>
@@ -69,6 +70,7 @@ const ArticlesFullList = () => {
                         {item.node.date} · {item.node.body.childMdx.timeToRead} min read
                       </MetaData>
                     </TextContainer>
+                   
                   </Item>
               </div>
               
@@ -100,7 +102,7 @@ const Label = styled.h2`
   font-family: "Portrait";
   font-weight: 600;
   text-transform: none;
-  font-size: 150px;
+  font-size: 180px;
   letter-spacing: -0.03em;
   text-align: center;
   margin-top: 50px;
@@ -110,6 +112,7 @@ const Label = styled.h2`
 
   ${mediaqueries.phablet`
     -webkit-text-stroke-width: 1px;
+    
     font-size: 70px;
     font-weight: 500;
     line-height: 1.3;
@@ -118,11 +121,11 @@ const Label = styled.h2`
 
 
 const Item = styled(Link)`
+  display: block;
   border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
   text-align: left;
   position: relative;
-  display: block;
-  width: 450px;
+  width: 550px;
   top: 0;
   left: 0;
   z-index: 1;
@@ -154,6 +157,8 @@ const Item = styled(Link)`
   }
 
   ${mediaqueries.phablet`
+    grid-template-columns: 1fr;
+    padding-bottom: 15px;
     width: 90vw;
     &:hover {
       transform: none;
@@ -167,28 +172,21 @@ const Item = styled(Link)`
 `;
 
 const ImageContainer = styled.div`
-  position: relative;
-  transition: transform 0.3s var(--ease-out-quad),
-    box-shadow 0.3s var(--ease-out-quad);
 
   
 
   ${mediaqueries.tablet`
-    height: 200px;
-    margin-bottom: 10px;
+    
   `}
 
   ${mediaqueries.phablet`
-    overflow: hidden;
-    margin-bottom: 0px;
-    box-shadow: none;
-    
+    display: none;
   `}
 `;
 
 const TextContainer = styled("div")`
   position: relative;
-  padding: 20px 0px 10px 0px;
+  padding: 0px 0px 30px 0px;
   ${mediaqueries.phablet`
     padding: 20px 0px 20px 0px;
   `}
@@ -210,7 +208,7 @@ const limitToTwoLines = css`
 
 
 const Title = styled(Headings.h2)`
-  font-size: 22px;
+  font-size: 26px;
   line-height: 1.3;
   font-family: ${p => p.theme.fonts.serif};
   font-weight: 500 !important;
@@ -237,7 +235,7 @@ const Title = styled(Headings.h2)`
 const Slogan = styled.p`
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   margin-top: 0px;
   margin-bottom: 5px;
@@ -262,7 +260,7 @@ const Slogan = styled.p`
 const Excerpt = styled.p`
   font-family: ${p => p.theme.fonts.serif};
   ${limitToTwoLines};
-  font-size: 17px;
+  font-size: 18px;
   letter-spacing: -.005em;
   font-style: italic;
   line-height: 1.618;

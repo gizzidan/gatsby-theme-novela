@@ -69,7 +69,7 @@ const ArticlesList2 = () => {
       <Main>
       <LargeDiv>
         {
-          data.allContentfulArticle.edges.slice(0,3).map((item, i) => (
+          data.allContentfulArticle.edges.slice(0,4).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <ListItem to={item.node.slug}>
@@ -488,7 +488,7 @@ const Excerpt = styled.div`
   line-height: 1.618;
   margin-top: 0px;
   margin-bottom: 10px;
-  font-weight: 300;
+  font-weight: 400;
   color: ${p => p.theme.colors.primary} !important;
   
   ${mediaqueries.tablet`

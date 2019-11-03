@@ -23,7 +23,7 @@ const Label = styled.h2`
   font-family: "Portrait";
   font-weight: 600;
   text-transform: capitalize;
-  font-size: 150px;
+  font-size: 180px;
   letter-spacing: -0.03em;
   text-align: center;
   margin-top: 50px;
