@@ -340,7 +340,8 @@ const SeeAll = styled(Link)`
 
 const SidebarItem = styled(Link)`
   border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
-  margin-bottom: 50px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
   position: relative;
   display: block;
   & img {

@@ -38,7 +38,7 @@ interface ArticlesListItemProps {
 function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
   if (!articles) return null;
   const sectiongap = '60px';
-  const gap = '30px';
+  const gap = '25px';
 
   /**
    * We're taking the flat array of articles [{}, {}, {}...]
@@ -186,6 +186,8 @@ const Item = styled(Link)`
   }
 
   ${mediaqueries.phablet`
+    
+    padding-bottom: 10px;
     width: 90vw;
     &:hover {
       transform: none;
@@ -251,7 +253,7 @@ const Excerpt = styled.div`
 const MetaData = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: none;
   font-style: normal;
   color: ${p => p.theme.colors.primary};

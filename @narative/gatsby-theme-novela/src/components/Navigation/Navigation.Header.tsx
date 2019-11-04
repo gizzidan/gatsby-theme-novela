@@ -222,7 +222,7 @@ export const NavControls = styled.div`
 export const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
   position: absolute;
   padding: 4px 13px;
-  background: ${p => (p.isDark ? "#fff" : "rgba(0,0,0,0.9)")};
+  background: ${p => (p.isDark ? "#fff" : "rgba(0,0,0,0.95)")};
   color: ${p => (p.isDark ? "#000" : "#fff")};
   border-radius: 5px;
   font-size: 14px;
@@ -293,8 +293,8 @@ export const MoonOrSun = styled.div<{ isDark: boolean }>`
   height: 21px;
   border-radius: 50%;
   border: ${p => (p.isDark ? "4px" : "2px")} solid
-    ${p => p.theme.colors.primary};
-  background: ${p => p.theme.colors.primary};
+    ${p => p.theme.colors.navbar};
+  background: ${p => p.theme.colors.navbar};
   transform: scale(${p => (p.isDark ? 0.55 : 1)});
   transition: all 0.45s ease;
   overflow: ${p => (p.isDark ? "visible" : "hidden")};
@@ -306,7 +306,7 @@ export const MoonOrSun = styled.div<{ isDark: boolean }>`
     top: -10px;
     height: 22px;
     width: 22px;
-    border: 2px solid ${p => p.theme.colors.primary};
+    border: 2px solid ${p => p.theme.colors.navbar};
     border-radius: 50%;
     transform: translate(${p => (p.isDark ? "14px, -14px" : "0, 0")});
     opacity: ${p => (p.isDark ? 0 : 1)};
@@ -347,7 +347,7 @@ export const MoonMask = styled.div<{ isDark: boolean }>`
   width: 22px;
   border-radius: 50%;
   border: 0;
-  background: ${p => p.theme.colors.background};
+  background: ${p => p.theme.colors.navBackground};
   transform: translate(${p => (p.isDark ? "14px, -14px" : "0, 0")});
   opacity: ${p => (p.isDark ? 0 : 1)};
   transition: ${p => p.theme.colorModeTransition}, transform 0.25s ease;

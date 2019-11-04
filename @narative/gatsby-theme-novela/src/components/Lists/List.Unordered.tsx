@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
 const UnorderedList = styled.ul`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   list-style: none;
   list-style-type: disc;
   counter-reset: list;

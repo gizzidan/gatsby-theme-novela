@@ -10,7 +10,7 @@ import { css } from "@emotion/core";
 
 const ArticlesFullList = () => {
   const sectiongap = '60px';
-  const gap = '30px';
+  const gap = '25px';
   const data = useStaticQuery(
     graphql`
       query { 
@@ -158,7 +158,7 @@ const Item = styled(Link)`
 
   ${mediaqueries.phablet`
     grid-template-columns: 1fr;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     width: 90vw;
     &:hover {
       transform: none;
@@ -285,7 +285,7 @@ const Excerpt = styled.p`
 export const MetaData = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: none;
   font-style: normal;
   color: ${p => p.theme.colors.primary};

@@ -164,10 +164,10 @@ const Meta = styled.div`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 43px;
+  font-size: 44px;
   font-family: "Portrait";
-  margin-bottom: 25px;
-  line-height: 1.1;
+  margin-bottom: 20px;
+  line-height: 1.15;
   text-transform: uppercase;
   font-weight: 400;
 
@@ -178,6 +178,8 @@ const HeroHeading = styled(Headings.h1)`
 
   ${mediaqueries.phablet`
     font-size: 30px;
+    line-height: 1.1;
+    margin-bottom: 12px;
   `}
 `;
 

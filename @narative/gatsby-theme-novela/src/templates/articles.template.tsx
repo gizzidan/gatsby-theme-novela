@@ -27,9 +27,6 @@ function ArticlesPage({ location, pageContext }) {
         <Section>
            <ArticlesList2 />
   
-        <ArticlesPaginator show={pageContext.pageCount > 1}>
-          <Paginator {...pageContext} />
-        </ArticlesPaginator>
         </Section>
       <ArticlesGradient />
     </Layout>

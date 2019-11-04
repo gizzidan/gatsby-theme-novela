@@ -4,7 +4,7 @@ import mediaqueries from "@styles/media";
 const HorizontalRule = styled.hr`
   position: relative;
   width: 100%;
-  max-width: 630px;
+  max-width: 610px;
   margin: 8px auto 50px auto;
   border: 0;
   height: 14.36px;
@@ -22,16 +22,18 @@ const HorizontalRule = styled.hr`
 
   ${mediaqueries.tablet`
     max-width: 486px;
+    margin-top: 20px !important;
+    margin-bottom: 40px !important;
   `};
 
   ${mediaqueries.phablet`
-    padding: 0 20px;
+    margin-top: 10px !important;
+    margin-bottom: 40px !important;
+    max-width: 400px;
   `};
 
-  ${mediaqueries.tablet`
-    width: calc(100vw - 40px);
-    margin: 0px auto 50px;
-  `};
+
+
 `;
 
 export default HorizontalRule;

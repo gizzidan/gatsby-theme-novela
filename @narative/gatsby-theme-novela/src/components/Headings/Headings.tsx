@@ -10,7 +10,7 @@ import mediaqueries from "@styles/media";
 
 const commonStyles = p => css`
   font-weight: 400;
-  color: ${p.theme.colors.primary};
+  color: ${p.theme.colors.articleText};
 `;
 
 const h1 = styled.h1`
@@ -30,8 +30,8 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-family: ${p => p.theme.fonts.serif};
-  font-size: 30px;
+  font-family: ${p => p.theme.fonts.sansSerif};
+  font-size: 26px;
   line-height: 1.2;
   font-weight: 500 !important;
   ${commonStyles};
@@ -66,12 +66,20 @@ const h3 = styled.h3`
 `;
 
 const h4 = styled.h4`
-  font-size: 18px;
-  line-height: 1.45;
+  text-align: center;
+  font-family: "GT America";
+  font-size: 36px;
+  text-transform: none;
+  padding-top: 15px;
+  padding-bottom: 50px;
+  font-weight: 500 !important;
+  line-height: 1.3;
   ${commonStyles};
 
   ${mediaqueries.phablet`
-    font-size: 16px;
+    font-size: 24px;
+    padding-bottom: 35px !important;
+
   `};
 `;
 

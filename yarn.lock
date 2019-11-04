@@ -14167,6 +14167,11 @@ react-medium-image-zoom@^3.1.1:
   resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-3.1.1.tgz#6e48901e5e899fad4483e9a7251ad9a8e81ded23"
   integrity sha512-nAbQLFJtRTrdizsYZ5zlsjY+irXpFT0JC16jo4BXIlWH5KPerFkZoU5AWnDw6TOjRaqOVKr5lsjcUt/xC2zMwA==
 
+react-moment@^0.9.6:
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.9.6.tgz#6b359a48205a52196408303e30bc982cd46d0bee"
+  integrity sha512-GAnd5NRIpGjDqLoGahJCkiCEQS1d8+dIZbIfPuy/eQ0O5Rio43fEkj5G+qrKbZCQY55fiNafpHpuirVIHqPoSg==
+
 react-outside-click-handler@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/react-outside-click-handler/-/react-outside-click-handler-1.2.4.tgz#020428af92fcee61c42a194c7e3016c43fe99534"

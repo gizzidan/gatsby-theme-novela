@@ -43,7 +43,7 @@ const StyledMenu = styled.div`
   flex-direction: column;
   justify-content: center;
   z-index: 4000;
-  background: rgba(211,209,219, 0.95);
+  background: rgba(224, 220, 238, 0.95);
   height: 100vh;
   text-align: center;
   padding-left: 0px;

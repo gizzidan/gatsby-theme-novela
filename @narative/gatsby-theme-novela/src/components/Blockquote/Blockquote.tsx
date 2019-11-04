@@ -4,10 +4,11 @@ import mediaqueries from "@styles/media";
 const Blockquote = styled.blockquote`
   transition: ${p => p.theme.colorModeTransition};
   margin: 15px auto 50px;
+  opacity: 0.95;
   color: ${p => p.theme.colors.articleText};
   font-family: ${p => p.theme.fonts.serif};
   font-style: italic;
-  border-left: 1px solid ${p => p.theme.colors.accent};
+  border-left: 5px solid ${p => p.theme.colors.accent};
   
 
   ${mediaqueries.tablet`
@@ -15,8 +16,8 @@ const Blockquote = styled.blockquote`
   `};
 
   & > p {
-    font-family: ${p => p.theme.fonts.serif};
-    max-width: 630px !important;
+    font-family: ${p => p.theme.fonts.sansSerif};
+    
     padding-bottom: 0;
     padding-left: 30px;
     width: 100%;
@@ -26,13 +27,13 @@ const Blockquote = styled.blockquote`
     font-weight: 400;
 
     ${mediaqueries.tablet`
-      font-size: 26px;
-      padding: 0 180px;
+      font-size: 18px;
+      
     `};
 
     ${mediaqueries.phablet`
-      font-size: 36px;
-      padding: 0 20px 0 40px;
+      font-size: 19px;
+      padding-left: 30px;
     `};
   }
 `;

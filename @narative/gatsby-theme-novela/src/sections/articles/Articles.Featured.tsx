@@ -9,7 +9,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "It is Our Moral Duty to Boo The President"}) {
+        contentfulArticle(title: {eq: "Carol Rizzo and Rob Layne Win Neptune Township Committee Election Again"}) {
           title
           date
           excerpt
@@ -80,7 +80,7 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(9, 9, 9, 0.1), rgba(9, 9, 9, 0.8));
+  background-image: linear-gradient(to bottom, rgba(17, 17, 20, 0.1), rgba(28, 28, 38, 0.9));
   width: 100%;
   height: 100%;
 `

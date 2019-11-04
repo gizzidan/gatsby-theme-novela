@@ -118,7 +118,6 @@ function Article({ pageContext, location }) {
             <Twitter solid medium message="Checkout this article from Shoreside" link={window.location.href}/>
             <Facebook solid medium link={window.location.href}/>
             <Mail solid medium subject="Checkout this article from Shoreside" link={window.location.href}/>
-            <Reddit solid medium link={window.location.href}/>
           </SocialContainer>
           <DiscussionEmbed {...disqusConfig}/>
         </BottomContainer>
@@ -210,10 +209,10 @@ const FooterSpacer = styled.div`
 `;
 
 const BottomContainer = styled.div`
-  width: 630px;
+  width: 610px;
   margin: 10px auto;
   ${mediaqueries.phablet`
-    max-width: 100%;
+    width: 90vw;
   `};
 `
 const SocialContainer = styled.div`
@@ -222,23 +221,28 @@ const SocialContainer = styled.div`
   padding-bottom: 50px;
   margin: auto;
   display: flex;
-`
+`;
 const Tags = styled.div`
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   font-size: 17px;
   color: ${p => p.theme.colors.primary};  
   display: flex;
   padding-bottom: 100px;
   
-`
+`;
 const Tag = styled(Link)`
   color: #131516 !important;
   line-height: 0;
-  background: #e0e0e1;
-  padding: 4px 6px;
+  background: ${p => p.theme.colors.tagBackground};
+  padding: 4px 8px;
+  padding-bottom: 7px;
   border-radius: 3px;
   margin-left: 15px;
   transition: all 0.04s linear;
   &:hover {
     opacity: 0.6;
   }
-`
+`;
+

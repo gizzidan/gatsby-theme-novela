@@ -90,8 +90,8 @@ export const Container = styled("header")`
 
 export const BgContainer = styled("header")`
   border-bottom: 1px solid;
-  border-color: ${a => a.theme.colors.lightGrey};
-  background-color: ${p => p.theme.colors.background};
+  border-color: ${a => a.theme.colors.navBorder};
+  background-color: ${a => a.theme.colors.navBackground};
   position: absolute;
   top: 0;
   z-index: 1;
@@ -156,7 +156,7 @@ export const LogoContainer = styled(Link)`
     font-family: "GT America";
     font-size: 26px;
     font-weight: 400;
-    color: ${a => a.theme.colors.primary};
+    color: #fff;
     position: absolute;
     transform: translate(-50%,-50%);
     transition: all 0.15s ease;

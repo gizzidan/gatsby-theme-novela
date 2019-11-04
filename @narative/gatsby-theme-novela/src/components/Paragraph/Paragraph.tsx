@@ -3,7 +3,7 @@ import mediaqueries from "@styles/media";
 
 
 const Paragraph = styled.p`
-  line-height: 1.75;
+  line-height: 1.68;
   font-size: ${p => p.theme.fontSizes.p};
   color: ${p => p.theme.colors.articleText};
   font-family: ${p => p.theme.fonts.sansSerif};
@@ -11,7 +11,7 @@ const Paragraph = styled.p`
   margin: 0 auto 42px;
   width: 100%;
   font-weight: 400;
-  max-width: 630px;
+  max-width: 610px;
 
   b {
     font-weight: 800;
@@ -27,7 +27,7 @@ const Paragraph = styled.p`
   `};
 
   ${mediaqueries.phablet`
-    font-size: 18px;
+    font-size: 19px;
     padding: 0 20px;
   `};
 `;

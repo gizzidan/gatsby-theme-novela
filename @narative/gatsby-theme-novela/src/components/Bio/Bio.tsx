@@ -51,9 +51,9 @@ const BioLabel = styled('h3')`
 `
 
 const BioLink = styled(Link)`
-  color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.primary};
   border-bottom: 1px solid;
-  border-color: ${p => p.theme.colors.articleText};
+  border-color: ${p => p.theme.colors.primary};
 `
 const BioContainer = styled.div`
   display: flex;
