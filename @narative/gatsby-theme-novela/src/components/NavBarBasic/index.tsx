@@ -189,23 +189,6 @@ export const Separator = styled("div")`
 
 
 export default class NavBarBasic extends React.Component {
-  state = {
-    opacity: '0',
-    reverse: '1'
-  }
-
-  listenScrollEvent = e => {
-    if (window.scrollY > 150) {
-      this.setState({opacity: '1', reverse: '0'})
-    } else {
-      this.setState({opacity: '0', reverse: '1'})
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.listenScrollEvent)
-  }
-
   render (){
     return (
       <Container>
