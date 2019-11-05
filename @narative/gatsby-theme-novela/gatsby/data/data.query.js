@@ -29,7 +29,7 @@ module.exports.local = {
           category
           tags
           slogan
-          date(formatString: "MMMM Do, YYYY")
+          date(formatString: "MMM DD")
           dateForSEO: date
           timeToRead
           excerpt
@@ -115,7 +115,7 @@ module.exports.contentful = {
           tags
           slug
           secret
-          date(formatString: "MMMM Do, YYYY")
+          date(formatString: "MMM DD")
           dateForSEO: date
           hero {
             full: fluid(maxWidth: 944, quality: 100) {

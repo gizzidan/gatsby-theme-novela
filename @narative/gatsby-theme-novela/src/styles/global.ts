@@ -5,8 +5,6 @@ import PortraitItalic from "www/static/fonts/Portrait/Portrait-Regular2Italic.wo
 import PortraitMedium from "www/static/fonts/Portrait/Portrait-Medium.woff";
 import PortraitBold from "www/static/fonts/Portrait/Portrait-Bold.woff";
 
-import UntitledSerifRegular from "www/static/fonts/Untitled Serif/UntitledSerif-Regular.woff";
-import UntitledSerifBold from "www/static/fonts/Untitled Serif/UntitledSerif-Bold.woff";
 
 import SectraBook from "www/static/fonts/GT Sectra/GT-Sectra-Book.woff";
 import SectraBookItalic from "www/static/fonts/GT Sectra/GT-Sectra-Book-Italic.woff";
@@ -20,15 +18,12 @@ import SectraBoldItalic from "www/static/fonts/GT Sectra/GT-Sectra-Bold-Italic.w
 import SectraFine from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Regular.woff";
 import SectraFineItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Regular-Italic.woff";
 
-import PressuraBold from "www/static/fonts/GT Pressura/gt-pressura-bold.woff";
-
-import TerminaDemi from "www/static/fonts/Termina/Termina-Demi.woff";
-import TerminaMedium from "www/static/fonts/Termina/Termina-Medium.woff";
-
-import GTConReg from "www/static/fonts/GT America/GTAmerica-CondensedRegular.woff";
-import GTConRegItalic from "www/static/fonts/GT America/GTAmerica-CondensedRegularItalic.woff";
-import GTConMed from "www/static/fonts/GT America/GTAmerica-CondensedMedium.woff";
-import GTExtBlack from "www/static/fonts/GT America/GTAmerica-ExtendedBlack.woff";
+import AmericaReg from "www/static/fonts/GT America/GTAmerica-Regular.woff";
+import AmericaRegItalic from "www/static/fonts/GT America/GTAmerica-RegularItalic.woff";
+import AmericaMedium from "www/static/fonts/GT America/GTAmerica-Medium.woff";
+import AmericaMediumItalic from "www/static/fonts/GT America/GTAmerica-MediumItalic.woff";
+import AmericaBold from "www/static/fonts/GT America/GTAmerica-Bold.woff";
+import AmericaBoldItalic from "www/static/fonts/GT America/GTAmerica-BoldItalic.woff";
 
 import Ogg from "www/static/fonts/Ogg/Ogg-Roman.woff";
 
@@ -86,13 +81,6 @@ export const globalStyles = css`
     src: url(${PortraitBold}) format("woff");
   }
 
-    /** GT Pressura */
-    @font-face {
-    font-family: "Pressura";
-    font-weight: 700;
-    font-style: normal;
-    src: url(${PressuraBold}) format("woff");
-  }
 
    /** GT Sectra */
    @font-face {
@@ -155,70 +143,46 @@ export const globalStyles = css`
     font-style: italic;
     src: url(${SectraFineItalic}) format("woff");
   }
-
-   /** Ogg */
-  @font-face {
-    font-family: "Ogg";
-    font-weight: 400;
-    font-style: normal;
-    src: url(${Ogg}) format("true-type");
-  }
-
-   /** Termina */
-   @font-face {
-    font-family: "Termina";
-    font-weight: 600;
-    font-style: normal;
-    src: url(${TerminaDemi}) format("woff");
-  }
-  @font-face {
-    font-family: "Termina";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${TerminaMedium}) format("woff");
-  }
-
   
 
     /** GT America */
   @font-face {
-    font-family: "GT America Cond";
+    font-family: "GT America";
     font-weight: 400;
     font-style: normal;
-    src: url(${GTConReg}) format("woff");
+    src: url(${AmericaReg}) format("woff");
   }
   @font-face {
-    font-family: "GT America Cond";
+    font-family: "GT America";
     font-weight: 400;
     font-style: italic;
-    src: url(${GTConRegItalic}) format("woff");
+    src: url(${AmericaRegItalic}) format("woff");
   }
   @font-face {
-    font-family: "GT America Cond";
+    font-family: "GT America";
     font-weight: 500;
     font-style: normal;
-    src: url(${GTConMed}) format("woff");
+    src: url(${AmericaMedium}) format("woff");
   }
   @font-face {
-    font-family: "GT America Ext";
-    font-weight: 900;
-    font-style: normal;
-    src: url(${GTExtBlack}) format("woff");
+    font-family: "GT America";
+    font-weight: 500;
+    font-style: italic;
+    src: url(${AmericaMediumItalic}) format("woff");
   }
-
-    /** Untitled Serif */
   @font-face {
-    font-family: "Untitled Serif";
-    font-weight: 400;
-    font-style: normal;
-    src: url(${UntitledSerifRegular}) format("woff");
-  }
-   @font-face {
-    font-family: "Untitled Serif";
+    font-family: "GT America";
     font-weight: 700;
     font-style: normal;
-    src: url(${UntitledSerifBold}) format("woff");
+    src: url(${AmericaBold}) format("woff");
   }
+  @font-face {
+    font-family: "GT America";
+    font-weight: 700;
+    font-style: italic;
+    src: url(${AmericaBoldItalic}) format("woff");
+  }
+
 
   /** Larish Alte */
   @font-face {

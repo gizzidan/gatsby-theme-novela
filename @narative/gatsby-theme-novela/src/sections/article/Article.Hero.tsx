@@ -167,9 +167,9 @@ const HeroHeading = styled(Headings.h1)`
   font-size: 44px;
   font-family: "Portrait";
   margin-bottom: 20px;
-  line-height: 1.15;
+  line-height: 1.1;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 600;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
@@ -214,7 +214,7 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
 
   ${p => mediaqueries.phablet`
     padding: 0 4px;
-    font-size: 15px;
+    font-size: 16px;
     flex-direction: column;
 
     ${p.hasCoAUthors &&

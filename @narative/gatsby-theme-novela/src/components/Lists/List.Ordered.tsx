@@ -7,7 +7,7 @@ const OrderedList = styled.ol`
   counter-reset: list;
   color: ${p => p.theme.colors.articleText};
   position: relative;
-  padding: 15px 0 30px 30px;
+  padding: 15px 0 28px 30px;
   margin: 0 auto;
   transition: ${p => p.theme.colorModeTransition};
   font-size: ${p => p.theme.fontSizes.p};
@@ -31,7 +31,7 @@ const OrderedList = styled.ol`
 
   li {
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 
     ${mediaqueries.tablet`
       padding-left: 30px;

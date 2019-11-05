@@ -109,6 +109,7 @@ const PodcastContainer = styled.div`
   `};
 `
 const Header = styled.h2`
+  color: ${p => p.theme.colors.primary};
   font-family: "Portrait";
   font-size: 32px;
   font-weight: 500;
