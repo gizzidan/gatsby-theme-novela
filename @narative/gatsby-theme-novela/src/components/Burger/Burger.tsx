@@ -23,17 +23,16 @@ export default Burger;
 
 
 const StyledBurger = styled.button`
-  position: absolute;
+  position: fixed;
   top: 16px;
-  right: 48px;
+  right: 30px;
   display: flex;
   flex-direction: column;
-  width: 10px;
-  height: 10px;
+  
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 5000;
+  z-index: 8000;
   ${mediaqueries.tablet`
       right: 38px;
     `}

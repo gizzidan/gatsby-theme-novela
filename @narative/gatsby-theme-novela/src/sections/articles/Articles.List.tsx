@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import { Link } from "gatsby";
-
 import Headings from "@components/Headings";
 import Image, { ImagePlaceholder } from "@components/Image";
 
@@ -82,6 +81,7 @@ const ListItem = ({ article }: ArticlesListItemProps) => {
   if (!article) return null;
 
   return (
+
       <Item to={article.slug} data-a11y="false"> 
         <TextContainer>
           <Slogan>
@@ -98,6 +98,8 @@ const ListItem = ({ article }: ArticlesListItemProps) => {
           </MetaData>
         </TextContainer>
       </Item>
+
+      
   );
 };
 
