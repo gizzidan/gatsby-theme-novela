@@ -228,7 +228,6 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     if (next.length === 1 && articlesThatArentSecret.length !== 2)
       next = [...next, articlesThatArentSecret[0]];
     if (articlesThatArentSecret.length === 1) next = [];
-   
     createPage({
       path: article.slug,
       component: templates.article,
@@ -316,11 +315,6 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     });
   });
 
-    /**
-   * Creating main tag pages example
-   *  /tag/gatsby
-   * /tag/gatsby/2
-   */
   log('Creating', 'tag pages');
   uniqueTags.forEach(tag => {
     let allArticlesOfTheTag;
@@ -354,6 +348,4 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       },
     });
   });
-  
 };
-

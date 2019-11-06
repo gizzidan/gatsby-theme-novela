@@ -35,7 +35,7 @@ const Spacer = styled.span`
   font-family: "GT America";
   font-size: 20px;
   padding: 0px 10px 0px 10px;
-`
+`;
 const StyledMenu = styled.div`
   width: 100vw;
   display: flex;
@@ -47,9 +47,7 @@ const StyledMenu = styled.div`
   height: 100vh;
   text-align: center;
   padding-left: 0px;
-  position: relative;
-  top: 40;
-  left: 0;
+  position: fixed;
   transition: all 0.3s ease-in-out;
  
   ${mediaqueries.tablet`
@@ -65,7 +63,11 @@ const Label = styled.p`
   padding-bottom: 10px;
   text-transform: uppercase;
   color: #4524ea;
-`
+  ${mediaqueries.tablet`
+    font-size: 18px;
+    background: rgb(211,209,219);
+  `}
+`;
 
 const MenuLink = styled(Link)`
   font-family: "Portrait";
@@ -80,7 +82,12 @@ const MenuLink = styled(Link)`
     text-shadow: 
                  2px 2px 10px #fff;
   }
-`
+  ${mediaqueries.tablet`
+    font-size: 52px;
+    background: rgb(211,209,219);
+  `}
+`;
+
 const StyledDiv = styled.div`
   padding-top: 20px;
   font-size: 14px;
@@ -98,4 +105,8 @@ const SecondaryLink = styled(Link)`
   &:hover {
     border-bottom: 1px solid;
   }
-`
+  ${mediaqueries.tablet`
+    font-size: 18px;
+    background: rgb(211,209,219);
+  `}
+`;
