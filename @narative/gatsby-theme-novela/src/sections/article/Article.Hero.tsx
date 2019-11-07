@@ -63,10 +63,10 @@ const StyledLink = styled(Link)`
 `
 const Slogan = styled("p")`
   font-family: ${p => p.theme.fonts.slogan};
-  font-size: 17px;
+  font-size: 18px;
   text-transform: uppercase;
   font-weight: ${p => p.theme.fontWeights.slogan};
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   color: ${p => p.theme.colors.primary};
 
   ${mediaqueries.desktop`
@@ -164,7 +164,7 @@ const Meta = styled.div`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 44px;
+  font-size: 54px;
   font-family: ${p => p.theme.fonts.serifFine};
   margin-bottom: 20px;
   line-height: 1.1;
@@ -184,7 +184,7 @@ const HeroHeading = styled(Headings.h1)`
 `;
 
 const HeroExcerpt = styled("p")`
-  font-size: 20px;
+  font-size: 22px;
   font-family: ${p => p.theme.fonts.sansSerif};
   margin-bottom: 40px;
   line-height: 1.6;

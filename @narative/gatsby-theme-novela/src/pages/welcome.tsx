@@ -89,7 +89,7 @@ const Heading = styled.div`
   font-style: normal;
   font-family: "Noe Display";
   text-transform: none;
-  font-weight: 400;
+  font-weight: 500;
   
   ${mediaqueries.tablet`
     padding-bottom: 30px;

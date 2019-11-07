@@ -126,6 +126,11 @@ const Card = styled(Link)`
   min-width: 320px;
   height: 155px;
   border: 1px solid ${p => p.theme.colors.lightGrey};
+  &:hover, &:focus {
+    h2 {
+      opacity: 0.6;
+    }
+  }
 `
 const PodcastImageContainer = styled.div`
   
@@ -134,7 +139,7 @@ const PodcastImageContainer = styled.div`
 const PodcastTitle = styled.h2`
   ${limitToTwoLines}; 
   font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   padding-left: 15px;
   margin-top: -2px;
@@ -142,7 +147,7 @@ const PodcastTitle = styled.h2`
 `
 const PodcastMeta = styled.h2`
   font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 300;
+  font-weight: 400;
   font-size: 13px;
   padding-left: 15px;
 

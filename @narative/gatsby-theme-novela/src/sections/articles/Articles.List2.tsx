@@ -376,9 +376,9 @@ const SidebarItem = styled(Link)`
   }
 
   &:hover, &:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 20px -20px rgba(0, 0, 0, 0.27),
-      0 10px 20px -20px rgba(0, 0, 0, 0.3);
+    h2 {
+      opacity: 0.5;
+    }
   }
 
 
@@ -559,8 +559,9 @@ const Item = styled(Link)`
   }
   &:hover, &:focus {
     transform: translateY(-1px);
-    box-shadow: 0 10px 20px -20px rgba(0, 0, 0, 0.27),
-      0 10px 20px -20px rgba(0, 0, 0, 0.3);
+    h2 {
+      opacity: 0.5;
+    }
   }
 
 
@@ -622,8 +623,9 @@ const ListItem = styled(Link)`
 
   &:hover, &:focus {
     transform: translateY(-1px);
-    box-shadow: 0 10px 20px -20px rgba(0, 0, 0, 0.27),
-      0 10px 20px -20px rgba(0, 0, 0, 0.3);
+    h2 {
+      opacity: 0.5;
+    }
   }
 
 

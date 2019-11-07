@@ -184,7 +184,8 @@ const Title = styled(Headings.h3)`
   line-height: 1.4;
   margin-bottom: ${p => (p.hasOverflow ? "10px" : "5px")};
   color: ${p => p.theme.colors.primary};
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: "Noe Text";
+  font-weight: 700 !important;
   transition: color 0.3s ease-in-out;
   ${limitToTwoLines};
 
@@ -202,9 +203,9 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   ${limitToTwoLines};
   font-size: 17px;
   margin-bottom: 5px;
-  font-weight: 300;
-  font-style: italic;
-  font-family: ${p => p.theme.fonts.serif};
+  font-weight: 400;
+  font-style: normal;
+  font-family: ${p => p.theme.fonts.sansSerif};
   color: ${p => p.theme.colors.articleText};
   display: ${p => (p.hasOverflow ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};

@@ -80,7 +80,7 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(17, 17, 20, 0.1), rgba(28, 28, 38, 0.9));
+  background-image: linear-gradient(to bottom, rgba(17, 17, 20, 0.1), rgba(28, 28, 38, 0.93));
   width: 100%;
   height: 100%;
 `
