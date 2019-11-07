@@ -22,11 +22,9 @@ function ArticlesPage({ location, pageContext }) {
       <NavBar />
       <ArticlesFeatured />
       <SEO pathname={location.pathname} />
-      <ArticlesHero authors={authors} />
-      
+     
         <Section>
            <ArticlesList2 />
-  
         </Section>
       <ArticlesGradient />
     </Layout>

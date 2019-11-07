@@ -142,9 +142,9 @@ export const ToolContainer = styled("div")`
     z-index: 1000;
     margin-top: 0px;
     display: flex;
-    left: 13px;
+    right: 80px;
     ${mediaqueries.tablet`
-      left: 13px;
+      right: 56px;
     `}
 `
 
@@ -152,13 +152,13 @@ export const ToolContainer = styled("div")`
 export const LogoContainer = styled(Link)`
     z-index: 4000;
     top: 50%;
-    left: 50%;
-    font-family: "GT America";
+    left: 30px;
+    font-family: "F Grotesk";
     font-size: 26px;
     font-weight: 400;
     color: #fff;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(0,-50%);
     transition: all 0.15s ease;
     &:hover {
         ${a => a.theme.colors.accent};
@@ -167,6 +167,7 @@ export const LogoContainer = styled(Link)`
     }
     ${mediaqueries.tablet`
       font-size: 22px;
+      left: 15px;
     `}
     ${mediaqueries.phone_small`
       font-size: 18px;

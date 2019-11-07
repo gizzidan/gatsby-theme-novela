@@ -142,7 +142,7 @@ const Slogan = styled.div`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 13px;
+    font-size: 14px;
     max-width: 100%;
     padding:  0;
     margin-bottom: 5px;
@@ -203,10 +203,10 @@ const Item = styled(Link)`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.3;
-  font-family: ${p => p.theme.fonts.serif};
-  font-weight: 500 !important;
+  font-family: "Noe Text";
+  font-weight: 700 !important;
   text-transform: none;
   margin-bottom: -10px;
   transition: color 0.3s ease-in-out;
@@ -228,15 +228,15 @@ const Title = styled(Headings.h2)`
 `;
 
 const Excerpt = styled.div`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   ${limitToTwoLines};
   font-size: 18px;
-  font-style: italic;
+  font-style: normal;
   letter-spacing: -.005em;
   line-height: 1.618;
   margin-top: 15px;
   margin-bottom: 5px !important;
-  font-weight: 300;
+  font-weight: 400;
   color: ${p => p.theme.colors.primary} !important;
 
   ${mediaqueries.desktop`
@@ -245,6 +245,7 @@ const Excerpt = styled.div`
 
 
   ${mediaqueries.phablet`
+    font-size: 16px;
     margin-bottom: 10px;
     max-width: 100%;
     padding:  0;
@@ -262,6 +263,7 @@ const MetaData = styled.div`
   
 
   ${mediaqueries.phablet`
+    font-size: 15px;
     max-width: 100%;
     padding:  10px 0px 10px;
   `}

@@ -32,7 +32,7 @@ export default Menu;
 
 const Spacer = styled.span`
   color: #aa9bf5;
-  font-family: "GT America";
+  font-family: "F Grotesk";
   font-size: 20px;
   padding: 0px 10px 0px 10px;
 `;
@@ -47,7 +47,7 @@ const StyledMenu = styled.div`
   height: 100vh;
   text-align: center;
   padding-left: 0px;
-  position: fixed;
+  position: relative;
   transition: all 0.3s ease-in-out;
  
   ${mediaqueries.tablet`
@@ -57,7 +57,7 @@ const StyledMenu = styled.div`
 `;
 
 const Label = styled.p`
-  font-family: "GT America";
+  font-family: "F Grotesk";
   font-weight: 400;
   font-size: 20px;
   padding-bottom: 10px;
@@ -70,8 +70,8 @@ const Label = styled.p`
 `;
 
 const MenuLink = styled(Link)`
-  font-family: "Portrait";
-  font-weight: 600;
+  font-family: "Noe Display";
+  font-weight: 500;
   font-size: 74px;
   color: #4524ea;
   font-style: normal;
@@ -98,7 +98,7 @@ const StyledDiv = styled.div`
   margin-right: 0px;
 `
 const SecondaryLink = styled(Link)`
-  font-family: "GT America";
+  font-family: "F Grotesk";
   font-size: 20px;
   font-weight: 400;
   color: #4524ea;

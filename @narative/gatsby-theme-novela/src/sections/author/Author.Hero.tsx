@@ -64,7 +64,7 @@ const HeroImage = styled.div`
 
 const Heading = styled.h1`
   font-size: 48px;
-  font-family: "Portrait";
+  font-family: "Noe Display";
   color: ${p => p.theme.colors.primary};
   margin-bottom: 15px;
   font-weight: 400;

@@ -34,7 +34,7 @@ const StyledBurger = styled.button`
   cursor: pointer;
   z-index: 8000;
   ${mediaqueries.tablet`
-      right: 20px;
+      right: 15px;
     `}
 
   &:focus {

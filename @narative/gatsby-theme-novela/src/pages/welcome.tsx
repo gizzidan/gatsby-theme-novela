@@ -49,7 +49,7 @@ const LogoContainer = styled.div`
     display: flex;
     align-items: center;
     transform: translate(-50%);
-    font-family: "GT America";
+    font-family: "F Grotesk";
     font-size: 26px;
     font-weight: 400;
     color: white;
@@ -87,7 +87,7 @@ const Heading = styled.div`
   line-height: 1.2;
   color: #fff;
   font-style: normal;
-  font-family: "Portrait";
+  font-family: "Noe Display";
   text-transform: none;
   font-weight: 400;
   

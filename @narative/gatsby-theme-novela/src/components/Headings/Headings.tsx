@@ -67,9 +67,9 @@ const h3 = styled.h3`
 
 const h4 = styled.h4`
   text-align: center;
-  font-family: "GT America";
+  font-family: "F Grotesk";
   font-size: 36px;
-  text-transform: none;
+  text-transform: uppercase;
   padding-top: 15px;
   padding-bottom: 50px;
   font-weight: 500 !important;

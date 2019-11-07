@@ -18,10 +18,8 @@ const Hero = styled.section`
 
 const Label = styled.h2`
   color: ${p => p.theme.colors.primary};
-  -webkit-text-fill-color: transparent; 
-  -webkit-text-stroke: 1.5px ${p => p.theme.colors.primary};
-  font-family: "Portrait";
-  font-weight: 600;
+  font-family: "Noe Display";
+  font-weight: 500;
   text-transform: capitalize;
   font-size: 180px;
   letter-spacing: -0.03em;

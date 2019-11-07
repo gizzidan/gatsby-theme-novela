@@ -41,7 +41,7 @@ const BioLabel = styled('h3')`
   color: ${p => p.theme.colors.primary};
   font-weight: 500;
   font-size: 18px;
-  font-family: 'Sectra';
+  font-family: 'F Grotesk';
   ${mediaqueries.phablet`
     font-size: 18px;
   `};

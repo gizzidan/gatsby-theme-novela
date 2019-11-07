@@ -9,7 +9,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "Carol Rizzo and Rob Layne Win Neptune Township Committee Election Again"}) {
+        contentfulArticle(title: {eq: "It is Our Moral Duty to Boo The President"}) {
           title
           date
           excerpt
@@ -53,7 +53,7 @@ const Arrow = styled.div`
 `
 const FeaturedContainer = styled("section")`
   overflow: hidden;
-  height: 78vh;
+  height: 58vh;
   position: relative;
   margin: -61px auto 0px auto;
   &:hover, &:focus {
@@ -86,11 +86,13 @@ const Overlay = styled("div")`
 `
 const TextContainer = styled("div") `
   position: absolute;
-  top: 79%;
+  top: 69%;
   left: 50%;
-  max-width: 800px;
+  width: 1470px;
+  padding: 0 4rem;
+  padding-right: 700px;
   transform: translate(-50%,-50%);
-  text-align: center;
+  text-align: left;
   transition: all 0.1s linear;
   &:hover {
     p {
@@ -100,13 +102,27 @@ const TextContainer = styled("div") `
       transform: translate(7px, 0);
     }
   }
-  ${mediaqueries.tablet`
+  ${mediaqueries.desktop_large`
+    width: 100vw;
+    top: 74%;
+    padding: 0 4rem;
+  `}
+
+  ${mediaqueries.desktop`
     width: 80vw;
     top: 74%;
+    padding: 0 2rem;
+  `}
+
+  ${mediaqueries.tablet`
+    width: 80vw;
+    padding: 0 4rem;
+    top: 72%;
   `}
   ${mediaqueries.phablet`
-    width: 93vw;
-    top: 69%;
+    width: 100vw;
+    padding: 0 2rem;
+    top: 72%;
   `}
 `
 const Category = styled.p`
@@ -134,13 +150,13 @@ const Category = styled.p`
 `;
 
 const Title = styled("div")`
-  font-family: "Portrait";
+  font-family: ${p => p.theme.fonts.serifFine};
   color: white;
   font-size: 50px;
   line-height: 1.1;
-  text-transform: uppercase;
+  text-transform: none;
   padding-bottom: 15px;
-  font-weight: 400;
+  font-weight: 700;
   transition: all 0.1s linear;
 
 
@@ -156,16 +172,15 @@ const Title = styled("div")`
 `;
 
 const Excerpt = styled("div")`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   color: white;
   font-size: 24px;
   line-height: 1.4;
 
-
   ${mediaqueries.desktop`
-    font-size: 38px;
+    font-size: 24px;
     line-height: 1.2;
   `};
   ${mediaqueries.tablet`

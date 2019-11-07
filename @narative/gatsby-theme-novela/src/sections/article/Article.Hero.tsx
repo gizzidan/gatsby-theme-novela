@@ -115,7 +115,7 @@ export const ArticleMeta = styled.div`
 `;
 
 const Header = styled.header`
-  text-align: center;
+  text-align: left;
   position: relative;
   z-index: 10;
   margin: 100px auto 50px;
@@ -165,11 +165,11 @@ const Meta = styled.div`
 
 const HeroHeading = styled(Headings.h1)`
   font-size: 44px;
-  font-family: "Portrait";
+  font-family: ${p => p.theme.fonts.serifFine};
   margin-bottom: 20px;
   line-height: 1.1;
-  text-transform: uppercase;
-  font-weight: 600;
+  text-transform: none;
+  font-weight: 700;
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
@@ -184,11 +184,11 @@ const HeroHeading = styled(Headings.h1)`
 `;
 
 const HeroExcerpt = styled("p")`
-  font-size: 22px;
-  font-family: ${p => p.theme.fonts.serif};
+  font-size: 20px;
+  font-family: ${p => p.theme.fonts.sansSerif};
   margin-bottom: 40px;
   line-height: 1.6;
-  font-style: italic;
+  font-style: normal;
   color: ${p => p.theme.colors.articleText};
   font-weight: 400;
 

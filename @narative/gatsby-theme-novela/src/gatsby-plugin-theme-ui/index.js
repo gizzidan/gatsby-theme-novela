@@ -14,8 +14,9 @@ const breakpoints = [
 
 const fonts = {
   serif: 'Sectra',
-  sansSerif: 'GT America',
-  slogan: 'GT America',
+  serifFine: 'Noe Display',
+  sansSerif: 'F Grotesk',
+  slogan: 'F Grotesk',
   funHeader: 'Termina',
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
@@ -25,7 +26,7 @@ const fontWeights = {
 };
 
 const fontSizes = {
-  p: `20px`,
+  p: `21px`,
 };
 
 const widths = {

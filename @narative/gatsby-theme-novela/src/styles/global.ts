@@ -5,6 +5,19 @@ import PortraitItalic from "www/static/fonts/Portrait/Portrait-Regular2Italic.wo
 import PortraitMedium from "www/static/fonts/Portrait/Portrait-Medium.woff";
 import PortraitBold from "www/static/fonts/Portrait/Portrait-Bold.woff";
 
+import NoeText from 'www/static/fonts/Noe Text/NoeText-Book.woff';
+import NoeTextItalic from 'www/static/fonts/Noe Text/NoeText-BookItalic.woff';
+import NoeTextSemi from 'www/static/fonts/Noe Text/NoeText-SemiBold.woff';
+import NoeTextSemiItalic from 'www/static/fonts/Noe Text/NoeText-SemiBoldItalic.woff';
+import NoeTextBold from 'www/static/fonts/Noe Text/NoeText-Bold.woff';
+import NoeTextBoldItalic from 'www/static/fonts/Noe Text/NoeText-BoldItalic.woff';
+
+import NoeDisplay from 'www/static/fonts/Noe Display/NoeDisplay-Regular.woff';
+import NoeDisplayItalic from 'www/static/fonts/Noe Display/NoeDisplay-RegularItalic.woff';
+import NoeDisplayMedium from 'www/static/fonts/Noe Display/NoeDisplay-Medium.woff';
+import NoeDisplayMediumItalic from 'www/static/fonts/Noe Display/NoeDisplay-MediumItalic.woff';
+import NoeDisplayBold from 'www/static/fonts/Noe Display/NoeDisplay-Bold.woff';
+import NoeDisplayBoldItalic from 'www/static/fonts/Noe Display/NoeDisplay-BoldItalic.woff';
 
 import SectraBook from "www/static/fonts/GT Sectra/GT-Sectra-Book.woff";
 import SectraBookItalic from "www/static/fonts/GT Sectra/GT-Sectra-Book-Italic.woff";
@@ -17,6 +30,10 @@ import SectraBoldItalic from "www/static/fonts/GT Sectra/GT-Sectra-Bold-Italic.w
 
 import SectraFine from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Regular.woff";
 import SectraFineItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Regular-Italic.woff";
+import SectraFineMedium from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Medium.woff";
+import SectraFineMediumItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Medium-Italic.woff";
+import SectraFineBold from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Bold.woff";
+import SectraFineBoldItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Bold-Italic.woff";
 
 import AmericaReg from "www/static/fonts/GT America/GTAmerica-Regular.woff";
 import AmericaRegItalic from "www/static/fonts/GT America/GTAmerica-RegularItalic.woff";
@@ -25,9 +42,17 @@ import AmericaMediumItalic from "www/static/fonts/GT America/GTAmerica-MediumIta
 import AmericaBold from "www/static/fonts/GT America/GTAmerica-Bold.woff";
 import AmericaBoldItalic from "www/static/fonts/GT America/GTAmerica-BoldItalic.woff";
 
-import Ogg from "www/static/fonts/Ogg/Ogg-Roman.woff";
+import Grotesk from "www/static/fonts/F Grotesk/FGrotesk-Regular.woff";
+import GroteskItalic from 'www/static/fonts/F Grotesk/FGrotesk-Italic.woff';
+import GroteskMedium from "www/static/fonts/F Grotesk/FGroteskDemi-Regular.woff";
+import GroteskMediumItalic from "www/static/fonts/F Grotesk/FGroteskDemi-Italic.woff";
+import GroteskThin from "www/static/fonts/F Grotesk/FGroteskThin-Regular.woff";
+import GroteskThinItalic from 'www/static/fonts/F Grotesk/FGroteskThin-Italic.woff';
+import GroteskBold from "www/static/fonts/F Grotesk/FGroteskBold-Regular.woff";
+import GroteskBoldItalic from 'www/static/fonts/F Grotesk/FGroteskBold-Italic.woff';
 
-import LarishAlte from "www/static/fonts/Larish Alte/LarishAlte-SemiBold.woff";
+
+
 
 
 
@@ -81,6 +106,80 @@ export const globalStyles = css`
     src: url(${PortraitBold}) format("woff");
   }
 
+   /** Noe Text */
+   @font-face {
+    font-family: "Noe Text";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${NoeText}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Text";
+    font-weight: 400;
+    font-style: italic;
+    src: url(${NoeTextItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Text";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${NoeTextSemi}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Text";
+    font-weight: 500;
+    font-style: italic;
+    src: url(${NoeTextSemiItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Text";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${NoeTextBold}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Text";
+    font-weight: 700;
+    font-style: italic;
+    src: url(${NoeTextBoldItalic}) format("woff");
+  }
+  /** Noe Display */
+  @font-face {
+    font-family: "Noe Display";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${NoeDisplay}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Display";
+    font-weight: 400;
+    font-style: italic;
+    src: url(${NoeDisplayItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Display";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${NoeDisplayMedium}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Display";
+    font-weight: 500;
+    font-style: italic;
+    src: url(${NoeDisplayMediumItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Display";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${NoeDisplayBold}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Display";
+    font-weight: 700;
+    font-style: italic;
+    src: url(${NoeDisplayBoldItalic}) format("woff");
+  }
 
    /** GT Sectra */
    @font-face {
@@ -143,6 +242,25 @@ export const globalStyles = css`
     font-style: italic;
     src: url(${SectraFineItalic}) format("woff");
   }
+  @font-face {
+    font-family: "Sectra Fine";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${SectraFineMedium}) format("woff");
+  }
+  @font-face {
+    font-family: "Sectra Fine";
+    font-weight: 500;
+    font-style: italic;
+    src: url(${SectraFineMediumItalic}) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Sectra Fine";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${SectraFineBold}) format("woff");
+  }
   
 
     /** GT America */
@@ -183,13 +301,54 @@ export const globalStyles = css`
     src: url(${AmericaBoldItalic}) format("woff");
   }
 
-
-  /** Larish Alte */
+  /** F Grotesk */
   @font-face {
-    font-family: "Larish Alte";
+    font-family: "F Grotesk";
+    font-weight: 300;
+    font-style: normal;
+    src: url(${GroteskThin}) format("woff");
+  }
+  @font-face {
+    font-family: "F Grotesk";
+    font-weight: 300;
+    font-style: italic;
+    src: url(${GroteskThinItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "F Grotesk";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${Grotesk}) format("woff");
+  }
+  @font-face {
+    font-family: "F Grotesk";
+    font-weight: 400;
+    font-style: italic;
+    src: url(${GroteskItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "F Grotesk";
     font-weight: 500;
     font-style: normal;
-    src: url(${LarishAlte}) format("woff");
+    src: url(${GroteskMedium}) format("woff");
+  }
+  @font-face {
+    font-family: "F Grotesk";
+    font-weight: 500;
+    font-style: italic;
+    src: url(${GroteskMediumItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "F Grotesk";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${GroteskBold}) format("woff");
+  }
+  @font-face {
+    font-family: "F Grotesk";
+    font-weight: 700;
+    font-style: italic;
+    src: url(${GroteskBoldItalic}) format("woff");
   }
 
 
@@ -215,7 +374,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "GT America";
+    font-family: "F Grotesk";
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

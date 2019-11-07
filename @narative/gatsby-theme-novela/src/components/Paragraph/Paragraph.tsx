@@ -3,10 +3,10 @@ import mediaqueries from "@styles/media";
 
 
 const Paragraph = styled.p`
-  line-height: 1.68;
+  line-height: 1.6;
   font-size: ${p => p.theme.fontSizes.p};
   color: ${p => p.theme.colors.articleText};
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   transition: ${p => p.theme.colorModeTransition};
   margin: 0 auto 42px;
   width: 100%;

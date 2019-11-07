@@ -97,10 +97,8 @@ const Container = styled.section`
 
 const Label = styled.h2`
   color: ${p => p.theme.colors.primary};
-  -webkit-text-fill-color: transparent; 
-  -webkit-text-stroke: 1.5px ${p => p.theme.colors.primary};
-  font-family: "Portrait";
-  font-weight: 600;
+  font-family: "Noe Display";
+  font-weight: 500;
   text-transform: none;
   font-size: 180px;
   letter-spacing: -0.03em;
@@ -208,10 +206,10 @@ const limitToTwoLines = css`
 
 
 const Title = styled(Headings.h2)`
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.3;
-  font-family: ${p => p.theme.fonts.serif};
-  font-weight: 500 !important;
+  font-family: "Noe Text";
+  font-weight: 700 !important;
   text-transform: none;
   margin-bottom: -10px;
   transition: color 0.3s ease-in-out;
@@ -249,7 +247,7 @@ const Slogan = styled.p`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 13px;
+    font-size: 14px;
     max-width: 100%;
     padding:  0;
     margin-bottom: 5px;
@@ -258,15 +256,15 @@ const Slogan = styled.p`
 `;
 
 const Excerpt = styled.p`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   ${limitToTwoLines};
   font-size: 18px;
   letter-spacing: -.005em;
-  font-style: italic;
+  font-style: normal;
   line-height: 1.618;
   margin-top: 15px;
   margin-bottom: 5px !important;
-  font-weight: 300;
+  font-weight: 400;
   color: ${p => p.theme.colors.primary} !important;
 
   ${mediaqueries.desktop`
@@ -275,6 +273,7 @@ const Excerpt = styled.p`
 
 
   ${mediaqueries.phablet`
+    font-size: 16px;
     margin-bottom: 10px;
     max-width: 100%;
     padding:  0;
@@ -292,6 +291,7 @@ export const MetaData = styled.div`
   
 
   ${mediaqueries.phablet`
+    font-size: 15px;
     max-width: 100%;
     padding:  10px 0px 10px;
   `}
