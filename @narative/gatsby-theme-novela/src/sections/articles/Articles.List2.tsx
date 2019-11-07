@@ -381,12 +381,6 @@ const SidebarItem = styled(Link)`
     }
   }
 
-
-  &:hover h2,
-  &:focus h2 {
-   
-  }
-
   &[data-a11y="true"]:focus::after {
     content: "";
     position: absolute;
@@ -400,14 +394,10 @@ const SidebarItem = styled(Link)`
   }
 
   ${mediaqueries.phablet`
-    &:hover {
+    &:hover, &:focus {
       transform: none;
-      box-shadow: initial;
     }
 
-    &:active {
-      transform: scale(0.97) translateY(3px);
-    }
   `}
 `
 const ImageContainer = styled.div`
@@ -563,33 +553,11 @@ const Item = styled(Link)`
       opacity: 0.5;
     }
   }
-
-
-  &:hover h2,
-  &:focus h2 {
-   
-  }
-
-  &[data-a11y="true"]:focus::after {
-    content: "";
-    position: absolute;
-    left: -1.5%;
-    top: -2%;
-    width: 103%;
-    height: 104%;
-    border: 3px solid ${p => p.theme.colors.accent};
-    background: rgba(255, 255, 255, 0.01);
-    
-  }
   
   ${mediaqueries.phablet`
-    &:hover {
+    &:hover, &:focus {
       transform: none;
       box-shadow: initial;
-    }
-
-    &:active {
-      transform: scale(0.97) translateY(3px);
     }
   `}
 `;
@@ -628,12 +596,6 @@ const ListItem = styled(Link)`
     }
   }
 
-
-  &:hover h2,
-  &:focus h2 {
-   
-  }
-
   &[data-a11y="true"]:focus::after {
     content: "";
     position: absolute;
@@ -656,9 +618,8 @@ const ListItem = styled(Link)`
   `}
   ${mediaqueries.phablet`
     margin-bottom: 25px;
-    &:hover {
+    &:hover, &:focus {
       transform: none;
-      box-shadow: initial;
     }
     & h2 {
       font-size: 20px;
@@ -674,9 +635,6 @@ const ListItem = styled(Link)`
       font-size: 14px !important;
     }
 
-    &:active {
-      transform: scale(0.97) translateY(3px);
-    }
   `}
 `;
 

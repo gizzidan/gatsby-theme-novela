@@ -197,9 +197,7 @@ const Item = styled(Link)`
       box-shadow: initial;
     }
 
-    &:active {
-      transform: scale(0.97) translateY(3px);
-    }
+  
   `}
 `;
 
