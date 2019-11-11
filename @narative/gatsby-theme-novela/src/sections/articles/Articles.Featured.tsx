@@ -4,12 +4,13 @@ import styled from "@emotion/styled";
 import Img from "gatsby-image"
 import mediaqueries from "@styles/media";
 import { Link } from 'gatsby';
+import Section from '@components/Section';
 
 const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "It is Our Moral Duty to Boo The President"}) {
+        contentfulArticle(title: {eq: "Carol Rizzo and Rob Layne Win Neptune Township Committee Election Again"}) {
           title
           date
           excerpt
@@ -29,9 +30,10 @@ const Featured = () => {
     <FeaturedContainer>
       <Link to={article.contentfulArticle.slug}>
       <BgImg fluid={article.contentfulArticle.hero.sizes} />
-      <Overlay></Overlay>
+      <Overlay>
+      <Section>
       <TextContainer>
-        
+        <Sub>Featured Story</Sub>
         <Title>
           <p>{article.contentfulArticle.title}</p>
         </Title>
@@ -40,6 +42,8 @@ const Featured = () => {
           <p style={{ fontSize: '40px',}}><Arrow id="arrow">&rarr;</Arrow></p>
         </Excerpt>
       </TextContainer>
+      </Section>
+      </Overlay>
       </Link>
     </FeaturedContainer>
   )
@@ -47,6 +51,11 @@ const Featured = () => {
 
 export default Featured
 
+const Sub = styled.div`
+  font-family: ${p => p.theme.fonts.monospace};
+  color: white !important;
+  padding-bottom: 15px;
+`
 const Arrow = styled.div`
   transition: all 0.1s linear;
   
@@ -63,8 +72,8 @@ const FeaturedContainer = styled("section")`
     
   `};
 
-  ${mediaqueries.phablet`
-    
+  ${mediaqueries.phone_small`
+     height: 80vh;
   `};
 `
 const BgImg = styled(Img)`
@@ -80,18 +89,14 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(17, 17, 20, 0.1), rgba(28, 28, 38, 0.93));
+  background-image: linear-gradient(to bottom, rgba(17, 17, 20, .4), rgba(24, 24, 35, 1));
   width: 100%;
   height: 100%;
 `
 const TextContainer = styled("div") `
   position: absolute;
-  top: 69%;
-  left: 50%;
-  width: 1470px;
-  padding: 0 4rem;
-  padding-right: 700px;
-  transform: translate(-50%,-50%);
+  width: 40%;
+  bottom: 25px;
   text-align: left;
   transition: all 0.1s linear;
   &:hover {
@@ -103,26 +108,22 @@ const TextContainer = styled("div") `
     }
   }
   ${mediaqueries.desktop_large`
-    width: 100vw;
-    top: 74%;
-    padding: 0 4rem;
+    width: 50%;
   `}
 
   ${mediaqueries.desktop`
-    width: 80vw;
-    top: 74%;
-    padding: 0 2rem;
+    width: 60%;
+   
   `}
 
   ${mediaqueries.tablet`
-    width: 80vw;
-    padding: 0 4rem;
-    top: 72%;
+    width: 85%;
+    bottom: 5px;
+   
   `}
   ${mediaqueries.phablet`
-    width: 100vw;
-    padding: 0 2rem;
-    top: 72%;
+    padding: 0 0 0 0;
+    
   `}
 `
 const Category = styled.p`

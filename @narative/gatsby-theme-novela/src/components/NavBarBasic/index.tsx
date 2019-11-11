@@ -142,9 +142,9 @@ export const ToolContainer = styled("div")`
     z-index: 1000;
     margin-top: 0px;
     display: flex;
-    right: 80px;
+    right: 78px;
     ${mediaqueries.tablet`
-      right: 56px;
+      right: 54px;
     `}
 `
 

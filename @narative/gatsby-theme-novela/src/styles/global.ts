@@ -5,12 +5,18 @@ import PortraitItalic from "www/static/fonts/Portrait/Portrait-Regular2Italic.wo
 import PortraitMedium from "www/static/fonts/Portrait/Portrait-Medium.woff";
 import PortraitBold from "www/static/fonts/Portrait/Portrait-Bold.woff";
 
+import FoundersMono from 'www/static/fonts/Founders Grotesk Mono/FoundersGroteskMono-Light.woff';
+import FoundersMonoRegular from 'www/static/fonts/Founders Grotesk Mono/FoundersGroteskMono.woff';
+import FoundersMonoMedium from 'www/static/fonts/Founders Grotesk Mono/FoundersGroteskMono-Medium.woff';
+
 import NoeText from 'www/static/fonts/Noe Text/NoeText-Book.woff';
 import NoeTextItalic from 'www/static/fonts/Noe Text/NoeText-BookItalic.woff';
 import NoeTextSemi from 'www/static/fonts/Noe Text/NoeText-SemiBold.woff';
 import NoeTextSemiItalic from 'www/static/fonts/Noe Text/NoeText-SemiBoldItalic.woff';
 import NoeTextBold from 'www/static/fonts/Noe Text/NoeText-Bold.woff';
 import NoeTextBoldItalic from 'www/static/fonts/Noe Text/NoeText-BoldItalic.woff';
+import NoeTextBlack from 'www/static/fonts/Noe Text/NoeText-Black.woff';
+import NoeTextBlackItalic from 'www/static/fonts/Noe Text/NoeText-BlackItalic.woff';
 
 import NoeDisplay from 'www/static/fonts/Noe Display/NoeDisplay-Regular.woff';
 import NoeDisplayItalic from 'www/static/fonts/Noe Display/NoeDisplay-RegularItalic.woff';
@@ -79,6 +85,25 @@ export const globalStyles = css`
     font-weight: 400;
     font-style: normal;
   }
+  /** Founders Grotesk Mono */
+  @font-face {
+    font-family: "Founders Mono";
+    font-weight: 300;
+    font-style: normal;
+    src: url(${FoundersMono}) format("woff");
+  }
+  @font-face {
+    font-family: "Founders Mono";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${FoundersMonoRegular}) format("woff");
+  }
+  @font-face {
+    font-family: "Founders Mono";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${FoundersMonoMedium}) format("woff");
+  }
 
    /** Portrait */
    @font-face {
@@ -143,6 +168,19 @@ export const globalStyles = css`
     font-style: italic;
     src: url(${NoeTextBoldItalic}) format("woff");
   }
+  @font-face {
+    font-family: "Noe Text";
+    font-weight: 900;
+    font-style: normal;
+    src: url(${NoeTextBlack}) format("woff");
+  }
+  @font-face {
+    font-family: "Noe Text";
+    font-weight: 900;
+    font-style: italic;
+    src: url(${NoeTextBlackItalic}) format("woff");
+  }
+
   /** Noe Display */
   @font-face {
     font-family: "Noe Display";

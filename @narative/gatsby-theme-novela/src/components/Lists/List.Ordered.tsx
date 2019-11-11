@@ -2,18 +2,17 @@ import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 
 const OrderedList = styled.ol`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   list-style: none;
   counter-reset: list;
   color: ${p => p.theme.colors.articleText};
   position: relative;
-  padding: 15px 0 28px 30px;
+  padding: 0px 0 28px 0px;
   margin: 0 auto;
   transition: ${p => p.theme.colorModeTransition};
   font-size: ${p => p.theme.fontSizes.p};
-
   width: 100%;
-  max-width: ${p => p.theme.widths.regular};
+  max-width: 565px;
 
   ${mediaqueries.desktop`
     max-width: 507px;
@@ -21,12 +20,12 @@ const OrderedList = styled.ol`
 
   ${mediaqueries.tablet`
     max-width: 486px;
-    padding-left: 0px;
+    padding: 15px 0px 25px 0px;
   `};
 
   ${mediaqueries.phablet`
-    padding-left: 20px;
-    font-size: 18px;
+    padding: 10px 0px 21px 25px;
+    font-size: 19px;
   `};
 
   li {
@@ -39,7 +38,7 @@ const OrderedList = styled.ol`
 
     ${mediaqueries.phablet`
       padding-left: 30px;
-      font-size: 18px;
+      font-size: 19px;
     `};
 
     p {

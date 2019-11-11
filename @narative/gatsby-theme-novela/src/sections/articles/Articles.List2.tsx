@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { css } from '@emotion/core'
 import React, { useEffect} from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import Image from 'gatsby-image';
@@ -6,8 +9,9 @@ import mediaqueries from "@styles/media";
 import Headings from "@components/Headings";
 import Podcast from "@components/Podcast";
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 import Subscription from "@components/Subscription"
+import Sidebar from '@components/Sidebar';
+import HomeFeature from '@components/Sponsored/HomeFeature';
 
 const TwitterContainer = () => {
   useEffect(() => {
@@ -30,7 +34,7 @@ const TwitterContainer = () => {
   );
 };
 
-const limitToTwoLines = css`
+export const limitToTwoLines = css`
   text-overflow: ellipsis;
   overflow-wrap: normal;
   -webkit-line-clamp: 2;
@@ -50,7 +54,7 @@ const ArticlesList2 = () => {
   const data = useStaticQuery(
     graphql`
       query { 
-        allContentfulArticle(sort: {fields: date, order: DESC}, limit: 30) {
+        allContentfulArticle(filter: {category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
           edges {
             node {
               date(formatString: "MMM DD")
@@ -89,8 +93,9 @@ const ArticlesList2 = () => {
         </div>
       <Main>
       <LargeDiv>
+        <HomeFeature />
         {
-          data.allContentfulArticle.edges.slice(0,3).map((item, i) => (
+          data.allContentfulArticle.edges.slice(0,2).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <ListItem to={item.node.slug}>
@@ -121,23 +126,7 @@ const ArticlesList2 = () => {
           ))
         }
         </LargeDiv> 
-        <div>
-        <div style={{paddingBottom: '50px',}}>ad space</div>
-        {
-          data.allContentfulArticle.edges.slice(1,7).map((item, i) => (
-            item.node.hero ? (
-              <div key={i}>
-                <SidebarItem to={item.node.slug}>
-                  
-                  <Slogan>{item.node.slogan}</Slogan>
-                  <Title>{item.node.title}</Title>
-                </SidebarItem>
-              </div>            
-            ) : (<div></div>)
-          ))
-        }
-        <div style={{paddingBottom: '50px',}}>ad space</div>
-        </div>
+        <Sidebar />
         </Main>
         <Podcast />
         <Subscription />
@@ -359,57 +348,17 @@ const SeeAll = styled(Link)`
   ${mediaqueries.phablet`
     padding-top: 9px;
   `};
-`
+`;
 
-const SidebarItem = styled(Link)`
-  border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  position: relative;
-  display: block;
-  & img {
-    padding-bottom: 10px;
-  }
-  & h2 {
-    line-height: 1.25;
-    padding-bottom: 10px
-  }
-
-  &:hover, &:focus {
-    h2 {
-      opacity: 0.5;
-    }
-  }
-
-  &[data-a11y="true"]:focus::after {
-    content: "";
-    position: absolute;
-    left: -1.5%;
-    top: -2%;
-    width: 103%;
-    height: 104%;
-    border: 3px solid ${p => p.theme.colors.accent};
-    background: rgba(255, 255, 255, 0.01);
-    
-  }
-
-  ${mediaqueries.phablet`
-    &:hover, &:focus {
-      transform: none;
-    }
-
-  `}
-`
-const ImageContainer = styled.div`
+export const ImageContainer = styled.div`
   position: relative;
   transition: transform 0.3s var(--ease-out-quad),
-    box-shadow 0.3s var(--ease-out-quad);
+  box-shadow 0.3s var(--ease-out-quad);
 
   
 
   ${mediaqueries.tablet`
-    height: 200px;
-    margin-bottom: 120px;
+    margin-bottom: 20px;
   `}
 
   ${mediaqueries.phablet`
@@ -420,10 +369,10 @@ const ImageContainer = styled.div`
   `}
 `;
 
-const MetaData = styled.div`
+export const MetaData = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   font-style: normal;
   color: ${p => p.theme.colors.primary};
   
@@ -437,18 +386,19 @@ const MetaData = styled.div`
   `}
 `;
 
-const TextContainer = styled.div`
+export const TextContainer = styled.div`
   position: relative;
   padding: 0px 0px 10px 0px;
   ${mediaqueries.phablet`
     padding: 20px 0px 20px 0px;
   `}
+  
 `;
 
-const Excerpt = styled.div`
+export const Excerpt = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
   ${limitToTwoLines};
-  font-size: 15px;
+  font-size: 16px;
   font-style: normal;
   line-height: 1.618;
   margin-top: 0px;
@@ -469,14 +419,15 @@ const Excerpt = styled.div`
 `;
 
 
-const Title = styled(Headings.h2)`
+export const Title = styled(Headings.h2)`
   font-size: 20px;
   line-height: 1.25;
   font-family: "Noe Text";
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   text-transform: none;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
   transition: color 0.3s ease-in-out;
+  color: ${p => p.theme.colors.primary};
 
   ${mediaqueries.desktop`
     margin-bottom: 0px;
@@ -495,7 +446,7 @@ const Title = styled(Headings.h2)`
   `}
 `;
 
-const Slogan = styled.div`
+export const Slogan = styled.div`
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 14px;
@@ -505,7 +456,7 @@ const Slogan = styled.div`
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
   color: ${p => p.theme.colors.primary};
-
+  
 
   ${mediaqueries.desktop`
     display: -webkit-box;
@@ -547,7 +498,7 @@ const Item = styled(Link)`
       padding-top: 0px;
     `}
   }
-  &:hover, &:focus {
+  &:hover {
     transform: translateY(-1px);
     h2 {
       opacity: 0.5;
@@ -555,15 +506,15 @@ const Item = styled(Link)`
   }
   
   ${mediaqueries.phablet`
-    &:hover, &:focus {
+    &:hover {
       transform: none;
       box-shadow: initial;
     }
   `}
 `;
 
-const ListItem = styled(Link)`
-  align-items: top;
+export const ListItem = styled(Link)`
+  align-items: center;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
@@ -589,7 +540,7 @@ const ListItem = styled(Link)`
     font-size: 15px !important;
   }
 
-  &:hover, &:focus {
+  &:hover{
     transform: translateY(-1px);
     h2 {
       opacity: 0.5;
@@ -608,6 +559,8 @@ const ListItem = styled(Link)`
     
   }
   ${mediaqueries.tablet`
+    align-items: top;
+    border: none;
     grid-gap: 0px;
     grid-template-columns: 1fr;
     & h2 {
@@ -617,8 +570,8 @@ const ListItem = styled(Link)`
    
   `}
   ${mediaqueries.phablet`
-    margin-bottom: 25px;
-    &:hover, &:focus {
+    margin-bottom: 5px;
+    &:hover {
       transform: none;
     }
     & h2 {

@@ -138,8 +138,9 @@ const PodcastImageContainer = styled.div`
 `
 const PodcastTitle = styled.h2`
   ${limitToTwoLines}; 
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: "Noe Text";
   font-weight: 700;
+  line-height: 1.3;
   font-size: 16px;
   padding-left: 15px;
   margin-top: -2px;

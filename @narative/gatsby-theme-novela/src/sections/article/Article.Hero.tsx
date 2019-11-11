@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Headings from '@components/Headings';
 import Image, { ImagePlaceholder } from '@components/Image';
-import { jsx } from 'theme-ui'
 import mediaqueries from '@styles/media';
 import { IArticle, IAuthor } from '@types';
 
@@ -16,7 +15,18 @@ interface ArticleHeroProps {
   authors: IAuthor[];
 }
 
+
+
 const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
+  const query = graphql`
+    {
+      contentfulArticle {
+        hero {
+          title
+        }
+      }
+    }
+  `;
   const hasHeroImage =
     Object.keys(article.hero.full).length !== 0 &&
     article.hero.full.constructor === Object;
@@ -26,7 +36,6 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
       <Header>
         <Slogan>
             {article.slogan}
-            
         </Slogan>
         <HeroHeading>{article.title}</HeroHeading>
         <HeroExcerpt>{article.excerpt}</HeroExcerpt>
@@ -37,13 +46,14 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
         ) : (
           <ImagePlaceholder />
         )}
+        <ImageCaption>{article.hero.description}</ImageCaption>
       </HeroImage>
       <Meta>
       <HeroSubtitle>By: <StyledLink to={authors[0].slug}>{article.author}</StyledLink>
             <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> {article.date}
             <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> 
             <StyledLink 
-              style={{ fontStyle: 'italic'}} 
+              
               to={"/category/" + article.category.toString().replace(/\s+/g, '-')}>
               {article.category}
               </StyledLink>
@@ -129,13 +139,13 @@ const Header = styled.header`
 
   ${mediaqueries.tablet`
     padding-left: 0;
-    margin: 100px auto 70px;
+    margin: 80px auto 50px;
     max-width: 480px;
   `}
 
   ${mediaqueries.phablet`
     max-width: 90vw;
-    margin: 80px auto 30px;
+    margin: 55px auto 30px;
     padding: 0 px;
   `}
 `;
@@ -143,7 +153,7 @@ const Header = styled.header`
 const Meta = styled.div`
   position: relative;
   z-index: 10;
-  margin: 60px auto 10px;
+  margin: 50px auto 0px;
   max-width: 680px;
 
   ${mediaqueries.desktop`
@@ -153,12 +163,12 @@ const Meta = styled.div`
 
   ${mediaqueries.tablet`
     padding-left: 0;
-    margin: 50px auto 40px auto;
+    margin: 40px auto 30px auto;
     max-width: 480px;
   `}
 
   ${mediaqueries.phablet`
-    margin: 50px auto 40px auto;
+
   `}
 
 `;
@@ -170,6 +180,7 @@ const HeroHeading = styled(Headings.h1)`
   line-height: 1.1;
   text-transform: none;
   font-weight: 700;
+  color: ${p => p.theme.colors.primary};
 
   ${mediaqueries.tablet`
     margin-bottom: 20px;
@@ -203,9 +214,11 @@ const HeroExcerpt = styled("p")`
 `;
 
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  text-transform: none;
+  font-weight: 400 !important;
+  font-family: ${p => p.theme.fonts.monospace};
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   color: ${p => p.theme.colors.articleText};
 
   ${mediaqueries.tablet`
@@ -214,7 +227,7 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
 
   ${p => mediaqueries.phablet`
     padding: 0 4px;
-    font-size: 16px;
+    font-size: 15px;
     flex-direction: column;
 
     ${p.hasCoAUthors &&
@@ -241,6 +254,21 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   `}
 `;
 
+const ImageCaption = styled.div`
+  font-family: ${p => p.theme.fonts.monospace};
+  font-size: 14px;
+  font-weight: 300;
+  color: ${p => p.theme.colors.primary};
+  opacity: 0.8;
+  padding-top: 10px;
+  text-align: center;
+  ${mediaqueries.tablet`
+    padding-right: 0px;
+  `}
+  ${mediaqueries.phablet`
+    font-size: 12px;
+  `}
+`
 const HeroImage = styled.div`
   position: relative;
   z-index: 1;
@@ -251,16 +279,16 @@ const HeroImage = styled.div`
   
 
   ${mediaqueries.tablet`
-    max-width: 100%;
+    max-width: 100vw;
   `}
 
   ${mediaqueries.phablet`
     margin: 0 auto;
     width: 100vw;
-    height: 220px;
+    
 
     & > div {
-      height: 220px;
+      
     }
 `}
 `;

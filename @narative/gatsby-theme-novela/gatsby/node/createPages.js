@@ -240,6 +240,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
         slug: article.slug,
         id: article.id,
         title: article.title,
+        caption: article.hero.description,
         mailchimp,
         next,
       },

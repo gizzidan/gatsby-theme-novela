@@ -209,7 +209,7 @@ const FooterSpacer = styled.div`
 `;
 
 const BottomContainer = styled.div`
-  width: 610px;
+  width: 630px;
   margin: 10px auto;
   ${mediaqueries.phablet`
     width: 90vw;

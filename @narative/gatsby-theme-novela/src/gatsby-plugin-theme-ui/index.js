@@ -18,7 +18,7 @@ const fonts = {
   sansSerif: 'F Grotesk',
   slogan: 'F Grotesk',
   funHeader: 'Termina',
-  monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
+  monospace: `"Founders Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 
 const fontWeights = {
@@ -30,7 +30,7 @@ const fontSizes = {
 };
 
 const widths = {
-  regular: `580px`,
+  regular: `630px`,
 };
 
 const colorModeTransition =

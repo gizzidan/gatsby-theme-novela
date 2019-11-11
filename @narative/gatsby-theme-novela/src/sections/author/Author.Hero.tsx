@@ -67,7 +67,7 @@ const Heading = styled.h1`
   font-family: "Noe Display";
   color: ${p => p.theme.colors.primary};
   margin-bottom: 15px;
-  font-weight: 400;
+  font-weight: 700;
 
   ${mediaqueries.tablet`
   `}

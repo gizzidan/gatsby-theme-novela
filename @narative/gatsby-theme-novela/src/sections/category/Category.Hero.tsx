@@ -30,6 +30,7 @@ const Label = styled.h2`
   `};
 
   ${mediaqueries.phablet`
+    padding-bottom: 30px;
     -webkit-text-stroke-width: 1px;
     font-size: 74px;
     font-weight: 500;

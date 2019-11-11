@@ -79,10 +79,16 @@ export default ArticlesList;
 
 const ListItem = ({ article }: ArticlesListItemProps) => {
   if (!article) return null;
+  
 
   return (
-
+    <div style={{
+      display: 'grid',
+      justifyItems: 'center',
+      gridTemplateColumns: '1fr',
+          }}>
       <Item to={article.slug} data-a11y="false"> 
+       <Image style={{ margin: '0 0 1em 1em', float: 'right', width: '90px', height: '90px'}} src={article.hero.regular}></Image>
         <TextContainer>
           <Slogan>
             <p>{article.slogan}</p>
@@ -98,7 +104,7 @@ const ListItem = ({ article }: ArticlesListItemProps) => {
           </MetaData>
         </TextContainer>
       </Item>
-
+    </div>
       
   );
 };
@@ -118,20 +124,23 @@ const limitToTwoLines = css`
   `}
 `;
 
+
 const TextContainer = styled("div")`
+  width: 100%;
   padding: 0px 0px 30px 0px;
   ${mediaqueries.phablet`
-    padding: 20px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
   `}
 `;
 
-const Slogan = styled.div`
+const Slogan = styled.p`
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 16px;
   line-height: 1.7;
-  margin-top: 0px;
   margin-bottom: 5px;
+  margin-top: 0px;
+  padding-top: 0px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
   color: ${p => p.theme.colors.primary};
@@ -144,7 +153,7 @@ const Slogan = styled.div`
   ${mediaqueries.phablet`
     font-size: 14px;
     max-width: 100%;
-    padding:  0;
+    padding: 0px;
     margin-bottom: 5px;
     -webkit-line-clamp: 2;
   `}
@@ -153,9 +162,9 @@ const Slogan = styled.div`
 
 const Item = styled(Link)`
   border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
+  display: block;
   text-align: left;
   position: relative;
-  display: block;
   width: 550px;
   top: 0;
   left: 0;
@@ -189,7 +198,7 @@ const Item = styled(Link)`
   }
 
   ${mediaqueries.phablet`
-    
+    grid-template-columns: 1fr;
     padding-bottom: 10px;
     width: 90vw;
     &:hover {
@@ -197,17 +206,17 @@ const Item = styled(Link)`
       box-shadow: initial;
     }
 
-  
+   
   `}
 `;
 
 const Title = styled(Headings.h2)`
   font-size: 22px;
-  line-height: 1.3;
+  line-height: 1.25 !important;
   font-family: "Noe Text";
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   text-transform: none;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
 
   ${mediaqueries.desktop`
@@ -221,20 +230,17 @@ const Title = styled(Headings.h2)`
   ${mediaqueries.phablet`
     font-size: 20px;  
     padding: 0px;
-    margin-bottom: -5px;
+    margin-bottom: 7px;
     -webkit-line-clamp: 3;
   `}
 `;
 
-const Excerpt = styled.div`
+const Excerpt = styled.p`
   font-family: ${p => p.theme.fonts.sansSerif};
-  ${limitToTwoLines};
   font-size: 18px;
   font-style: normal;
-  letter-spacing: -.005em;
   line-height: 1.618;
-  margin-top: 15px;
-  margin-bottom: 5px !important;
+  margin-bottom: 12px !important;
   font-weight: 400;
   color: ${p => p.theme.colors.primary} !important;
 
@@ -245,14 +251,14 @@ const Excerpt = styled.div`
 
   ${mediaqueries.phablet`
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     max-width: 100%;
     padding:  0;
     -webkit-line-clamp: 2;
   `}
 `;
 
-const MetaData = styled.div`
+export const MetaData = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
   font-weight: 400;
   font-size: 16px;
@@ -264,6 +270,5 @@ const MetaData = styled.div`
   ${mediaqueries.phablet`
     font-size: 15px;
     max-width: 100%;
-    padding:  10px 0px 10px;
   `}
 `;

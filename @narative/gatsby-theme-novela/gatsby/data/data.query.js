@@ -36,6 +36,11 @@ module.exports.local = {
           subscription
           body
           hero {
+            list: childImageSharp {
+              fixed(width: 100, height: 100, quality: 100) {
+                src
+              }
+            }
             full: childImageSharp {
               fluid(maxWidth: 944, quality: 100) {
                 ${GatsbyFluid_withWebp}
@@ -130,6 +135,8 @@ module.exports.contentful = {
             seo: fixed(width: 1200, quality: 100) {
               src
             }
+            title
+            description
           }
           id
           author {

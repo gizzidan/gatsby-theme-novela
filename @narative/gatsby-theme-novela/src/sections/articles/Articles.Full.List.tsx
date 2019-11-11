@@ -14,7 +14,7 @@ const ArticlesFullList = () => {
   const data = useStaticQuery(
     graphql`
       query { 
-        allContentfulArticle(sort: {fields: date, order: DESC}, limit: 32) {
+        allContentfulArticle(filter: {category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 32) {
           edges {
             node {
               date(formatString: "MMM DD")
@@ -24,8 +24,8 @@ const ArticlesFullList = () => {
               title
               category 
               hero {
-                sizes(maxWidth: 600, maxHeight: 400, quality:100) {
-                  ...GatsbyContentfulSizes_withWebp
+                fixed(width: 90, height: 90, quality:100) {
+                  ...GatsbyContentfulFixed_withWebp
                  }  
               }
               body {
@@ -54,22 +54,20 @@ const ArticlesFullList = () => {
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>  
-                 
+                    <ImageContainer fixed={item.node.hero.fixed}></ImageContainer> 
                     <TextContainer>
-                    <Slogan>
-                        <p>{item.node.slogan}</p>
-                      </Slogan>
-
-                      <Title>
+                      <Slogan>{item.node.slogan}</Slogan>
+                    <Title>
                         {item.node.title}
-                      </Title>
-                      <Excerpt>
-                        {item.node.excerpt}
-                      </Excerpt>
+                    </Title>
+                    <Excerpt>
+                      {item.node.excerpt}
+                    </Excerpt>
                       <MetaData>
                         {item.node.date} · {item.node.body.childMdx.timeToRead} min read
                       </MetaData>
                     </TextContainer>
+             
                    
                   </Item>
               </div>
@@ -110,7 +108,7 @@ const Label = styled.h2`
 
   ${mediaqueries.phablet`
     -webkit-text-stroke-width: 1px;
-    
+    padding-bottom: 30px;
     font-size: 70px;
     font-weight: 500;
     line-height: 1.3;
@@ -119,8 +117,8 @@ const Label = styled.h2`
 
 
 const Item = styled(Link)`
-  display: block;
   border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
+  display: block;
   text-align: left;
   position: relative;
   width: 550px;
@@ -168,24 +166,23 @@ const Item = styled(Link)`
   `}
 `;
 
-const ImageContainer = styled.div`
-
-  
-
+const ImageContainer = styled(Image)`
+  float: right;
+  margin: 0 0 1em 1em;
   ${mediaqueries.tablet`
     
   `}
 
   ${mediaqueries.phablet`
-    display: none;
+    
   `}
 `;
 
 const TextContainer = styled("div")`
-  position: relative;
+  width: 100%;
   padding: 0px 0px 30px 0px;
   ${mediaqueries.phablet`
-    padding: 20px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
   `}
 `;
 
@@ -205,12 +202,13 @@ const limitToTwoLines = css`
 
 
 const Title = styled(Headings.h2)`
+ 
   font-size: 22px;
-  line-height: 1.3;
+  line-height: 1.25 !important;
   font-family: "Noe Text";
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   text-transform: none;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
 
   ${mediaqueries.desktop`
@@ -224,7 +222,7 @@ const Title = styled(Headings.h2)`
   ${mediaqueries.phablet`
     font-size: 20px;  
     padding: 0px;
-    margin-bottom: -5px;
+    margin-bottom: 7px;
     -webkit-line-clamp: 3;
   `}
 `;
@@ -234,8 +232,9 @@ const Slogan = styled.p`
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 16px;
   line-height: 1.7;
-  margin-top: 0px;
   margin-bottom: 5px;
+  margin-top: 0px;
+  padding-top: 0px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
   color: ${p => p.theme.colors.primary};
@@ -248,7 +247,7 @@ const Slogan = styled.p`
   ${mediaqueries.phablet`
     font-size: 14px;
     max-width: 100%;
-    padding:  0;
+    padding: 0px;
     margin-bottom: 5px;
     -webkit-line-clamp: 2;
   `}
@@ -256,13 +255,10 @@ const Slogan = styled.p`
 
 const Excerpt = styled.p`
   font-family: ${p => p.theme.fonts.sansSerif};
-  ${limitToTwoLines};
   font-size: 18px;
-  letter-spacing: -.005em;
   font-style: normal;
   line-height: 1.618;
-  margin-top: 15px;
-  margin-bottom: 5px !important;
+  margin-bottom: 12px !important;
   font-weight: 400;
   color: ${p => p.theme.colors.primary} !important;
 
@@ -273,7 +269,7 @@ const Excerpt = styled.p`
 
   ${mediaqueries.phablet`
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     max-width: 100%;
     padding:  0;
     -webkit-line-clamp: 2;
@@ -292,6 +288,5 @@ export const MetaData = styled.div`
   ${mediaqueries.phablet`
     font-size: 15px;
     max-width: 100%;
-    padding:  10px 0px 10px;
   `}
 `;

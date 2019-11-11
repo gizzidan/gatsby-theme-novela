@@ -48,6 +48,7 @@ export interface IArticle {
     preview: IGatsbyImageFluid;
     regular: IGatsbyImageFluid;
     seo: string;
+    title: string;
   };
   timeToRead: number;
   date: string;

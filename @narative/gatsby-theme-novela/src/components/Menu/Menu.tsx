@@ -7,7 +7,7 @@ import mediaqueries from "@styles/media";
 const Menu = ({ open }) => {
     return (
         <StyledMenu open={open}>
-        <Label>Topics</Label>
+        
         <MenuLink to='/latest'>Latest</MenuLink>
         <MenuLink to='/category/thoughts'>Thoughts</MenuLink>
         <MenuLink to='/category/culture'>Culture</MenuLink>
@@ -43,7 +43,7 @@ const StyledMenu = styled.div`
   flex-direction: column;
   justify-content: center;
   z-index: 4000;
-  background: rgba(224, 220, 238, 0.95);
+  background: rgba(2, 2, 2, 0.96);
   height: 100vh;
   text-align: center;
   padding-left: 0px;
@@ -52,7 +52,7 @@ const StyledMenu = styled.div`
  
   ${mediaqueries.tablet`
     width: 100vw;
-    background: rgb(211,209,219);
+    background: rgb(2,2,2);
   `}
 `;
 
@@ -62,10 +62,10 @@ const Label = styled.p`
   font-size: 20px;
   padding-bottom: 10px;
   text-transform: uppercase;
-  color: #4524ea;
+  color: #eedaf8;
   ${mediaqueries.tablet`
     font-size: 18px;
-    background: rgb(211,209,219);
+    
   `}
 `;
 
@@ -73,7 +73,7 @@ const MenuLink = styled(Link)`
   font-family: "Noe Display";
   font-weight: 500;
   font-size: 74px;
-  color: #4524ea;
+  color: #eedaf8;
   font-style: normal;
   border-width: 50%;
   text-transform: none;
@@ -84,7 +84,7 @@ const MenuLink = styled(Link)`
   }
   ${mediaqueries.tablet`
     font-size: 52px;
-    background: rgb(211,209,219);
+    
   `}
 `;
 
@@ -101,12 +101,12 @@ const SecondaryLink = styled(Link)`
   font-family: "F Grotesk";
   font-size: 20px;
   font-weight: 400;
-  color: #4524ea;
+  color: #eedaf8;
   &:hover {
     border-bottom: 1px solid;
   }
   ${mediaqueries.tablet`
     font-size: 18px;
-    background: rgb(211,209,219);
+    
   `}
 `;
