@@ -27,7 +27,6 @@ interface IGatsbyImageFixed extends IGatsbyImage {
 
 export interface IAuthor {
   authorsPage?: boolean;
-  featured?: boolean;
   name: string;
   slug: string;
   bio: string;

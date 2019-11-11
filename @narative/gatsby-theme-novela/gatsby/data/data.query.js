@@ -74,7 +74,6 @@ module.exports.local = {
           bio
           id
           name
-          featured
           social {
             url
           }
@@ -170,7 +169,6 @@ module.exports.contentful = {
           id
           name
           social
-          featured
         }
       }
     }

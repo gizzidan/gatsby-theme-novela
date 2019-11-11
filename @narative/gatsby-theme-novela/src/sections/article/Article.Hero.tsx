@@ -214,6 +214,7 @@ const HeroExcerpt = styled("p")`
 `;
 
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
+  letter-spacing: -0.4px;
   text-transform: none;
   font-weight: 400 !important;
   font-family: ${p => p.theme.fonts.monospace};
@@ -226,6 +227,7 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   `}
 
   ${p => mediaqueries.phablet`
+    letter-spacing: -0.2px;
     padding: 0 4px;
     font-size: 15px;
     flex-direction: column;
@@ -259,7 +261,7 @@ const ImageCaption = styled.div`
   font-size: 14px;
   font-weight: 300;
   color: ${p => p.theme.colors.primary};
-  opacity: 0.8;
+  opacity: 1;
   padding-top: 10px;
   text-align: center;
   ${mediaqueries.tablet`
