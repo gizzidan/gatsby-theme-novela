@@ -5,8 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from 'gatsby-image';
 import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
-
-import { Title, Slogan, Excerpt, MetaData, ListItem, TextContainer} 
+import { limitToTwoLines, Title, Slogan, Excerpt, MetaData, ListItem, TextContainer} 
     from "@narative/gatsby-theme-novela/src/sections/articles/Articles.List2";
 
 const HomeFeature = () => {
