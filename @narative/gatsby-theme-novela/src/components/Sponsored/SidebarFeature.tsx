@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import { useStaticQuery, graphql } from "gatsby"
 import Image from 'gatsby-image';
-import {limittoTwoLines, SidebarItem, STextContainer, InnerContainer, SSlogan, STitle, SMetaData, CatLink, SImageContainer } 
+import { SidebarItem, STextContainer, InnerContainer, SSlogan, STitle, SMetaData, CatLink, SImageContainer } 
         from '@components/Sidebar/Sidebar';
 
 const Sidebar = () => {

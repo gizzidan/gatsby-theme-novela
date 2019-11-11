@@ -2,11 +2,26 @@
 import { jsx } from 'theme-ui'
 import React, { useEffect} from 'react';
 import { useStaticQuery, graphql } from "gatsby"
+import { css } from '@emotion/core';
 import Image from 'gatsby-image';
 import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
-import { limitToTwoLines, Title, Slogan, Excerpt, MetaData, ListItem, TextContainer} 
+import { Title, Slogan, Excerpt, MetaData, ListItem, TextContainer} 
     from "@narative/gatsby-theme-novela/src/sections/articles/Articles.List2";
+
+const limitToTwoLines = css`
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  white-space: normal;
+  overflow: hidden;
+
+  ${mediaqueries.phablet`
+    -webkit-line-clamp: 2;
+  `}
+`;
 
 const HomeFeature = () => {
     const data = useStaticQuery(
