@@ -9,6 +9,7 @@ import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import LandingSub from "@components/LandingSub";
 import LogoLanding from "@components/Logo/LogoLanding";
+import background from "www/static/black.jpeg"
 
 
 function Welcome({ location }) {
@@ -39,7 +40,7 @@ const Hero = styled.section`
   top: 0;
   left: 0;
   background: linear-gradient(to top right, rgba(63,61,76, 0.9), rgba(63,61,76, 0.9)), 
-              url('/black.jpeg') no-repeat center center;
+              url(${background}) no-repeat center center;
   background-size: cover;
   padding: 0 10px;
 `
