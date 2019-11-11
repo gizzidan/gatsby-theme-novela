@@ -39,7 +39,7 @@ const Hero = styled.section`
   top: 0;
   left: 0;
   background: linear-gradient(to top right, rgba(63,61,76, 0.9), rgba(63,61,76, 0.9)), 
-              url("black.jpeg") no-repeat center center;
+              url('./black.jpeg') no-repeat center center;
   background-size: cover;
   padding: 0 10px;
 `
