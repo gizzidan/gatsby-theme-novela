@@ -7,11 +7,9 @@ import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import mediaqueries from "@styles/media";
 import Headings from "@components/Headings";
-import { limitToTwoLines } from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2.tsx';
 import SidebarFeature from '@components/Sponsored/SidebarFeature';
 
 const Sidebar = () => {
-	const isSponsored = "Sponsor Content";
 	const data = useStaticQuery(
     graphql`
       query { 
@@ -154,7 +152,6 @@ export const STitle = styled(Headings.h2)`
 `;
 
 export const SSlogan = styled.div`
-  ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 14px;
 	line-height: 1.7;
