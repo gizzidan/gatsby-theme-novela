@@ -28,7 +28,6 @@ const StyledBurger = styled.button`
   right: 30px;
   display: flex;
   flex-direction: column;
-  
   background: transparent;
   border: none;
   cursor: pointer;
@@ -45,7 +44,7 @@ const StyledBurger = styled.button`
     width: 25px;
     margin: 2.5px;
     height: 3px;
-    background: ${({ open }) => open ? '#4524ea' : p => p.theme.colors.navbar};
+    background: ${({ open }) => open ? '#eedaf8' : p => p.theme.colors.navbarSecond};
     border-radius: 10px;
     transition: all 0.20s linear;
     position: relative;

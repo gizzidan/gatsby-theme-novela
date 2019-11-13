@@ -99,9 +99,8 @@ const Label = styled.h2`
   font-weight: 500;
   text-transform: none;
   font-size: 180px;
-  letter-spacing: -0.03em;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 90px;
   ${mediaqueries.desktop`
     font-size: 100px;
   `};

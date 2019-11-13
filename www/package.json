@@ -19,8 +19,12 @@
     "gatsby-source-filesystem": "^2.1.9",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-focus-on": "^3.3.0",
+    "react-headroom": "^3.0.0",
     "react-indiana-drag-scroll": "^1.4.2",
     "react-moment": "^0.9.6",
-    "react-social-sharing": "^3.0.1"
+    "react-social-sharing": "^3.0.1",
+    "scroll-to-element": "^2.0.3",
+    "underscore": "^1.9.1"
   }
 }

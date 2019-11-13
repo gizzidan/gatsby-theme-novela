@@ -153,7 +153,7 @@ const Header = styled.header`
 const Meta = styled.div`
   position: relative;
   z-index: 10;
-  margin: 50px auto 0px;
+  margin: 35px auto 0px;
   max-width: 680px;
 
   ${mediaqueries.desktop`

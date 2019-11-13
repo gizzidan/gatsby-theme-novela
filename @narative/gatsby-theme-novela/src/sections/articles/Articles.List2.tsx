@@ -12,6 +12,7 @@ import styled from "@emotion/styled";
 import Subscription from "@components/Subscription"
 import Sidebar from '@components/Sidebar';
 import HomeFeature from '@components/Sponsored/HomeFeature';
+import Sidenav from '@components/Sidenav/Sidenav';
 
 const TwitterContainer = () => {
   useEffect(() => {
@@ -49,7 +50,7 @@ export const limitToTwoLines = css`
 `;
 
 const ArticlesList2 = () => {
-  const sectiongap = '45px';
+  const sectiongap = '55px';
   const gap = '25px';
   const data = useStaticQuery(
     graphql`
@@ -84,57 +85,63 @@ const ArticlesList2 = () => {
   )
     return (
       <Container>
-        <div style={{ 
-          position: 'relative',
-          display: 'flex',
-          paddingTop: '70px'
-          }}>
-          <Label>The Latest ⌚️</Label><SeeAll to="/latest">See All →</SeeAll>
-        </div>
-      <Main>
-      <LargeDiv>
-        <HomeFeature />
-        {
-          data.allContentfulArticle.edges.slice(0,2).map((item, i) => (
-            item.node.hero ? (
-              <div key={i}>
-                <ListItem to={item.node.slug}>
-                <ImageContainer>
-                    <Image
-                      fluid={item.node.hero.sizes}
-                    />
-                  </ImageContainer>            
-                    <TextContainer>
-                    <Slogan>
-                        <p>{item.node.slogan}</p>
-                      </Slogan>
+  
+       <div style={{
+            
+            }}>
+       <div style={{ 
+              position: 'relative',
+              display: 'flex',
+              paddingTop: '40px'
+              }}>
+              <Label id="latest">The Latest ⌚️</Label><SeeAll to="/latest">See All →</SeeAll>
+            </div>
+        <Main>
+          
+          <LargeDiv id="latest">
+            
+            <HomeFeature/>
+            {
+              data.allContentfulArticle.edges.slice(0,2).map((item, i) => (
+                item.node.hero ? (
+                  <div key={i}>
+                    <ListItem to={item.node.slug}>
+                    <ImageContainer>
+                        <Image
+                          fluid={item.node.hero.sizes}
+                        />
+                      </ImageContainer>            
+                        <TextContainer>
+                        <Slogan>
+                            <p>{item.node.slogan}</p>
+                          </Slogan>
 
-                      <Title>
-                        {item.node.title}
-                      </Title>
-                      <Excerpt>
-                        {item.node.excerpt}
-                      </Excerpt>
-                      <MetaData>
-                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read 
-                      </MetaData>
-                    </TextContainer>
-                  </ListItem>
-              </div>
-              
-            ) : (<div></div>)
-          ))
-        }
-        </LargeDiv> 
-        <Sidebar />
-        </Main>
-        <Podcast />
-        <Subscription />
+                          <Title>
+                            {item.node.title}
+                          </Title>
+                          <Excerpt>
+                            {item.node.excerpt}
+                          </Excerpt>
+                          <MetaData>
+                            {item.node.date} · {item.node.body.childMdx.timeToRead} min read 
+                          </MetaData>
+                        </TextContainer>
+                      </ListItem>
+                  </div>
+                  
+                ) : (<div></div>)
+              ))
+            }
+            </LargeDiv> 
+          <Sidebar />
+          </Main>
+          <Subscription />
+          <Podcast />
         <div style={{ 
           position: 'relative',
           display: 'flex',
           }}>
-          <Label>Thoughts 🧠</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
+          <Label id="thoughts">Thoughts 🧠</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
         </div>
      
         <StyledDiv style={{
@@ -181,7 +188,7 @@ const ArticlesList2 = () => {
           position: 'relative',
           display: 'flex',
           }}>
-          <Label>Culture 🎨</Label><SeeAll to='/category/culture'>See All →</SeeAll>
+          <Label id="culture">Culture 🎨</Label><SeeAll to='/category/culture'>See All →</SeeAll>
         </div>
          
         <StyledDiv style={{
@@ -228,7 +235,7 @@ const ArticlesList2 = () => {
           position: 'relative',
           display: 'flex',
           }}>
-          <Label>Goings On 🗞</Label><SeeAll to="/category/goings-on">See All →</SeeAll>
+          <Label id="goings-on">Goings On 🗞</Label><SeeAll to="/category/goings-on">See All →</SeeAll>
         </div>
         <StyledDiv style={{
         marginBottom: sectiongap, 
@@ -269,7 +276,8 @@ const ArticlesList2 = () => {
             ) : (<div style={{ display: 'none'}}></div>)
           ))
         }
-        </StyledDiv>
+        </StyledDiv>    
+       </div>
       </Container>
         
       
@@ -280,10 +288,11 @@ export default ArticlesList2;
 
 const Main = styled.div`
   display: grid;
-  grid-template-columns: 1fr 350px;
+  grid-template-columns: 1fr 300px;
   grid-template-rows: 1fr;
   grid-gap: 70px;
   margin-bottom: 50px;
+  position: relative;
   ${mediaqueries.desktop`
     grid-gap: 10px;
     grid-template-columns: 1fr;
@@ -310,6 +319,7 @@ const Container = styled.section`
 
 
 const Label = styled.h2`
+
   font-family: "Noe Display";
   color: ${p => p.theme.colors.primary};
   font-weight: 700;
@@ -358,7 +368,7 @@ export const ImageContainer = styled.div`
   
 
   ${mediaqueries.tablet`
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   `}
 
   ${mediaqueries.phablet`
@@ -390,7 +400,7 @@ export const TextContainer = styled.div`
   position: relative;
   padding: 0px 0px 10px 0px;
   ${mediaqueries.phablet`
-    padding: 20px 0px 20px 0px;
+    padding: 10px 0px 20px 0px;
   `}
   
 `;
@@ -561,7 +571,7 @@ export const ListItem = styled(Link)`
   ${mediaqueries.tablet`
     align-items: top;
     border: none;
-    grid-gap: 0px;
+    grid-gap: 15px;
     grid-template-columns: 1fr;
     & h2 {
       font-size: 24px;
@@ -571,6 +581,7 @@ export const ListItem = styled(Link)`
   `}
   ${mediaqueries.phablet`
     margin-bottom: 5px;
+    grid-gap: 0px;
     &:hover {
       transform: none;
     }

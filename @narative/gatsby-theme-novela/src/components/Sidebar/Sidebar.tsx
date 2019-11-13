@@ -86,6 +86,7 @@ export const CatLink = styled(Link) `
 	}
 `	
 export const SContainer = styled.div`
+	
 	${mediaqueries.desktop`
 		width: 100vw;
 		position: relative;

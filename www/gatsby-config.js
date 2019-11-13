@@ -1,8 +1,8 @@
 require("dotenv").config();
 
 const siteMetadata = {
-  title: `Shoreside News`,
-  name: `Shoreside`,
+  title: `The Hum`,
+  name: `The Hum`,
   siteUrl: `https://novela.narative.co`,
   description: `Bringing Sanity to the Jersey Shore: Your Local Source`,
   hero: {

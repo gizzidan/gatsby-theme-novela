@@ -9,7 +9,9 @@ const breakpoints = [
   ['tablet', 813],
   ['desktop', 1070],
   ['desktop_medium', 1280],
+  ['desktop_mediumlarge', 1380],
   ['desktop_large', 1440],
+  ['desktop_xlarge', 1700],
 ];
 
 const fonts = {

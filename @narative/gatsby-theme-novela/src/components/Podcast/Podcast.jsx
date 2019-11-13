@@ -57,7 +57,7 @@ const Podcast = () => {
       return (
         <PodcastContainer>
           <Header>Checkout Our Podcasts</Header>
-          
+
             <ScrollContainer 
               nativeMobileScroll='true'
               hideScrollbars='false'
@@ -87,22 +87,22 @@ const Podcast = () => {
                   ) : (<div style={{ display: 'none'}}></div>)
                 ))
               }
-            </ScrollContainer>
 
+            </ScrollContainer>
         </PodcastContainer>
     )
 }
 
 export default Podcast;
 
-
 const PodcastContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 300px;
   margin: 0 auto;
   display: block;
   justify-content: center;
   align-items: center;
+  padding-bottom: 70px;  
   ${mediaqueries.phablet`
     padding-top: 20px;
     padding-bottom: 70px;
@@ -112,7 +112,7 @@ const Header = styled.h2`
   color: ${p => p.theme.colors.primary};
   font-family: "Noe Display";
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
   font-style: italic;
 `
 

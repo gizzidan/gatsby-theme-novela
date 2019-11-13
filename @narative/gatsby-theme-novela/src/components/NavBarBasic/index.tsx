@@ -11,6 +11,8 @@ import { copyToClipboard, } from "@utils";
 import Logo from "@components/Logo";
 import Menu from '@components/Menu';
 import Burger from '@components/Burger';
+import Headroom from 'react-headroom';
+import MobileNav from '@components/MobileNav'
 
 function BurgerMenu () {
   const [open, setOpen] = useState(false);
@@ -26,7 +28,7 @@ function SharePageButton() {
     const [hasCopied, setHasCopied] = useState<boolean>(false);
     const [colorMode] = useColorMode();
     const isDark = colorMode === `dark`;
-    const fill = isDark ? "#fff" : "#000";
+    const fill = isDark ? "#fff" : "#fff";
   
     function copyToClipboardOnClick() {
       if (hasCopied) return;
@@ -107,25 +109,35 @@ export const BgContainer = styled("header")`
 
 
 export const LinkContainer = styled("div")`
+  display: none;
   z-index: 1000;
   top: 50%;
-  transform: translate(0,-50%);
+  left: 50%;
+  transform: translate(-50%,-50%);
   line-height: 0px;
   position: absolute;
-  display: flex;
-  align-items: center;
-  left: 22px;
-    ${mediaqueries.tablet`
-        display: none;
-      `}
+  color: white;
+  width: 100%;
+  max-width: 1470px;
+  z-index: 1000;
+  padding: 0 4rem;
+  align-items: left;
+  text-align: left;
+  ${mediaqueries.desktop_xlarge`
+     text-align: center;
+
+  `}
+  ${mediaqueries.desktop`
+    display: none;
+  `}
 `;
 
 export const StyledLink = styled(Link)`
     color: ${a => a.theme.colors.navbar};
-    font-size: 18px;
-    padding-left: 20px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-size: 15px;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-right: 20px;
     transition: all 0.15s ease;
 
     &:hover {
@@ -135,6 +147,21 @@ export const StyledLink = styled(Link)`
     }
 `;
 
+export const StyledLinkBig = styled(Link)`
+    color: ${a => a.theme.colors.navbar};
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 20px;
+    transition: all 0.15s ease;
+    &:hover {
+        opacity: 0.6;
+        transition: all 0.15s ease;
+        
+    }
+    
+`;
+
 export const ToolContainer = styled("div")`
     top: 50%;
     transform: translate(0,-50%);
@@ -142,9 +169,9 @@ export const ToolContainer = styled("div")`
     z-index: 1000;
     margin-top: 0px;
     display: flex;
-    right: 78px;
+    right: 20px;
     ${mediaqueries.tablet`
-      right: 54px;
+      right: 15px;
     `}
 `
 
@@ -167,7 +194,7 @@ export const LogoContainer = styled(Link)`
     }
     ${mediaqueries.tablet`
       font-size: 22px;
-      left: 15px;
+      left: 20px;
     `}
     ${mediaqueries.phone_small`
       font-size: 18px;
@@ -190,28 +217,42 @@ export const Separator = styled("div")`
 
 
 export default class NavBarBasic extends React.Component {
+  
   render (){
     return (
-      <Container>
-         <BgContainer/>
-          <LogoContainer 
-          to="/"
-          data-a11y="false"
-          title="Navigate back to the homepage"
-          aria-label="Navigate back to the homepage">
-           <p>Shoreside <span style={{ fontStyle: 'italic',}}>News</span></p>
-          </LogoContainer>
-          <div> <BurgerMenu /></div>
-            
+      <div>
+      <Headroom style={{ zIndex: '1000'}}>
+        <Container>
+          <BgContainer/>
+            <LogoContainer 
+            to="/"
+            data-a11y="false"
+            title="Navigate back to the homepage"
+            aria-label="Navigate back to the homepage">
+            <Logo/>
+            </LogoContainer>
             <LinkContainer >
-      
-            </LinkContainer>
+              </LinkContainer>
             <ToolContainer >
-              <SharePageButton />
+               <SharePageButton />
                <DarkModeToggle />
             </ToolContainer>
-    </Container>
+          <LowerContainer>
+          <MobileNav />
+      </LowerContainer>
+      </Container>
+    </Headroom>
+     </div>
     )
   }
-
 }
+
+const LowerContainer = styled("header")`
+  padding-top: 0px;
+  position: relative;
+  width: 100vw;
+  top: 0px;
+  z-index: 100;
+  text-align: center;
+  transition: all 0.15s linear;
+`;

@@ -256,22 +256,10 @@ export const IconWrapper = styled.button<{ isDark: boolean }>`
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s ease;
-  margin-left: 9px;
+  margin-left: 2px;
 
   &:hover {
     opacity: 0.6;
-  }
-
-  &[data-a11y="true"]:focus::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -30%;
-    width: 100%;
-    height: 160%;
-    border: 2px solid ${p => p.theme.colors.accent};
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 5px;
   }
 
   ${mediaqueries.tablet`

@@ -115,9 +115,9 @@ function Article({ pageContext, location }) {
         }
           </Tags>
           <SocialContainer>
-            <Twitter solid medium message="Checkout this article from Shoreside" link={article.slug}/>
+            <Twitter solid medium message="Checkout this article from The Hum" link={article.slug}/>
             <Facebook solid medium link={article.slug}/>
-            <Mail solid medium subject="Checkout this article from Shoreside" link={article.slug}/>
+            <Mail solid medium subject="Checkout this article from The Hum" link={article.slug}/>
           </SocialContainer>
           <DiscussionEmbed {...disqusConfig}/>
         </BottomContainer>

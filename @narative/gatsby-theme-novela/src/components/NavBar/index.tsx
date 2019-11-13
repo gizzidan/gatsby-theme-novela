@@ -1,16 +1,18 @@
 import React, { Fragment } from 'react'
 import { useState } from "react";
 import { Link } from 'gatsby';
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 import mediaqueries from "@styles/media";
 import { useColorMode } from "theme-ui";
 import Icons from "@icons";
 import {IconWrapper, MoonOrSun, MoonMask, ToolTip} 
     from "@narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx";
 import { copyToClipboard, } from "@utils";
+import Logo from "@components/Logo";
+import Headroom from "react-headroom";
+import MobileNav from '@components/MobileNav';
+import styled from "@emotion/styled";
 
-import { Container, BgContainer, LogoContainer, LinkContainer, StyledLink, ToolContainer, Separator }
+import { Container, BgContainer, LogoContainer, LinkContainer, StyledLink, ToolContainer, Separator, StyledLinkBig}
     from "@components/NavBarBasic";
 import Burger from '@components/Burger';
 import Menu from '@components/Menu';
@@ -30,7 +32,7 @@ function SharePageButton() {
     const [hasCopied, setHasCopied] = useState<boolean>(false);
     const [colorMode] = useColorMode();
     const isDark = colorMode === `dark`;
-    const fill = isDark ? "#fff" : "#000";
+    const fill = isDark ? "#fff" : "#fff";
   
     function copyToClipboardOnClick() {
       if (hasCopied) return;
@@ -92,7 +94,7 @@ export default class NavBar extends React.Component {
   }
 
   listenScrollEvent = e => {
-    if (window.scrollY > 150) {
+    if (window.scrollY > 200) {
       this.setState({color: 'white', opacity: '1', logo: 'inherit', reverse: '0',})
     } else {
       this.setState({color: 'transparent', opacity: '0', logo: 'white', reverse: '1',})
@@ -106,33 +108,40 @@ export default class NavBar extends React.Component {
 
   render (){
     return (
+      <div>
+     <Headroom style={{zIndex: '1000'}}>
       <Container>
          <BgContainer style={{opacity: this.state.opacity}}/>
          <LogoContainer 
-          style={{opacity: this.state.reverse, color: 'white'}}
+          
           to="/"
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage">
-            <p>Shoreside <span style={{ fontStyle: 'italic',}}>News</span></p>
+            <Logo />
           </LogoContainer>
-         <LogoContainer 
-          style={{opacity: this.state.opacity}}
-          to="/"
-          data-a11y="false"
-          title="Navigate back to the homepage"
-          aria-label="Navigate back to the homepage">
-            <p>Shoreside <span style={{ fontStyle: 'italic',}}>News</span></p>
-          </LogoContainer>
-          <div style={{opacity: this.state.opacity}}> <BurgerMenu /></div>
-            <LinkContainer style={{opacity: this.state.opacity}} >
-            </LinkContainer>
+            
             <ToolContainer style={{opacity: this.state.opacity}}>
                 <SharePageButton />
                 <DarkModeToggle />
             </ToolContainer>
-    </Container>
+            <LowerContainer style={{opacity: this.state.opacity}}>
+               <MobileNav />
+            </LowerContainer>
+      </Container> 
+    </Headroom>
+    </div>
     )
   }
 
 }
+
+const LowerContainer = styled("header")`
+  padding-top: 0px;
+  position: relative;
+  width: 100vw;
+  top: 0px;
+  z-index: 100;
+  text-align: center;
+  transition: all 0.15s linear;
+`;

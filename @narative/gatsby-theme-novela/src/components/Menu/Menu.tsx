@@ -4,10 +4,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import mediaqueries from "@styles/media";
 
+
 const Menu = ({ open }) => {
     return (
         <StyledMenu open={open}>
-        
         <MenuLink to='/latest'>Latest</MenuLink>
         <MenuLink to='/category/thoughts'>Thoughts</MenuLink>
         <MenuLink to='/category/culture'>Culture</MenuLink>
@@ -41,14 +41,17 @@ const StyledMenu = styled.div`
   display: flex;
   transform: ${({ open }) => open ? 'translateX(0vw)' : 'translateX(-100vw)'};
   flex-direction: column;
+  overflow: scroll;
   justify-content: center;
   z-index: 4000;
-  background: rgba(2, 2, 2, 0.96);
+  position: fixed !important;
+  background: #6d6886;
   height: 100vh;
+  top: 0;
   text-align: center;
   padding-left: 0px;
-  position: relative;
   transition: all 0.3s ease-in-out;
+ 
  
   ${mediaqueries.tablet`
     width: 100vw;
@@ -80,7 +83,7 @@ const MenuLink = styled(Link)`
   transition: all 0.08s linear;
   &:hover {
     text-shadow: 
-                 2px 2px 10px #fff;
+                 2px 2px 15px #eedaf8;
   }
   ${mediaqueries.tablet`
     font-size: 52px;

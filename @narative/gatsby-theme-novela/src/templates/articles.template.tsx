@@ -11,6 +11,7 @@ import NavBar from "@components/NavBar";
 import ArticlesFeatured from "../sections/articles/Articles.Featured";
 import ArticlesHero from "../sections/articles/Articles.Hero";
 import ArticlesList2 from "../sections/articles/Articles.List2";
+import MobileNav from '@components/MobileNav';
 
 
 function ArticlesPage({ location, pageContext }) {
@@ -20,19 +21,52 @@ function ArticlesPage({ location, pageContext }) {
   return (
     <Layout>
       <NavBar />
-      <ArticlesFeatured />
+      <ArticlesFeatured /> 
       <SEO pathname={location.pathname} />
-     
-        <Section>
+      <Section>
            <ArticlesList2 />
-        </Section>
-      <ArticlesGradient />
+           <ArticlesGradient />   
+      </Section>
     </Layout>
   );
 }
 
 export default ArticlesPage;
 
+const MainGrid = styled.div`
+  display: grid;
+  grid-template-columns: 165px 1255px;
+  grid-gap: 20px;
+  max-width: 1490px;
+  margin: 0 auto;
+  ${mediaqueries.desktop_mediumlarge`
+    grid-gap: 0px;
+    display: block;
+    max-width: 1190px;
+    padding: 0 40px;
+  `};
+  ${mediaqueries.desktop`
+    display: block;
+    max-width: 850px;
+  `};
+  ${p =>
+    p.narrow
+      ? mediaqueries.tablet`
+          padding: 0 2rem;
+          max-width: 527px;
+        `
+      : mediaqueries.tablet`
+          padding: 0 1.618rem;
+          max-width: 567px;
+        `}
+  ${mediaqueries.phablet`
+    max-width: 100%;
+    
+  `};
+  ${mediaqueries.phone_small`
+    padding: 0 10px;
+  `};
+`
 
 const ArticlesGradient = styled.div`
   position: absolute;

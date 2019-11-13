@@ -71,6 +71,9 @@ const FeaturedContainer = styled("section")`
   ${mediaqueries.desktop`
     
   `};
+  ${mediaqueries.phablet`
+     height: 68vh;
+  `};
 
   ${mediaqueries.phone_small`
      height: 80vh;
