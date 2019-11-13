@@ -9,7 +9,8 @@ import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import LandingSub from "@components/LandingSub";
 import LogoLanding from "@components/Logo/LogoLanding";
-import background from "www/static/black.jpeg"
+import background from "www/static/black.jpeg";
+import Logo from "@components/Logo/Logo";
 
 
 function Welcome({ location }) {
@@ -19,7 +20,7 @@ function Welcome({ location }) {
       <SEO pathname={location.pathname} />     
       <Global styles={globalStyles} />
       <LogoContainer>
-        <p>Shoreside <span style={{ fontStyle: 'italic',}}>News</span></p>
+        <Logo />
       </LogoContainer>
         <Hero>
           <TextContainer>
@@ -39,7 +40,7 @@ const Hero = styled.section`
   width: 100vw;
   top: 0;
   left: 0;
-  background: linear-gradient(to top right, rgba(63,61,76, 0.9), rgba(63,61,76, 0.9)), 
+  background: linear-gradient(to bottom, rgba(63,61,76, 0.9), rgba(63,61,76, 0.4)), 
               url(${background}) no-repeat center center;
   background-size: cover;
   padding: 0 10px;
@@ -55,7 +56,7 @@ const LogoContainer = styled.div`
     font-weight: 400;
     color: white;
     left: 50%;
-    top: 20px;
+    top: 00px;
     margin: 0 auto;
     position: absolute;
     transition: all 0.15s ease;

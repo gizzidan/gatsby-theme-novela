@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import { useState } from "react";
 import { Link } from 'gatsby';
-import mediaqueries from "@styles/media";
+import mediaqueries from '@styles/media';
 import { useColorMode } from "theme-ui";
-import Icons from "@icons";
+import Icons from '@icons';
 import {IconWrapper, MoonOrSun, MoonMask, ToolTip} 
-    from "@narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx";
-import { copyToClipboard, } from "@utils";
+    from '@narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx';
+import { copyToClipboard, } from '@utils';
 import Logo from "@components/Logo";
 import Headroom from "react-headroom";
 import MobileNav from '@components/MobileNav';

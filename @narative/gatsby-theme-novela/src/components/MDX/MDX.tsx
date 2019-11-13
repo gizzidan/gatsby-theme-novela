@@ -6,7 +6,7 @@ import { MDXProvider } from "@mdx-js/react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import { useColorMode } from "theme-ui";
-
+import InPageSubscription from "@components/InPageSubscription";
 import Anchor from "@components/Anchor";
 import Blockquote from "@components/Blockquote";
 import Code from "@components/Code";
@@ -39,7 +39,8 @@ const components = {
   table: Tables.Table,
   thead: Tables.Head,
   th: Tables.HeadCell,
-  td: Tables.Cell
+  td: Tables.Cell,
+  Subscription: InPageSubscription
 };
 
 function MDX({ content, children, ...props }) {

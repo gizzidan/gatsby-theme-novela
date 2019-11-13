@@ -5,6 +5,7 @@ export default {
 
   primary: "#131516",
   secondary: "#6a6c6f",
+  onAccent: "#fff",
   grey: "#6a6c6f",
   lightGrey: "#e1e1e1",
   darkGrey: "#3f3d4c",
@@ -40,6 +41,7 @@ export default {
       navBorder: "#393c43",
       primary: "rgba(255, 255, 255, 0.9)",
       secondary: "#000",
+      onAccent: "#333",
       accent: "#f3c5eb",
       tagBackground: "#d3d1db",
       outline: "#13161d",
