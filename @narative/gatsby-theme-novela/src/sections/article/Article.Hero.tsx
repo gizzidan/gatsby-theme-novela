@@ -70,6 +70,9 @@ const StyledLink = styled(Link)`
   border-bottom: 1px solid;
   border-color: ${p => p.theme.colors.articleText};
   text-transform: capitalize;
+  &:hover {
+    opacity: 0.6;
+  }
 `
 const Slogan = styled("p")`
   font-family: ${p => p.theme.fonts.slogan};
@@ -128,7 +131,7 @@ const Header = styled.header`
   text-align: left;
   position: relative;
   z-index: 10;
-  margin: 100px auto 50px;
+  margin: 120px auto 50px;
   max-width: 680px;
 
   ${mediaqueries.desktop`
@@ -139,13 +142,13 @@ const Header = styled.header`
 
   ${mediaqueries.tablet`
     padding-left: 0;
-    margin: 80px auto 50px;
+    margin: 100px auto 50px;
     max-width: 480px;
   `}
 
   ${mediaqueries.phablet`
     max-width: 90vw;
-    margin: 55px auto 30px;
+    margin: 75px auto 30px;
     padding: 0 px;
   `}
 `;
@@ -163,12 +166,12 @@ const Meta = styled.div`
 
   ${mediaqueries.tablet`
     padding-left: 0;
-    margin: 40px auto 30px auto;
+    margin: 30px auto 20px auto;
     max-width: 480px;
   `}
 
   ${mediaqueries.phablet`
-
+    max-width: 95vw;
   `}
 
 `;
@@ -223,29 +226,13 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   color: ${p => p.theme.colors.articleText};
 
   ${mediaqueries.tablet`
-
   `}
 
   ${p => mediaqueries.phablet`
     letter-spacing: -0.2px;
     padding: 0 4px;
-    font-size: 15px;
+    font-size: 13px;
     flex-direction: column;
-
-    ${p.hasCoAUthors &&
-      `
-        &::before {
-          content: '';
-          position: absolute;
-          left: -20px;
-          right: -20px;
-          top: -10px;
-          bottom: -10px;
-          border: 1px solid ${p.theme.colors.horizontalRule};
-          opacity: 0.5;
-          border-radius: 5px;
-        }
-    `}
 
 
     strong {
@@ -253,6 +240,9 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
       font-weight: 500;
       margin-bottom: 5px;
     }
+  `}
+  ${mediaqueries.phone_small`
+    font-size: 11px;
   `}
 `;
 

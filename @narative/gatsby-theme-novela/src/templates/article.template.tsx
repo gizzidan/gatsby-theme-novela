@@ -38,6 +38,7 @@ const siteQuery = graphql`
 `;
 
 function Article({ pageContext, location }) {
+  const sitePath = 'https://thehum.netlify.com'
   const contentSectionRef = useRef<HTMLElement>(null);
 
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
@@ -115,9 +116,9 @@ function Article({ pageContext, location }) {
         }
           </Tags>
           <SocialContainer>
-            <Twitter solid medium message="Checkout this article from The Hum" link={article.slug}/>
-            <Facebook solid medium link={article.slug}/>
-            <Mail solid medium subject="Checkout this article from The Hum" link={article.slug}/>
+            <Twitter solid medium message="Checkout this article from The Hum" link={sitePath + '/' + article.slug}/>
+            <Facebook solid medium link={sitePath + '/' + article.slug}/>
+            <Mail solid medium subject="Checkout this article from The Hum" link={sitePath + '/' + article.slug}/>
           </SocialContainer>
           <DiscussionEmbed {...disqusConfig}/>
         </BottomContainer>

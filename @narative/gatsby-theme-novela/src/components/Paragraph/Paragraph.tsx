@@ -33,7 +33,7 @@ const Paragraph = styled.p`
 
   ${mediaqueries.tablet`
     max-width: 486px;
-    margin: 0 auto 25px;
+    margin: 0 auto 15px;
   `};
 
   ${mediaqueries.phablet`
