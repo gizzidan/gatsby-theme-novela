@@ -43,8 +43,11 @@ const LandingSub: React.FunctionComponent<{}> = () => {
       <SubscriptionContainer>
         <Content>
           <Heading>
-            Join our email list and get notified when we launch
+            Bringing Sanity to The Shore: Your Local Source
           </Heading>
+          <Text>
+            Sign up with your email address to be the first to know when we launch.
+          </Text>
           
           <Form onSubmit={handleSubmit} hasError={error}>
             <Input
@@ -81,6 +84,7 @@ const SubscriptionContainer = styled.div`
   flex-direction: column;
   padding: 64px 0 55px;
   margin: 10px auto 100px;
+  max-width: 650px;
   background: white !important;
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   z-index: 1;
@@ -114,16 +118,18 @@ const Content = styled.div`
 `;
 
 const Heading = styled(Headings.h3)`
-  font-family: "Sectra";
-  margin-bottom: 20px;
+  font-family: "Noe Text";
+  margin-bottom: 15px;
+  font-weight: 700 !important;
+  line-height: 1.4;
 
   ${mediaqueries.tablet`
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   `}
 `;
 
 const Text = styled.p`
-  font-family: "Sectra";
+  font-family: "F Grotesk";
   margin: 0 auto 30px;
   color: ${p => p.theme.colors.grey};
   line-height: 1.75;

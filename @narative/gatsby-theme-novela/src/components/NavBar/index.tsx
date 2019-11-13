@@ -94,7 +94,7 @@ export default class NavBar extends React.Component {
   }
 
   listenScrollEvent = e => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 60) {
       this.setState({color: 'white', opacity: '1', logo: 'inherit', reverse: '0',})
     } else {
       this.setState({color: 'transparent', opacity: '0', logo: 'white', reverse: '1',})

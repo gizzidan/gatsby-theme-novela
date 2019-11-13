@@ -24,7 +24,7 @@ function Welcome({ location }) {
       </LogoContainer>
         <Hero>
           <TextContainer>
-            <Heading><p>Bringing Sanity to the Shore: Your Local Source</p></Heading>  
+            <Heading><p>Coming Soon!</p></Heading>  
             <LandingSub />
           </TextContainer>
         </Hero>
@@ -40,7 +40,7 @@ const Hero = styled.section`
   width: 100vw;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, rgba(63,61,76, 0.9), rgba(63,61,76, 0.4)), 
+  background: linear-gradient(to bottom, rgba(63,61,136, 0.9), rgba(63,61,76, 0.4)), 
               url(${background}) no-repeat center center;
   background-size: cover;
   padding: 0 10px;
@@ -76,7 +76,7 @@ const LogoContainer = styled.div`
 const TextContainer = styled.div`
   position: relative;
   margin: 50vh auto;
-  width: 800px;
+  width: 1200px;
   transform: translate(0%,-50%);
   ${mediaqueries.desktop`
     width: 100%;
@@ -84,18 +84,18 @@ const TextContainer = styled.div`
 `
 const Heading = styled.div`
   text-align: center;
-  font-size: 68px;
+  font-size: 78px;
   padding-bottom: 10px;
   line-height: 1.2;
   color: #fff;
   font-style: normal;
-  font-family: "Noe Display";
-  text-transform: none;
-  font-weight: 500;
+  font-family: "F Grotesk";
+  text-transform: uppercase;
+  font-weight: 300;
   
   ${mediaqueries.tablet`
     padding-bottom: 30px;
-    font-size: 39px;
+    font-size: 59px;
     line-height: 1.2;
   `};
   ${mediaqueries.phablet`

@@ -118,8 +118,9 @@ const Content = styled.div`
 `;
 
 const Heading = styled(Headings.h3)`
-  font-family: "Sectra";
+  font-family: "Noe Text";
   margin-bottom: 20px;
+  font-weight: 700 !important;
 
   ${mediaqueries.tablet`
     margin-bottom: 15px;
