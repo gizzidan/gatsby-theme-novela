@@ -48,7 +48,6 @@ const Sidebar = () => {
   )
 	return (
 		<SContainer>
-			<TopSidebar />
 			<SidebarFeature />
 				{
 					data.allContentfulArticle.edges.slice(3,6).map((item, i) => (
