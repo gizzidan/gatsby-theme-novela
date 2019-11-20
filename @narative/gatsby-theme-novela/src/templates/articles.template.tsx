@@ -12,36 +12,6 @@ import ArticlesHero from "../sections/articles/Articles.Hero";
 import ArticlesList2 from "../sections/articles/Articles.List2";
 import MobileNav from '@components/MobileNav';
 
-const useDfpSlot = ({ path, size, id }) => {
-  useEffect(() => {
-    const googletag = window.googletag || {};
-    googletag.cmd = googletag.cmd || [];
-    googletag.cmd.push(function() {
-      googletag.defineSlot(path, size, id)
-        .addService(googletag.pubads());
-      googletag.pubads().enableSingleRequest();
-      googletag.enableServices();
-    });
-    googletag.cmd.push(function() {
-      googletag.display(id);
-    });
-  }, [path, size, id]);
-};
-
-const App = () => {
-  useDfpSlot({
-   path: '/21862636432/home_top_leaderboard',
-   size: [[320, 50], [728, 90]],
-   id: 'div-gpt-ad-1574263623994-0',
-  });
- return (
-   <div
-     id="div-gpt-ad-1574263623994-0"
-     
-   />
- )
-};
-
 function ArticlesPage({ location, pageContext }) {
   const articles = pageContext.group;
   const authors = pageContext.additionalContext.authors;
@@ -50,8 +20,6 @@ function ArticlesPage({ location, pageContext }) {
     <Layout>
       <NavBar />
       <ArticlesFeatured /> 
-      <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-      <App />
       <SEO pathname={location.pathname} />
       <Section>
            <ArticlesList2 />

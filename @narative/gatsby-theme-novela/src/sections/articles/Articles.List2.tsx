@@ -15,6 +15,42 @@ import Sidebar from '@components/Sidebar';
 import HomeFeature from '@components/Sponsored/HomeFeature';
 import Sidenav from '@components/Sidenav/Sidenav';
 
+const useDfpSlot = ({ path, size, id }) => {
+  useEffect(() => {
+    const googletag = window.googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.cmd.push(function() {
+      googletag.defineSlot(path, size, id)
+        .addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+    googletag.cmd.push(function() {
+      googletag.display(id);
+    });
+  }, [path, size, id]);
+};
+
+const App = () => {
+  const Leaderboard = styled.div`
+    margin: 0px auto;
+    margin-top: 45px;
+    
+    
+  `
+  useDfpSlot({
+   path: '/21862636432/home_top_leaderboard',
+   size: [[320, 50], [728, 90]],
+   id: 'div-gpt-ad-1574263623994-0',
+  });
+ return (
+   <Leaderboard
+     id="div-gpt-ad-1574263623994-0"
+   />
+ )
+};
+
+
 export const limitToTwoLines = css`
   text-overflow: ellipsis;
   overflow-wrap: normal;
@@ -68,6 +104,7 @@ const ArticlesList2 = () => {
   )
     return (
       <Container>
+        <App />
        <div style={{
             
             }}>
@@ -77,7 +114,6 @@ const ArticlesList2 = () => {
           <LargeDiv id="latest">
             
             <HomeFeature/>
-           
             {
               data.allContentfulArticle.edges.slice(0,2).map((item, i) => (
                 item.node.hero ? (
