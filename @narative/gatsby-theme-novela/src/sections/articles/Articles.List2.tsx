@@ -35,8 +35,8 @@ const App = () => {
   const Leaderboard = styled.div`
     margin: 0px auto;
     margin-top: 45px;
-    
-    
+    width: 100%;
+    height: 100%;
   `
   useDfpSlot({
    path: '/21862636432/home_top_leaderboard',
