@@ -68,7 +68,6 @@ const ArticlesList2 = () => {
   )
     return (
       <Container>
-  
        <div style={{
             
             }}>
@@ -78,6 +77,7 @@ const ArticlesList2 = () => {
           <LargeDiv id="latest">
             
             <HomeFeature/>
+           
             {
               data.allContentfulArticle.edges.slice(0,2).map((item, i) => (
                 item.node.hero ? (
@@ -264,6 +264,7 @@ const ArticlesList2 = () => {
   }
 
 export default ArticlesList2;
+
 
 const Main = styled.div`
   display: grid;

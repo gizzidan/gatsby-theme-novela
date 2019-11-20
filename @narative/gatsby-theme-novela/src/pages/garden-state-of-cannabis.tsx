@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import Image from 'gatsby-image';
-import {StyledDiv, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2.tsx';
+import {StyledDiv, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
 
 
 function Cannabis({ location }) {
