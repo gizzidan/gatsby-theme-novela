@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { css } from '@emotion/core'
-import React, { useEffect} from 'react';
+import React, { Component, useEffect} from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import Image from 'gatsby-image';
 import Img from "gatsby-image"
@@ -14,15 +14,22 @@ import Subscription from "@components/Subscription"
 import Sidebar from '@components/Sidebar';
 import HomeFeature from '@components/Sponsored/HomeFeature';
 import Sidenav from '@components/Sidenav/Sidenav';
+import Leaderboard from '@components/Ads/Leaderboard';
 
 const useDfpSlot = ({ path, size, id }) => {
   useEffect(() => {
     const googletag = window.googletag || {};
+    var bannerMapping = googletag.sizeMapping().
+        addSize([800, 600], [728, 90]).
+        addSize([0, 0], [320, 50]).
+        build();
     googletag.cmd = googletag.cmd || [];
     googletag.cmd.push(function() {
       googletag.defineSlot(path, size, id)
+        .defineSizeMapping(bannerMapping)
         .addService(googletag.pubads());
       googletag.pubads().enableSingleRequest();
+      googletag.pubads().collapseEmptyDivs();
       googletag.enableServices();
     });
     googletag.cmd.push(function() {
@@ -35,8 +42,7 @@ const App = () => {
   const Leaderboard = styled.div`
     margin: 0px auto;
     margin-top: 45px;
-    width: 780px;
-    height: 90px;
+    width: 90%;
     ${mediaqueries.tablet`
       width: 320px;
       height: 50px;
@@ -108,12 +114,12 @@ const ArticlesList2 = () => {
   )
     return (
       <Container>
-        <App />
        <div style={{
             
             }}>
-       
+        <Leaderboard />
         <Main>
+          
           
           <LargeDiv id="latest">
             
@@ -311,7 +317,7 @@ const Main = styled.div`
   grid-template-columns: 1fr 300px;
   grid-template-rows: 1fr;
   grid-gap: 70px;
-  margin-top: 60px;
+  margin-top: 50px;
   margin-bottom: 50px;
   position: relative;
   ${mediaqueries.desktop`
@@ -447,7 +453,7 @@ export const Excerpt = styled.div`
   line-height: 1.4;
   margin-top: 0px;
   margin-bottom: 10px;
-  opacity: 0.75;
+  opacity: 0.7;
   color: ${p => p.theme.colors.primary} !important;
   
   ${mediaqueries.tablet`

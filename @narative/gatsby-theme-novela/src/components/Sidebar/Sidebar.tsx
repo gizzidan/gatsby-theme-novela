@@ -9,6 +9,7 @@ import mediaqueries from "@styles/media";
 import Headings from "@components/Headings";
 import SidebarFeature from '@components/Sponsored/SidebarFeature';
 import ArticleAuthors from '../../sections/article/Article.Authors';
+import TopSidebar from '@components/Ads/TopSidebar';
 
 const Sidebar = () => {
 	const data = useStaticQuery(
@@ -47,6 +48,7 @@ const Sidebar = () => {
   )
 	return (
 		<SContainer>
+			<TopSidebar />
 			<SidebarFeature />
 				{
 					data.allContentfulArticle.edges.slice(3,6).map((item, i) => (
@@ -70,6 +72,7 @@ const Sidebar = () => {
 						) : (<div></div>)
 					))
 				}
+			
 			<div style={{padding: '30px', textAlign: 'center'}}>AD SPACE</div>
 		</SContainer>
 	)
