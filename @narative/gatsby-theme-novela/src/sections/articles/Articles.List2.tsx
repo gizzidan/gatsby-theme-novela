@@ -16,50 +16,6 @@ import HomeFeature from '@components/Sponsored/HomeFeature';
 import Sidenav from '@components/Sidenav/Sidenav';
 import Leaderboard from '@components/Ads/Leaderboard';
 
-const useDfpSlot = ({ path, size, id }) => {
-  useEffect(() => {
-    const googletag = window.googletag || {};
-    var bannerMapping = googletag.sizeMapping().
-        addSize([800, 600], [728, 90]).
-        addSize([0, 0], [320, 50]).
-        build();
-    googletag.cmd = googletag.cmd || [];
-    googletag.cmd.push(function() {
-      googletag.defineSlot(path, size, id)
-        .defineSizeMapping(bannerMapping)
-        .addService(googletag.pubads());
-      googletag.pubads().enableSingleRequest();
-      googletag.pubads().collapseEmptyDivs();
-      googletag.enableServices();
-    });
-    googletag.cmd.push(function() {
-      googletag.display(id);
-    });
-  }, [path, size, id]);
-};
-
-const App = () => {
-  const Leaderboard = styled.div`
-    margin: 0px auto;
-    margin-top: 45px;
-    width: 90%;
-    ${mediaqueries.tablet`
-      width: 320px;
-      height: 50px;
-    `};
-  `
-  useDfpSlot({
-   path: '/21862636432/home_top_leaderboard',
-   size: [[320, 50], [728, 90]],
-   id: 'div-gpt-ad-1574263623994-0',
-  });
- return (
-   <Leaderboard
-     id="div-gpt-ad-1574263623994-0"
-   />
- )
-};
-
 
 export const limitToTwoLines = css`
   text-overflow: ellipsis;
