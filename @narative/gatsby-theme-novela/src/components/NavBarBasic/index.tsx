@@ -84,7 +84,7 @@ export const Container = styled("header")`
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 55px;
+  height: 50px;
   display: flex;
   text-align: center;
   transition: all 0.15s linear;
@@ -103,9 +103,6 @@ export const BgContainer = styled("header")`
   text-align: center;
   transition: all 0.15s linear;
 `;
-
-
-
 
 
 export const LinkContainer = styled("div")`
@@ -171,7 +168,7 @@ export const ToolContainer = styled("div")`
     display: flex;
     right: 20px;
     ${mediaqueries.tablet`
-      right: 15px;
+      right: 7px;
     `}
 `
 
@@ -194,7 +191,7 @@ export const LogoContainer = styled(Link)`
     }
     ${mediaqueries.tablet`
       font-size: 22px;
-      left: 20px;
+      left: 16px;
     `}
     ${mediaqueries.phone_small`
       font-size: 18px;

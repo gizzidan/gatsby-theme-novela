@@ -31,6 +31,9 @@ const Sidebar = () => {
               }
               author {
                 name
+                fields {
+                  slug
+                }
               }
             }
           }
@@ -49,12 +52,8 @@ const Sidebar = () => {
 										<InnerContainer>
 											<SSlogan>{item.node.slogan}</SSlogan>
 											<STitle>{item.node.title}</STitle>
-											<SMetaData>{item.node.author[0].name} in&nbsp;
-												<CatLink 
-													to={"/category/" + item.node.category.toString().replace(/\s+/g, '-')}
-													>
-													{item.node.category}
-												</CatLink>
+											<SMetaData>{item.node.author[0].name} in <CatLink to={"/category/" + item.node.category}>{item.node.category}</CatLink>
+												
 											</SMetaData>
 										</InnerContainer>
 									</STextContainer>

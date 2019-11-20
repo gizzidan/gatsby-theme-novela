@@ -10,7 +10,7 @@ const MobileItem = styled(Link)`
   font-size: 16px;
   display: flex;
   color: ${p => p.theme.colors.primary};
-  opacity: 0.6;
+  opacity: 0.65;
   padding: 6px 25px 5px 0px;
   font-weight: 400;
   &:nth-last-child(1) {
@@ -44,7 +44,7 @@ const NavContainer = styled.div`
   position: relative;
   padding: 6px 35px 6px 35px;
   white-space: nowrap;
-  margin-top: 55px;
+  margin-top: 50px;
   transition: all 0.15s linear;
   &:after {
     content: "";
@@ -90,27 +90,31 @@ export default class MobileNav extends React.Component {
                     style={{ display: 'flex', overflowX: 'auto'}}
                     >
                     <MobileItem activeStyle={{
-                                opacity: opacity,
+                                opacity: opacity, fontWeight: '500'
 
                                 }} 
                                 
                                 to={"/"}>Home</MobileItem>
                     <MobileItem activeStyle={{
-                                opacity: opacity,
+                                opacity: opacity, fontWeight: '500'
                                 }} 
                                 to="/latest">Latest</MobileItem>
                     <MobileItem activeStyle={{
-                                opacity: opacity,
+                                opacity: opacity, fontWeight: '500'
                                 }} to="/category/thoughts">Thoughts</MobileItem>
                     <MobileItem activeStyle={{
-                                opacity: opacity,
+                                opacity: opacity, fontWeight: '500'
                                 
                                 }} to="/category/culture">Culture</MobileItem>
                     <MobileItem activeStyle={{
-                                opacity: opacity,
+                                opacity: opacity, fontWeight: '500'
                                 }} to="/category/goings-on">Goings On</MobileItem>
-                    <MobileItem>State of Cannabis</MobileItem>
-                    <MobileItem>Election 2020</MobileItem>
+                    <MobileItem activeStyle={{
+                                opacity: opacity, fontWeight: '500'
+                                }} to="/garden-state-of-cannabis">State of Cannabis</MobileItem>
+                    <MobileItem activeStyle={{
+                                opacity: opacity, fontWeight: '500'
+                                }} to="/election-2020">Election 2020</MobileItem>
                 </ScrollContainer>
             </NavContainer>    
         )

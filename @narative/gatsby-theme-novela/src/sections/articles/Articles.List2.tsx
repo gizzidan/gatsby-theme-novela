@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import React, { useEffect} from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import Image from 'gatsby-image';
+import Img from "gatsby-image"
 import { Link } from "gatsby";
 import mediaqueries from "@styles/media";
 import Headings from "@components/Headings";
@@ -13,27 +14,6 @@ import Subscription from "@components/Subscription"
 import Sidebar from '@components/Sidebar';
 import HomeFeature from '@components/Sponsored/HomeFeature';
 import Sidenav from '@components/Sidenav/Sidenav';
-
-const TwitterContainer = () => {
-  useEffect(() => {
-    const anchor = document.createElement("a");
-    anchor.setAttribute("class", "twitter-timeline");
-    anchor.setAttribute("data-theme", "light");
-    anchor.setAttribute("data-height", "75vh");;
-    anchor.setAttribute("href", "https://twitter.com/nytimes");
-    document.getElementsByClassName("twitter-embed")[0].appendChild(anchor);
-
-    const script = document.createElement("script");
-    script.setAttribute("src", "https://platform.twitter.com/widgets.js");
-    document.getElementsByClassName("twitter-embed")[0].appendChild(script);
-  }, []);
-
-  return (
-    <section className="twitterContainer">
-      <div className="twitter-embed"></div>
-    </section>
-  );
-};
 
 export const limitToTwoLines = css`
   text-overflow: ellipsis;
@@ -76,6 +56,9 @@ const ArticlesList2 = () => {
               }
               author {
                 name
+                fields {
+                  slug
+                }
               }
             }
           }
@@ -89,13 +72,7 @@ const ArticlesList2 = () => {
        <div style={{
             
             }}>
-       <div style={{ 
-              position: 'relative',
-              display: 'flex',
-              paddingTop: '40px'
-              }}>
-              <Label id="latest">The Latest ⌚️</Label><SeeAll to="/latest">See All →</SeeAll>
-            </div>
+       
         <Main>
           
           <LargeDiv id="latest">
@@ -123,7 +100,7 @@ const ArticlesList2 = () => {
                             {item.node.excerpt}
                           </Excerpt>
                           <MetaData>
-                            {item.node.date} · {item.node.body.childMdx.timeToRead} min read 
+                            By <AuthorLink to={item.node.author[0].fields.slug}>{item.node.author[0].name}</AuthorLink>
                           </MetaData>
                         </TextContainer>
                       </ListItem>
@@ -136,13 +113,15 @@ const ArticlesList2 = () => {
           <Sidebar />
           </Main>
           <Subscription />
+          
           <Podcast />
-        <div style={{ 
+          
+        <LabelContainer style={{ 
           position: 'relative',
           display: 'flex',
           }}>
-          <Label id="thoughts">Thoughts 🧠</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
-        </div>
+          <Label id="thoughts">Thoughts</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
+        </LabelContainer>
      
         <StyledDiv style={{
         marginBottom: sectiongap, 
@@ -174,7 +153,7 @@ const ArticlesList2 = () => {
                         {item.node.excerpt}
                       </Excerpt>
                       <MetaData>
-                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read
+                        <AuthorLink to={item.node.author[0].fields.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
                       </MetaData>
                     </TextContainer>
                   </Item>
@@ -184,12 +163,12 @@ const ArticlesList2 = () => {
           ))
         }
         </StyledDiv>
-        <div style={{ 
+        <LabelContainer style={{ 
           position: 'relative',
           display: 'flex',
           }}>
-          <Label id="culture">Culture 🎨</Label><SeeAll to='/category/culture'>See All →</SeeAll>
-        </div>
+          <Label id="culture">Culture</Label><SeeAll to='/category/culture'>See All →</SeeAll>
+        </LabelContainer>
          
         <StyledDiv style={{
         marginBottom: sectiongap, 
@@ -221,7 +200,7 @@ const ArticlesList2 = () => {
                         {item.node.excerpt}
                       </Excerpt>
                       <MetaData>
-                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read
+                        <AuthorLink to={item.node.author[0].fields.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
                       </MetaData>
                     </TextContainer>
                   </Item>
@@ -231,12 +210,12 @@ const ArticlesList2 = () => {
           ))
         }
         </StyledDiv>
-        <div style={{ 
+        <LabelContainer style={{ 
           position: 'relative',
           display: 'flex',
           }}>
-          <Label id="goings-on">Goings On 🗞</Label><SeeAll to="/category/goings-on">See All →</SeeAll>
-        </div>
+          <Label id="goings-on">Goings On</Label><SeeAll to="/category/goings-on">See All →</SeeAll>
+        </LabelContainer>
         <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
@@ -267,7 +246,7 @@ const ArticlesList2 = () => {
                         {item.node.excerpt}
                       </Excerpt>
                       <MetaData>
-                        {item.node.date} · {item.node.body.childMdx.timeToRead} min read
+                        <AuthorLink to={item.node.author[0].fields.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
                       </MetaData>
                     </TextContainer>
                   </Item>
@@ -291,6 +270,7 @@ const Main = styled.div`
   grid-template-columns: 1fr 300px;
   grid-template-rows: 1fr;
   grid-gap: 70px;
+  margin-top: 60px;
   margin-bottom: 50px;
   position: relative;
   ${mediaqueries.desktop`
@@ -310,26 +290,38 @@ const LargeDiv = styled.div`
   `};
 `;
 
-const StyledDiv = styled.div`
+export const StyledDiv = styled.div`
 
 `;
 const Container = styled.section`
   
 `;
 
+export const AuthorLink = styled(Link)`
+  color: black;
+  font-weight: 500;
+  color: ${p => p.theme.colors.darkGrey};
+  &:hover {
+    border-bottom: 1px solid;
+  }
+`
 
-const Label = styled.h2`
-
+export const LabelContainer = styled.div`
+  
+`
+export const Label = styled.h2`
   font-family: "Noe Display";
   color: ${p => p.theme.colors.primary};
   font-weight: 700;
   text-transform: none;
+  border-top: 5px solid ${p => p.theme.colors.primary};
   font-style: normal;
-  font-size: 48px;
+  font-size: 42px;
   text-align: left;
   margin-bottom: 15px;
+  padding-top: 3px;
   ${mediaqueries.desktop`
-    font-size: 38px;
+    font-size: 36px;
     line-height: 1.2;
   `};
 
@@ -339,16 +331,17 @@ const Label = styled.h2`
   `};
 `;
 
-const SeeAll = styled(Link)`
+export const SeeAll = styled(Link)`
   font-family: ${p => p.theme.fonts.sansSerif};
   text-align: right;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 1.2;
+  text-transform: uppercase;
   right: 0px;
   color :${a => a.theme.colors.accent};
-  font-weight: 400;
+  font-weight: 500;
   position: absolute;
-  padding-top: 19px;
+  padding-top: 28px;
   &:hover {
     border-bottom: 1px solid;
   }
@@ -356,7 +349,7 @@ const SeeAll = styled(Link)`
     color :${a => a.theme.colors.accent};
   }
   ${mediaqueries.phablet`
-    padding-top: 9px;
+    padding-top: 23px;
   `};
 `;
 
@@ -364,7 +357,6 @@ export const ImageContainer = styled.div`
   position: relative;
   transition: transform 0.3s var(--ease-out-quad),
   box-shadow 0.3s var(--ease-out-quad);
-
   
 
   ${mediaqueries.tablet`
@@ -381,10 +373,11 @@ export const ImageContainer = styled.div`
 
 export const MetaData = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 15px;
   font-style: normal;
-  color: ${p => p.theme.colors.primary};
+  text-transform: none;
+  color: ${p => p.theme.colors.darkGrey};
   
   ${mediaqueries.tablet`
     font-size: 17px;
@@ -400,19 +393,20 @@ export const TextContainer = styled.div`
   position: relative;
   padding: 0px 0px 10px 0px;
   ${mediaqueries.phablet`
-    padding: 10px 0px 20px 0px;
+    padding: 10px 0px 10px 0px;
   `}
   
 `;
 
 export const Excerpt = styled.div`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   ${limitToTwoLines};
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
-  line-height: 1.618;
+  line-height: 1.4;
   margin-top: 0px;
   margin-bottom: 10px;
+  opacity: 0.75;
   color: ${p => p.theme.colors.primary} !important;
   
   ${mediaqueries.tablet`
@@ -420,7 +414,7 @@ export const Excerpt = styled.div`
 ` }
 
   ${mediaqueries.phablet`
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 10px;
     max-width: 100%;
     padding:  0;
@@ -430,14 +424,18 @@ export const Excerpt = styled.div`
 
 
 export const Title = styled(Headings.h2)`
-  font-size: 20px;
-  line-height: 1.25;
+  font-size: 21px;
+  line-height: 1.2 !important;
   font-family: "Noe Text";
   font-weight: 900 !important;
   text-transform: none;
   margin-bottom: 7px;
+  opacity: 0.95;
   transition: color 0.3s ease-in-out;
   color: ${p => p.theme.colors.primary};
+  &:hover {
+    opacity: 0.5;
+  }
 
   ${mediaqueries.desktop`
     margin-bottom: 0px;
@@ -459,13 +457,13 @@ export const Title = styled(Headings.h2)`
 export const Slogan = styled.div`
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.7;
   margin-top: 0px;
   margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.accent};
   
 
   ${mediaqueries.desktop`
@@ -473,11 +471,11 @@ export const Slogan = styled.div`
   `}
 
   ${mediaqueries.tablet`
-    font-size: 16px;
+    font-size: 15px;
   `}
 
   ${mediaqueries.phablet`
-    font-size: 15px;
+    font-size: 14px;
     max-width: 100%;
     padding:  0;
     margin-bottom: 5px;
@@ -493,7 +491,7 @@ const SecondFeature = styled.div`
     -webkit-line-clamp: 2 !important;
   }
 `
-const Item = styled(Link)`
+export const Item = styled(Link)`
   text-align: left;
   position: relative;
   display: block;
@@ -510,9 +508,7 @@ const Item = styled(Link)`
   }
   &:hover {
     transform: translateY(-1px);
-    h2 {
-      opacity: 0.5;
-    }
+
   }
   
   ${mediaqueries.phablet`
@@ -540,14 +536,15 @@ export const ListItem = styled(Link)`
     -webkit-line-clamp: 2 !important;
   }
   & ${MetaData} {
-    font-size: 15px !important;
+    font-size: 16px !important;
   }
   & ${Excerpt} {
-    font-size: 17px !important;
-    -webkit-line-clamp: 2 !important;
+    font-size: 19px !important;
+    -webkit-line-clamp: 3 !important;
+    
   }
   & ${Slogan} {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
 
   &:hover{
@@ -581,6 +578,7 @@ export const ListItem = styled(Link)`
   `}
   ${mediaqueries.phablet`
     margin-bottom: 5px;
+    padding-bottom: 20px;
     grid-gap: 0px;
     &:hover {
       transform: none;
@@ -593,7 +591,7 @@ export const ListItem = styled(Link)`
       font-size: 15px !important;
     }
     & ${Excerpt} {
-      font-size: 16px !important;
+      font-size: 17px !important;
     }
     & ${Slogan} {
       font-size: 14px !important;

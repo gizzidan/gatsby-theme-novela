@@ -24,11 +24,11 @@ const fonts = {
 };
 
 const fontWeights = {
-  slogan: `400`,
+  slogan: `500`,
 };
 
 const fontSizes = {
-  p: `21px`,
+  p: `20px`,
 };
 
 const widths = {

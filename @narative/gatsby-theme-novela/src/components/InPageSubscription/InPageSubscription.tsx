@@ -81,7 +81,7 @@ const SubscriptionContainer = styled.div`
   align-items: center;
   position: relative;
   display: flex;
-  max-width: 640px;
+  max-width: 630px;
   flex-direction: column;
   padding: 35px 0 55px;
   margin: 25px auto 65px auto;

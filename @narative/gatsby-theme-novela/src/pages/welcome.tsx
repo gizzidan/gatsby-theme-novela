@@ -9,7 +9,7 @@ import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import LandingSub from "@components/LandingSub";
 import LogoLanding from "@components/Logo/LogoLanding";
-import background from "www/static/black.jpeg";
+import background from "www/static/explore.png";
 import Logo from "@components/Logo/Logo";
 
 
@@ -40,7 +40,7 @@ const Hero = styled.section`
   width: 100vw;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, rgba(63,61,136, 0.9), rgba(63,61,76, 0.4)), 
+  background: linear-gradient(to top, rgba(63,61,136, 0), rgba(63,61,76, 0)), 
               url(${background}) no-repeat center center;
   background-size: cover;
   padding: 0 10px;
@@ -84,14 +84,14 @@ const TextContainer = styled.div`
 `
 const Heading = styled.div`
   text-align: center;
-  font-size: 78px;
+  font-size: 68px;
   padding-bottom: 10px;
   line-height: 1.2;
   color: #fff;
   font-style: normal;
-  font-family: "F Grotesk";
+  font-family: "Noe Text";
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
   
   ${mediaqueries.tablet`
     padding-bottom: 30px;
@@ -99,7 +99,7 @@ const Heading = styled.div`
     line-height: 1.2;
   `};
   ${mediaqueries.phablet`
-    padding-bottom: 45px;
+    padding-bottom: 35px;
     font-size: 36px;
     line-height: 1.3;
   `};

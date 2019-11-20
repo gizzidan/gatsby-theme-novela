@@ -49,14 +49,12 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
         <ImageCaption>{article.hero.description}</ImageCaption>
       </HeroImage>
       <Meta>
-      <HeroSubtitle>By: <StyledLink to={authors[0].slug}>{article.author}</StyledLink>
-            <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> {article.date}
-            <span style={{ color: '#c2c2c2', padding: '5px'}}> / </span> 
-            <StyledLink 
-              
+      <HeroSubtitle>By <StyledLink to={authors[0].slug}>{article.author}</StyledLink> in&nbsp;
+             <StyledLink 
               to={"/category/" + article.category.toString().replace(/\s+/g, '-')}>
               {article.category}
               </StyledLink>
+            <span style={{ color: '#c2c2c2', padding: '4px'}}> / </span> {article.date}
         </HeroSubtitle>
         </Meta>
     </Hero>
@@ -66,9 +64,7 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
 export default ArticleHero;
 
 const StyledLink = styled(Link)`
-  color: ${p => p.theme.colors.articleText};
-  border-bottom: 1px solid;
-  border-color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.accent};
   text-transform: capitalize;
   &:hover {
     opacity: 0.6;
@@ -80,7 +76,7 @@ const Slogan = styled("p")`
   text-transform: uppercase;
   font-weight: ${p => p.theme.fontWeights.slogan};
   margin-bottom: 15px;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.accent};
 
   ${mediaqueries.desktop`
     
@@ -131,7 +127,7 @@ const Header = styled.header`
   text-align: left;
   position: relative;
   z-index: 10;
-  margin: 120px auto 50px;
+  margin: 120px auto 35px;
   max-width: 680px;
 
   ${mediaqueries.desktop`
@@ -156,7 +152,7 @@ const Header = styled.header`
 const Meta = styled.div`
   position: relative;
   z-index: 10;
-  margin: 35px auto 0px;
+  margin: 55px auto 0px;
   max-width: 680px;
 
   ${mediaqueries.desktop`
@@ -203,6 +199,7 @@ const HeroExcerpt = styled("p")`
   margin-bottom: 40px;
   line-height: 1.6;
   font-style: normal;
+  opacity: 0.75;
   color: ${p => p.theme.colors.articleText};
   font-weight: 400;
 
@@ -223,6 +220,7 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   font-family: ${p => p.theme.fonts.monospace};
   text-align: center;
   font-size: 17px;
+
   color: ${p => p.theme.colors.articleText};
 
   ${mediaqueries.tablet`

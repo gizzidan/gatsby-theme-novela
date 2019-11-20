@@ -1,11 +1,42 @@
 import addToMailchimp from "gatsby-plugin-mailchimp";
 import React, { useState } from "react";
-
 import Section from "@components/Section";
 import Headings from "@components/Headings";
-
+import Img from 'gatsby-image';
 import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
+import { useStaticQuery, graphql } from "gatsby";
+
+const SubImage = () => {
+  const SubImageContainer = styled.div`
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  ${mediaqueries.phablet`
+    width: 60vw;
+ `}
+  `
+  const query = useStaticQuery(
+    graphql`
+    query {
+    file(relativePath: { eq: "newspaper.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+)
+  return (
+    <SubImageContainer>
+      <Img fluid={query.file.childImageSharp.fluid} />
+    </SubImageContainer>
+  )
+  
+};
+
 
 const Subscription: React.FunctionComponent<{}> = () => {
   const [email, setEmail] = useState("");
@@ -40,10 +71,11 @@ const Subscription: React.FunctionComponent<{}> = () => {
 
   return (
     <Section narrow>
+      
       <SubscriptionContainer>
         <Content>
           <Heading>
-            Join our email list and get notified about new content
+            Join our newsletter
           </Heading>
           <Text>
             Be the first to receive our latest content with the ability to
@@ -77,17 +109,19 @@ const Subscription: React.FunctionComponent<{}> = () => {
 
 export default Subscription;
 
+
+
 const SubscriptionContainer = styled.div`
   text-align: center;
   align-items: center;
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 55px 0 55px;
+  padding: 35px 0 55px;
   margin: 65px auto 70px;
   background: ${p => p.theme.colors.cardMain};
-  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   z-index: 1;
+  border: 2px solid ${p => p.theme.colors.accent};
 
   ${mediaqueries.tablet`
     padding: 50px 0 0;
@@ -121,6 +155,8 @@ const Heading = styled(Headings.h3)`
   font-family: "Noe Text";
   margin-bottom: 20px;
   font-weight: 700 !important;
+  padding-top: 15px;
+  color: ${p => p.theme.colors.accent};
 
   ${mediaqueries.tablet`
     margin-bottom: 15px;

@@ -14,12 +14,12 @@ const Paragraph = styled.p`
   max-width: 630px;
 
   a {
-    color: ${p => p.theme.colors.articleText} !important;
+    color: ${p => p.theme.colors.accent} !important;
     border-bottom: 1px solid;
     transition: all 0s linear;
     &:hover {
       text-decoration: none !important;
-      color: ${p => p.theme.colors.accent} !important;
+      opacity: 0.6 !important;
     }
   }
 

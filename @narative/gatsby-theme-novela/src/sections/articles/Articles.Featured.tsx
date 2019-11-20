@@ -76,7 +76,7 @@ const FeaturedContainer = styled("section")`
   `};
 
   ${mediaqueries.phone_small`
-     height: 80vh;
+     height: 101vh;
   `};
 `
 const BgImg = styled(Img)`

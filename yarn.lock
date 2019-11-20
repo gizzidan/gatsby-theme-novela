@@ -8008,7 +8008,7 @@ gatsby-source-filesystem@^2.1.33:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
-gatsby-source-filesystem@^2.1.6, gatsby-source-filesystem@^2.1.9:
+gatsby-source-filesystem@^2.1.6:
   version "2.1.21"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.21.tgz#4d52383887bfa40c484523372f9629e92af6769a"
   integrity sha512-CYkj95vp6kNcO/UFYCYmJ78djJZAX1zO2hQyptFNRhto4J5SWB7Zy8Jc0r7sCitMeakfvNOT72y3r7LjcA0dNw==

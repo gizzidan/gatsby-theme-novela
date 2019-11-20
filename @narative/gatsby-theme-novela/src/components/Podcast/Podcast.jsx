@@ -36,7 +36,7 @@ const Podcast = () => {
                 title
                 category 
                 hero {
-                  fixed(width: 70, height: 70,) {
+                  fixed(width: 160, height: 160,) {
                     ...GatsbyContentfulFixed_withWebp
                    }  
                 }
@@ -56,7 +56,12 @@ const Podcast = () => {
     )
       return (
         <PodcastContainer>
-          <Header>Checkout Our Podcasts</Header>
+          <div>
+            <Header>Listen to The Hum Podcasts</Header>
+            <SubHeader>Daily New + Commentary</SubHeader>
+            <SeeAll to='/'>All Podcasts →</SeeAll>
+          </div>
+
 
             <ScrollContainer 
               nativeMobileScroll='true'
@@ -69,18 +74,19 @@ const Podcast = () => {
                   item.node.hero ? (
                     <div key={i}>
                       <Card to={item.node.slug}>
-                      <div style={{ display: 'flex'}}>
+                      <InnerContainer>
                         <PodcastImageContainer>
-                          <Image fixed={item.node.hero.fixed}></Image>
+                          <PodImage fixed={item.node.hero.fixed}></PodImage>
                         </PodcastImageContainer>
                         <div>
+                          
                           <PodcastTitle>{item.node.title}</PodcastTitle>
-                          <PodcastMeta>{item.node.date}</PodcastMeta>
+                          
                         </div>
-                      </div>
-                        
+                      </InnerContainer>
+                      
                           <PodcastExcerpt>{item.node.excerpt}</PodcastExcerpt>
-                        
+
                       </Card>
                     </div>
                     
@@ -97,35 +103,65 @@ export default Podcast;
 
 const PodcastContainer = styled.div`
   width: 100%;
-  height: 300px;
+  height: 310px;
   margin: 0 auto;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 70px;  
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 20px;
+  
+  padding-bottom: 30px;  
   ${mediaqueries.phablet`
-    padding-top: 20px;
-    padding-bottom: 70px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-bottom: 140px;
+    display: block;
   `};
+`
+const InnerContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  ${mediaqueries.phablet`
+    display: block;
+`};
 `
 const Header = styled.h2`
   color: ${p => p.theme.colors.primary};
-  font-family: "Noe Display";
-  font-size: 32px;
-  font-weight: 700;
-  font-style: italic;
+  font-family: "Noe Text";
+  font-size: 25px;
+  font-weight: 900;
+  font-style: normal;
+  margin-top: 20px;
+  line-height: 1.2;
+  ${mediaqueries.phablet`
+    font-size: 23px;
+  `};
 `
-
+const SubHeader = styled.p`
+  color: ${p => p.theme.colors.primary} !important;
+  opacity: 0.7;
+  font-family: ${p => p.theme.fonts.serif};
+  padding-top: 3px;
+  padding-bottom: 20px;
+  font-size: 18px;
+`
+const SeeAll = styled(Link)`
+  color: ${p => p.theme.colors.accent};
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  &:hover {
+    border-bottom: 1px solid;
+  }
+`
 const Card = styled(Link)`
   color: ${p => p.theme.colors.primary} !important;
   display: block;
   margin-right: 20px;
   margin-top: 20px;
-  padding: 15px;
+  padding: 0px;
   background-color: ${p => p.theme.colors.cardMain};
-  min-width: 320px;
-  height: 155px;
-  border: 1px solid ${p => p.theme.colors.lightGrey};
+  min-width: 150px;
+  height: 250px;
   &:hover, &:focus {
     h2 {
       opacity: 0.6;
@@ -133,32 +169,36 @@ const Card = styled(Link)`
   }
 `
 const PodcastImageContainer = styled.div`
-  
+  margin-bottom: 15px;
  
 `
+
+const PodImage = styled(Image)`
+  box-shadow: 0 7px 12px -4px rgba(0, 0, 0, 0.24),
+    0px 4px 8px -4px rgba(0, 0, 0, 0.28);
+`
 const PodcastTitle = styled.h2`
-  ${limitToTwoLines}; 
   font-family: "Noe Text";
-  font-weight: 700;
-  line-height: 1.3;
+  font-weight: 900;
+  line-height: 1.2;
   font-size: 16px;
-  padding-left: 15px;
   margin-top: -2px;
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  white-space: normal;
+  overflow: hidden;
 
 `
-const PodcastMeta = styled.h2`
-  font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 400;
-  font-size: 13px;
-  padding-left: 15px;
 
-`
 const PodcastExcerpt = styled.p`
   ${limitToTwoLines};
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
+  display: none;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   padding-top: 10px;
-  
-
+  opacity: 0.85;
 `

@@ -34,7 +34,7 @@ function Footer() {
       <FooterGradient />
       <Section narrow>
         <HoritzontalRule />
-        <Subscription />
+        
         <FooterContainer>
           <FooterText>
             © {new Date().getFullYear()} {name}

@@ -6,7 +6,7 @@ import { css } from '@emotion/core';
 import Image from 'gatsby-image';
 import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
-import { Title, Slogan, Excerpt, MetaData, ListItem, TextContainer} 
+import { Title, AuthorLink, Slogan, Excerpt, MetaData, ListItem, TextContainer} 
     from "@narative/gatsby-theme-novela/src/sections/articles/Articles.List2";
 
 const limitToTwoLines = css`
@@ -49,6 +49,9 @@ const HomeFeature = () => {
                 }
                 author {
                   name
+                  fields {
+                    slug
+                  }
                 }
               }
             }
@@ -81,7 +84,7 @@ const HomeFeature = () => {
                           {item.node.excerpt}
                         </Excerpt>
                         <MetaData>
-                          {item.node.author[0].name} · {item.node.body.childMdx.timeToRead} min read 
+                         By <AuthorLink to={item.node.author[0].fields.slug}>{item.node.author[0].name}</AuthorLink>
                         </MetaData>
                       </TextContainer>
                     </ListItem>

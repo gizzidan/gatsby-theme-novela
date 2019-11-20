@@ -8,6 +8,7 @@ import Image from 'gatsby-image';
 import mediaqueries from "@styles/media";
 import Headings from "@components/Headings";
 import SidebarFeature from '@components/Sponsored/SidebarFeature';
+import ArticleAuthors from '../../sections/article/Article.Authors';
 
 const Sidebar = () => {
 	const data = useStaticQuery(
@@ -33,7 +34,10 @@ const Sidebar = () => {
                 }
               }
               author {
-                name
+				name
+				fields {
+					slug
+				}
               }
             }
           }
@@ -53,12 +57,8 @@ const Sidebar = () => {
 										<InnerContainer>
 											<SSlogan>{item.node.slogan}</SSlogan>
 											<STitle>{item.node.title}</STitle>
-											<SMetaData>{item.node.author[0].name} in&nbsp;
-												<CatLink 
-													to={"/category/" + item.node.category.toString().replace(/\s+/g, '-')}
-													>
-													{item.node.category}
-												</CatLink>
+											<SMetaData>{item.node.author[0].name} in <CatLink to={"/category/" + item.node.category}>{item.node.category}</CatLink>
+												
 											</SMetaData>
 										</InnerContainer>
 									</STextContainer>
@@ -78,9 +78,9 @@ const Sidebar = () => {
 export default Sidebar;
 
 export const CatLink = styled(Link) `
-	color: ${p => p.theme.colors.primary} !important;
+	color: ${p => p.theme.colors.accent} !important;
 	font-weight: 500;
-	border-bottom: 1px solid;
+	text-transform: capitalize;
 	&:hover {
 		opacity: 0.6 !important;
 	}
@@ -122,7 +122,7 @@ export const InnerContainer = styled.div`
 	`}
 `
 export const STitle = styled(Headings.h2)`
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.2 !important;
   font-family: "Noe Text";
   font-weight: 900 !important;
@@ -154,13 +154,13 @@ export const STitle = styled(Headings.h2)`
 
 export const SSlogan = styled.div`
   font-family: ${p => p.theme.fonts.slogan};
-  font-size: 14px;
+  font-size: 13px;
 	line-height: 1.7;
   margin-top: 0px;
   margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.accent};
 
   ${mediaqueries.desktop`
 		font-size: 18px;
@@ -182,17 +182,17 @@ export const SSlogan = styled.div`
 `;
 
 export const SMetaData = styled.div`
-	font-family: ${p => p.theme.fonts.monospace};
-	font-size: 12px;
-	font-weight: 300;
-	text-transform: uppercase;
-	color: ${p => p.theme.colors.primary} !important;
+	font-family: ${p => p.theme.fonts.sansSerif};
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: none;
+	color: ${p => p.theme.colors.darkGrey} !important;
 	${mediaqueries.desktop`
 		font-size: 20px;
   `}
 
 	${mediaqueries.tablet`
-		font-size: 12px;
+		font-size: 13px;
 	`}
 	${mediaqueries.phone_small`
     font-size: 10px;

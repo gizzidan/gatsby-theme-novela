@@ -7,8 +7,8 @@ const Logo = () => {
   const [colorMode] = useColorMode();
   const fill = colorMode === "dark" ? "#fff" : "#fff";
   return (
-    <LogoContainer>
-		<svg width="85" height="85" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+    <SVGContainer>
+		<svg width="85" height="85" version="1.1" className="Logo_Desktop" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 	 viewBox="0 0 438.4 187.4">
 		<g>
 			<g>
@@ -31,24 +31,17 @@ const Logo = () => {
 		</g>
 		</svg>
       
-    </LogoContainer>
+    </SVGContainer>
   );
 };
 
 export default Logo;
 
-const LogoContainer = styled.div`
-  .Logo__Mobile {
-    display: none;
-  }
-
-  ${mediaqueries.tablet`
-    .Logo__Desktop {
-      display: none;
-    }
-    
-    .Logo__Mobile{
-      display: block;
-    }
+const SVGContainer = styled.div`
+  ${mediaqueries.phablet`
+	 .Logo_Desktop {
+		 width: 65px;
+		 height: 65px;
+	 }
   `}
 `;

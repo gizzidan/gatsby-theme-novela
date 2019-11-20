@@ -100,7 +100,7 @@ const ListItem = ({ article }: ArticlesListItemProps) => {
             {article.excerpt}
           </Excerpt>
           <MetaData>
-            {article.date} · {article.timeToRead} min read
+            <AuthorLink to={"/authors/"+article.author.toString().replace(/\s+/g, '-').toLowerCase()}>{article.author}</AuthorLink> · {article.date}
           </MetaData>
         </TextContainer>
       </Item>
@@ -124,6 +124,14 @@ const limitToTwoLines = css`
   `}
 `;
 
+export const AuthorLink = styled(Link)`
+  color: black;
+  font-weight: 500;
+  color: ${p => p.theme.colors.darkGrey};
+  &:hover {
+    border-bottom: 1px solid;
+  }
+`
 
 const TextContainer = styled("div")`
   width: 100%;
@@ -136,14 +144,14 @@ const TextContainer = styled("div")`
 const Slogan = styled.p`
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   margin-bottom: 5px;
   margin-top: 0px;
   padding-top: 0px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.accent};
 
 
   ${mediaqueries.desktop`
@@ -174,9 +182,6 @@ const Item = styled(Link)`
 
   &:hover, &:focus {
     transform: translateY(-1px);
-    h2 {
-      opacity: 0.5;
-    }
   }
 
 
@@ -216,8 +221,11 @@ const Title = styled(Headings.h2)`
   font-family: "Noe Text";
   font-weight: 900 !important;
   text-transform: none;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   transition: color 0.3s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
 
   ${mediaqueries.desktop`
     margin-bottom: 0px;
@@ -236,12 +244,13 @@ const Title = styled(Headings.h2)`
 `;
 
 const Excerpt = styled.p`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   font-size: 18px;
   font-style: normal;
-  line-height: 1.618;
-  margin-bottom: 12px !important;
+  line-height: 1.4;
+  margin-bottom: 10px !important;
   font-weight: 400;
+  opacity: 0.75;
   color: ${p => p.theme.colors.primary} !important;
 
   ${mediaqueries.desktop`
@@ -250,7 +259,7 @@ const Excerpt = styled.p`
 
 
   ${mediaqueries.phablet`
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 5px;
     max-width: 100%;
     padding:  0;
@@ -260,11 +269,11 @@ const Excerpt = styled.p`
 
 export const MetaData = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 15px;
   text-transform: none;
   font-style: normal;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.darkGrey};
   
 
   ${mediaqueries.phablet`

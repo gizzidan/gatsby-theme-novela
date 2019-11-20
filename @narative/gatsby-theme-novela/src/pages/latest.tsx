@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-
 import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
