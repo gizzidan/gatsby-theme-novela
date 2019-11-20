@@ -37,7 +37,7 @@ const App = () => {
  return (
    <div
      id="div-gpt-ad-1574263623994-0"
-     style={{width:'728px', height: '90px'}}
+     
    />
  )
 };
