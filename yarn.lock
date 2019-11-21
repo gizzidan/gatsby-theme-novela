@@ -3325,6 +3325,13 @@ babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-7.0.0-beta.0.tgz#aa213c1435e2bffeb6fca842287ef534ad05d5cf"
   integrity sha512-Xj9XuRuz3nTSbaTXWv3itLOcxyF4oPD8douBBmj7U9BBC6nEBYfyOJYQMf/8PJAFotC62UY5dFfIGEPr7WswzQ==
 
+babel-plugin-transform-object-assign@^6.22.0:
+  version "6.22.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-assign/-/babel-plugin-transform-object-assign-6.22.0.tgz#f99d2f66f1a0b0d498e346c5359684740caa20ba"
+  integrity sha1-+Z0vZvGgsNSY40bFNZaEdAyqILo=
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-react-remove-prop-types@^0.4.24:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
@@ -3388,7 +3395,7 @@ babel-preset-gatsby@^0.2.12:
     babel-plugin-macros "^2.6.1"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
 
-babel-runtime@6.26.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+babel-runtime@6.26.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -14105,6 +14112,14 @@ react-dev-utils@^4.2.3:
     sockjs-client "1.1.4"
     strip-ansi "3.0.1"
     text-table "0.2.0"
+
+react-dfp@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/react-dfp/-/react-dfp-0.16.0.tgz#86167ed9f5e49ee4e8fedd6646c5ae38a6b670ea"
+  integrity sha512-aNet7izrZx+li3hhQl02plMX1mRMWmsQs3/5UsqG4ohQuFFqbHP1M68/VDaY0tMxvHnfCinFRx/BQb20GWTA8A==
+  dependencies:
+    babel-plugin-transform-object-assign "^6.22.0"
+    prop-types "^15.6.1"
 
 react-dom@^16.8.6:
   version "16.9.0"

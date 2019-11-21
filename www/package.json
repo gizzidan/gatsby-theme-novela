@@ -17,6 +17,7 @@
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.4",
     "react": "^16.8.6",
+    "react-dfp": "^0.16.0",
     "react-dom": "^16.8.6",
     "react-focus-on": "^3.3.0",
     "react-google-publisher-tag": "^2.0.6",

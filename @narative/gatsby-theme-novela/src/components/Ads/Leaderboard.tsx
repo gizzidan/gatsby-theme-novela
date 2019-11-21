@@ -1,33 +1,21 @@
-import React, { useEffect } from 'react';
 import styled from "@emotion/styled";
+import React, { Component } from 'react';
+import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 
-const useDfpSlot = ({ path, size, id }) => {
-  useEffect(() => {
-    const googletag = window.googletag || {};
-    googletag.cmd = googletag.cmd || [];
-    googletag.cmd.push(function() {
-      googletag.defineSlot(path, size, id)
-        .addService(googletag.pubads());
-      googletag.pubads().enableSingleRequest();
-      googletag.enableServices();
-    });
-    googletag.cmd.push(function() {
-      googletag.display(id);
-    });
-  }, [path, size, id]);
-};
-
-const Leaderboard = () => {
-  useDfpSlot({
-   path: '/21862636432/home_top_leaderboard',
-   size: [[320, 50], [728, 90]],
-   id: 'div-gpt-ad-1574293347474-0',
-  });
- return (
-   <div
-     id="div-gpt-ad-1574293347474-0"
-   />
- )
-};
-
-export default Leaderboard;
+export default class Leaderboard extends Component {
+  render() {
+    return (
+      <DFPSlotsProvider 
+        singleRequest={true}
+        dfpNetworkId="21862636432" 
+        collapseEmptyDivs
+        sizeMapping={[{ viewport: [1024, 768], sizes: [[728, 90]] },
+          { viewport: [900, 768], sizes: [[320, 50]] }]}
+         >
+        <div>
+          <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home_top_leaderboard" />
+        </div>
+      </DFPSlotsProvider>
+    );
+  }
+}
