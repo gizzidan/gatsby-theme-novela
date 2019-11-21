@@ -129,7 +129,7 @@ const SubscriptionContainer = styled.div`
   `}
 
   ${mediaqueries.phablet`
-    margin: -20px auto 80px;
+    margin: -20px auto 60px;
   `}
 `;
 

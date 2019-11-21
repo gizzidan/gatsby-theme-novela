@@ -39,6 +39,15 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
         </Slogan>
         <HeroHeading>{article.title}</HeroHeading>
         <HeroExcerpt>{article.excerpt}</HeroExcerpt>
+        <Meta>
+          <HeroSubtitle>By <StyledLink to={authors[0].slug}>{article.author}</StyledLink> in&nbsp;
+                <StyledLink 
+                  to={"/category/" + article.category.toString().replace(/\s+/g, '-')}>
+                  {article.category}
+                  </StyledLink>
+                <span style={{ padding: '4px'}}> · </span> {article.date}
+            </HeroSubtitle>
+          </Meta>
       </Header>
       <HeroImage id="ArticleImage__Hero">
         {hasHeroImage ? (
@@ -48,15 +57,6 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
         )}
         <ImageCaption>{article.hero.description}</ImageCaption>
       </HeroImage>
-      <Meta>
-      <HeroSubtitle>By <StyledLink to={authors[0].slug}>{article.author}</StyledLink> in&nbsp;
-             <StyledLink 
-              to={"/category/" + article.category.toString().replace(/\s+/g, '-')}>
-              {article.category}
-              </StyledLink>
-            <span style={{ color: '#c2c2c2', padding: '4px'}}> / </span> {article.date}
-        </HeroSubtitle>
-        </Meta>
     </Hero>
   );
 };
@@ -128,7 +128,7 @@ const Header = styled.header`
   position: relative;
   z-index: 10;
   margin: 120px auto 35px;
-  max-width: 680px;
+  max-width: 720px;
 
   ${mediaqueries.desktop`
     padding-left: 53px;
@@ -152,7 +152,6 @@ const Header = styled.header`
 const Meta = styled.div`
   position: relative;
   z-index: 10;
-  margin: 55px auto 0px;
   max-width: 680px;
 
   ${mediaqueries.desktop`
@@ -174,11 +173,11 @@ const Meta = styled.div`
 
 const HeroHeading = styled(Headings.h1)`
   font-size: 54px;
-  font-family: ${p => p.theme.fonts.serifFine};
-  margin-bottom: 20px;
+  font-family: "Noe Text";
+  margin-bottom: 15px;
   line-height: 1.1;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 900;
   color: ${p => p.theme.colors.primary};
 
   ${mediaqueries.tablet`
@@ -196,8 +195,8 @@ const HeroHeading = styled(Headings.h1)`
 const HeroExcerpt = styled("p")`
   font-size: 22px;
   font-family: ${p => p.theme.fonts.sansSerif};
-  margin-bottom: 40px;
-  line-height: 1.6;
+  margin-bottom: 20px;
+  line-height: 1.5;
   font-style: normal;
   opacity: 0.75;
   color: ${p => p.theme.colors.articleText};
@@ -216,12 +215,12 @@ const HeroExcerpt = styled("p")`
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   letter-spacing: -0.4px;
   text-transform: none;
-  font-weight: 400 !important;
-  font-family: ${p => p.theme.fonts.monospace};
-  text-align: center;
+  font-weight: 500 !important;
+  font-family: ${p => p.theme.fonts.sansSerif};
+  text-align: left;
   font-size: 17px;
 
-  color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.darkGrey};
 
   ${mediaqueries.tablet`
   `}

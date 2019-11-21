@@ -12,16 +12,17 @@ export default class MidLeaderboard extends Component {
         sizeMapping={[{ viewport: [1024, 768], sizes: [[728, 90]] },
           { viewport: [900, 768], sizes: [[320, 50]] }]}
          >
-        <LeaderboardContainer>
+        <MidContainer>
           <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home-middle-leaderboard" />
-        </LeaderboardContainer>
+        </MidContainer>
       </DFPSlotsProvider>
     );
   }
 }
 
-const LeaderboardContainer = styled.div`
+const MidContainer = styled.div`
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 0px;
+  margin-bottom: 35px;
   text-align: center;
 `

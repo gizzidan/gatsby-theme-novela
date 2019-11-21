@@ -115,9 +115,8 @@ const ArticlesList2 = () => {
             </LargeDiv> 
           <Sidebar />
           </Main>
-          <Subscription />
-          
           <Podcast />
+          <Subscription />
           <MidLeaderboard />
         <LabelContainer style={{ 
           position: 'relative',
@@ -275,7 +274,7 @@ const Main = styled.div`
   grid-template-rows: 1fr;
   grid-gap: 70px;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   position: relative;
   ${mediaqueries.desktop`
     grid-gap: 10px;

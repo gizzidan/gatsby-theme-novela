@@ -8,7 +8,7 @@ import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import Image from 'gatsby-image';
 import {StyledDiv, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
-
+import FeatureOne from '@components/Ads/FeatureOne';
 
 function Cannabis({ location }) {
     const sectiongap = '55px';
@@ -59,8 +59,9 @@ function Cannabis({ location }) {
           <HeroContainer>
               <Image fluid={data.file.childImageSharp.fluid} />
             </HeroContainer>
+            <FeatureOne />
             <Section>
-              
+
             <Grids>
             <div style={{ 
                 position: 'relative',
