@@ -12,10 +12,16 @@ export default class Leaderboard extends Component {
         sizeMapping={[{ viewport: [1024, 768], sizes: [[728, 90]] },
           { viewport: [900, 768], sizes: [[320, 50]] }]}
          >
-        <div>
-          <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home_top_leaderboard" />
-        </div>
+        <LeaderboardContainer>
+          <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home-top-leaderboard" />
+        </LeaderboardContainer>
       </DFPSlotsProvider>
     );
   }
 }
+
+const LeaderboardContainer = styled.div`
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: center;
+`
