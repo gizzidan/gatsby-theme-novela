@@ -13,7 +13,7 @@ export default class MidLeaderboard extends Component {
           { viewport: [900, 768], sizes: [[320, 50]] }]}
          >
         <LeaderboardContainer>
-          <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home-mid-leaderboard" />
+          <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home-middle-leaderboard" />
         </LeaderboardContainer>
       </DFPSlotsProvider>
     );
