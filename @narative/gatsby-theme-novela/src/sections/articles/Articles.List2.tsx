@@ -15,6 +15,7 @@ import Sidebar from '@components/Sidebar';
 import HomeFeature from '@components/Sponsored/HomeFeature';
 import Sidenav from '@components/Sidenav/Sidenav';
 import Leaderboard from '@components/Ads/Leaderboard';
+import MidLeaderboard from '@components/Ads/MidLeaderboard';
 
 
 export const limitToTwoLines = css`
@@ -117,7 +118,7 @@ const ArticlesList2 = () => {
           <Subscription />
           
           <Podcast />
-          
+          <MidLeaderboard />
         <LabelContainer style={{ 
           position: 'relative',
           display: 'flex',

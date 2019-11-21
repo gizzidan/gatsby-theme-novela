@@ -48,7 +48,7 @@ const Sidebar = () => {
   )
 	return (
 		<SContainer>
-			<TopSidebar />
+			
 			<SidebarFeature />
 				{
 					data.allContentfulArticle.edges.slice(3,6).map((item, i) => (
@@ -72,7 +72,7 @@ const Sidebar = () => {
 						) : (<div></div>)
 					))
 				}
-			
+			<TopSidebar />
 			<div style={{padding: '30px', textAlign: 'center'}}>AD SPACE</div>
 		</SContainer>
 	)
