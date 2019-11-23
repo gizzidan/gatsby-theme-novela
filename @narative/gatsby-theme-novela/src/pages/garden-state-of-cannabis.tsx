@@ -3,12 +3,28 @@ import styled from "@emotion/styled";
 import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
+import { Link } from 'gatsby';
 import Image from 'gatsby-image';
-import {StyledDiv, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
+import {limitToTwoLines, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
+import { PodcastExcerpt,
+  StyledDiv,
+  PodcastTitle,
+  PodImage,
+  ScrollImageContainer,
+  Card,
+  SubHeader,
+  Header,
+  InnerContainer,
+  HeadlinesContainer,
+  ArticlesGradient,
+  ViewAll,
+  HeroContainer,
+  Grids } from '@narative/gatsby-theme-novela/src/sections/features/Headlines.Scroll.tsx';
 import FeatureOne from '@components/Ads/FeatureOne';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 function Cannabis({ location }) {
     const sectiongap = '55px';
@@ -37,6 +53,9 @@ function Cannabis({ location }) {
                     sizes(maxWidth: 500, maxHeight: 300, quality: 100) {
                       ...GatsbyContentfulSizes_withWebp
                      }  
+                     fixed(width: 170, height: 170,) {
+                      ...GatsbyContentfulFixed_withWebp
+                     }  
                   }
                   body {
                     childMdx {
@@ -61,7 +80,49 @@ function Cannabis({ location }) {
             </HeroContainer>
             <Section>
             <FeatureOne />
+            <HeadlinesContainer>
+          <div>
+            <Header>Recent Headlines</Header>
+            <SubHeader>Jersey Cannabis</SubHeader>
+            <ViewAll to='/'>See All →</ViewAll>
+          </div>
+
+
+            <ScrollContainer 
+              nativeMobileScroll='true'
+              hideScrollbars='false'
+              horizontal='true' 
+              style={{ display: 'flex', overflowX: 'auto', paddingBottom: '15px'}}>
+
+              {
+                data.allContentfulArticle.edges.map((item, i) => (
+                  item.node.hero ? (
+                    <div key={i}>
+                      <Card to={item.node.slug}>
+                      <InnerContainer>
+                        <ScrollImageContainer>
+                          <PodImage fixed={item.node.hero.fixed}></PodImage>
+                        </ScrollImageContainer>
+                        <div>
+                          
+                          <PodcastTitle>{item.node.title}</PodcastTitle>
+                          
+                        </div>
+                      </InnerContainer>
+                      
+                          <PodcastExcerpt>{item.node.excerpt}</PodcastExcerpt>
+
+                      </Card>
+                    </div>
+                    
+                  ) : (<div style={{ display: 'none'}}></div>)
+                ))
+              }
+
+            </ScrollContainer>
+        </HeadlinesContainer>
             <Grids>
+
             <div style={{ 
                 position: 'relative',
                 display: 'flex',
@@ -69,12 +130,7 @@ function Cannabis({ location }) {
                 <Label id="thoughts">Updates</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
                 </div>
                 
-                <StyledDiv style={{
-                marginBottom: sectiongap, 
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
-                gridGap: gap,
-                 }}> 
+                <StyledDiv> 
                 {
                 data.allContentfulArticle.edges.filter(c => c.node.tags.includes('testing')).slice(0,3).map((item, i) => (
                     item.node.hero ? (
@@ -117,12 +173,7 @@ function Cannabis({ location }) {
                 <Label id="thoughts">Interviews</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
                 </div>
                
-                <StyledDiv style={{
-                marginBottom: sectiongap, 
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
-                gridGap: gap,
-                 }}> 
+                <StyledDiv> 
                 {
                 data.allContentfulArticle.edges.filter(c => c.node.tags.includes('trump')).slice(0,4).map((item, i) => (
                     item.node.hero ? (
@@ -165,36 +216,3 @@ function Cannabis({ location }) {
   
 export default Cannabis;
 
-const Grids = styled.div`
-  margin-top: 60px;
-  ${mediaqueries.desktop`
-    margin-top: 50px;
-  `}
-  ${mediaqueries.phablet`
-    margin-top: 40px;
- `}
-`
-const HeroContainer = styled.div`
-  width: 100vw !important;
-  ${mediaqueries.desktop`
-    
- `}
-  ${mediaqueries.phablet`
-    margin-top: 43px;
-   
-    
-    
- `}
-`
-
-const ArticlesGradient = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 590px;
-  z-index: 0;
-  pointer-events: none;
-  background: ${p => p.theme.colors.gradient};
-  transition: ${p => p.theme.colorModeTransition};
-`;
