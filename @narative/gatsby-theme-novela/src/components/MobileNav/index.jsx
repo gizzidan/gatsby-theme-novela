@@ -26,6 +26,9 @@ const MobileItem = styled(Link)`
     &:nth-last-child(1) {
       padding-right: 90px;
     }
+    &:hover {
+      opacity: 0.65;
+    }
   `};
   ${mediaqueries.phablet`
     font-size: 15px;
@@ -67,10 +70,9 @@ const NavContainer = styled.div`
 
 const DropdownContent = styled.div`
   position: absolute;
-  padding: 6px;
+  padding: 10px;
   background-color: ${p => p.theme.colors.background};
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
   z-index: 9000;
   ${MobileItem} {
     display: block;
@@ -80,7 +82,7 @@ const DropdownContent = styled.div`
   ${mediaqueries.tablet`
     position: fixed;
     right: 0px;
-    margin-top: 10px;
+    margin-top: 0px;
     ${MobileItem} {
       text-align: right;
     }
