@@ -31,7 +31,6 @@ const MobileItem = styled(Link)`
     }
   `};
   ${mediaqueries.phablet`
-    font-size: 15px;
     &:nth-last-child(1) {
       padding-right: 35px;
     }
@@ -61,10 +60,10 @@ const NavContainer = styled.div`
     bottom: 0px;
     pointer-events: none;
     background-image: ${p => p.theme.colors.navGradient};
-    width: 28%;
+    width: 30%;
   }
   ${mediaqueries.phablet`
-    padding: 5px 30px 5px 30px;
+    padding: 5px 20px 5px 20px;
   `};
 `;
 
@@ -74,6 +73,7 @@ const DropdownContent = styled.div`
   background-color: ${p => p.theme.colors.background};
   min-width: 160px;
   z-index: 9000;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
   ${MobileItem} {
     display: block;
     padding: 6px 16px;
@@ -82,7 +82,7 @@ const DropdownContent = styled.div`
   ${mediaqueries.tablet`
     position: fixed;
     right: 0px;
-    margin-top: 0px;
+    margin-top: 5px;
     ${MobileItem} {
       text-align: right;
     }
@@ -93,7 +93,7 @@ const DropdownContent = styled.div`
 const More = styled.p`
     color: ${p => p.theme.colors.primary} !important;
     opacity: 0.65;
-    font-size: 20px;
+    font-size: 22px;
     &:hover {
       opacity: 1;
     }
@@ -191,12 +191,6 @@ export default class MobileNav extends React.Component {
                   horizontal='true' 
                   style={{ display: 'flex', overflowX: 'auto'}}
                   >
-                  <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
-
-                              }} 
-                              
-                              to={"/"}>Home</MobileItem>
                   <MobileItem activeStyle={{
                               opacity: opacity, fontWeight: '500'
                               }} 

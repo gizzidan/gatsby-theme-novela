@@ -168,7 +168,7 @@ export const ToolContainer = styled("div")`
     display: flex;
     right: 20px;
     ${mediaqueries.tablet`
-      right: 15px;
+      right: 10px;
     `}
 `
 
