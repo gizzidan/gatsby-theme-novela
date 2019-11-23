@@ -20,6 +20,7 @@ export default {
   outline: "#000",
   hover: "rgba(0, 0, 0, 0.07)",
   gradient: "linear-gradient(to bottom, #fff, #f6eafd)",
+  navGradient: "linear-gradient(to right, rgba(255,255,255,0), #fff 60% )",
   OGgradient: "linear-gradient(180deg, rgba(217, 219, 224, 0) 0%, #D9DBE0 100%)",
   articleText: "#131516",
   track: "rgba(8, 8, 11, 0.3)",
@@ -49,6 +50,7 @@ export default {
       background: "#15202b",
       hover: "rgba(255, 255, 255, 0.07)",
       gradient: "linear-gradient(to bottom, #15202b, #403d4e)",
+      navGradient: "linear-gradient(to right, rgba(21,32,43,0), #15202b 60% )",
       OGgradient:
         "linear-gradient(180deg, #15202b 0%, rgba(66, 81, 98, 0.36) 100%)",
       articleText: "rgba(255, 255, 255, 0.98)",

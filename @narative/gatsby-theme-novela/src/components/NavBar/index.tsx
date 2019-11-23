@@ -122,7 +122,7 @@ export default class NavBar extends React.Component {
           </LogoContainer>
             
             <ToolContainer style={{opacity: this.state.opacity}}>
-                <SharePageButton />
+                
                 <DarkModeToggle />
             </ToolContainer>
             <LowerContainer style={{opacity: this.state.opacity}}>

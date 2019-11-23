@@ -23,7 +23,7 @@ export default class Leaderboard extends Component {
 
 const LeaderboardContainer = styled.div`
   margin: 0 auto;
-  margin-top: 0px;
+  margin-top: 15px;
   margin-bottom: 10px;
   text-align: center;
 

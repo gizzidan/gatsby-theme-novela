@@ -168,7 +168,7 @@ export const ToolContainer = styled("div")`
     display: flex;
     right: 20px;
     ${mediaqueries.tablet`
-      right: 7px;
+      right: 15px;
     `}
 `
 
@@ -231,7 +231,7 @@ export default class NavBarBasic extends React.Component {
             <LinkContainer >
               </LinkContainer>
             <ToolContainer >
-               <SharePageButton />
+               
                <DarkModeToggle />
             </ToolContainer>
           <LowerContainer>

@@ -11,11 +11,11 @@ export default class FeatureTwo extends Component {
         dfpNetworkId="21862636432" 
         collapseEmptyDivs
         sizeMapping={[{ viewport: [1024, 768], sizes: [[970, 250]] },
-          { viewport: [900, 768], sizes: [[300, 250]] }]}
+          { viewport: [980, 690], sizes: [[300, 250]] }]}
          >
         <FeatureContainer>
         <AdLabel>Advertisement</AdLabel>
-          <AdSlot sizes={[[970, 250], [300, 250]]} adUnit="feature-page-2" />
+          <AdSlot sizes={[[300, 250]]} adUnit="feature-page-2" />
         </FeatureContainer>
       </DFPSlotsProvider>
     );

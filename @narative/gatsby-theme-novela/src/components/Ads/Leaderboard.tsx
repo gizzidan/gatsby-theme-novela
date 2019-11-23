@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 import AdLabel from "./Label";
 
-export default class Leaderboard extends Component {
+export default class Leaderboard extends React.Component {
   render() {
     return (
       <DFPSlotsProvider 
@@ -11,11 +11,11 @@ export default class Leaderboard extends Component {
         dfpNetworkId="21862636432" 
         collapseEmptyDivs
         sizeMapping={[{ viewport: [1024, 768], sizes: [[728, 90]] },
-          { viewport: [900, 768], sizes: [[320, 50]] }]}
+          { viewport: [980, 690], sizes: [[320, 50]] }]}
          >
         <LeaderboardContainer>
         <AdLabel>Advertisement</AdLabel>
-          <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home-top-leaderboard" />
+          <AdSlot sizes={[[320, 50]]} adUnit="home-top-leaderboard" />
         </LeaderboardContainer>
       </DFPSlotsProvider>
     );
