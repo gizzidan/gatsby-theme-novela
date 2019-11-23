@@ -9,6 +9,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
     "@narative/gatsby-theme-novela": "^0.9.1",
     "disqus-react": "^1.0.7",
     "dotenv": "^8.0.0",
