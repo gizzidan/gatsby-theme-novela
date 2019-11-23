@@ -570,6 +570,11 @@ export const ListItem = styled(Link)`
     
   }
   ${mediaqueries.tablet`
+    &:hover{
+      h2 {
+        opacity: 1;
+      }
+    }
     align-items: top;
     border: none;
     grid-gap: 15px;
