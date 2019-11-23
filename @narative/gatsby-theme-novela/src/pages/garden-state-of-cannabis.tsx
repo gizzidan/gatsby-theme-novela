@@ -11,7 +11,7 @@ import Image from 'gatsby-image';
 import {limitToTwoLines, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
 import { PodcastExcerpt,
   StyledDiv,
-  PodcastTitle,
+  HeadlineTitle,
   PodImage,
   ScrollImageContainer,
   Card,
@@ -53,7 +53,7 @@ function Cannabis({ location }) {
                     sizes(maxWidth: 500, maxHeight: 300, quality: 100) {
                       ...GatsbyContentfulSizes_withWebp
                      }  
-                     fixed(width: 170, height: 170,) {
+                     fixed(width: 260, height: 160,) {
                       ...GatsbyContentfulFixed_withWebp
                      }  
                   }
@@ -103,14 +103,12 @@ function Cannabis({ location }) {
                         <ScrollImageContainer>
                           <PodImage fixed={item.node.hero.fixed}></PodImage>
                         </ScrollImageContainer>
-                        <div>
+                  
                           
-                          <PodcastTitle>{item.node.title}</PodcastTitle>
+                          <HeadlineTitle>{item.node.title}</HeadlineTitle>
                           
-                        </div>
+                        
                       </InnerContainer>
-                      
-                          <PodcastExcerpt>{item.node.excerpt}</PodcastExcerpt>
 
                       </Card>
                     </div>

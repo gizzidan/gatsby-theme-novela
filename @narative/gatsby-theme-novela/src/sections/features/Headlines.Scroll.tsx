@@ -52,14 +52,13 @@ export const ArticlesGradient = styled.div`
 
 export const HeadlinesContainer = styled.div`
   width: 100%;
-  height: 325px;
+  height: 290px;
   margin: 0 auto;
   margin-top: 60px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 20px;
-  
-  padding-bottom: 30px;  
+  padding-bottom: 15px;  
   ${mediaqueries.phablet`
     padding-top: 0px;
     padding-bottom: 20px;
@@ -98,12 +97,11 @@ export const SubHeader = styled.p`
 export const Card = styled(Link)`
   color: ${p => p.theme.colors.primary} !important;
   display: block;
-  margin-right: 10px;
+  margin-right: 14px;
   margin-top: 20px;
   padding: 0px;
   background-color: ${p => p.theme.colors.cardMain};
   min-width: 150px;
-  height: 250px;
   &:hover, &:focus {
     h2 {
       opacity: 0.6;
@@ -120,7 +118,7 @@ export const PodImage = styled(Image)`
   box-shadow: 0 7px 12px -4px rgba(0, 0, 0, 0.24),
     0px 4px 8px -4px rgba(0, 0, 0, 0.28);
 `
-export const PodcastTitle = styled.h2`
+export const HeadlineTitle = styled.h2`
   font-family: "Noe Text";
   font-weight: 900;
   line-height: 1.2;
@@ -149,8 +147,8 @@ export const PodcastExcerpt = styled.p`
 export const StyledDiv = styled.div`
   margin-bottom: 55px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 30px;
   ${mediaqueries.tablet`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
  `}

@@ -116,8 +116,41 @@ export default class MobileNav extends React.Component {
                                 opacity: opacity, fontWeight: '500'
                                 }} to="/election-2020">Election 2020</MobileItem>
                 </ScrollContainer>
+                <Dropdown>
+                    <More>More ↓</More>
+                    <DropdownContent>
+                    <MobileItem activeStyle={{
+                                opacity: opacity, fontWeight: '500'
+                                }} to="/election-2020">Election 2020</MobileItem>
+                    </DropdownContent>
+                </Dropdown>
             </NavContainer>    
         )
     }
 }
 
+const DropdownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: ${p => p.theme.colors.background};
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 9000;
+  ${MobileItem} {
+    display: block;
+  }
+`
+const Dropdown = styled.div`
+  padding-left: 20px;
+  position: relative;
+  display: inline-block;
+  &:hover {
+    ${DropdownContent}{
+      display: block;
+    }
+  }
+`
+
+const More = styled.p`
+
+`

@@ -12,7 +12,7 @@ import FeatureTwo from '@components/Ads/FeatureTwo';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { PodcastExcerpt,
   StyledDiv,
-  PodcastTitle,
+  HeadlineTitle,
   PodImage,
   ScrollImageContainer,
   Card,
@@ -53,7 +53,7 @@ function Election2020({ location }) {
                     sizes(maxWidth: 500, maxHeight: 300, quality: 100) {
                       ...GatsbyContentfulSizes_withWebp
                      }
-                    fixed(width: 170, height: 170,) {
+                    fixed(width: 260, height: 160,) {
                       ...GatsbyContentfulFixed_withWebp
                      }   
                      
@@ -82,46 +82,46 @@ function Election2020({ location }) {
             <Section>
               <FeatureTwo />
               <HeadlinesContainer>
-          <div>
-            <Header>Recent Headlines</Header>
-            <SubHeader>Follow the Election</SubHeader>
-            <ViewAll to='/'>See All →</ViewAll>
-              </div>
-
-
-            <ScrollContainer 
-              nativeMobileScroll='true'
-              hideScrollbars='false'
-              horizontal='true' 
-              style={{ display: 'flex', overflowX: 'auto', paddingBottom: '15px'}}>
-
-              {
-                data.allContentfulArticle.edges.map((item, i) => (
-                  item.node.hero ? (
-                    <div key={i}>
-                      <Card to={item.node.slug}>
-                      <InnerContainer>
-                        <ScrollImageContainer>
-                          <PodImage fixed={item.node.hero.fixed}></PodImage>
-                        </ScrollImageContainer>
-                        <div>
-                          
-                          <PodcastTitle>{item.node.title}</PodcastTitle>
-                          
-                        </div>
-                      </InnerContainer>
-                      
-                          <PodcastExcerpt>{item.node.excerpt}</PodcastExcerpt>
-
-                      </Card>
+                <div>
+                  <Header>Recent Headlines</Header>
+                  <SubHeader>Follow the Election</SubHeader>
+                  <ViewAll to='/'>See All →</ViewAll>
                     </div>
-                    
-                  ) : (<div style={{ display: 'none'}}></div>)
-                ))
-              }
 
-            </ScrollContainer>
-        </HeadlinesContainer>
+
+                    <ScrollContainer 
+                      nativeMobileScroll='true'
+                      hideScrollbars='false'
+                      horizontal='true' 
+                      style={{ display: 'flex', overflowX: 'auto', paddingBottom: '15px'}}>
+
+                      {
+                        data.allContentfulArticle.edges.map((item, i) => (
+                          item.node.hero ? (
+                            <div key={i}>
+                              <Card to={item.node.slug}>
+                              <InnerContainer>
+                                <ScrollImageContainer>
+                                  <PodImage fixed={item.node.hero.fixed}></PodImage>
+                                </ScrollImageContainer>
+                                <div>
+                                  
+                                  <HeadlineTitle>{item.node.title}</HeadlineTitle>
+                                  
+                                </div>
+                              </InnerContainer>
+                              
+                                  <PodcastExcerpt>{item.node.excerpt}</PodcastExcerpt>
+
+                              </Card>
+                            </div>
+                            
+                          ) : (<div style={{ display: 'none'}}></div>)
+                        ))
+                      }
+
+                    </ScrollContainer>
+                </HeadlinesContainer>
             <Grids>
             <div style={{ 
                 position: 'relative',
