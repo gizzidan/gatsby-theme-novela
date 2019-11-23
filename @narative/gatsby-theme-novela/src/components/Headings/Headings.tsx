@@ -41,12 +41,12 @@ const h2 = styled.h2`
   `};
 
   ${mediaqueries.tablet`
-    font-size: 24px;
+    font-size: 25px;
     line-height: 1.4;
   `};
 
   ${mediaqueries.phablet`
-    font-size: 24px;
+    font-size: 25px;
   `};
 `;
 
