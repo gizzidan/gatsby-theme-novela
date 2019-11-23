@@ -59,7 +59,7 @@ const Sidebar = () => {
 										<InnerContainer>
 											<SSlogan>{item.node.slogan}</SSlogan>
 											<STitle>{item.node.title}</STitle>
-											<SMetaData>{item.node.author[0].name} in <CatLink to={"/category/" + item.node.category}>{item.node.category}</CatLink>
+											<SMetaData><span style={{ opacity: '0.8', }}>{item.node.author[0].name} in </span><CatLink to={"/category/" + item.node.category}>{item.node.category}</CatLink>
 												
 											</SMetaData>
 										</InnerContainer>
@@ -73,7 +73,6 @@ const Sidebar = () => {
 					))
 				}
 			<TopSidebar />
-			<div style={{padding: '30px', textAlign: 'center'}}>AD SPACE</div>
 		</SContainer>
 	)
 }
@@ -89,7 +88,6 @@ export const CatLink = styled(Link) `
 	}
 `	
 export const SContainer = styled.div`
-	
 	${mediaqueries.desktop`
 		width: 100vw;
 		position: relative;
@@ -189,7 +187,7 @@ export const SMetaData = styled.div`
 	font-size: 14px;
 	font-weight: 500;
 	text-transform: none;
-	color: ${p => p.theme.colors.darkGrey} !important;
+	color: ${p => p.theme.colors.articleText} !important;
 	${mediaqueries.desktop`
 		font-size: 20px;
   `}

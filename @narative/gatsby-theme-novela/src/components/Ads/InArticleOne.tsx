@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 import React, { Component } from 'react';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 import AdLabel from "./Label";
+import mediaqueries from "@styles/media";
 
-export default class Leaderboard extends Component {
+export default class InArticleOne extends Component {
   render() {
     return (
       <DFPSlotsProvider 
@@ -12,19 +13,21 @@ export default class Leaderboard extends Component {
         collapseEmptyDivs
         
          >
-        <LeaderboardContainer>
-        <AdLabel>Advertisement</AdLabel>
-          <AdSlot sizes={[300, 250]} adUnit="home-top-sidebar" />
-        </LeaderboardContainer>
+        <AdContainerOne>
+            <AdLabel>Advertisement</AdLabel>
+          <AdSlot sizes={[336, 280]} adUnit="in-article-1" />
+        </AdContainerOne>
       </DFPSlotsProvider>
     );
   }
 }
 
-const LeaderboardContainer = styled.div`
-  margin: 0 auto;
-  margin-top: 0px;
-  margin-bottom: 10px;
+const AdContainerOne = styled.div`
+  margin: 0px auto;
+  margin-bottom: 30px;
   text-align: center;
-
+  ${mediaqueries.phablet`
+    margin-top: 0px;
+  `};
 `
+

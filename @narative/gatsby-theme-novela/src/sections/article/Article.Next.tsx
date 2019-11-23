@@ -65,8 +65,8 @@ const GridItem = ({
         </Title>
         <Excerpt hasOverflow={hasOverflow}>{article.excerpt}</Excerpt>
         <MetaData>
-          {article.date} · {article.timeToRead} min read
-        </MetaData>{" "}
+            <AuthorLink to={"/authors/"+article.author.toString().replace(/\s+/g, '-').toLowerCase()}>{article.author}</AuthorLink> · {article.date}
+          </MetaData>{" "}
       </Item>
     </ArticleLink>
   );
@@ -88,6 +88,16 @@ const limitToTwoLines = css`
     -webkit-line-clamp: 3;
   `}
 `;
+
+const AuthorLink = styled(Link)`
+  color: black;
+  font-weight: 500;
+  color: ${p => p.theme.colors.darkGrey};
+  &:hover {
+    border-bottom: 1px solid;
+  }
+`
+
 const Grid = styled.div<{ numberOfArticles: number }>`
   position: relative;
   display: grid;
@@ -126,7 +136,7 @@ const Slogan = styled.p`
   margin-bottom: 5px;
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.accent};
 
 
   ${mediaqueries.desktop`
@@ -172,17 +182,13 @@ const ImageContainer = styled.div`
 const Item = styled.div`
   position: relative;
 
-  @media (max-width: 540px) {
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background: ${p => p.theme.colors.cardMain};
-  }
+  
 `;
 
 const Title = styled(Headings.h3)`
   font-size: 22px;
   line-height: 1.4;
-  margin-bottom: ${p => (p.hasOverflow ? "10px" : "5px")};
+  margin-bottom: ${p => (p.hasOverflow ? "10px" : "3px")};
   color: ${p => p.theme.colors.primary};
   font-family: "Noe Text";
   font-weight: 700 !important;
@@ -201,11 +207,12 @@ const Title = styled(Headings.h3)`
 
 const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   ${limitToTwoLines};
-  font-size: 17px;
-  margin-bottom: 5px;
+  font-size: 18px;
+  margin-bottom: 6px;
   font-weight: 400;
   font-style: normal;
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
+  opacity: 0.75;
   color: ${p => p.theme.colors.articleText} !important;
   display: ${p => (p.hasOverflow ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};

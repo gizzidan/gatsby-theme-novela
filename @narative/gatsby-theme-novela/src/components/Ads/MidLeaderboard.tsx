@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React, { Component } from 'react';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
+import AdLabel from "./Label";
 
 export default class MidLeaderboard extends Component {
   render() {
@@ -13,6 +14,7 @@ export default class MidLeaderboard extends Component {
           { viewport: [900, 768], sizes: [[320, 50]] }]}
          >
         <MidContainer>
+        <AdLabel>Advertisement</AdLabel>
           <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home-middle-leaderboard" />
         </MidContainer>
       </DFPSlotsProvider>

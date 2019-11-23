@@ -103,7 +103,7 @@ export default Podcast;
 
 const PodcastContainer = styled.div`
   width: 100%;
-  height: 310px;
+  height: 315px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -138,7 +138,7 @@ const Header = styled.h2`
 `
 const SubHeader = styled.p`
   color: ${p => p.theme.colors.primary} !important;
-  opacity: 0.7;
+  opacity: 0.8;
   font-family: ${p => p.theme.fonts.serif};
   padding-top: 3px;
   padding-bottom: 20px;

@@ -78,7 +78,7 @@ const h4 = styled.h4`
 
   ${mediaqueries.phablet`
     font-size: 24px;
-    padding-bottom: 35px !important;
+    padding-bottom: 30px !important;
 
   `};
 `;

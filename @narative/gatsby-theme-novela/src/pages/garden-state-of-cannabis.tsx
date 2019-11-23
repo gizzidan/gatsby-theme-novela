@@ -59,9 +59,8 @@ function Cannabis({ location }) {
           <HeroContainer>
               <Image fluid={data.file.childImageSharp.fluid} />
             </HeroContainer>
-            <FeatureOne />
             <Section>
-
+            <FeatureOne />
             <Grids>
             <div style={{ 
                 position: 'relative',
@@ -69,23 +68,25 @@ function Cannabis({ location }) {
                 }}>
                 <Label id="thoughts">Updates</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
                 </div>
-            
+                
                 <StyledDiv style={{
                 marginBottom: sectiongap, 
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
                 gridGap: gap,
                  }}> 
                 {
-                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('trump')).slice(0,4).map((item, i) => (
+                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('testing')).slice(0,3).map((item, i) => (
                     item.node.hero ? (
                     <div key={i}>
                         <Item to={item.node.slug}>
                     
                         <ImageContainer>
+                            
                             <Image
                             fluid={item.node.hero.sizes}
                             />
+                            
                         </ImageContainer>
                             <TextContainer>
                             <Slogan>
@@ -115,11 +116,11 @@ function Cannabis({ location }) {
                 }}>
                 <Label id="thoughts">Interviews</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
                 </div>
-            
+               
                 <StyledDiv style={{
                 marginBottom: sectiongap, 
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
                 gridGap: gap,
                  }}> 
                 {
@@ -162,10 +163,10 @@ function Cannabis({ location }) {
       );
   }  
   
-  export default Cannabis;
+export default Cannabis;
 
 const Grids = styled.div`
-  margin-top: 80px;
+  margin-top: 60px;
   ${mediaqueries.desktop`
     margin-top: 50px;
   `}

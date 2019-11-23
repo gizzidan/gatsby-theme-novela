@@ -52,7 +52,7 @@ const Sidebar = () => {
 										<InnerContainer>
 											<SSlogan>{item.node.slogan}</SSlogan>
 											<STitle>{item.node.title}</STitle>
-											<SMetaData>{item.node.author[0].name} in <CatLink to={"/category/" + item.node.category}>{item.node.category}</CatLink>
+											<SMetaData><span style={{ opacity: '0.8', }}>{item.node.author[0].name} in </span><CatLink to={"/category/" + item.node.category}>{item.node.category}</CatLink>
 												
 											</SMetaData>
 										</InnerContainer>

@@ -7,6 +7,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import { useColorMode } from "theme-ui";
 import InPageSubscription from "@components/InPageSubscription";
+import InArticleOne from "@components/Ads/InArticleOne";
 import Anchor from "@components/Anchor";
 import Blockquote from "@components/Blockquote";
 import Code from "@components/Code";
@@ -40,7 +41,8 @@ const components = {
   thead: Tables.Head,
   th: Tables.HeadCell,
   td: Tables.Cell,
-  Subscription: InPageSubscription
+  Subscription: InPageSubscription,
+  AdOne: InArticleOne
 };
 
 function MDX({ content, children, ...props }) {

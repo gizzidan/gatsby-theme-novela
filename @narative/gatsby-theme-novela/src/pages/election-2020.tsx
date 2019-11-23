@@ -8,6 +8,7 @@ import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import Image from 'gatsby-image';
 import {StyledDiv, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
+import FeatureTwo from '@components/Ads/FeatureTwo';
 
 
 function Election2020({ location }) {
@@ -60,7 +61,7 @@ function Election2020({ location }) {
               <Image fluid={data.file.childImageSharp.fluid} />
             </HeroContainer>
             <Section>
-              
+              <FeatureTwo />
             <Grids>
             <div style={{ 
                 position: 'relative',
@@ -72,7 +73,7 @@ function Election2020({ location }) {
                 <StyledDiv style={{
                 marginBottom: sectiongap, 
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
                 gridGap: gap,
                  }}> 
                 {
@@ -118,7 +119,7 @@ function Election2020({ location }) {
   export default Election2020;
 
 const Grids = styled.div`
-  margin-top: 80px;
+  margin-top: 60px;
   ${mediaqueries.desktop`
     margin-top: 50px;
   `}

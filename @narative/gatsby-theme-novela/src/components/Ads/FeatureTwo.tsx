@@ -3,27 +3,28 @@ import React, { Component } from 'react';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 import AdLabel from "./Label";
 
-export default class Leaderboard extends Component {
+export default class FeatureTwo extends Component {
   render() {
     return (
       <DFPSlotsProvider 
         singleRequest={true}
         dfpNetworkId="21862636432" 
         collapseEmptyDivs
-        sizeMapping={[{ viewport: [1024, 768], sizes: [[728, 90]] },
-          { viewport: [900, 768], sizes: [[320, 50]] }]}
+        sizeMapping={[{ viewport: [1024, 768], sizes: [[970, 250]] },
+          { viewport: [900, 768], sizes: [[300, 250]] }]}
          >
-        <LeaderboardContainer>
+        <FeatureContainer>
         <AdLabel>Advertisement</AdLabel>
-          <AdSlot sizes={[[728, 90], [320, 50]]} adUnit="home-top-leaderboard" />
-        </LeaderboardContainer>
+          <AdSlot sizes={[[970, 250], [300, 250]]} adUnit="feature-page-2" />
+        </FeatureContainer>
       </DFPSlotsProvider>
     );
   }
 }
 
-const LeaderboardContainer = styled.div`
+const FeatureContainer = styled.div`
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 40px;
+  margin-bottom: 0px;
   text-align: center;
 `

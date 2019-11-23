@@ -127,7 +127,7 @@ const limitToTwoLines = css`
 export const AuthorLink = styled(Link)`
   color: black;
   font-weight: 500;
-  color: ${p => p.theme.colors.darkGrey};
+  color: ${p => p.theme.colors.articleText};
   &:hover {
     border-bottom: 1px solid;
   }
@@ -273,7 +273,8 @@ export const MetaData = styled.div`
   font-size: 15px;
   text-transform: none;
   font-style: normal;
-  color: ${p => p.theme.colors.darkGrey};
+  opacity: 0.8;
+  color: ${p => p.theme.colors.articleText};
   
 
   ${mediaqueries.phablet`

@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import React, { Component } from 'react';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
+import AdLabel from "./Label";
+
 
 export default class FeatureOne extends Component {
   render() {
@@ -12,17 +14,18 @@ export default class FeatureOne extends Component {
         sizeMapping={[{ viewport: [1024, 768], sizes: [[970, 250]] },
           { viewport: [900, 768], sizes: [[300, 250]] }]}
          >
-        <FeatureContainer>
+        <FeatureOneContainer>
+        <AdLabel>Advertisement</AdLabel>
           <AdSlot sizes={[[970, 250], [300, 250]]} adUnit="feature-page-1" />
-        </FeatureContainer>
+        </FeatureOneContainer>
       </DFPSlotsProvider>
     );
   }
 }
 
-const FeatureContainer = styled.div`
+const FeatureOneContainer = styled.div`
   margin: 0 auto;
-  margin-top: 0px;
-  margin-bottom: 35px;
+  margin-top: 40px;
+  margin-bottom: 0px;
   text-align: center;
 `

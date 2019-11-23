@@ -274,7 +274,7 @@ const Main = styled.div`
   grid-template-rows: 1fr;
   grid-gap: 70px;
   margin-top: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   position: relative;
   ${mediaqueries.desktop`
     grid-gap: 10px;
@@ -303,7 +303,7 @@ const Container = styled.section`
 export const AuthorLink = styled(Link)`
   color: black;
   font-weight: 500;
-  color: ${p => p.theme.colors.darkGrey};
+  color: ${p => p.theme.colors.articleText};
   &:hover {
     border-bottom: 1px solid;
   }
@@ -380,7 +380,8 @@ export const MetaData = styled.div`
   font-size: 15px;
   font-style: normal;
   text-transform: none;
-  color: ${p => p.theme.colors.darkGrey};
+  opacity: 0.8;
+  color: ${p => p.theme.colors.articleText};
   
   ${mediaqueries.tablet`
     font-size: 17px;
@@ -409,7 +410,7 @@ export const Excerpt = styled.div`
   line-height: 1.4;
   margin-top: 0px;
   margin-bottom: 10px;
-  opacity: 0.7;
+  opacity: 0.8;
   color: ${p => p.theme.colors.primary} !important;
   
   ${mediaqueries.tablet`
