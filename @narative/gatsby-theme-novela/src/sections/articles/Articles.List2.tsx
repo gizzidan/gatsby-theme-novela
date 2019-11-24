@@ -387,7 +387,7 @@ export const MetaData = styled.div`
     font-size: 17px;
   `}
   ${mediaqueries.phablet`
-    font-size: 15px;
+    font-size: 16px;
     max-width: 100%;
     padding:  0px 0px 10px;
   `}
@@ -451,7 +451,7 @@ export const Title = styled(Headings.h2)`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 20px;  
+    font-size: 21px;  
     padding: 0px;
     margin-bottom: 5px;
     -webkit-line-clamp: 3;
@@ -593,11 +593,11 @@ export const ListItem = styled(Link)`
       transform: none;
     }
     & h2 {
-      font-size: 20px;
+      font-size: 21px;
       margin-bottom: 5px;
     }
     & ${MetaData} {
-      font-size: 15px !important;
+      font-size: 16px !important;
     }
     & ${Excerpt} {
       font-size: 17px !important;

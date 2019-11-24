@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 const opacity = "1";
+const dropdownOpacity = "0.9";
 
 const MobileItem = styled(Link)`
   font-size: 16px;
@@ -38,6 +39,38 @@ const MobileItem = styled(Link)`
 
 `;
 
+const MenuHeader = styled.p `
+  font-size: 14px;
+  display: flex;
+  color: ${p => p.theme.colors.primary};
+  opacity: 1;
+  padding: 16px 25px 5px 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  &:nth-last-child(1) {
+    padding-right: 0px;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  ${mediaqueries.tablet`
+    padding: 16px 20px 5px 0px;
+    margin-bottom: -2px;
+    &:nth-last-child(1) {
+      padding-right: 90px;
+    }
+    &:hover {
+      opacity: 0.65;
+    }
+  `};
+  ${mediaqueries.phablet`
+    &:nth-last-child(1) {
+      padding-right: 35px;
+    }
+  `};
+
+  `
+
 const NavContainer = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -68,22 +101,28 @@ const NavContainer = styled.div`
 `;
 
 const DropdownContent = styled.div`
+  font-size: 16px !important;
   position: absolute;
   padding: 10px;
   background-color: ${p => p.theme.colors.background};
   min-width: 160px;
   z-index: 9000;
   box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
-  ${MobileItem} {
+  ${MobileItem}{
     display: block;
     padding: 6px 16px;
     text-align: left;
   }
+  ${MenuHeader} {
+    text-align: left;
+    display: block;
+  }
+  
   ${mediaqueries.tablet`
     position: fixed;
     right: 0px;
     margin-top: 5px;
-    ${MobileItem} {
+    ${MobileItem}, ${MenuHeader} {
       text-align: right;
     }
   `};
@@ -105,6 +144,7 @@ const Dropdown = styled.button`
   display: inline-block;
   z-index: 10000;
 `
+
 
 class DropdownMenu extends React.Component {
   constructor() {
@@ -142,15 +182,50 @@ class DropdownMenu extends React.Component {
                   this.dropdownMenu = element;
                   }}
                   >
+          
+                  <MenuHeader>Features</MenuHeader>
                   <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              }} to="/garden-state-of-cannabis">Garden State of Cannabis</MobileItem>
+                  <MobileItem activeStyle={{
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              }} to="/election-2020">Election 2020</MobileItem>  
+                  <MobileItem activeStyle={{
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              }} to="/">Feature Three</MobileItem> 
+
+
+                  <MenuHeader>Sections</MenuHeader>
+                  <MobileItem activeStyle={{
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              }} to="/">Things To Do</MobileItem>
+                  <MobileItem activeStyle={{
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              }} 
+                              to="/latest">Latest</MobileItem>
+                  <MobileItem activeStyle={{
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              }} to="/category/thoughts">Thoughts</MobileItem>
+                  <MobileItem activeStyle={{
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              
+                              }} to="/category/culture">Culture</MobileItem>
+                  <MobileItem activeStyle={{
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              }} to="/category/goings-on">Goings On</MobileItem>
+                  <MobileItem activeStyle={{
+                              opacity: dropdownOpacity, fontWeight: '500'
                               }} to="/">Hear the Hum</MobileItem>
+                  
+    
+                  <MenuHeader>Resources</MenuHeader>
+
                   <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
+                              opacity: dropdownOpacity, fontWeight: '500'
                               }} to="/">Contact</MobileItem>  
                   <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
-                              }} to="/">Menu Item</MobileItem>                     
+                              opacity: dropdownOpacity, fontWeight: '500'
+                              }} to="/">Calendar</MobileItem>                      
                 </DropdownContent>
                 )
                 : (
