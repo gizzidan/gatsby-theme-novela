@@ -15,7 +15,9 @@ export default class InArticleOne extends Component {
          >
         <AdContainerOne>
             <AdLabel>Advertisement</AdLabel>
-          <AdSlot sizes={[336, 280]} adUnit="in-article-1" />
+            <div>
+              <AdSlot sizes={[336, 280]} adUnit="in-article-1" />
+            </div>        
         </AdContainerOne>
       </DFPSlotsProvider>
     );
@@ -24,10 +26,14 @@ export default class InArticleOne extends Component {
 
 const AdContainerOne = styled.div`
   margin: 0px auto;
-  margin-bottom: 30px;
+  margin-top: -10px;
+  padding: 20px;
+  margin-bottom: 25px;
   text-align: center;
+  max-width: 680px;
   ${mediaqueries.phablet`
     margin-top: 0px;
+    
   `};
 `
 

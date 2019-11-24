@@ -24,7 +24,7 @@ export default class MidLeaderboard extends Component {
 
 const MidContainer = styled.div`
   margin: 0 auto;
-  margin-top: 0px;
-  margin-bottom: 35px;
+  margin-top: -15px;
+  margin-bottom: 45px;
   text-align: center;
 `
