@@ -53,7 +53,7 @@ export default {
       navGradient: "linear-gradient(to right, rgba(21,32,43,0), #15202b 60% )",
       OGgradient:
         "linear-gradient(180deg, #15202b 0%, rgba(66, 81, 98, 0.36) 100%)",
-      articleText: "rgba(255, 255, 255, 0.98)",
+      articleText: "rgba(255, 255, 255, 0.90)",
       track: "rgba(255, 255, 255, 0.3)",
       progress: "#fff",
       card: "#15202b",
