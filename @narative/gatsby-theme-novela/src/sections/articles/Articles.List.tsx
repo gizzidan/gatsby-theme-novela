@@ -236,7 +236,7 @@ const Title = styled(Headings.h2)`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 20px;  
+    font-size: 21px;  
     padding: 0px;
     margin-bottom: 7px;
     -webkit-line-clamp: 3;
@@ -278,7 +278,7 @@ export const MetaData = styled.div`
   
 
   ${mediaqueries.phablet`
-    font-size: 15px;
+    font-size: 16px;
     max-width: 100%;
   `}
 `;

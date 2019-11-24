@@ -90,8 +90,7 @@ const limitToTwoLines = css`
 `;
 
 const AuthorLink = styled(Link)`
-  color: black;
-  font-weight: 500;
+  font-weight: 500 !important;
   color: ${p => p.theme.colors.darkGrey};
   &:hover {
     border-bottom: 1px solid;
@@ -234,14 +233,12 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
 `;
 
 const MetaData = styled.div`
-
+  color: ${p => p.theme.colors.darkGrey};
   font-family: ${p => p.theme.fonts.slogan};
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 500;
   text-transform: none;
   font-style: normal;
-  color: ${p => p.theme.colors.primary};
-  
 
   ${mediaqueries.phablet`
     max-width: 100%;
