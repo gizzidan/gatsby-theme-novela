@@ -8,7 +8,7 @@ import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
-import {limitToTwoLines, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
+import { AuthorLink, limitToTwoLines, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
 import { PodcastExcerpt,
   StyledDiv,
   HeadlineTitle,
@@ -154,8 +154,9 @@ function Cannabis({ location }) {
                                 {item.node.excerpt}
                             </Excerpt>
                             <MetaData>
-                                {item.node.date} · {item.node.body.childMdx.timeToRead} min read
-                            </MetaData>
+                               <AuthorLink to={item.node.author[0].name.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
+                           </MetaData>
+                            
                             </TextContainer>
                         </Item>
                     </div>

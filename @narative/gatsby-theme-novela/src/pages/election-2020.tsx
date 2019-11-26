@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import Image from 'gatsby-image';
-import {ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
+import {AuthorLink, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
 import FeatureTwo from '@components/Ads/FeatureTwo';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { PodcastExcerpt,
@@ -154,8 +154,8 @@ function Election2020({ location }) {
                                 {item.node.excerpt}
                             </Excerpt>
                             <MetaData>
-                                {item.node.date} · {item.node.body.childMdx.timeToRead} min read
-                            </MetaData>
+                               <AuthorLink to={item.node.author[0].name.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
+                           </MetaData>
                             </TextContainer>
                         </Item>
                     </div>

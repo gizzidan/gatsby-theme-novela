@@ -128,8 +128,9 @@ export const AuthorLink = styled(Link)`
   color: black;
   font-weight: 500;
   color: ${p => p.theme.colors.articleText};
+  border-bottom: 1px solid;
   &:hover {
-    border-bottom: 1px solid;
+    opacity: 0.6;
   }
 `
 
@@ -221,7 +222,7 @@ const Title = styled(Headings.h2)`
   font-family: "Noe Text";
   font-weight: 900 !important;
   text-transform: none;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   transition: color 0.3s ease-in-out;
   &:hover {
     opacity: 0.5;
@@ -250,7 +251,7 @@ const Excerpt = styled.p`
   line-height: 1.4;
   margin-bottom: 10px !important;
   font-weight: 400;
-  opacity: 0.75;
+  opacity: 1;
   color: ${p => p.theme.colors.primary} !important;
 
   ${mediaqueries.desktop`
@@ -268,12 +269,11 @@ const Excerpt = styled.p`
 `;
 
 export const MetaData = styled.div`
-  font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 500;
-  font-size: 15px;
+  font-family: ${p => p.theme.fonts.monospace};
+  font-weight: 400;
+  font-size: 14px;
   text-transform: none;
   font-style: normal;
-  opacity: 0.8;
   color: ${p => p.theme.colors.articleText};
   
 

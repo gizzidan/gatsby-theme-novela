@@ -13,7 +13,7 @@ const MobileItem = styled(Link)`
   font-size: 16px;
   display: flex;
   color: ${p => p.theme.colors.primary};
-  opacity: 0.65;
+  opacity: 0.7;
   padding: 6px 25px 5px 0px;
   font-weight: 400;
   &:nth-last-child(1) {
@@ -28,7 +28,7 @@ const MobileItem = styled(Link)`
       padding-right: 90px;
     }
     &:hover {
-      opacity: 0.65;
+      opacity: 1;
     }
   `};
   ${mediaqueries.phablet`

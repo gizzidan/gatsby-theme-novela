@@ -68,7 +68,8 @@ const FeaturedContainer = styled("section")`
   &:hover, &:focus {
     cursor: pointer;
   }
-  ${mediaqueries.desktop`
+  ${mediaqueries.desktop_mediumlarge`
+    height: 64vh;
     
   `};
   ${mediaqueries.phablet`

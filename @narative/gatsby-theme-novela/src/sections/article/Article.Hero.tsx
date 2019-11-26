@@ -66,6 +66,8 @@ export default ArticleHero;
 const StyledLink = styled(Link)`
   color: ${p => p.theme.colors.accent};
   text-transform: capitalize;
+  border-bottom: 1px solid;
+  font-weight: 500;
   &:hover {
     opacity: 0.6;
   }
@@ -195,15 +197,14 @@ const HeroHeading = styled(Headings.h1)`
 const HeroExcerpt = styled("p")`
   font-size: 22px;
   font-family: ${p => p.theme.fonts.sansSerif};
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   line-height: 1.5;
   font-style: normal;
-  opacity: 0.8;
   color: ${p => p.theme.colors.articleText};
   font-weight: 400;
 
   ${mediaqueries.tablet`
-    margin-bottom: 0px;
+    margin-bottom: 2px;
     font-size: 18px;
   `}
 
@@ -215,12 +216,11 @@ const HeroExcerpt = styled("p")`
 
 const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   text-transform: none;
-  font-weight: 500 !important;
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-weight: 400 !important;
+  font-family: ${p => p.theme.fonts.monospace};
   text-align: left;
   font-size: 16px;
-
-  color: ${p => p.theme.colors.darkGrey};
+  color: ${p => p.theme.colors.articleText};
 
   ${mediaqueries.tablet`
     
@@ -228,8 +228,8 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
 
   ${mediaqueries.phablet`
     
-    letter-spacing: -0.2px;
-    font-size: 15px;
+
+    font-size: 14px;
     flex-direction: column;
 
     strong {

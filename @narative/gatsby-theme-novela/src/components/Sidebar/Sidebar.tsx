@@ -59,7 +59,7 @@ const Sidebar = () => {
 										<InnerContainer>
 											<SSlogan>{item.node.slogan}</SSlogan>
 											<STitle>{item.node.title}</STitle>
-											<SMetaData><span style={{ opacity: '0.8', }}>{item.node.author[0].name} in </span><CatLink to={"/category/" + item.node.category}>{item.node.category}</CatLink>
+											<SMetaData><span style={{ opacity: '0.8', }}>{item.node.author[0].name} in </span><CatLink  to={"/category/" + item.node.category.toString().replace(/\s+/g, '-')}>{item.node.category}</CatLink>
 												
 											</SMetaData>
 										</InnerContainer>
@@ -80,9 +80,10 @@ const Sidebar = () => {
 export default Sidebar;
 
 export const CatLink = styled(Link) `
-	color: ${p => p.theme.colors.accent} !important;
+	color: ${p => p.theme.colors.articleText} !important;
 	font-weight: 500;
 	text-transform: capitalize;
+	border-bottom: 1px solid;
 	&:hover {
 		opacity: 0.6 !important;
 	}
@@ -183,9 +184,9 @@ export const SSlogan = styled.div`
 `;
 
 export const SMetaData = styled.div`
-	font-family: ${p => p.theme.fonts.sansSerif};
+	font-family: ${p => p.theme.fonts.monospace};
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 400;
 	text-transform: none;
 	color: ${p => p.theme.colors.articleText} !important;
 	${mediaqueries.desktop`

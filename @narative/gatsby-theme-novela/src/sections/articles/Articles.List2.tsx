@@ -34,7 +34,7 @@ export const limitToTwoLines = css`
 
 const ArticlesList2 = () => {
   const sectiongap = '55px';
-  const gap = '25px';
+  const gap = '35px';
   const data = useStaticQuery(
     graphql`
       query { 
@@ -128,7 +128,6 @@ const ArticlesList2 = () => {
         <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
         gridGap: gap,
       }}> 
      
@@ -175,7 +174,7 @@ const ArticlesList2 = () => {
         <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+       
         gridGap: gap,
       }}> 
      
@@ -221,7 +220,7 @@ const ArticlesList2 = () => {
         <StyledDiv style={{
         marginBottom: sectiongap, 
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+        
         gridGap: gap,
       }}> 
      
@@ -294,7 +293,10 @@ const LargeDiv = styled.div`
 `;
 
 export const StyledDiv = styled.div`
-
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  ${mediaqueries.tablet`
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  `};
 `;
 const Container = styled.section`
   
@@ -304,8 +306,9 @@ export const AuthorLink = styled(Link)`
   color: black;
   font-weight: 500;
   color: ${p => p.theme.colors.articleText};
+  border-bottom: 1px solid;
   &:hover {
-    border-bottom: 1px solid;
+    opacity: 0.6;
   }
 `
 
@@ -375,12 +378,12 @@ export const ImageContainer = styled.div`
 `;
 
 export const MetaData = styled.div`
-  font-family: ${p => p.theme.fonts.sansSerif};
-  font-weight: 500;
-  font-size: 15px;
+  font-family: ${p => p.theme.fonts.monospace};
+  font-weight: 400;
+  font-size: 14px;
   font-style: normal;
   text-transform: none;
-  opacity: 0.8;
+  opacity: 1;
   color: ${p => p.theme.colors.articleText};
   
   ${mediaqueries.tablet`
@@ -409,8 +412,7 @@ export const Excerpt = styled.div`
   font-style: normal;
   line-height: 1.4;
   margin-top: 0px;
-  margin-bottom: 10px;
-  opacity: 0.8;
+  margin-bottom: 12px;
   color: ${p => p.theme.colors.primary} !important;
   
   ${mediaqueries.tablet`
@@ -433,7 +435,7 @@ export const Title = styled(Headings.h2)`
   font-family: "Noe Text";
   font-weight: 900 !important;
   text-transform: none;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
   opacity: 0.95;
   transition: color 0.3s ease-in-out;
   color: ${p => p.theme.colors.primary};
@@ -540,7 +542,7 @@ export const ListItem = styled(Link)`
     -webkit-line-clamp: 2 !important;
   }
   & ${MetaData} {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
   & ${Excerpt} {
     font-size: 19px !important;

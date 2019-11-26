@@ -211,7 +211,6 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   font-weight: 400;
   font-style: normal;
   font-family: ${p => p.theme.fonts.serif};
-  opacity: 0.75;
   color: ${p => p.theme.colors.articleText} !important;
   display: ${p => (p.hasOverflow ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};
