@@ -69,7 +69,7 @@ const FeaturedContainer = styled("section")`
     cursor: pointer;
   }
   ${mediaqueries.desktop_mediumlarge`
-    height: 64vh;
+    height: 66vh;
     
   `};
   ${mediaqueries.phablet`
