@@ -436,6 +436,7 @@ export const Title = styled(Headings.h2)`
   font-weight: 900 !important;
   text-transform: none;
   margin-bottom: 9px;
+  margin-top: 20px;
   opacity: 0.95;
   transition: color 0.3s ease-in-out;
   color: ${p => p.theme.colors.primary};
@@ -448,6 +449,7 @@ export const Title = styled(Headings.h2)`
   `}
 
   ${mediaqueries.tablet`
+    margin-top: 10px;
     font-size: 20px;  
     margin-bottom: 10px;
   `}
@@ -461,6 +463,7 @@ export const Title = styled(Headings.h2)`
 `;
 
 export const Slogan = styled.div`
+  display: none !important;
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 13px;
@@ -473,7 +476,7 @@ export const Slogan = styled.div`
   
 
   ${mediaqueries.desktop`
-    display: -webkit-box;
+    
   `}
 
   ${mediaqueries.tablet`
@@ -538,6 +541,7 @@ export const ListItem = styled(Link)`
   transition: all 0.28s var(--ease-out-quart);
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   & h2 {
+    margin-top: 0px;
     font-size: 26px;
     -webkit-line-clamp: 2 !important;
   }
@@ -582,6 +586,7 @@ export const ListItem = styled(Link)`
     grid-gap: 15px;
     grid-template-columns: 1fr;
     & h2 {
+      margin-top: 10px;
       font-size: 24px;
       margin-bottom: 10px;
     }

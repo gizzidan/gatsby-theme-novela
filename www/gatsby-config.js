@@ -28,6 +28,7 @@ const plugins = [
     options: {
       spaceId: process.env.CONTENTFUL_SPACE_ID,
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      host: `preview.contentful.com`,
     },
   },
   {
@@ -89,6 +90,7 @@ if (process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
     options: {
       spaceId: process.env.CONTENTFUL_SPACE_ID,
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      host: `preview.contentful.com`,
     },
   });
 }

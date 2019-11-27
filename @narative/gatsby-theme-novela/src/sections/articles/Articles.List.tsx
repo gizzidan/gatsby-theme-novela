@@ -143,6 +143,7 @@ const TextContainer = styled("div")`
 `;
 
 const Slogan = styled.p`
+  display: none !important;
   ${limitToTwoLines};
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 15px;
@@ -156,7 +157,7 @@ const Slogan = styled.p`
 
 
   ${mediaqueries.desktop`
-    display: -webkit-box;
+    
   `}
 
   ${mediaqueries.phablet`

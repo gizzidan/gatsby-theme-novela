@@ -155,6 +155,7 @@ export const STitle = styled(Headings.h2)`
 `;
 
 export const SSlogan = styled.div`
+  display: none;
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 13px;
 	line-height: 1.7;

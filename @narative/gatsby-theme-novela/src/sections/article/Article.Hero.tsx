@@ -74,6 +74,7 @@ const StyledLink = styled(Link)`
 `
 const Slogan = styled("p")`
   font-family: ${p => p.theme.fonts.slogan};
+  display: none;
   font-size: 16px;
   text-transform: uppercase;
   font-weight: ${p => p.theme.fontWeights.slogan};
