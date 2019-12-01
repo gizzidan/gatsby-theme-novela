@@ -13,7 +13,7 @@ function ArticlesPage({ location, pageContext }) {
   return (
     <Layout>
       <NavBarBasic />
-      <SEO pathname={location.pathname} />     
+      <SEO pathname={location.pathname} title="The Latest"/>     
         <Section>
            <ArticlesFullList />
         </Section>

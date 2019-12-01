@@ -437,6 +437,7 @@ export const Title = styled(Headings.h2)`
   text-transform: none;
   margin-bottom: 9px;
   margin-top: 20px;
+  padding: 0px;
   opacity: 0.95;
   transition: color 0.3s ease-in-out;
   color: ${p => p.theme.colors.primary};

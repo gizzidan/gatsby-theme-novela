@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "@emotion/styled";
 import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
 import { useStaticQuery, graphql } from "gatsby";
-import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
@@ -74,7 +72,7 @@ function Cannabis({ location }) {
     return (
         <Layout>
           <NavBarBasic />
-          <SEO pathname={location.pathname} />   
+          <SEO pathname={location.pathname} title="Garden State of Cannabis" image={data.file.childImageSharp.fluid}/>   
           <HeroContainer>
               <Image fluid={data.file.childImageSharp.fluid} />
             </HeroContainer>

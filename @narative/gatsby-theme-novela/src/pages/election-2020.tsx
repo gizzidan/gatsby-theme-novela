@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "@emotion/styled";
 import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
 import { useStaticQuery, graphql } from "gatsby"
-import mediaqueries from "@styles/media";
 import NavBarBasic from "@components/NavBarBasic";
 import Image from 'gatsby-image';
 import {AuthorLink, ImageContainer, Label, SeeAll, Item, Title, Slogan, Excerpt, MetaData, TextContainer} from '@narative/gatsby-theme-novela/src/sections/articles/Articles.List2';
@@ -75,7 +73,7 @@ function Election2020({ location }) {
     return (
         <Layout>
           <NavBarBasic />
-          <SEO pathname={location.pathname} />   
+          <SEO pathname={location.pathname} title="Election 2020" image={data.file.childImageSharp.fluid}/>   
           <HeroContainer>
               <Image fluid={data.file.childImageSharp.fluid} />
             </HeroContainer>

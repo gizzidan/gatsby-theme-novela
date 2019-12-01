@@ -15,7 +15,9 @@ function TagPage({ location, pageContext }) {
   return (
     <Layout>
       <NavBarBasic />
-      <SEO pathname={location.pathname} title={tag} />
+      <SEO pathname={location.pathname} title={tag.split(' ')
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ')} />
       <Section narrow>
         <TagHero tag={tag} />
         <AuthorArticles articles={articles} />

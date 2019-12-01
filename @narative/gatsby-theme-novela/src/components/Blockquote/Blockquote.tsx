@@ -4,7 +4,7 @@ import mediaqueries from "@styles/media";
 
 export const Blockquote = styled.blockquote`
   transition: ${p => p.theme.colorModeTransition};
-  margin: 10px auto 50px;
+  margin: 10px auto 52px;
   color: ${p => p.theme.colors.articleText};
   font-style: normal;
   padding-left: 35px;

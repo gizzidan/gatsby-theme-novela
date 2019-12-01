@@ -26,9 +26,9 @@ export default class InArticleOne extends Component {
 
 const AdContainerOne = styled.div`
   margin: 0px auto;
-  margin-top: -10px;
-  padding: 20px;
-  margin-bottom: 25px;
+  margin-top: -5px;
+  padding: 0px;
+  margin-bottom: 45px;
   text-align: center;
   max-width: 680px;
   ${mediaqueries.phablet`

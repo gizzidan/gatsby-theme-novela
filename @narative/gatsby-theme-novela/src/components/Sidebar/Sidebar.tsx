@@ -129,6 +129,7 @@ export const STitle = styled(Headings.h2)`
   font-family: "Noe Text";
   font-weight: 900 !important;
   text-transform: none;
+  padding: 0px;
   color: ${p => p.theme.colors.primary};
   margin-bottom: 12px;
 	transition: color 0.3s ease-in-out;

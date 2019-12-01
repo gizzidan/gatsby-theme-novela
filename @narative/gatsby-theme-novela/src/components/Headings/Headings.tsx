@@ -32,8 +32,9 @@ const h1 = styled.h1`
 const h2 = styled.h2`
   font-family: ${p => p.theme.fonts.sansSerif};
   font-size: 26px;
-  line-height: 1.2;
-  font-weight: 500 !important;
+  line-height: 1.42;
+  padding-bottom: 15px;
+  font-weight: 700 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`
@@ -42,11 +43,11 @@ const h2 = styled.h2`
 
   ${mediaqueries.tablet`
     font-size: 25px;
-    line-height: 1.4;
   `};
 
   ${mediaqueries.phablet`
     font-size: 25px;
+    padding-bottom: 10px !important;
   `};
 `;
 

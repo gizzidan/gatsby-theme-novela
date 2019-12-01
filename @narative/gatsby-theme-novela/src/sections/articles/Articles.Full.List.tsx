@@ -217,7 +217,8 @@ const Title = styled(Headings.h2)`
   font-family: "Noe Text";
   font-weight: 900 !important;
   text-transform: none;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
+  padding: 0px;
   transition: color 0.3s ease-in-out;
   &:hover {
     opacity: 0.5;

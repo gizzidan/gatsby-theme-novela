@@ -3,7 +3,7 @@ require("dotenv").config();
 const siteMetadata = {
   title: `The Hum`,
   name: `The Hum`,
-  siteUrl: `https://novela.narative.co`,
+  siteUrl: `https://thehum.co`,
   description: `Bringing Sanity to the Jersey Shore: Your Local Source`,
   hero: {
     heading: `Bringing Sanity to the Jersey Shore: Your Local Source`,
@@ -11,10 +11,10 @@ const siteMetadata = {
   },
   social: [
     {
-      url: `https://twitter.com/narative`,
+      url: `https://twitter.com/thehumdaily`,
     },
     {
-      url: `https://instagram.com/narative.co`,
+      url: `https://instagram.com/thehumdaily`,
     },
     {
       url: `https://youtube.com`,

@@ -15,7 +15,9 @@ function CategoryPage({ location, pageContext }) {
   return (
     <Layout>
       <NavBarBasic />
-      <SEO pathname={location.pathname} title={category} />
+      <SEO pathname={location.pathname} title={category.split(' ')
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ')} />
       <Section narrow>
         <CategoryHero category={category} />
         <AuthorArticles articles={articles} />
