@@ -36,8 +36,8 @@ const Paragraph = styled.p`
   `};
 
   ${mediaqueries.phablet`
-    line-height: 1.55;
-    font-size: 18px;
+    line-height: 1.618;
+    font-size: 18.5px;
     padding: 0 20px;
     margin: 0 auto 20px;
   `};
