@@ -31,7 +31,7 @@ const h1 = styled.h1`
 
 const h2 = styled.h2`
   font-family: "Noe Text";
-  font-size: 26px;
+  font-size: 28px;
   line-height: 1.25;
   padding-bottom: 10px;
   font-weight: 700 !important;
@@ -46,7 +46,7 @@ const h2 = styled.h2`
   `};
 
   ${mediaqueries.phablet`
-    font-size: 25px;
+    font-size: 24px;
     padding-bottom: 8px !important;
   `};
 `;
@@ -69,16 +69,17 @@ const h3 = styled.h3`
 const h4 = styled.h4`
   text-align: center;
   font-family: "F Grotesk";
-  font-size: 36px;
-  text-transform: uppercase;
+  font-size: 42px;
+  text-transform: none;
+  font-style: italic;
   padding-top: 15px;
   padding-bottom: 50px;
-  font-weight: 500 !important;
-  line-height: 1.3;
+  font-weight: 300 !important;
+  line-height: 1.25;
   ${commonStyles};
 
   ${mediaqueries.phablet`
-    font-size: 24px;
+    font-size: 29px;
     padding-bottom: 30px !important;
 
   `};

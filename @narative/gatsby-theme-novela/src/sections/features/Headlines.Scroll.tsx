@@ -120,7 +120,7 @@ export const PodImage = styled(Image)`
 `
 export const HeadlineTitle = styled.h2`
   font-family: "Noe Text";
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.2;
   font-size: 17px;
   margin-top: -2px;

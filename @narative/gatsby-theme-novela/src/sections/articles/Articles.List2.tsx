@@ -433,7 +433,7 @@ export const Title = styled(Headings.h2)`
   font-size: 21px;
   line-height: 1.2 !important;
   font-family: "Noe Text";
-  font-weight: 900 !important;
+  font-weight: 700 !important;
   text-transform: none;
   margin-bottom: 9px;
   margin-top: 20px;

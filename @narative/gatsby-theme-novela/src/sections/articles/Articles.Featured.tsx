@@ -177,7 +177,7 @@ const Title = styled("div")`
 `;
 
 const Excerpt = styled("div")`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   font-weight: 400;
   font-style: normal;
   color: white;

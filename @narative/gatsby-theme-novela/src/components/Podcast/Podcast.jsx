@@ -179,7 +179,7 @@ const PodImage = styled(Image)`
 `
 const PodcastTitle = styled.h2`
   font-family: "Noe Text";
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.2;
   font-size: 16px;
   margin-top: -2px;

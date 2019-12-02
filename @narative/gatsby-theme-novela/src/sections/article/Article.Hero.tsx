@@ -180,7 +180,7 @@ const HeroHeading = styled(Headings.h1)`
   margin-bottom: 10px;
   line-height: 1.15;
   text-transform: none;
-  font-weight: 900;
+  font-weight: 700;
   font-style: normal;
   color: ${p => p.theme.colors.articleText};
 

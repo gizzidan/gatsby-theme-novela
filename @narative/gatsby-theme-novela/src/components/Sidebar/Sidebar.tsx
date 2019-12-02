@@ -127,7 +127,7 @@ export const STitle = styled(Headings.h2)`
   font-size: 19px;
   line-height: 1.2 !important;
   font-family: "Noe Text";
-  font-weight: 900 !important;
+  font-weight: 700 !important;
   text-transform: none;
   padding: 0px;
   color: ${p => p.theme.colors.primary};
