@@ -9,8 +9,8 @@ import { css } from "@emotion/core";
 
 
 const ArticlesFullList = () => {
-  const sectiongap = '60px';
-  const gap = '25px';
+  const sectiongap = '20px';
+  const gap = '28px';
   const data = useStaticQuery(
     graphql`
       query { 

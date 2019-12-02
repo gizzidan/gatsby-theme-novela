@@ -30,7 +30,7 @@ const AuthorHero = ({ author }: AuthorHeroProps) => {
 export default AuthorHero;
 
 const Hero = styled.div`
-  margin-top: 70px;
+  margin-top: 90px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -64,9 +64,9 @@ const HeroImage = styled.div`
 
 const Heading = styled.h1`
   font-size: 48px;
-  font-family: "Noe Display";
+  font-family: "Noe Text";
   color: ${p => p.theme.colors.primary};
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   font-weight: 700;
 
   ${mediaqueries.tablet`
@@ -83,6 +83,7 @@ const Subheading = styled.p`
   font-size: 18px;
   font-family: ${p => p.theme.fonts.sansSerif};
   line-height: 1.4;
+  
   text-align: center;
 
   ${mediaqueries.phablet`
@@ -93,9 +94,10 @@ const Subheading = styled.p`
 const Social = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 35px;
+  margin-top: 15px;
+  margin-bottom: 40px;
 
-  ${mediaqueries.phablet`
-    font-size: 14px;
+  ${mediaqueries.desktop`
+    font-size: 15px;
   `}
 `;

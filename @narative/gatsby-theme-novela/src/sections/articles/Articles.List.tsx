@@ -36,8 +36,8 @@ interface ArticlesListItemProps {
 
 function ArticlesList({ articles, alwaysShowAllDetails }: ArticlesListProps) {
   if (!articles) return null;
-  const sectiongap = '60px';
-  const gap = '25px';
+  const sectiongap = '20px';
+  const gap = '28px';
 
   /**
    * We're taking the flat array of articles [{}, {}, {}...]
