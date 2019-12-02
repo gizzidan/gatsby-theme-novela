@@ -34,7 +34,7 @@ const h2 = styled.h2`
   font-size: 28px;
   line-height: 1.25;
   padding-bottom: 10px;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`
