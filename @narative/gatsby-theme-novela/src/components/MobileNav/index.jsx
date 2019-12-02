@@ -225,7 +225,8 @@ class DropdownMenu extends React.Component {
                               }} to="/">Contact</MobileItem>  
                   <MobileItem activeStyle={{
                               opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/">Calendar</MobileItem>                      
+                              }} to="/">Calendar</MobileItem>   
+                 
                 </DropdownContent>
                 )
                 : (

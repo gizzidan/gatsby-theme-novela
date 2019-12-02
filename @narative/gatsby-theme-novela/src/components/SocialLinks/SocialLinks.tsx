@@ -61,7 +61,7 @@ export default SocialLinks;
 
 const SocialIconContainer = styled.a`
   position: relative;
-  margin-left: 3.2rem;
+  margin-left: 2.2rem;
   text-decoration: none;
   max-width: 16px;
 

@@ -90,10 +90,11 @@ const limitToTwoLines = css`
 `;
 
 const AuthorLink = styled(Link)`
-  font-weight: 500 !important;
-  color: ${p => p.theme.colors.darkGrey};
+  font-weight: 500;
+  color: ${p => p.theme.colors.articleText};
+  border-bottom: 1px solid;
   &:hover {
-    border-bottom: 1px solid;
+    opacity: 0.6;
   }
 `
 
@@ -233,16 +234,17 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
 `;
 
 const MetaData = styled.div`
-  color: ${p => p.theme.colors.darkGrey};
-  font-family: ${p => p.theme.fonts.slogan};
+  font-family: ${p => p.theme.fonts.monospace};
+  font-weight: 400;
   font-size: 16px;
-  font-weight: 500;
   text-transform: none;
   font-style: normal;
+  color: ${p => p.theme.colors.articleText};
+
 
   ${mediaqueries.phablet`
+    font-size: 16px;
     max-width: 100%;
-    padding:  10px 0px 10px;
   `}
 `;
 

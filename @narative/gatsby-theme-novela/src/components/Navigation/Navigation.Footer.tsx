@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -7,6 +7,7 @@ import SocialLinks from "@components/SocialLinks";
 import LandingSub from "@components/LandingSub";
 import Subscription from "@components/Subscription";
 import mediaqueries from "@styles/media";
+import PatreonButton from "@components/Navigation/PatreonButton";
 
 const siteQuery = graphql`
   {
@@ -39,14 +40,18 @@ function Footer() {
           <FooterText>
             © {new Date().getFullYear()} {name}
           </FooterText>
-          <div>
-            <SocialLinks links={social} />
+          <div style={{ display: 'flex' }}>
+            
+            <PatreonButton />
           </div>
+         
+         
         </FooterContainer>
       </Section>
     </>
   );
 }
+
 
 export default Footer;
 
@@ -103,3 +108,4 @@ const FooterGradient = styled.div`
   background: ${p => p.theme.colors.gradient};
   transition: ${p => p.theme.colorModeTransition};
 `;
+

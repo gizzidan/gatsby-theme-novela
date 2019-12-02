@@ -30,11 +30,11 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-family: "Noe Text";
+  font-family: ${p => p.theme.fonts.serif};
   font-size: 28px;
   line-height: 1.25;
   padding-bottom: 10px;
-  font-weight: 500 !important;
+  font-weight: 700 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`

@@ -75,11 +75,12 @@ const ArticlesList2 = () => {
             
             }}>
         <Leaderboard />
+       
         <Main>
           
           
           <LargeDiv id="latest">
-            
+         
             <HomeFeature/>
             {
               data.allContentfulArticle.edges.slice(0,2).map((item, i) => (
