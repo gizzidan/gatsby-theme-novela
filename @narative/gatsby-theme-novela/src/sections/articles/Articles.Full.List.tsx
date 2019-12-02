@@ -235,7 +235,7 @@ const Title = styled(Headings.h2)`
   ${mediaqueries.phablet`
     font-size: 21px;  
     padding: 0px;
-    margin-bottom: 7px;
+    margin-bottom: 2px;
     -webkit-line-clamp: 3;
   `}
 `;

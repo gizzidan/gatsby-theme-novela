@@ -155,13 +155,13 @@ const Category = styled.p`
 `;
 
 const Title = styled("div")`
-  font-family: ${p => p.theme.fonts.serifFine};
+  font-family: "Noe Text";
   color: white;
   font-size: 50px;
   line-height: 1.1;
   text-transform: none;
   padding-bottom: 15px;
-  font-weight: 700;
+  font-weight: 500;
   transition: all 0.1s linear;
 
 

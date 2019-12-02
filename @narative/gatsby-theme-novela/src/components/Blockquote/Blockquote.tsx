@@ -28,7 +28,7 @@ export const Blockquote = styled.blockquote`
     font-weight: 400;
 
     ${mediaqueries.tablet`
-      font-size: 17px;
+      font-size: 18px;
       
     `};
 

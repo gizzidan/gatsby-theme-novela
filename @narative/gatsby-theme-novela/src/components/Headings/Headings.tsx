@@ -30,10 +30,10 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: "Noe Text";
   font-size: 26px;
-  line-height: 1.42;
-  padding-bottom: 15px;
+  line-height: 1.25;
+  padding-bottom: 10px;
   font-weight: 700 !important;
   ${commonStyles};
 
@@ -47,7 +47,7 @@ const h2 = styled.h2`
 
   ${mediaqueries.phablet`
     font-size: 25px;
-    padding-bottom: 10px !important;
+    padding-bottom: 8px !important;
   `};
 `;
 

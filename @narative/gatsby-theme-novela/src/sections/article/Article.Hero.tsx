@@ -147,7 +147,7 @@ const Header = styled.header`
 
   ${mediaqueries.phablet`
     max-width: 90vw;
-    margin: 75px auto 30px;
+    margin: 90px auto 30px;
     padding: 0 px;
   `}
 `;
@@ -175,34 +175,34 @@ const Meta = styled.div`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 54px;
+  font-size: 46px;
   font-family: "Noe Text";
   margin-bottom: 10px;
-  line-height: 1.1;
+  line-height: 1.15;
   text-transform: none;
   font-weight: 900;
+  font-style: normal;
   color: ${p => p.theme.colors.articleText};
 
   ${mediaqueries.tablet`
     margin-bottom: 10px;
-    font-size: 34px;
+    font-size: 42px;
   `}
 
   ${mediaqueries.phablet`
     font-size: 28px;
-    line-height: 1.1;
     margin-bottom: 12px;
   `}
 `;
 
 const HeroExcerpt = styled("p")`
-  font-size: 22px;
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-size: 24px;
+  font-family: ${p => p.theme.fonts.serif};
   margin-bottom: 25px;
   line-height: 1.5;
   font-style: normal;
   color: ${p => p.theme.colors.articleText};
-  font-weight: 400;
+  font-weight: 300;
 
   ${mediaqueries.tablet`
     margin-bottom: 2px;
@@ -210,7 +210,7 @@ const HeroExcerpt = styled("p")`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 18px;
+    font-size: 20px;
     
   `}
 `;
@@ -220,7 +220,7 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   font-weight: 400 !important;
   font-family: ${p => p.theme.fonts.monospace};
   text-align: left;
-  font-size: 16px;
+  font-size: 17px;
   color: ${p => p.theme.colors.articleText};
 
   ${mediaqueries.tablet`
