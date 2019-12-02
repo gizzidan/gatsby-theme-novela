@@ -155,7 +155,7 @@ const Category = styled.p`
 `;
 
 const Title = styled("div")`
-  font-family: "Noe Text";
+  font-family: "Noe Display";
   color: white;
   font-size: 50px;
   line-height: 1.1;
