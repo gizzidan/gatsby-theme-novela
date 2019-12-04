@@ -10,7 +10,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "Carol Rizzo and Rob Layne Win Neptune Township Committee Election Again"}) {
+        contentfulArticle(title: {eq: "It is Our Moral Duty to Boo The President"}) {
           title
           date
           excerpt
@@ -62,7 +62,7 @@ const Arrow = styled.div`
 `
 const FeaturedContainer = styled("section")`
   overflow: hidden;
-  height: 58vh;
+  height: 52vh;
   position: relative;
   margin: -61px auto 0px auto;
   &:hover, &:focus {
@@ -93,7 +93,7 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(17, 17, 20, .1), rgba(24, 24, 35, 1));
+  background-image: linear-gradient(to bottom, rgba(17, 17, 20, .1), rgba(3, 3, 3, 0.8));
   width: 100%;
   height: 100%;
 `
@@ -158,10 +158,10 @@ const Title = styled("div")`
   font-family: "Noe Text";
   color: white;
   font-size: 48px;
-  line-height: 1.1;
+  line-height: 1.05;
   text-transform: none;
   padding-bottom: 15px;
-  font-weight: 700;
+  font-weight: 900;
   transition: all 0.1s linear;
 
 
@@ -179,7 +179,7 @@ const Title = styled("div")`
 const Excerpt = styled("div")`
   font-family: ${p => p.theme.fonts.serif};
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
   color: white;
   font-size: 24px;
   line-height: 1.4;

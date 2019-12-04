@@ -25,10 +25,11 @@ export const Blockquote = styled.blockquote`
     margin: 0 auto;
     font-size: 19px;
     line-height: 1.618;
-    font-weight: 400;
+    font-style: italic;
+    font-weight: 300;
 
     ${mediaqueries.tablet`
-      font-size: 18px;
+      font-size: 17px;
       
     `};
 
@@ -37,10 +38,11 @@ export const Blockquote = styled.blockquote`
     `};
   }
   & > .source {
-    padding-top: 5px;
+    padding-top: 0px;
     margin-top: -7px;
     text-align: left;
     text-transform: none;
+    font-style: normal !important;
     font-size: 17px;
     font-weight: 400;
     font-family: ${p => p.theme.fonts.sansSerif};

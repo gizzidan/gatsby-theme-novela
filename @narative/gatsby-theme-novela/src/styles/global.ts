@@ -1,4 +1,5 @@
 import { css } from "@emotion/core";
+import mediaqueries from "@styles/media";
 
 import Portrait from "www/static/fonts/Portrait/Portrait-Regular2.woff";
 import PortraitItalic from "www/static/fonts/Portrait/Portrait-Regular2Italic.woff";

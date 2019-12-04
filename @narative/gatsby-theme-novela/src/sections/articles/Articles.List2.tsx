@@ -48,7 +48,7 @@ const ArticlesList2 = () => {
               title
               category 
               hero {
-                sizes(maxWidth: 500, maxHeight: 300, quality: 100) {
+                sizes(maxWidth: 500, maxHeight: 309, quality: 100) {
                   ...GatsbyContentfulSizes_withWebp
                  }  
               }
@@ -545,7 +545,7 @@ export const ListItem = styled(Link)`
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   & h2 {
     margin-top: 0px;
-    font-size: 26px;
+    font-size: 28px;
     -webkit-line-clamp: 2 !important;
   }
   & ${MetaData} {
@@ -553,7 +553,7 @@ export const ListItem = styled(Link)`
   }
   & ${Excerpt} {
     font-size: 19px !important;
-    -webkit-line-clamp: 3 !important;
+    -webkit-line-clamp: 4 !important;
     
   }
   & ${Slogan} {

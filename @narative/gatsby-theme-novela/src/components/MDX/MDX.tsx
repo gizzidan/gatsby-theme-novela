@@ -63,7 +63,7 @@ function MDX({ content, children, ...props }) {
 export default MDX;
 
 const IMAGE_WIDTHS = {
-  regular: "680px",
+  regular: "630px",
   large: "1004px",
   full: "100vw"
 };
@@ -210,6 +210,16 @@ const ImageCSS = css`
   .gatsby-resp-image-background-image {
     display: none !important;
   }
+  
+  .youtube {
+    text-align: center;
+    margin: 0px auto 40px auto;
+    width: 630px;
+    ${mediaqueries.phablet`
+      width: 95%;
+    `}
+  }
+
 
   img {
     display: inline-block;
@@ -221,7 +231,7 @@ const ImageCSS = css`
     border-radius: 5px;
 
     ${mediaqueries.tablet`
-      margin: 10px auto 45px;
+      margin: 10px auto 45px; 
     `};
   }
 
@@ -231,10 +241,10 @@ const ImageCSS = css`
     max-width: 100%;
     height: auto;
     z-index: 0;
-    margin: 15px auto 50px;
+    margin: 5px auto 50px;
     border-radius: 5px;
     width: 100%;
-    max-width: 680px;
+    max-width: 630px;
 
     ${mediaqueries.tablet`
       margin: 10px auto 45px;
@@ -250,7 +260,7 @@ const ImageCSS = css`
     `};
 
     ${mediaqueries.phablet`
-      padding: 0 20px;
+      padding: 0 10px;
     `};
   }
 
