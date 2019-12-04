@@ -22,7 +22,7 @@ export default {
   gradient: "linear-gradient(to bottom, #fff, #f6eafd)",
   navGradient: "linear-gradient(to right, rgba(255,255,255,0), #fff 60% )",
   OGgradient: "linear-gradient(180deg, rgba(217, 219, 224, 0) 0%, #D9DBE0 100%)",
-  articleText: "#141823",
+  articleText: "#000",
   track: "rgba(8, 8, 11, 0.3)",
   progress: "#000",
   card: "linear-gradient(to right, #fff, #fff)",

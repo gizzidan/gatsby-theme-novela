@@ -37,15 +37,15 @@ export const Blockquote = styled.blockquote`
     `};
   }
   & > .source {
-    padding-top: 0px;
+    padding-top: 5px;
     margin-top: -7px;
     text-align: left;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: 500;
+    text-transform: none;
+    font-size: 17px;
+    font-weight: 400;
     font-family: ${p => p.theme.fonts.sansSerif};
     ${mediaqueries.tablet`
-      font-size: 13px;
+      font-size: 15px;
       
     `};
   }

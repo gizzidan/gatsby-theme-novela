@@ -182,7 +182,7 @@ const HeroHeading = styled(Headings.h1)`
   text-transform: none;
   font-weight: 700;
   font-style: normal;
-  color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.primary};
 
   ${mediaqueries.tablet`
     margin-bottom: 10px;
@@ -201,7 +201,7 @@ const HeroExcerpt = styled("p")`
   margin-bottom: 25px;
   line-height: 1.5;
   font-style: normal;
-  color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.primary};
   font-weight: 300;
 
   ${mediaqueries.tablet`
@@ -221,7 +221,7 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   font-family: ${p => p.theme.fonts.monospace};
   text-align: left;
   font-size: 17px;
-  color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.primary};
 
   ${mediaqueries.tablet`
     

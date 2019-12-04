@@ -91,7 +91,7 @@ const limitToTwoLines = css`
 
 const AuthorLink = styled(Link)`
   font-weight: 500;
-  color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.primary};
   border-bottom: 1px solid;
   &:hover {
     opacity: 0.6;
@@ -157,7 +157,7 @@ const Slogan = styled.p`
 const ImageContainer = styled.div`
   position: relative;
   height: 280px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   transition: transform 0.3s var(--ease-out-quad),
     box-shadow 0.3s var(--ease-out-quad);
 
@@ -172,7 +172,7 @@ const ImageContainer = styled.div`
 
   ${mediaqueries.phablet`
     height: 200px;
-    margin-bottom: 0;
+    margin-bottom: 15px;
     box-shadow: none;
     overflow: hidden;
     border-top-right-radius: 5px;
@@ -188,7 +188,7 @@ const Item = styled.div`
 
 const Title = styled(Headings.h3)`
   font-size: 22px;
-  line-height: 1.4;
+  line-height: 1.25;
   margin-bottom: ${p => (p.hasOverflow ? "10px" : "3px")};
   color: ${p => p.theme.colors.primary};
   font-family: "Noe Text";
@@ -200,7 +200,6 @@ const Title = styled(Headings.h3)`
     margin-bottom: 15px;
   `}
   ${mediaqueries.phablet`
-    padding: 0px 0px 0;
     margin-bottom: 10px;
     -webkit-line-clamp: 3;
   `}
@@ -210,10 +209,10 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   ${limitToTwoLines};
   font-size: 18px;
   margin-bottom: 6px;
-  font-weight: 400;
+  font-weight: 300 !important;
   font-style: normal;
   font-family: ${p => p.theme.fonts.serif};
-  color: ${p => p.theme.colors.articleText} !important;
+  color: ${p => p.theme.colors.primary} !important;
   display: ${p => (p.hasOverflow ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};
 

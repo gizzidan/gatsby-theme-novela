@@ -99,7 +99,7 @@ const Container = styled.section`
 
 export const AuthorLink = styled(Link)`
   font-weight: 500;
-  color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.primary};
   border-bottom: 1px solid;
   &:hover {
     opacity: 0.6;
@@ -273,9 +273,9 @@ const Excerpt = styled.p`
   font-style: normal;
   line-height: 1.4;
   margin-bottom: 10px !important;
-  font-weight: 400;
+  font-weight: 300;
   opacity: 1;
-  color: ${p => p.theme.colors.primary} !important;
+  color: ${p => p.theme.colors.articleText} !important;
 
   ${mediaqueries.desktop`
     display: -webkit-box;

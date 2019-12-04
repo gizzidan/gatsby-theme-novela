@@ -93,7 +93,7 @@ const Overlay = styled("div")`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(17, 17, 20, .4), rgba(24, 24, 35, 1));
+  background-image: linear-gradient(to bottom, rgba(17, 17, 20, .1), rgba(24, 24, 35, 1));
   width: 100%;
   height: 100%;
 `
@@ -155,13 +155,13 @@ const Category = styled.p`
 `;
 
 const Title = styled("div")`
-  font-family: "Noe Display";
+  font-family: "Noe Text";
   color: white;
-  font-size: 50px;
+  font-size: 48px;
   line-height: 1.1;
   text-transform: none;
   padding-bottom: 15px;
-  font-weight: 500;
+  font-weight: 700;
   transition: all 0.1s linear;
 
 
@@ -171,7 +171,7 @@ const Title = styled("div")`
   `};
 
   ${mediaqueries.phablet`
-    font-size: 32px;
+    font-size: 30px;
     line-height: 1.2;
   `};
 `;
@@ -194,7 +194,7 @@ const Excerpt = styled("div")`
   `};
 
   ${mediaqueries.phablet`
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.4;
   `};
 `;

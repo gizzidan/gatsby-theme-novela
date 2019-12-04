@@ -306,7 +306,7 @@ const Container = styled.section`
 export const AuthorLink = styled(Link)`
   color: black;
   font-weight: 500;
-  color: ${p => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.primary};
   border-bottom: 1px solid;
   &:hover {
     opacity: 0.6;
@@ -411,10 +411,11 @@ export const Excerpt = styled.div`
   ${limitToTwoLines};
   font-size: 18px;
   font-style: normal;
+  font-weight: 300;
   line-height: 1.4;
   margin-top: 0px;
   margin-bottom: 12px;
-  color: ${p => p.theme.colors.primary} !important;
+  color: ${p => p.theme.colors.articleText} !important;
   
   ${mediaqueries.tablet`
     font-size: 18px;

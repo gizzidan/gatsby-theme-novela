@@ -80,7 +80,7 @@ const Sidebar = () => {
 export default Sidebar;
 
 export const CatLink = styled(Link) `
-	color: ${p => p.theme.colors.articleText} !important;
+	color: ${p => p.theme.colors.primary} !important;
 	font-weight: 500;
 	text-transform: capitalize;
 	border-bottom: 1px solid;
