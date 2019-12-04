@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import styled from '@emotion/styled';

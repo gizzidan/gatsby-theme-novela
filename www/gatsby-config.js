@@ -71,6 +71,12 @@ const plugins = [
         "https://thehum.us4.list-manage.com/subscribe/post?u=2a29422160c469fe9a4610a49&amp;id=cf5fa978d2",
     },
   },
+  {
+    resolve: `gatsby-plugin-facebook-pixel`,
+    options: {
+      pixelId: '442385586682506',
+    },
+  },
 ];
 
 /**
