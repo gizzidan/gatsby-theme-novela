@@ -211,15 +211,6 @@ const ImageCSS = css`
     display: none !important;
   }
   
-  .youtube {
-    text-align: center;
-    margin: 0px auto 40px auto;
-    width: 630px;
-    ${mediaqueries.phablet`
-      width: 95%;
-    `}
-  }
-
 
   img {
     display: inline-block;
@@ -228,7 +219,7 @@ const ImageCSS = css`
     height: auto;
     z-index: 0;
     margin: 15px auto 50px;
-    border-radius: 5px;
+    border-radius: 2px;
 
     ${mediaqueries.tablet`
       margin: 10px auto 45px; 
@@ -317,6 +308,18 @@ const ImageCSS = css`
       margin: 0 auto 25px;
     `};
   }
+  .youtube {
+    text-align: center;
+    margin: 0px auto 40px auto;
+    width: 630px;
+    ${mediaqueries.desktop`
+      width: 507px;
+    `}
+    ${mediaqueries.phablet`
+      width: 95%;
+    `}
+  }
+
 `;
 
 /**

@@ -142,7 +142,7 @@ const Dropdown = styled.button`
   padding-left: 20px;
   position: relative;
   display: inline-block;
-  z-index: 10000;
+  z-index: 1000000;
 `
 
 
@@ -225,7 +225,7 @@ class DropdownMenu extends React.Component {
                               }} to="/">Contact</MobileItem>  
                   <MobileItem activeStyle={{
                               opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/">Calendar</MobileItem>   
+                              }} to="/calendar">Calendar</MobileItem>   
                  
                 </DropdownContent>
                 )

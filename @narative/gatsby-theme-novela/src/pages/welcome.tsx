@@ -6,7 +6,6 @@ import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
 import mediaqueries from "@styles/media";
-import NavBarBasic from "@components/NavBarBasic";
 import LandingSub from "@components/LandingSub";
 import LogoLanding from "@components/Logo/LogoLanding";
 import background from "www/static/explore.png";
