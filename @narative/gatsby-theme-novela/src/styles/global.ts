@@ -42,21 +42,21 @@ import SectraFineMediumItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Me
 import SectraFineBold from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Bold.woff";
 import SectraFineBoldItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Bold-Italic.woff";
 
-import AmericaReg from "www/static/fonts/GT America/GTAmerica-Regular.woff";
-import AmericaRegItalic from "www/static/fonts/GT America/GTAmerica-RegularItalic.woff";
-import AmericaMedium from "www/static/fonts/GT America/GTAmerica-Medium.woff";
-import AmericaMediumItalic from "www/static/fonts/GT America/GTAmerica-MediumItalic.woff";
-import AmericaBold from "www/static/fonts/GT America/GTAmerica-Bold.woff";
-import AmericaBoldItalic from "www/static/fonts/GT America/GTAmerica-BoldItalic.woff";
+import RepublicRegular from "www/static/fonts/SangBleu/SangBleuRepublic-Regular-WebXL.otf";
+import RepublicRegularItalic from "www/static/fonts/SangBleu/SangBleuRepublic-RegularItalic-WebXL.otf";
+import RepublicBold from "www/static/fonts/SangBleu/SangBleuRepublic-Bold-WebXL.otf";
+import RepublicBoldItalic from "www/static/fonts/SangBleu/SangBleuRepublic-BoldItalic-WebXL.otf";
 
-import Grotesk from "www/static/fonts/F Grotesk/FGrotesk-Regular.woff";
-import GroteskItalic from 'www/static/fonts/F Grotesk/FGrotesk-Italic.woff';
-import GroteskMedium from "www/static/fonts/F Grotesk/FGroteskDemi-Regular.woff";
-import GroteskMediumItalic from "www/static/fonts/F Grotesk/FGroteskDemi-Italic.woff";
-import GroteskThin from "www/static/fonts/F Grotesk/FGroteskThin-Regular.woff";
-import GroteskThinItalic from 'www/static/fonts/F Grotesk/FGroteskThin-Italic.woff';
-import GroteskBold from "www/static/fonts/F Grotesk/FGroteskBold-Regular.woff";
-import GroteskBoldItalic from 'www/static/fonts/F Grotesk/FGroteskBold-Italic.woff';
+import SuisseThin from "www/static/fonts/Suisse/SuisseIntl-Thin.otf";
+import SuisseThinItalic from "www/static/fonts/Suisse/SuisseIntl-ThinItalic.otf";
+import SuisseRegular from "www/static/fonts/Suisse/SuisseIntl-Regular.otf";
+import SuisseRegularItalic from "www/static/fonts/Suisse/SuisseIntl-RegularItalic.otf";
+import SuisseMedium from "www/static/fonts/Suisse/SuisseIntl-Medium.otf";
+import SuisseMediumItalic from "www/static/fonts/Suisse/SuisseIntl-MediumItalic.otf";
+import SuisseBold from "www/static/fonts/Suisse/SuisseIntl-Bold.otf";
+import SuisseBoldItalic from "www/static/fonts/Suisse/SuisseIntl-BoldItalic.otf";
+import SuisseCondBold from "www/static/fonts/Suisse/SuisseIntlCond-Bold.otf";
+
 
 
 
@@ -221,6 +221,33 @@ export const globalStyles = css`
     src: url(${NoeDisplayBoldItalic}) format("woff");
   }
 
+   /** Republic */
+   @font-face {
+    font-family: "SangBleu Republic";
+    font-weight: 400;
+    font-style: normal;
+    src: url(${RepublicRegular}) format("open-type");
+  }
+  @font-face {
+    font-family: "SangBleu Republic";
+    font-weight: 400;
+    font-style: italic;
+    src: url(${RepublicRegularItalic}) format("open-type");
+  }
+  @font-face {
+    font-family: "SangBleu Republic";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${RepublicBold}) format("open-type");
+  }
+  @font-face {
+    font-family: "SangBleu Republic";
+    font-weight: 700;
+    font-style: normal;
+    src: url(${RepublicBoldItalic}) format("open-type");
+  }
+
+
    /** GT Sectra */
    @font-face {
     font-family: "Sectra";
@@ -303,94 +330,61 @@ export const globalStyles = css`
   }
   
 
-    /** GT America */
+  /** Suisse Int'l  */
   @font-face {
-    font-family: "GT America";
+    font-family: "Suisse Intl";
+    font-weight: 200;
+    font-style: normal;
+    src: url(${SuisseThin}) format("open-type");
+  }
+  @font-face {
+    font-family: "Suisse Intl";
+    font-weight: 200;
+    font-style: italic;
+    src: url(${SuisseThinItalic}) format("open-type");
+  }
+  @font-face {
+    font-family: "Suisse Intl";
     font-weight: 400;
     font-style: normal;
-    src: url(${AmericaReg}) format("woff");
+    src: url(${SuisseRegular}) format("open-type");
   }
   @font-face {
-    font-family: "GT America";
+    font-family: "Suisse Intl";
     font-weight: 400;
     font-style: italic;
-    src: url(${AmericaRegItalic}) format("woff");
+    src: url(${SuisseRegularItalic}) format("open-type");
   }
   @font-face {
-    font-family: "GT America";
+    font-family: "Suisse Intl";
     font-weight: 500;
     font-style: normal;
-    src: url(${AmericaMedium}) format("woff");
+    src: url(${SuisseMedium}) format("open-type");
   }
   @font-face {
-    font-family: "GT America";
+    font-family: "Suisse Intl";
     font-weight: 500;
     font-style: italic;
-    src: url(${AmericaMediumItalic}) format("woff");
+    src: url(${SuisseMediumItalic}) format("open-type");
   }
   @font-face {
-    font-family: "GT America";
+    font-family: "Suisse Intl";
     font-weight: 700;
     font-style: normal;
-    src: url(${AmericaBold}) format("woff");
+    src: url(${SuisseBold}) format("open-type");
   }
   @font-face {
-    font-family: "GT America";
+    font-family: "Suisse Intl";
     font-weight: 700;
     font-style: italic;
-    src: url(${AmericaBoldItalic}) format("woff");
-  }
-
-  /** F Grotesk */
-  @font-face {
-    font-family: "F Grotesk";
-    font-weight: 300;
-    font-style: normal;
-    src: url(${GroteskThin}) format("woff");
+    src: url(${SuisseBoldItalic}) format("open-type");
   }
   @font-face {
-    font-family: "F Grotesk";
-    font-weight: 300;
-    font-style: italic;
-    src: url(${GroteskThinItalic}) format("woff");
-  }
-  @font-face {
-    font-family: "F Grotesk";
-    font-weight: 400;
-    font-style: normal;
-    src: url(${Grotesk}) format("woff");
-  }
-  @font-face {
-    font-family: "F Grotesk";
-    font-weight: 400;
-    font-style: italic;
-    src: url(${GroteskItalic}) format("woff");
-  }
-  @font-face {
-    font-family: "F Grotesk";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${GroteskMedium}) format("woff");
-  }
-  @font-face {
-    font-family: "F Grotesk";
-    font-weight: 500;
-    font-style: italic;
-    src: url(${GroteskMediumItalic}) format("woff");
-  }
-  @font-face {
-    font-family: "F Grotesk";
+    font-family: "Suisse Int'l Condensed";
     font-weight: 700;
     font-style: normal;
-    src: url(${GroteskBold}) format("woff");
+    src: url(${SuisseCondBold}) format("open-type");
   }
-  @font-face {
-    font-family: "F Grotesk";
-    font-weight: 700;
-    font-style: italic;
-    src: url(${GroteskBoldItalic}) format("woff");
-  }
-
 
   *,
   *:before,
@@ -414,7 +408,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "F Grotesk";
+    font-family: "Suisse Intl";
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

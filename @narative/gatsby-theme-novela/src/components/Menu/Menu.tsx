@@ -32,7 +32,7 @@ export default Menu;
 
 const Spacer = styled.span`
   color: #aa9bf5;
-  font-family: "F Grotesk";
+  font-family: "Suisse Intl";
   font-size: 20px;
   padding: 0px 10px 0px 10px;
 `;
@@ -60,7 +60,7 @@ const StyledMenu = styled.div`
 `;
 
 const Label = styled.p`
-  font-family: "F Grotesk";
+  font-family: "Suisse Intl";
   font-weight: 400;
   font-size: 20px;
   padding-bottom: 10px;
@@ -101,7 +101,7 @@ const StyledDiv = styled.div`
   margin-right: 0px;
 `
 const SecondaryLink = styled(Link)`
-  font-family: "F Grotesk";
+  font-family: "Suisse Intl";
   font-size: 20px;
   font-weight: 400;
   color: #eedaf8;

@@ -178,10 +178,10 @@ const PodImage = styled(Image)`
     0px 4px 8px -4px rgba(0, 0, 0, 0.28);
 `
 const PodcastTitle = styled.h2`
-  font-family: "Noe Text";
+  font-family: "Suisse Int'l Condensed";
   font-weight: 700;
   line-height: 1.2;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: -2px;
   text-overflow: ellipsis;
   overflow-wrap: normal;

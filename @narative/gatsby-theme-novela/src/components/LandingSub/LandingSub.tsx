@@ -129,7 +129,7 @@ const Heading = styled(Headings.h3)`
 `;
 
 const Text = styled.p`
-  font-family: "F Grotesk";
+  font-family: "Suisse Intl";
   margin: 0 auto 30px;
   color: ${p => p.theme.colors.grey};
   line-height: 1.75;

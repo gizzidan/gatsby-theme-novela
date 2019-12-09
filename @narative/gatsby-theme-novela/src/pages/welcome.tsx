@@ -50,7 +50,7 @@ const LogoContainer = styled.div`
     display: flex;
     align-items: center;
     transform: translate(-50%);
-    font-family: "F Grotesk";
+    font-family: "Suisse Intl";
     font-size: 26px;
     font-weight: 400;
     color: white;

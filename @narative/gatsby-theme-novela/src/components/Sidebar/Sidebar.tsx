@@ -124,9 +124,9 @@ export const InnerContainer = styled.div`
 	`}
 `
 export const STitle = styled(Headings.h2)`
-  font-size: 19px;
+  font-size: 21px;
   line-height: 1.2 !important;
-  font-family: "Noe Text";
+  font-family: "Suisse Int'l Condensed";
   font-weight: 700 !important;
   text-transform: none;
   padding: 0px;
@@ -143,7 +143,7 @@ export const STitle = styled(Headings.h2)`
   `}
 
 	${mediaqueries.tablet`
-		font-size: 16.5px; 
+		font-size: 18px; 
     margin-bottom: 0px;
   `}
 
@@ -151,7 +151,7 @@ export const STitle = styled(Headings.h2)`
     -webkit-line-clamp: 3;
 	`}
 	${mediaqueries.phone_small`
-    font-size: 14px;
+    font-size: 16px;
   `}
 `;
 

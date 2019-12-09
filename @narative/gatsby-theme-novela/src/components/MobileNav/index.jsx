@@ -45,7 +45,7 @@ const MenuHeader = styled.p `
   color: ${p => p.theme.colors.primary};
   opacity: 1;
   padding: 17px 25px 5px 15px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   &:nth-last-child(1) {
     padding-right: 0px;

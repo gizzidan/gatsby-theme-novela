@@ -30,11 +30,11 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-family: ${p => p.theme.fonts.serif};
-  font-size: 28px;
+  font-family: ${p => p.theme.fonts.sansSerif};
+  font-size: 24px;
   line-height: 1.25;
   padding-bottom: 10px;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`
@@ -68,13 +68,13 @@ const h3 = styled.h3`
 
 const h4 = styled.h4`
   text-align: center;
-  font-family: "F Grotesk";
+  font-family: "Suisse Intl";
   font-size: 42px;
   text-transform: none;
   font-style: italic;
   padding-top: 15px;
   padding-bottom: 50px;
-  font-weight: 300 !important;
+  font-weight: 200 !important;
   line-height: 1.25;
   ${commonStyles};
 

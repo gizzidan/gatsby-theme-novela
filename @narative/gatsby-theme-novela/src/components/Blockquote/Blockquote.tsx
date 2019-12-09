@@ -18,7 +18,7 @@ export const Blockquote = styled.blockquote`
   `};
 
   & > p {
-    font-family: ${p => p.theme.fonts.sansSerif};
+    font-family: "${p => p.theme.fonts.sansSerif}";
     background: ${p => p.theme.colors.blockquote};
     padding: 30px;
     width: 100%;
@@ -26,7 +26,7 @@ export const Blockquote = styled.blockquote`
     font-size: 19px;
     line-height: 1.618;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 200;
 
     ${mediaqueries.tablet`
       font-size: 17px;

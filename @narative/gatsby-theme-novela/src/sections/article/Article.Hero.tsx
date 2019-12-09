@@ -175,7 +175,7 @@ const Meta = styled.div`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 46px;
+  font-size: 52px;
   font-family: "Noe Text";
   margin-bottom: 10px;
   line-height: 1.15;
@@ -196,7 +196,7 @@ const HeroHeading = styled(Headings.h1)`
 `;
 
 const HeroExcerpt = styled("p")`
-  font-size: 24px;
+  font-size: 22px;
   font-family: ${p => p.theme.fonts.serif};
   margin-bottom: 25px;
   line-height: 1.5;

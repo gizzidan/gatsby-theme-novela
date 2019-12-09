@@ -177,7 +177,7 @@ export const LogoContainer = styled(Link)`
     z-index: 4000;
     top: 50%;
     left: 30px;
-    font-family: "F Grotesk";
+    font-family: "Suisse Intl";
     font-size: 26px;
     font-weight: 400;
     color: #fff;

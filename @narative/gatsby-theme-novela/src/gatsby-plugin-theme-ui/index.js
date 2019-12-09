@@ -15,10 +15,11 @@ const breakpoints = [
 ];
 
 const fonts = {
-  serif: 'Sectra',
+  serif: 'SangBleu Republic',
   serifFine: 'Noe Display',
-  sansSerif: 'F Grotesk',
-  slogan: 'F Grotesk',
+  sansSerif: 'Suisse Intl',
+  slogan: 'Suisse Intl',
+  condensed: "Suisse Int'l Condensed",
   funHeader: 'Termina',
   monospace: `"Founders Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
@@ -28,7 +29,7 @@ const fontWeights = {
 };
 
 const fontSizes = {
-  p: `20px`,
+  p: `19px`,
 };
 
 const widths = {

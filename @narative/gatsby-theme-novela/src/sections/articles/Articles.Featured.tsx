@@ -177,11 +177,11 @@ const Title = styled("div")`
 `;
 
 const Excerpt = styled("div")`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: "${p => p.theme.fonts.serif}";
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   color: white;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.4;
 
   ${mediaqueries.desktop`

@@ -432,7 +432,7 @@ export const Excerpt = styled.div`
 
 
 export const Title = styled(Headings.h2)`
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.2 !important;
   font-family: "Noe Text";
   font-weight: 700 !important;
