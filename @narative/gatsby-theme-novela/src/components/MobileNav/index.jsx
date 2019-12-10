@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import React from 'react';
 import { Link } from 'gatsby';
 import ScrollContainer from 'react-indiana-drag-scroll';
@@ -6,21 +8,28 @@ import mediaqueries from "@styles/media";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
-const opacity = "1";
-const dropdownOpacity = "0.9";
+const listActiveStyle = {
+  fontWeight: '700'
+}
+const activeStyle = {
+  fontWeight: '700',
+}
 
 const MobileItem = styled(Link)`
   font-size: 16px;
+  font-family: "Suisse Int'l Condensed";
   display: flex;
   color: ${p => p.theme.colors.primary};
-  opacity: 0.7;
-  padding: 6px 25px 5px 0px;
-  font-weight: 400;
+  opacity: 1;
+  padding: 6px 25px 3px 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.1s;
   &:nth-last-child(1) {
     padding-right: 0px;
   }
   &:hover {
-    opacity: 1;
+    opacity: 0.6;
   }
   ${mediaqueries.tablet`
     padding: 13px 20px 13px 0px;
@@ -42,10 +51,10 @@ const MobileItem = styled(Link)`
 const MenuHeader = styled.p `
   font-size: 14px;
   display: flex;
-  color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.accent};
   opacity: 1;
   padding: 17px 25px 5px 15px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   &:nth-last-child(1) {
     padding-right: 0px;
@@ -93,7 +102,7 @@ const NavContainer = styled.div`
     bottom: 0px;
     pointer-events: none;
     background-image: ${p => p.theme.colors.navGradient};
-    width: 30%;
+    width: 25%;
   }
   ${mediaqueries.phablet`
     padding: 0px 20px 0px 20px;
@@ -184,48 +193,23 @@ class DropdownMenu extends React.Component {
                   >
           
                   <MenuHeader>Features</MenuHeader>
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/garden-state-of-cannabis">Garden State of Cannabis</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/election-2020">Election 2020</MobileItem>  
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/">Feature Three</MobileItem> 
+                  <MobileItem activeStyle={listActiveStyle} to="/garden-state-of-cannabis">Garden State of Cannabis</MobileItem>
+                  <MobileItem activeStyle={listActiveStyle} to="/election-2020">Election 2020</MobileItem>  
+                  <MobileItem activeStyle={listActiveStyle} to="/">Feature Three</MobileItem> 
 
 
                   <MenuHeader>Sections</MenuHeader>
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/">Things To Do</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} 
-                              to="/latest">Latest</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/category/thoughts">Thoughts</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              
-                              }} to="/category/culture">Culture</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/category/goings-on">Goings On</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/">Hear the Hum</MobileItem>
+                  <MobileItem activeStyle={listActiveStyle} to="/">Things To Do</MobileItem>
+                  <MobileItem activeStyle={listActiveStyle} to="/latest">Latest</MobileItem>
+                  <MobileItem activeStyle={listActiveStyle} to="/category/thoughts">Thoughts</MobileItem>
+                  <MobileItem activeStyle={listActiveStyle} to="/category/culture">Culture</MobileItem>
+                  <MobileItem activeStyle={listActiveStyle} to="/category/goings-on">Goings On</MobileItem>
+                  <MobileItem activeStyle={listActiveStyle} to="/">Hear the Hum</MobileItem>
                   
     
                   <MenuHeader>Resources</MenuHeader>
-
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/">Contact</MobileItem>  
-                  <MobileItem activeStyle={{
-                              opacity: dropdownOpacity, fontWeight: '500'
-                              }} to="/calendar">Calendar</MobileItem>   
+                  <MobileItem activeStyle={listActiveStyle} to="/">Contact</MobileItem>  
+                  <MobileItem activeStyle={listActiveStyle} to="/calendar">Calendar</MobileItem>   
                  
                 </DropdownContent>
                 )
@@ -267,26 +251,13 @@ export default class MobileNav extends React.Component {
                   horizontal='true' 
                   style={{ display: 'flex', overflowX: 'auto'}}
                   >
-                  <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
-                              }} 
+                  <MobileItem activeStyle={activeStyle} 
                               to="/latest">Latest</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
-                              }} to="/category/thoughts">Thoughts</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
-                              
-                              }} to="/category/culture">Culture</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
-                              }} to="/category/goings-on">Goings On</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
-                              }} to="/garden-state-of-cannabis">State of Cannabis</MobileItem>
-                  <MobileItem activeStyle={{
-                              opacity: opacity, fontWeight: '500'
-                              }} to="/election-2020">Election 2020</MobileItem>
+                  <MobileItem activeStyle={activeStyle} to="/category/thoughts">Thoughts</MobileItem>
+                  <MobileItem activeStyle={activeStyle} to="/category/culture">Culture</MobileItem>
+                  <MobileItem activeStyle={activeStyle} to="/category/goings-on">Goings On</MobileItem>
+                  <MobileItem activeStyle={activeStyle} to="/garden-state-of-cannabis">State of Cannabis</MobileItem>
+                  <MobileItem activeStyle={activeStyle} to="/election-2020">Election 2020</MobileItem>
               </ScrollContainer>
               <DropdownMenu />
           </NavContainer>    

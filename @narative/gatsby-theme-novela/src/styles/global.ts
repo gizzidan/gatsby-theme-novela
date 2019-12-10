@@ -26,36 +26,26 @@ import NoeDisplayMediumItalic from 'www/static/fonts/Noe Display/NoeDisplay-Medi
 import NoeDisplayBold from 'www/static/fonts/Noe Display/NoeDisplay-Bold.woff';
 import NoeDisplayBoldItalic from 'www/static/fonts/Noe Display/NoeDisplay-BoldItalic.woff';
 
-import SectraBook from "www/static/fonts/GT Sectra/GT-Sectra-Book.woff";
-import SectraBookItalic from "www/static/fonts/GT Sectra/GT-Sectra-Book-Italic.woff";
-import SectraRegular from "www/static/fonts/GT Sectra/GT-Sectra-Regular.woff";
-import SectraRegularItalic from "www/static/fonts/GT Sectra/GT-Sectra-Regular-Italic.woff";
-import SectraMedium from "www/static/fonts/GT Sectra/GT-Sectra-Medium.woff";
-import SectraMediumItalic from "www/static/fonts/GT Sectra/GT-Sectra-Medium-Italic.woff";
-import SectraBold from "www/static/fonts/GT Sectra/GT-Sectra-Bold.woff";
-import SectraBoldItalic from "www/static/fonts/GT Sectra/GT-Sectra-Bold-Italic.woff";
+import RepublicBook from "www/static/fonts/SangBleu/SangBleuRepublic-Book.woff";
+import RepublicBookItalic from "www/static/fonts/SangBleu/SangBleuRepublic-BookItalic.woff";
+import RepublicRegular from "www/static/fonts/SangBleu/SangBleuRepublic-Regular.woff";
+import RepublicRegularItalic from "www/static/fonts/SangBleu/SangBleuRepublic-Italic.woff";
+import RepublicBold from "www/static/fonts/SangBleu/SangBleuRepublic-Bold.woff";
+import RepublicBoldItalic from "www/static/fonts/SangBleu/SangBleuRepublic-BoldItalic.woff";
 
-import SectraFine from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Regular.woff";
-import SectraFineItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Regular-Italic.woff";
-import SectraFineMedium from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Medium.woff";
-import SectraFineMediumItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Medium-Italic.woff";
-import SectraFineBold from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Bold.woff";
-import SectraFineBoldItalic from "www/static/fonts/GT Sectra/GT-Sectra-Fine-Bold-Italic.woff";
-
-import RepublicRegular from "www/static/fonts/SangBleu/SangBleuRepublic-Regular-WebXL.otf";
-import RepublicRegularItalic from "www/static/fonts/SangBleu/SangBleuRepublic-RegularItalic-WebXL.otf";
-import RepublicBold from "www/static/fonts/SangBleu/SangBleuRepublic-Bold-WebXL.otf";
-import RepublicBoldItalic from "www/static/fonts/SangBleu/SangBleuRepublic-BoldItalic-WebXL.otf";
-
-import SuisseThin from "www/static/fonts/Suisse/SuisseIntl-Thin.otf";
-import SuisseThinItalic from "www/static/fonts/Suisse/SuisseIntl-ThinItalic.otf";
-import SuisseRegular from "www/static/fonts/Suisse/SuisseIntl-Regular.otf";
-import SuisseRegularItalic from "www/static/fonts/Suisse/SuisseIntl-RegularItalic.otf";
-import SuisseMedium from "www/static/fonts/Suisse/SuisseIntl-Medium.otf";
-import SuisseMediumItalic from "www/static/fonts/Suisse/SuisseIntl-MediumItalic.otf";
-import SuisseBold from "www/static/fonts/Suisse/SuisseIntl-Bold.otf";
-import SuisseBoldItalic from "www/static/fonts/Suisse/SuisseIntl-BoldItalic.otf";
-import SuisseCondBold from "www/static/fonts/Suisse/SuisseIntlCond-Bold.otf";
+import SuisseThin from "www/static/fonts/Suisse/SuisseIntl-Thin.woff";
+import SuisseThinItalic from "www/static/fonts/Suisse/SuisseIntl-ThinItalic.woff";
+import SuisseLight from "www/static/fonts/Suisse/SuisseIntl-Light.woff";
+import SuisseLightItalic from "www/static/fonts/Suisse/SuisseIntl-LightItalic.woff";
+import SuisseRegular from "www/static/fonts/Suisse/SuisseIntl-Regular.woff";
+import SuisseRegularItalic from "www/static/fonts/Suisse/SuisseIntl-Italic.woff";
+import SuisseMedium from "www/static/fonts/Suisse/SuisseIntl-Medium.woff";
+import SuisseMediumItalic from "www/static/fonts/Suisse/SuisseIntl-MediumItalic.woff";
+import SuisseBold from "www/static/fonts/Suisse/SuisseIntl-Bold.woff";
+import SuisseBoldItalic from "www/static/fonts/Suisse/SuisseIntl-BoldItalic.woff";
+import SuisseCondMedium from "www/static/fonts/Suisse/SuisseIntlCondensed-Medium.woff";
+import SuisseCondBold from "www/static/fonts/Suisse/SuisseIntlCondensed-Bold.woff";
+import SuisseCondBoldItalic from "www/static/fonts/Suisse/SuisseIntlCondensed-BoldItalic.woff";
 
 
 
@@ -224,166 +214,121 @@ export const globalStyles = css`
    /** Republic */
    @font-face {
     font-family: "SangBleu Republic";
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
-    src: url(${RepublicRegular}) format("open-type");
+    src: url(${RepublicBook}) format("woff");
   }
   @font-face {
     font-family: "SangBleu Republic";
-    font-weight: 400;
+    font-weight: 300;
     font-style: italic;
-    src: url(${RepublicRegularItalic}) format("open-type");
+    src: url(${RepublicBookItalic}) format("woff");
   }
-  @font-face {
-    font-family: "SangBleu Republic";
-    font-weight: 700;
-    font-style: normal;
-    src: url(${RepublicBold}) format("open-type");
-  }
-  @font-face {
-    font-family: "SangBleu Republic";
-    font-weight: 700;
-    font-style: normal;
-    src: url(${RepublicBoldItalic}) format("open-type");
-  }
-
-
-   /** GT Sectra */
    @font-face {
-    font-family: "Sectra";
-    font-weight: 300;
-    font-style: normal;
-    src: url(${SectraBook}) format("woff");
-  }
-  @font-face {
-    font-family: "Sectra";
-    font-weight: 300;
-    font-style: italic;
-    src: url(${SectraBookItalic}) format("woff");
-  }
-  @font-face {
-    font-family: "Sectra";
+    font-family: "SangBleu Republic";
     font-weight: 400;
     font-style: normal;
-    src: url(${SectraRegular}) format("woff");
+    src: url(${RepublicRegular}) format("woff");
   }
   @font-face {
-    font-family: "Sectra";
+    font-family: "SangBleu Republic";
     font-weight: 400;
     font-style: italic;
-    src: url(${SectraRegularItalic}) format("woff");
+    src: url(${RepublicRegularItalic}) format("woff");
   }
   @font-face {
-    font-family: "Sectra";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${SectraMedium}) format("woff");
-  }
-  @font-face {
-    font-family: "Sectra";
-    font-weight: 500;
-    font-style: italic;
-    src: url(${SectraMediumItalic}) format("woff");
-  }
-  @font-face {
-    font-family: "Sectra";
+    font-family: "SangBleu Republic";
     font-weight: 700;
     font-style: normal;
-    src: url(${SectraBold}) format("woff");
+    src: url(${RepublicBold}) format("woff");
   }
   @font-face {
-    font-family: "Sectra";
+    font-family: "SangBleu Republic";
     font-weight: 700;
     font-style: italic;
-    src: url(${SectraBoldItalic}) format("woff");
+    src: url(${RepublicBoldItalic}) format("woff");
   }
-  @font-face {
-    font-family: "Sectra Fine";
-    font-weight: 400;
-    font-style: normal;
-    src: url(${SectraFine}) format("woff");
-  }
-  @font-face {
-    font-family: "Sectra Fine";
-    font-weight: 400;
-    font-style: italic;
-    src: url(${SectraFineItalic}) format("woff");
-  }
-  @font-face {
-    font-family: "Sectra Fine";
-    font-weight: 500;
-    font-style: normal;
-    src: url(${SectraFineMedium}) format("woff");
-  }
-  @font-face {
-    font-family: "Sectra Fine";
-    font-weight: 500;
-    font-style: italic;
-    src: url(${SectraFineMediumItalic}) format("woff");
-  }
-  
-  @font-face {
-    font-family: "Sectra Fine";
-    font-weight: 700;
-    font-style: normal;
-    src: url(${SectraFineBold}) format("woff");
-  }
-  
+
+
 
   /** Suisse Int'l  */
   @font-face {
     font-family: "Suisse Intl";
     font-weight: 200;
     font-style: normal;
-    src: url(${SuisseThin}) format("open-type");
+    src: url(${SuisseThin}) format("woff");
   }
   @font-face {
     font-family: "Suisse Intl";
     font-weight: 200;
     font-style: italic;
-    src: url(${SuisseThinItalic}) format("open-type");
+    src: url(${SuisseThinItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Suisse Intl";
+    font-weight: 300;
+    font-style: normal;
+    src: url(${SuisseLight}) format("woff");
+  }
+  @font-face {
+    font-family: "Suisse Intl";
+    font-weight: 300;
+    font-style: italic;
+    src: url(${SuisseLightItalic}) format("woff");
   }
   @font-face {
     font-family: "Suisse Intl";
     font-weight: 400;
     font-style: normal;
-    src: url(${SuisseRegular}) format("open-type");
+    src: url(${SuisseRegular}) format("woff");
   }
   @font-face {
     font-family: "Suisse Intl";
     font-weight: 400;
     font-style: italic;
-    src: url(${SuisseRegularItalic}) format("open-type");
+    src: url(${SuisseRegularItalic}) format("woff");
   }
   @font-face {
     font-family: "Suisse Intl";
     font-weight: 500;
     font-style: normal;
-    src: url(${SuisseMedium}) format("open-type");
+    src: url(${SuisseMedium}) format("woff");
   }
   @font-face {
     font-family: "Suisse Intl";
     font-weight: 500;
     font-style: italic;
-    src: url(${SuisseMediumItalic}) format("open-type");
+    src: url(${SuisseMediumItalic}) format("woff");
   }
   @font-face {
     font-family: "Suisse Intl";
     font-weight: 700;
     font-style: normal;
-    src: url(${SuisseBold}) format("open-type");
+    src: url(${SuisseBold}) format("woff");
   }
   @font-face {
     font-family: "Suisse Intl";
     font-weight: 700;
     font-style: italic;
-    src: url(${SuisseBoldItalic}) format("open-type");
+    src: url(${SuisseBoldItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "Suisse Int'l Condensed";
+    font-weight: 500;
+    font-style: normal;
+    src: url(${SuisseCondMedium}) format("woff");
   }
   @font-face {
     font-family: "Suisse Int'l Condensed";
     font-weight: 700;
     font-style: normal;
-    src: url(${SuisseCondBold}) format("open-type");
+    src: url(${SuisseCondBold}) format("woff");
+  }
+  @font-face {
+    font-family: "Suisse Int'l Condensed";
+    font-weight: 700;
+    font-style: italic;
+    src: url(${SuisseCondBoldItalic}) format("woff");
   }
 
   *,

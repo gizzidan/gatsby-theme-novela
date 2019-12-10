@@ -58,7 +58,7 @@ const Podcast = () => {
         <PodcastContainer>
           <div>
             <Header>Listen to The Hum Podcasts</Header>
-            <SubHeader>Daily New + Commentary</SubHeader>
+            <SubHeader>Daily News & Commentary</SubHeader>
             <SeeAll to='/'>All Podcasts →</SeeAll>
           </div>
 
@@ -108,9 +108,8 @@ const PodcastContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 20px;
-  
   padding-bottom: 30px;  
-  ${mediaqueries.phablet`
+  ${mediaqueries.tablet`
     padding-top: 0px;
     padding-bottom: 20px;
     margin-bottom: 140px;

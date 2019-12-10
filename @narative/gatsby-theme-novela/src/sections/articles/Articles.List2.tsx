@@ -79,8 +79,8 @@ const ArticlesList2 = () => {
         <Main>
           
           
-          <LargeDiv id="latest">
-         
+          <LargeDiv id="latest">\
+          
             <HomeFeature/>
             {
               data.allContentfulArticle.edges.slice(0,2).map((item, i) => (
@@ -407,11 +407,11 @@ export const TextContainer = styled.div`
 `;
 
 export const Excerpt = styled.div`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   ${limitToTwoLines};
   font-size: 18px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
   margin-top: 0px;
   margin-bottom: 12px;
@@ -433,14 +433,13 @@ export const Excerpt = styled.div`
 
 export const Title = styled(Headings.h2)`
   font-size: 22px;
-  line-height: 1.2 !important;
+  line-height: 1.1 !important;
   font-family: "Noe Text";
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   text-transform: none;
   margin-bottom: 9px;
   margin-top: 20px;
   padding: 0px;
-  opacity: 0.95;
   transition: color 0.3s ease-in-out;
   color: ${p => p.theme.colors.primary};
   &:hover {
@@ -452,9 +451,8 @@ export const Title = styled(Headings.h2)`
   `}
 
   ${mediaqueries.tablet`
-    margin-top: 10px;
-    font-size: 20px;  
-    margin-bottom: 10px;
+    margin-top: 20px; 
+    margin-bottom: 5px;
   `}
 
   ${mediaqueries.phablet`

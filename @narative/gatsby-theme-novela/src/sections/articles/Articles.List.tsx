@@ -219,9 +219,9 @@ const Item = styled(Link)`
 
 const Title = styled(Headings.h2)`
   font-size: 22px;
-  line-height: 1.25 !important;
+  line-height: 1.1 !important;
   font-family: "Noe Text";
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   text-transform: none;
   margin-bottom: 9px;
   padding: 0px;
@@ -236,6 +236,7 @@ const Title = styled(Headings.h2)`
 
   ${mediaqueries.tablet`
     font-size: 24px;  
+    margin-bottom: 8px;
   `}
 
   ${mediaqueries.phablet`
@@ -247,12 +248,12 @@ const Title = styled(Headings.h2)`
 `;
 
 const Excerpt = styled.p`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   font-size: 18px;
   font-style: normal;
   line-height: 1.4;
   margin-bottom: 10px !important;
-  font-weight: 300;
+  font-weight: 400;
   opacity: 1;
   color: ${p => p.theme.colors.articleText} !important;
 

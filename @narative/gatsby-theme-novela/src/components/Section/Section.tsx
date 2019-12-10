@@ -9,6 +9,10 @@ const Section = styled.section<{ narrow?: boolean }>`
   padding: 0 4rem;
   ${mediaqueries.desktop`
     max-width: 850px;
+  
+  `};
+  ${mediaqueries.tablet`
+ 
   `};
 
   ${p =>

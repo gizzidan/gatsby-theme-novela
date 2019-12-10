@@ -2,18 +2,22 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Global } from '@emotion/core';
 import { globalStyles } from '@styles';
-import Section from "@components/Section";
+import { Link } from "gatsby"
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
 import mediaqueries from "@styles/media";
 import LandingSub from "@components/LandingSub";
 import LogoLanding from "@components/Logo/LogoLanding";
-import background from "www/static/explore.png";
+import background from "www/static/images/cave.jpeg";
 import Logo from "@components/Logo/Logo";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
+library.add(fab)
 
 function Welcome({ location }) {
-
+  
   return ( 
     <div>
       <SEO pathname={location.pathname} />     
@@ -25,6 +29,11 @@ function Welcome({ location }) {
           <TextContainer>
             <Heading><p>Coming Soon!</p></Heading>  
             <LandingSub />
+            <Social>
+              <SocialItem href="https://facebook.com/thehumdaily"><FontAwesomeIcon icon={['fab', 'facebook']} /></SocialItem>
+              <SocialItem href="https://instagram.com/thehumdaily"><FontAwesomeIcon icon={['fab', 'instagram']} /></SocialItem>
+              <SocialItem href="https://twitter.com/thehumdaily"><FontAwesomeIcon icon={['fab', 'twitter']} /></SocialItem>
+            </Social>
           </TextContainer>
         </Hero>
     </div>
@@ -32,6 +41,23 @@ function Welcome({ location }) {
 }  
 
 export default Welcome;
+
+const Social = styled.div`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+`
+const SocialItem = styled.a`
+  display: flex;
+  padding: 0px 20px 0px 20px;
+  font-size: 38px;
+  color: #fff;
+  transition: all 0.1s;
+  &:hover {
+    color: #4524EA;
+  }
+`
 
 const Hero = styled.section`
   position: fixed;
@@ -53,7 +79,7 @@ const LogoContainer = styled.div`
     font-family: "Suisse Intl";
     font-size: 26px;
     font-weight: 400;
-    color: white;
+    color: black;
     left: 50%;
     top: 00px;
     margin: 0 auto;
@@ -87,10 +113,10 @@ const Heading = styled.div`
   padding-bottom: 10px;
   line-height: 1.2;
   color: #fff;
-  font-style: normal;
-  font-family: "Noe Text";
+  font-style: italic;
+  font-family: "Suisse Int'l Condensed";
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   
   ${mediaqueries.tablet`
     padding-bottom: 30px;
@@ -99,7 +125,7 @@ const Heading = styled.div`
   `};
   ${mediaqueries.phablet`
     padding-bottom: 35px;
-    font-size: 36px;
+    font-size: 38px;
     line-height: 1.3;
   `};
   ${mediaqueries.phone_small`

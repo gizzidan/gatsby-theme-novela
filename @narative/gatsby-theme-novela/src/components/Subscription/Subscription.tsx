@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 import styled from "@emotion/styled";
 import mediaqueries from "@styles/media";
 import { useStaticQuery, graphql } from "gatsby";
+import background from "www/static/images/1.jpg";
 
 const SubImage = () => {
   const SubImageContainer = styled.div`
@@ -19,7 +20,7 @@ const SubImage = () => {
   const query = useStaticQuery(
     graphql`
     query {
-    file(relativePath: { eq: "newspaper.png" }) {
+    file(relativePath: { eq: "4.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000, quality: 100) {
           ...GatsbyImageSharpFluid
@@ -114,16 +115,25 @@ export default Subscription;
 const SubscriptionContainer = styled.div`
   text-align: center;
   align-items: center;
+  transform: skew(-20deg);
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 35px 0 55px;
   margin: 55px auto 70px;
-  background: ${p => p.theme.colors.cardMain};
+  background: linear-gradient(
+    rgba(236, 236, 255, 0.35), 
+    rgba(236, 236, 255, 0.35)
+  ), url(${background});
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   z-index: 1;
-  border: 2px solid ${p => p.theme.colors.accent};
+  border-radius: 15px;
 
   ${mediaqueries.tablet`
+    transform: skew(0deg);
+    border-radius: 0px;
     padding: 50px 0 0;
     text-align: center;
   `}
@@ -134,11 +144,13 @@ const SubscriptionContainer = styled.div`
 `;
 
 const Content = styled.div`
+  transform: skew(20deg);
   margin: 0 auto;
   width: 100%;
   max-width: 580px;
 
   ${mediaqueries.tablet`
+    transform: skew(0deg);
     h3 {
       padding: 0 50px;
     }
@@ -152,23 +164,28 @@ const Content = styled.div`
 `;
 
 const Heading = styled(Headings.h3)`
-  font-family: "Noe Text";
+  font-family: "Suisse Int'l Condensed";
   margin-bottom: 20px;
+  font-size: 28px;
+  text-transform: uppercase;
   font-weight: 700 !important;
   padding-top: 15px;
-  color: ${p => p.theme.colors.accent};
+  color: #4524EA;
 
   ${mediaqueries.tablet`
+    font-size: 24px;
     margin-bottom: 15px;
   `}
 `;
 
 const Text = styled.p`
+  font-size: 18px;
   margin: 0 auto 30px;
-  color: ${p => p.theme.colors.grey};
-  line-height: 1.75;
+  color: #131516;
+  line-height: 1.618;
 
   ${mediaqueries.tablet`
+    font-size: 16px;
     padding: 0 26px;
     margin: 0 auto 25px;
   `}
@@ -181,7 +198,7 @@ const Form = styled.form<{ hasError: string }>`
     position: absolute;
     left: 45px;
     top: 10px;
-    color: ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
+    color: ${p => (p.hasError ? p.theme.colors.error : '#4524EA')};
 
     ${mediaqueries.tablet`
     left: 34px;
@@ -200,19 +217,19 @@ const Input = styled.input<{ hasError: string }>`
   border: none;
   padding: 13px 21px 13px 35px;
   width: 471px;
-  color: ${p => p.theme.colors.primary};
+  color: #131516;
 
   ::placeholder {
-    color: ${p => p.theme.colors.track};
+    color: rgba(8, 8, 11, 0.3);
     opacity: 1;
   }
 
   :-ms-input-placeholder {
-    color: ${p => p.theme.colors.track};
+    color: rgba(8, 8, 11, 0.3);
   }
 
   ::-ms-input-placeholder {
-    color: ${p => p.theme.colors.track};
+    color: rgba(8, 8, 11, 0.3);
   }
 
   ${mediaqueries.tablet`
@@ -233,20 +250,20 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   line-height: 0px;
   width: 161px;
   height: 46px;
-  border: 1px solid
-    ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
-  color: ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
-  background: ${p => (p.subscribed ? p.theme.colors.accent : "transparent")};
+
+  color: ${p => (p.hasError ? p.theme.colors.error : "white")};
+  background: ${p => (p.subscribed ? "#4524EA" : "#4524EA")};
   font-weight: 500;
   border-radius: 35px;
   letter-spacing: 0.42px;
-  transition: border-color 0.2s var(--ease-in-out-quad),
+  transition: all 0.2s var(--ease-in-out-quad),
     background 0.2s var(--ease-in-out-quad), color 0.2s var(--ease-in-out-quad);
 
   &:hover {
     background: ${p =>
-      p.hasError ? p.theme.colors.error : p.theme.colors.accent};
-    color: ${p => p.theme.colors.background};
+      p.hasError ? p.theme.colors.error : "#4524EA"};
+    color: white;
+    opacity: 0.6;
   }
 
   &[disabled] {

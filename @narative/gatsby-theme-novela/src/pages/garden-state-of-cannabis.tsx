@@ -62,6 +62,9 @@ function Cannabis({ location }) {
                   }
                   author {
                     name
+                    fields {
+                      slug
+                    }
                   }
                 }
               }
@@ -77,7 +80,7 @@ function Cannabis({ location }) {
               <Image fluid={data.file.childImageSharp.fluid} />
             </HeroContainer>
             <Section>
-            <FeatureOne />
+
             <HeadlinesContainer>
           <div>
             <Header>Recent Headlines</Header>
@@ -117,6 +120,8 @@ function Cannabis({ location }) {
 
             </ScrollContainer>
         </HeadlinesContainer>
+        <FeatureOne />
+
             <Grids>
 
             <div style={{ 
@@ -152,7 +157,7 @@ function Cannabis({ location }) {
                                 {item.node.excerpt}
                             </Excerpt>
                             <MetaData>
-                               <AuthorLink to={item.node.author[0].name.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
+                               <AuthorLink to={item.node.author[0].fields.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
                            </MetaData>
                             
                             </TextContainer>

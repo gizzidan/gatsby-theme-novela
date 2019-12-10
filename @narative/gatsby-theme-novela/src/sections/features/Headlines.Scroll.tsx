@@ -7,24 +7,29 @@ import { limitToTwoLines } from '@narative/gatsby-theme-novela/src/sections/arti
 
 
 export const Grids = styled.div`
-  margin-top: 30px;
+  margin-top: 50px;
   ${mediaqueries.desktop`
     margin-top: 50px;
   `}
   ${mediaqueries.phablet`
-    margin-top: 110px;
+    margin-top: 50px;
  `}
 `
 export const HeroContainer = styled.div`
-  width: 100vw !important;
+  width: 1366px;
+  margin: auto;
+  padding: 0 4rem;
+  margin-top: 44px;
   ${mediaqueries.desktop`
-    
+    width: 850px;
+ `}
+ ${mediaqueries.tablet`
+    width: 100vw;
+    padding: 0;
  `}
   ${mediaqueries.phablet`
-    margin-top: 43px;
+   margin-top: 48px;
    
-    
-    
  `}
 `
 export const ViewAll = styled(Link)`
@@ -54,13 +59,18 @@ export const HeadlinesContainer = styled.div`
   width: 100%;
   height: 290px;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 20px;
-  padding-bottom: 15px;  
+  padding-bottom: 0px;  
+  ${mediaqueries.desktop`
+    grid-template-columns: 200px 4fr;
+    grid-gap: 0px;
+  `};
   ${mediaqueries.phablet`
     padding-top: 0px;
+    margin-top: 30px;
     padding-bottom: 20px;
     margin-bottom: 80px;
     display: block;

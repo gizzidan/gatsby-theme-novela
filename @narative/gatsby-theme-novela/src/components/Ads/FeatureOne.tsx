@@ -11,8 +11,8 @@ export default class FeatureOne extends Component {
         singleRequest={true}
         dfpNetworkId="21862636432" 
         collapseEmptyDivs
-        sizeMapping={[{ viewport: [1024, 768], sizes: [[970, 250]] },
-          { viewport: [980, 690], sizes: [[300, 250]] }]}
+        sizeMapping={[{ viewport: [1366, 1024], sizes: [[970, 250]] },
+          { viewport: [1024, 768], sizes: [[300, 250]] }]}
          >
         <FeatureOneContainer>
         <AdLabel>Advertisement</AdLabel>

@@ -63,6 +63,9 @@ function Election2020({ location }) {
                   }
                   author {
                     name
+                    fields {
+                      slug
+                    }
                   }
                 }
               }
@@ -74,11 +77,13 @@ function Election2020({ location }) {
         <Layout>
           <NavBarBasic />
           <SEO pathname={location.pathname} title="Election 2020" image={data.file.childImageSharp.fluid}/>   
-          <HeroContainer>
+
+         
+           
+            <HeroContainer>
               <Image fluid={data.file.childImageSharp.fluid} />
             </HeroContainer>
             <Section>
-              <FeatureTwo />
               <HeadlinesContainer>
                 <div>
                   <Header>Recent Headlines</Header>
@@ -120,6 +125,7 @@ function Election2020({ location }) {
 
                     </ScrollContainer>
                 </HeadlinesContainer>
+                <FeatureTwo />
             <Grids>
             <div style={{ 
                 position: 'relative',
@@ -152,7 +158,7 @@ function Election2020({ location }) {
                                 {item.node.excerpt}
                             </Excerpt>
                             <MetaData>
-                               <AuthorLink to={item.node.author[0].name.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
+                               <AuthorLink to={item.node.author[0].fields.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
                            </MetaData>
                             </TextContainer>
                         </Item>
@@ -163,6 +169,7 @@ function Election2020({ location }) {
                 }
                 </StyledDiv>                         
             </Grids>
+      
             </Section>
           <ArticlesGradient />
         </Layout>

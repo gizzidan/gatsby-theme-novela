@@ -124,11 +124,12 @@ export const InnerContainer = styled.div`
 	`}
 `
 export const STitle = styled(Headings.h2)`
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1.2 !important;
   font-family: "Suisse Int'l Condensed";
   font-weight: 700 !important;
-  text-transform: none;
+  text-transform: uppercase;
+  font-style: italic;
   padding: 0px;
   color: ${p => p.theme.colors.primary};
   margin-bottom: 12px;

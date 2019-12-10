@@ -178,9 +178,9 @@ const HeroHeading = styled(Headings.h1)`
   font-size: 52px;
   font-family: "Noe Text";
   margin-bottom: 10px;
-  line-height: 1.15;
+  line-height: 1.05;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   color: ${p => p.theme.colors.primary};
 
@@ -197,12 +197,12 @@ const HeroHeading = styled(Headings.h1)`
 
 const HeroExcerpt = styled("p")`
   font-size: 22px;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   margin-bottom: 25px;
   line-height: 1.5;
   font-style: normal;
   color: ${p => p.theme.colors.primary};
-  font-weight: 300;
+  font-weight: 400;
 
   ${mediaqueries.tablet`
     margin-bottom: 2px;
@@ -210,7 +210,7 @@ const HeroExcerpt = styled("p")`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 20px;
+    font-size: 18px;
     
   `}
 `;
@@ -245,8 +245,8 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
 `;
 
 const ImageCaption = styled.div`
-  font-family: ${p => p.theme.fonts.monospace};
-  font-size: 14px;
+  font-family: ${p => p.theme.fonts.sansSerif};
+  font-size: 15px;
   font-weight: 300;
   color: ${p => p.theme.colors.primary};
   opacity: 1;
@@ -256,7 +256,7 @@ const ImageCaption = styled.div`
     padding-right: 0px;
   `}
   ${mediaqueries.phablet`
-    font-size: 12px;
+    font-size: 13px;
   `}
 `
 const HeroImage = styled.div`

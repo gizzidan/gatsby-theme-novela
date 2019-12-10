@@ -209,9 +209,9 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   ${limitToTwoLines};
   font-size: 18px;
   margin-bottom: 6px;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   font-style: normal;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   color: ${p => p.theme.colors.primary} !important;
   display: ${p => (p.hasOverflow ? "none" : "box")};
   max-width: ${p => (p.narrow ? "415px" : "515px")};

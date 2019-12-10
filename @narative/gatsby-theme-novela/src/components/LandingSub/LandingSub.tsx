@@ -43,7 +43,7 @@ const LandingSub: React.FunctionComponent<{}> = () => {
       <SubscriptionContainer>
         <Content>
           <Heading>
-            Bringing Sanity to The Shore: Your Local Source
+              Bringing #CageFreeNews to Central Jersey
           </Heading>
           <Text>
             Sign up with your email address to be the first to know when we launch.
@@ -83,10 +83,10 @@ const SubscriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 64px 0 55px;
-  margin: 10px auto 100px;
+  margin: 10px auto 30px;
   max-width: 650px;
   background: white !important;
-  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.2);
   z-index: 1;
 
   ${mediaqueries.tablet`
@@ -95,7 +95,7 @@ const SubscriptionContainer = styled.div`
   `}
 
   ${mediaqueries.phablet`
-    margin: -20px auto 80px;
+    margin: -20px auto 30px;
   `}
 `;
 
@@ -121,7 +121,7 @@ const Heading = styled(Headings.h3)`
   font-family: "Noe Text";
   margin-bottom: 15px;
   font-weight: 700 !important;
-  line-height: 1.4;
+  line-height: 1.3;
 
   ${mediaqueries.tablet`
     margin-bottom: 10px;
@@ -131,7 +131,7 @@ const Heading = styled(Headings.h3)`
 const Text = styled.p`
   font-family: "Suisse Intl";
   margin: 0 auto 30px;
-  color: ${p => p.theme.colors.grey};
+  color: ${p => p.theme.colors.primary};
   line-height: 1.75;
 
   ${mediaqueries.tablet`
@@ -200,16 +200,17 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   height: 46px;
   border: 1px solid
     ${p => (p.hasError ? p.theme.colors.error : '#4824ea')};
-  color: ${p => (p.hasError ? p.theme.colors.error : '#4824ea')};
-  background: ${p => (p.subscribed ? p.theme.colors.accent : "transparent")};
+  color: ${p => (p.hasError ? p.theme.colors.error : 'white')};
+  background: ${p => (p.subscribed ? p.theme.colors.accent : "#4824ea")};
   font-weight: 500;
   border-radius: 35px;
   letter-spacing: 0.42px;
   line-height: 0px;
-  transition: border-color 0.2s var(--ease-in-out-quad),
+  transition: all 0.2s var(--ease-in-out-quad),
     background 0.2s var(--ease-in-out-quad), color 0.2s var(--ease-in-out-quad);
 
   &:hover {
+    opacity: 0.6;
     background: ${p =>
       p.hasError ? p.theme.colors.error : '#4824ea'};
     color: ${p => p.theme.colors.background};

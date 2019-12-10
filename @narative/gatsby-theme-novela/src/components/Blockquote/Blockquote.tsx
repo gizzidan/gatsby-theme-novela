@@ -12,6 +12,11 @@ export const Blockquote = styled.blockquote`
   
 
   ${mediaqueries.tablet`
+    margin: 0px auto 40px;
+    max-width: 90vw;
+    padding-left: 15px;
+  `};
+  ${mediaqueries.phablet`
     margin: 10px auto 35px;
     max-width: 90vw;
     padding-left: 15px;
@@ -26,7 +31,7 @@ export const Blockquote = styled.blockquote`
     font-size: 19px;
     line-height: 1.618;
     font-style: italic;
-    font-weight: 200;
+    font-weight: 300;
 
     ${mediaqueries.tablet`
       font-size: 17px;
@@ -43,9 +48,9 @@ export const Blockquote = styled.blockquote`
     text-align: left;
     text-transform: none;
     font-style: normal !important;
-    font-size: 17px;
-    font-weight: 400;
-    font-family: ${p => p.theme.fonts.sansSerif};
+   
+    font-weight: 500;
+    font-family: "Suisse Int'l Condensed";
     ${mediaqueries.tablet`
       font-size: 15px;
       

@@ -30,23 +30,24 @@ const h1 = styled.h1`
 `;
 
 const h2 = styled.h2`
-  font-family: ${p => p.theme.fonts.sansSerif};
-  font-size: 24px;
+  font-family: "Suisse Intl";
+  font-size: 22px;
   line-height: 1.25;
-  padding-bottom: 10px;
-  font-weight: 600 !important;
+  font-style: normal;
+  padding-bottom: 0px;
+  font-weight: 700 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`
-    font-size: 21px;
+    
   `};
 
   ${mediaqueries.tablet`
-    font-size: 25px;
+    font-size: 22px;
   `};
 
   ${mediaqueries.phablet`
-    font-size: 24px;
+    font-size: 20px;
     padding-bottom: 5px !important;
   `};
 `;
@@ -68,18 +69,18 @@ const h3 = styled.h3`
 
 const h4 = styled.h4`
   text-align: center;
-  font-family: "Suisse Intl";
-  font-size: 42px;
-  text-transform: none;
-  font-style: italic;
+  font-family: "Suisse Int'l Condensed";
+  font-size: 40px;
+  text-transform: uppercase;
+  font-style: normal;
   padding-top: 15px;
   padding-bottom: 50px;
-  font-weight: 200 !important;
+  font-weight: 700 !important;
   line-height: 1.25;
   ${commonStyles};
 
   ${mediaqueries.phablet`
-    font-size: 29px;
+    font-size: 28px;
     padding-bottom: 30px !important;
 
   `};

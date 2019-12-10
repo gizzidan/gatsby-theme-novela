@@ -107,7 +107,7 @@ const Sponsored = styled.div`
   
 
   ${mediaqueries.tablet`
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   `}
 
   ${mediaqueries.phablet`

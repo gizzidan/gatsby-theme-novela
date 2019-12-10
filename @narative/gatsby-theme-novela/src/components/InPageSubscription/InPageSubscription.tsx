@@ -85,8 +85,8 @@ const SubscriptionContainer = styled.div`
   flex-direction: column;
   padding: 35px 0 55px;
   margin: 25px auto 65px auto;
-  background: ${p => p.theme.colors.accent};
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  background: ${p => p.theme.colors.accent};
   z-index: 1;
 
   ${mediaqueries.desktop`

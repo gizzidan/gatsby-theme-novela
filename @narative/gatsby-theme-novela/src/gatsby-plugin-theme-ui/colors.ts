@@ -3,7 +3,7 @@ import prism from "./prism";
 export default {
   prism,
 
-  primary: "#141823",
+  primary: "#131516",
   secondary: "#6a6c6f",
   onAccent: "#fff",
   grey: "#6a6c6f",
@@ -11,11 +11,11 @@ export default {
   darkGrey: "#46454d",
   navbar: "#fff",
   navbarSecond: "#f3c5eb",
-  navBackground: "#141823",
+  navBackground: "#131516",
   navBorder: "transparent",
   background: "#fff",
   accent: "#4524EA",
-  sponsored: "#141823",
+  sponsored: "#131516",
   tagBackground: "#e1dfe6",
   outline: "#000",
   hover: "rgba(0, 0, 0, 0.07)",
@@ -63,7 +63,7 @@ export default {
       success: "#46B17B",
       errorBackground: "rgba(238, 86, 91, 0.1)",
       horizontalRule: "rgba(255, 255, 255, 0.15)",
-      inputBackground: "rgba(255, 255, 255, 0.07)",
+      inputBackground: "rgba(0, 0, 0, 0.03)",
     },
   },
 };
