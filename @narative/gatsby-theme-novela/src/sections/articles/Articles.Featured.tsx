@@ -155,7 +155,7 @@ const Category = styled.p`
 `;
 
 const Title = styled("div")`
-  font-family: "Noe Text";
+  font-family: "SangBleu Empire";
   color: white;
   font-size: 48px;
   line-height: 1.05;
@@ -177,7 +177,7 @@ const Title = styled("div")`
 `;
 
 const Excerpt = styled("div")`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   font-weight: 400;
   font-style: normal;
   color: white;

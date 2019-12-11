@@ -32,6 +32,7 @@ import RepublicRegular from "www/static/fonts/SangBleu/SangBleuRepublic-Regular.
 import RepublicRegularItalic from "www/static/fonts/SangBleu/SangBleuRepublic-Italic.woff";
 import RepublicBold from "www/static/fonts/SangBleu/SangBleuRepublic-Bold.woff";
 import RepublicBoldItalic from "www/static/fonts/SangBleu/SangBleuRepublic-BoldItalic.woff";
+import EmpireBlack from "www/static/fonts/SangBleu/SangBleuEmpire-Black.woff";
 
 import SuisseThin from "www/static/fonts/Suisse/SuisseIntl-Thin.woff";
 import SuisseThinItalic from "www/static/fonts/Suisse/SuisseIntl-ThinItalic.woff";
@@ -247,6 +248,12 @@ export const globalStyles = css`
     font-weight: 700;
     font-style: italic;
     src: url(${RepublicBoldItalic}) format("woff");
+  }
+  @font-face {
+    font-family: "SangBleu Empire";
+    font-weight: 900;
+    font-style: italic;
+    src: url(${EmpireBlack}) format("woff");
   }
 
 

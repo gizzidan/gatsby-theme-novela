@@ -48,6 +48,39 @@ const MobileItem = styled(Link)`
 
 `;
 
+const ExternalLink = styled.a`
+  font-size: 16px;
+  font-family: "Suisse Int'l Condensed";
+  display: flex;
+  color: ${p => p.theme.colors.primary};
+  opacity: 1;
+  padding: 6px 25px 3px 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.1s;
+  &:nth-last-child(1) {
+    padding-right: 0px;
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+  ${mediaqueries.tablet`
+    padding: 13px 20px 13px 0px;
+    &:nth-last-child(1) {
+      padding-right: 90px;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  `};
+  ${mediaqueries.phablet`
+    &:nth-last-child(1) {
+      padding-right: 35px;
+    }
+  `};
+
+`;
+
 const MenuHeader = styled.p `
   font-size: 14px;
   display: flex;
@@ -117,7 +150,7 @@ const DropdownContent = styled.div`
   min-width: 160px;
   z-index: 9000;
   box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
-  ${MobileItem}{
+  ${MobileItem}, ${ExternalLink} {
     display: block;
     padding: 6px 16px;
     text-align: left;
@@ -208,9 +241,9 @@ class DropdownMenu extends React.Component {
                   
     
                   <MenuHeader>Resources</MenuHeader>
-                  <MobileItem activeStyle={listActiveStyle} to="/">Contact</MobileItem>  
                   <MobileItem activeStyle={listActiveStyle} to="/calendar">Calendar</MobileItem>   
-                 
+                  <ExternalLink href="mailto:team@thehum.co" target="_blank">Contact</ExternalLink>  
+                  <ExternalLink href="https://airtable.com/shr48AjhpQwUjtfuf" target="_blank">Volunteer</ExternalLink>
                 </DropdownContent>
                 )
                 : (

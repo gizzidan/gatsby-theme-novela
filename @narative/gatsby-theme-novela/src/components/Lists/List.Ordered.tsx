@@ -25,7 +25,7 @@ const OrderedList = styled.ol`
 
   ${mediaqueries.phablet`
     padding: 10px 0px 21px 25px;
-    font-size: 19px;
+    font-size: 18px;
   `};
 
   li {
@@ -38,7 +38,7 @@ const OrderedList = styled.ol`
 
     ${mediaqueries.phablet`
       padding-left: 30px;
-      font-size: 19px;
+      font-size: 18px;
     `};
 
     p {
@@ -65,8 +65,8 @@ const OrderedList = styled.ol`
     font-weight: 400;
     position: absolute;
     left: -3rem;
-    top: -0.3rem;
-    font-size: 2rem;
+    top: -0rem;
+    font-size: 18px;
 
     ${mediaqueries.tablet`
       left: 0;

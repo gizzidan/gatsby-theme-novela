@@ -197,7 +197,7 @@ const HeroHeading = styled(Headings.h1)`
 
 const HeroExcerpt = styled("p")`
   font-size: 22px;
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   margin-bottom: 25px;
   line-height: 1.5;
   font-style: normal;

@@ -31,11 +31,11 @@ const h1 = styled.h1`
 
 const h2 = styled.h2`
   font-family: "Suisse Intl";
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.25;
   font-style: normal;
   padding-bottom: 0px;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   ${commonStyles};
 
   ${mediaqueries.desktop`

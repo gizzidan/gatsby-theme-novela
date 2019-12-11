@@ -26,7 +26,7 @@ const UnorderedList = styled.ul`
 
   ${mediaqueries.phablet`
     padding: 10px 0px 21px 25px;
-    font-size: 19px;
+    font-size: 18px;
   `};
 
   li {
@@ -39,7 +39,7 @@ const UnorderedList = styled.ul`
 
     ${mediaqueries.phablet`
       padding-left: 30px;
-      font-size: 19px;
+      font-size: 18px;
     `};
 
     p {

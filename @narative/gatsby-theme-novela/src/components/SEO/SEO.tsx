@@ -86,7 +86,7 @@ function SEO({
     path ? `${site.siteUrl}${path}` : site.siteUrl;
 
   // If no image is provided lets looks for a default novela static image
-  image = image ? image : '/shoreside_preview.png';
+  image = image ? image : '/avatar_holographic1.png';
 
   const metaTags = [
     { charset: 'utf-8' },

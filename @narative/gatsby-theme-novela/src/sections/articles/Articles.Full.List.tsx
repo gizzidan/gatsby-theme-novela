@@ -213,7 +213,7 @@ const limitToTwoLines = css`
 const Title = styled(Headings.h2)`
  
   font-size: 22px;
-  line-height: 1.1 !important;
+  line-height: 1.15 !important;
   font-family: "Noe Text";
   font-weight: 700 !important;
   text-transform: none;
@@ -270,7 +270,7 @@ const Slogan = styled.p`
 
 const Excerpt = styled.p`
   font-family: ${p => p.theme.fonts.sansSerif};
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   line-height: 1.4;
   margin-bottom: 10px !important;
@@ -284,7 +284,7 @@ const Excerpt = styled.p`
 
 
   ${mediaqueries.phablet`
-    font-size: 17px;
+    font-size: 15px;
     margin-bottom: 5px;
     max-width: 100%;
     padding:  0;
@@ -302,7 +302,7 @@ export const MetaData = styled.div`
   
 
   ${mediaqueries.phablet`
-    font-size: 16px;
+
     max-width: 100%;
   `}
 `;

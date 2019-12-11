@@ -79,7 +79,7 @@ const ArticlesList2 = () => {
         <Main>
           
           
-          <LargeDiv id="latest">\
+          <LargeDiv id="latest">
           
             <HomeFeature/>
             {
@@ -409,7 +409,7 @@ export const TextContainer = styled.div`
 export const Excerpt = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
   ${limitToTwoLines};
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.4;
@@ -418,11 +418,11 @@ export const Excerpt = styled.div`
   color: ${p => p.theme.colors.articleText} !important;
   
   ${mediaqueries.tablet`
-    font-size: 18px;
+    font-size: 16px;
 ` }
 
   ${mediaqueries.phablet`
-    font-size: 17px;
+    font-size: 15px;
     margin-bottom: 10px;
     max-width: 100%;
     padding:  0;
@@ -433,9 +433,9 @@ export const Excerpt = styled.div`
 
 export const Title = styled(Headings.h2)`
   font-size: 22px;
-  line-height: 1.1 !important;
+  line-height: 1.15 !important;
   font-family: "Noe Text";
-  font-weight: 900 !important;
+  font-weight: 700 !important;
   text-transform: none;
   margin-bottom: 9px;
   margin-top: 20px;
@@ -550,7 +550,7 @@ export const ListItem = styled(Link)`
     font-size: 15px !important;
   }
   & ${Excerpt} {
-    font-size: 19px !important;
+    font-size: 17px !important;
     -webkit-line-clamp: 4 !important;
     
   }
