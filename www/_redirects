@@ -1,2 +1,3 @@
 https://shoresidenews.netlify.com/* https://thehum.co/:splat 301!
-https://thehum.co/* https://thehum.co/welcome 301!
+https://thehum.co https://thehum.co/welcome 301!
+https://thehum.co/ https://thehum.co/welcome 301!
