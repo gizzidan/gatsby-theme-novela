@@ -10,7 +10,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: ""}) {
+        contentfulArticle(title: {eq: "Let's See How HTML Works in Markdown"}) {
           title
           date
           excerpt
