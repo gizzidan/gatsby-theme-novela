@@ -27,7 +27,7 @@ const HomeFeature = () => {
     const data = useStaticQuery(
       graphql`
         query { 
-          allContentfulArticle(filter: {title: {eq: "A Sample Sponsored Post to See Why You Should Use This Service"}},
+          allContentfulArticle(filter: {title: {eq: ""}},
                                sort: {fields: date, order: DESC}, limit: 30) {
             edges {
               node {

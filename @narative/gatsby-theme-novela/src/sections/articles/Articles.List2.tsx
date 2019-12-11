@@ -83,7 +83,7 @@ const ArticlesList2 = () => {
           
             <HomeFeature/>
             {
-              data.allContentfulArticle.edges.slice(0,2).map((item, i) => (
+              data.allContentfulArticle.edges.slice(0,3).map((item, i) => (
                 item.node.hero ? (
                   <div key={i}>
                     <ListItem to={item.node.slug}>
