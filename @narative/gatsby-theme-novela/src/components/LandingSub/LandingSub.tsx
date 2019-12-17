@@ -43,10 +43,12 @@ const LandingSub: React.FunctionComponent<{}> = () => {
       <SubscriptionContainer>
         <Content>
           <Heading>
-              Bringing #CageFreeNews to Central Jersey
+              The Hum is Bringing #CageFreeNews to Central Jersey
           </Heading>
           <Text>
-            Sign up with your email address to be the first to know when we launch.
+            Sign up with your email address for an invite to our private Facebook group. {
+              
+            }.
           </Text>
           
           <Form onSubmit={handleSubmit} hasError={error}>
@@ -84,7 +86,7 @@ const SubscriptionContainer = styled.div`
   flex-direction: column;
   padding: 64px 0 55px;
   margin: 10px auto 30px;
-  max-width: 650px;
+  max-width: 750px;
   background: white !important;
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -102,7 +104,7 @@ const SubscriptionContainer = styled.div`
 const Content = styled.div`
   margin: 0 auto;
   width: 100%;
-  max-width: 580px;
+  max-width: 680px;
 
   ${mediaqueries.tablet`
     h3 {
