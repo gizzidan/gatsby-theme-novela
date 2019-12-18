@@ -252,7 +252,7 @@ export const globalStyles = css`
   @font-face {
     font-family: "SangBleu Empire";
     font-weight: 900;
-    font-style: italic;
+    font-style: normal;
     src: url(${EmpireBlack}) format("woff");
   }
 
