@@ -111,7 +111,7 @@ export const Card = styled(Link)`
   margin-top: 20px;
   padding: 0px;
   background-color: ${p => p.theme.colors.cardMain};
-  min-width: 150px;
+  max-width: 260px;
   &:hover, &:focus {
     h2 {
       opacity: 0.6;

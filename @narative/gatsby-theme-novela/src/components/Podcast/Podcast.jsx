@@ -26,7 +26,7 @@ const Podcast = () => {
     const data = useStaticQuery(
       graphql`
         query { 
-          allContentfulArticle(sort: {fields: date, order: DESC}, limit: 7) {
+          allContentfulArticle(filter: {category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 7) {
             edges {
               node {
                 date(fromNow: true)
@@ -78,11 +78,11 @@ const Podcast = () => {
                         <PodcastImageContainer>
                           <PodImage fixed={item.node.hero.fixed}></PodImage>
                         </PodcastImageContainer>
-                        <div>
+                       
                           
                           <PodcastTitle>{item.node.title}</PodcastTitle>
                           
-                        </div>
+                       
                       </InnerContainer>
                       
                           <PodcastExcerpt>{item.node.excerpt}</PodcastExcerpt>
@@ -159,7 +159,7 @@ const Card = styled(Link)`
   margin-top: 20px;
   padding: 0px;
   background-color: ${p => p.theme.colors.cardMain};
-  min-width: 150px;
+  max-width: 160px;
   height: 250px;
   &:hover, &:focus {
     h2 {
