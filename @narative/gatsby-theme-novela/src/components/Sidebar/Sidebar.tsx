@@ -204,7 +204,7 @@ export const SMetaData = styled.div`
   `}
 `
 export const SidebarItem = styled(Link)`
-	display: block;
+  display: block;
   padding-bottom: 10px;
   margin-bottom: 15px;
   position: relative;

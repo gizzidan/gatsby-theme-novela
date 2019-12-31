@@ -55,8 +55,8 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
         ) : (
           <ImagePlaceholder />
         )}
-        <ImageCaption>{article.hero.description}</ImageCaption>
       </HeroImage>
+      <ImageCaption>{article.hero.description}</ImageCaption>
     </Hero>
   );
 };
@@ -93,6 +93,7 @@ const Slogan = styled("p")`
 `;
 
 const Hero = styled.div`
+  margin-bottom: 30px;
   ${p => mediaqueries.phablet`
     &::before {
       content: "";
@@ -175,10 +176,10 @@ const Meta = styled.div`
 `;
 
 const HeroHeading = styled(Headings.h1)`
-  font-size: 52px;
+  font-size: 48px;
   font-family: "Noe Text";
   margin-bottom: 10px;
-  line-height: 1.05;
+  line-height: 1.12;
   text-transform: none;
   font-weight: 900;
   font-style: normal;
@@ -246,11 +247,12 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
 
 const ImageCaption = styled.div`
   font-family: ${p => p.theme.fonts.sansSerif};
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 400;
   color: ${p => p.theme.colors.primary};
   opacity: 1;
-  padding-top: 10px;
+  font-style: italic;
+  padding-top: 2px;
   text-align: center;
   ${mediaqueries.tablet`
     padding-right: 0px;
@@ -266,7 +268,9 @@ const HeroImage = styled.div`
   max-width: 1100px;
   overflow: hidden;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 23px;
+  box-shadow: 0 28px 58px -7px rgba(0, 0, 0, 0.18),
+  0 16px 32px -16px rgba(0, 0, 0, 0.20);
   
   ${mediaqueries.desktop`
 

@@ -15,7 +15,7 @@ const commonStyles = p => css`
 
 const h1 = styled.h1`
   font-size: 52px;
-  line-height: 1.15;
+  line-height: 1.3;
   ${commonStyles};
 
   ${mediaqueries.desktop`
@@ -25,16 +25,16 @@ const h1 = styled.h1`
 
   ${mediaqueries.phablet`
     font-size: 32px;
-    line-height: 1.3;
+    line-height: 1.2;
   `};
 `;
 
 const h2 = styled.h2`
   font-family: "Suisse Intl";
-  font-size: 20px;
-  line-height: 1.25;
+  font-size: 24px;
+  line-height: 1.35;
   font-style: normal;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
   font-weight: 500 !important;
   ${commonStyles};
 
@@ -43,11 +43,11 @@ const h2 = styled.h2`
   `};
 
   ${mediaqueries.tablet`
-    font-size: 22px;
+
   `};
 
   ${mediaqueries.phablet`
-    font-size: 20px;
+    font-size: 22px;
     padding-bottom: 5px !important;
   `};
 `;
@@ -69,8 +69,8 @@ const h3 = styled.h3`
 
 const h4 = styled.h4`
   text-align: center;
-  font-family: "Suisse Int'l Condensed";
-  font-size: 40px;
+  font-family: "Suisse Intl";
+  font-size: 35px;
   text-transform: uppercase;
   font-style: normal;
   padding-top: 15px;
@@ -80,8 +80,9 @@ const h4 = styled.h4`
   ${commonStyles};
 
   ${mediaqueries.phablet`
-    font-size: 28px;
-    padding-bottom: 30px !important;
+    font-size: 23px;
+    padding-top: 10px !important;
+    padding-bottom: 25px !important;
 
   `};
 `;

@@ -232,13 +232,13 @@ const ImageCSS = css`
     max-width: 100%;
     height: auto;
     z-index: 0;
-    margin: 5px auto 50px;
+    margin: 5px auto 35px;
     border-radius: 5px;
     width: 100%;
     max-width: 630px;
 
     ${mediaqueries.tablet`
-      margin: 10px auto 45px;
+      margin: 10px auto 25px;
     `};
 
     ${mediaqueries.desktop`
@@ -265,7 +265,7 @@ const ImageCSS = css`
 
   div.Image__Medium {
     position: relative;
-    margin: 15px auto 50px;
+    margin: 10px auto 35px;
     width: 100%;
     max-width: ${IMAGE_WIDTHS.large};
 
@@ -280,7 +280,7 @@ const ImageCSS = css`
     ${mediaqueries.tablet`
       border-radius: 0;
       left: 0;
-      margin: 0 auto 25px;
+      margin: 10px auto 25px;
 
       img {
         border-radius: 0;

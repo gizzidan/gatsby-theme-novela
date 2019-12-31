@@ -120,7 +120,7 @@ const SubscriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 35px 0 55px;
-  margin: 55px auto 70px;
+  margin: 20px auto 70px;
   background: linear-gradient(
     rgba(236, 236, 255, 0.35), 
     rgba(236, 236, 255, 0.35)
@@ -139,7 +139,7 @@ const SubscriptionContainer = styled.div`
   `}
 
   ${mediaqueries.phablet`
-    margin: -20px auto 60px;
+    margin: 0px auto 60px;
   `}
 `;
 

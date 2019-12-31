@@ -65,9 +65,10 @@ const ExternalLink = styled.a`
     opacity: 0.6;
   }
   ${mediaqueries.tablet`
+    text-align: right !important;
     padding: 13px 20px 13px 0px;
     &:nth-last-child(1) {
-      padding-right: 90px;
+      padding-right: 15px;
     }
     &:hover {
       opacity: 1;
@@ -75,7 +76,7 @@ const ExternalLink = styled.a`
   `};
   ${mediaqueries.phablet`
     &:nth-last-child(1) {
-      padding-right: 35px;
+      padding-right: 15px;
     }
   `};
 
@@ -226,18 +227,15 @@ class DropdownMenu extends React.Component {
                   >
           
                   <MenuHeader>Features</MenuHeader>
-                  <MobileItem activeStyle={listActiveStyle} to="/garden-state-of-cannabis">Garden State of Cannabis</MobileItem>
+                  {/* <MobileItem activeStyle={listActiveStyle} to="/garden-state-of-cannabis">Garden State of Cannabis</MobileItem> */}
                   <MobileItem activeStyle={listActiveStyle} to="/election-2020">Election 2020</MobileItem>  
-                  <MobileItem activeStyle={listActiveStyle} to="/">Feature Three</MobileItem> 
-
 
                   <MenuHeader>Sections</MenuHeader>
-                  <MobileItem activeStyle={listActiveStyle} to="/">Things To Do</MobileItem>
+                  {/* <MobileItem activeStyle={listActiveStyle} to="/">Things To Do</MobileItem> */}
                   <MobileItem activeStyle={listActiveStyle} to="/latest">Latest</MobileItem>
                   <MobileItem activeStyle={listActiveStyle} to="/category/thoughts">Thoughts</MobileItem>
                   <MobileItem activeStyle={listActiveStyle} to="/category/culture">Culture</MobileItem>
                   <MobileItem activeStyle={listActiveStyle} to="/category/goings-on">Goings On</MobileItem>
-                  <MobileItem activeStyle={listActiveStyle} to="/">Hear the Hum</MobileItem>
                   
     
                   <MenuHeader>Resources</MenuHeader>
@@ -289,7 +287,7 @@ export default class MobileNav extends React.Component {
                   <MobileItem activeStyle={activeStyle} to="/category/thoughts">Thoughts</MobileItem>
                   <MobileItem activeStyle={activeStyle} to="/category/culture">Culture</MobileItem>
                   <MobileItem activeStyle={activeStyle} to="/category/goings-on">Goings On</MobileItem>
-                  <MobileItem activeStyle={activeStyle} to="/garden-state-of-cannabis">State of Cannabis</MobileItem>
+                  {/* <MobileItem activeStyle={activeStyle} to="/garden-state-of-cannabis">State of Cannabis</MobileItem> */}
                   <MobileItem activeStyle={activeStyle} to="/election-2020">Election 2020</MobileItem>
               </ScrollContainer>
               <DropdownMenu />

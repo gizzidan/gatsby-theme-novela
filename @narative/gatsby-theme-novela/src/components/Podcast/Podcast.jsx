@@ -108,10 +108,11 @@ const PodcastContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 20px;
-  padding-bottom: 30px;  
+  padding-top: 8px;
+  padding-bottom: 10px;  
   ${mediaqueries.tablet`
-    padding-top: 0px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-bottom: 140px;
     display: block;
   `};

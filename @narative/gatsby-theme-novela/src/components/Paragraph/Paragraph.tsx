@@ -3,12 +3,12 @@ import mediaqueries from "@styles/media";
 
 
 const Paragraph = styled.p`
-  line-height: 1.65;
+  line-height: 1.69;
   font-size: ${p => p.theme.fontSizes.p};
   color: ${p => p.theme.colors.articleText};
   font-family: ${p => p.theme.fonts.serif};
   transition: ${p => p.theme.colorModeTransition};
-  margin: 0 auto 42px;
+  margin: 0 auto 36px;
   width: 100%;
   font-weight: 400;
   max-width: 630px;
@@ -36,10 +36,10 @@ const Paragraph = styled.p`
   `};
 
   ${mediaqueries.phablet`
-    line-height: 1.618;
+    line-height: 1.65;
     font-size: 18px;
     padding: 0 20px;
-    margin: 0 auto 20px;
+    margin: 0 auto 24px;
   `};
 
 

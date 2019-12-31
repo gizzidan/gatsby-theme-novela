@@ -52,7 +52,7 @@ export const Blockquote = styled.blockquote`
     font-weight: 500;
     font-family: "Suisse Int'l Condensed";
     ${mediaqueries.tablet`
-      font-size: 15px;
+      font-size: 17px;
       
     `};
   }

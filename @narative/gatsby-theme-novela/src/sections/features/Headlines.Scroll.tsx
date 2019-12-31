@@ -13,6 +13,7 @@ export const Grids = styled.div`
   `}
   ${mediaqueries.phablet`
     margin-top: 50px;
+    padding-top: 60px;
  `}
 `
 export const HeroContainer = styled.div`

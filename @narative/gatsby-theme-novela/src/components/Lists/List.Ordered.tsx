@@ -7,7 +7,8 @@ const OrderedList = styled.ol`
   counter-reset: list;
   color: ${p => p.theme.colors.articleText};
   position: relative;
-  padding: 0px 0 28px 0px;
+  padding: 0px 0 30px 0px;
+  line-height: 1.65;
   margin: 0 auto;
   transition: ${p => p.theme.colorModeTransition};
   font-size: ${p => p.theme.fontSizes.p};
@@ -24,13 +25,14 @@ const OrderedList = styled.ol`
   `};
 
   ${mediaqueries.phablet`
-    padding: 10px 0px 21px 25px;
+    line-height: 1.618;
+    padding: 10px 25px 21px 25px;
     font-size: 18px;
   `};
 
   li {
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 
     ${mediaqueries.tablet`
       padding-left: 30px;
@@ -66,7 +68,7 @@ const OrderedList = styled.ol`
     position: absolute;
     left: -3rem;
     top: -0rem;
-    font-size: 18px;
+    font-size: ${p => p.theme.fontSizes.p};
 
     ${mediaqueries.tablet`
       left: 0;

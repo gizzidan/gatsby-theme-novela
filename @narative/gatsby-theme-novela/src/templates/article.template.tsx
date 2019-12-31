@@ -107,7 +107,7 @@ function Article({ pageContext, location }) {
           {
          article.tags.map((tag, i) => (
             tag ? (
-              <div key={i}>
+              <div style={{paddingTop: '15px'}}key={i}>
                 <Tag to={"/tag/" + tag.toString().replace(/\s+/g, '-')}>#{tag}</Tag>                 
               </div>
               
@@ -229,8 +229,8 @@ const Tags = styled.div`
   justify-content: center;
   font-size: 17px;
   color: ${p => p.theme.colors.primary};  
-  display: flex;
-  padding-bottom: 100px;
+  display: block;
+  padding-bottom: 60px;
   
 `;
 const Tag = styled(Link)`
@@ -240,7 +240,7 @@ const Tag = styled(Link)`
   padding: 4px 8px;
   padding-bottom: 7px;
   border-radius: 3px;
-  margin-left: 15px;
+  position: relative;
   transition: all 0.04s linear;
   &:hover {
     opacity: 0.6;

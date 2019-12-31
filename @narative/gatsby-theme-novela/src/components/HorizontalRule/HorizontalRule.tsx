@@ -27,8 +27,8 @@ const HorizontalRule = styled.hr`
   `};
 
   ${mediaqueries.phablet`
-    margin-top: 10px !important;
-    margin-bottom: 40px !important;
+    margin-top: 15px !important;
+    margin-bottom: 35px !important;
     max-width: 400px;
   `};
 

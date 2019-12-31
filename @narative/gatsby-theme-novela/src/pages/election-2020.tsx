@@ -88,7 +88,7 @@ function Election2020({ location }) {
                 <div>
                   <Header>Recent Headlines</Header>
                   <SubHeader>Follow the Election</SubHeader>
-                  <ViewAll to='/'>See All →</ViewAll>
+                  <ViewAll to='/tag/election-2020'>See All →</ViewAll>
                     </div>
 
 
@@ -99,7 +99,7 @@ function Election2020({ location }) {
                       style={{ display: 'flex', overflowX: 'auto', paddingBottom: '15px'}}>
 
                       {
-                        data.allContentfulArticle.edges.map((item, i) => (
+                        data.allContentfulArticle.edges.filter(c => c.node.tags.includes('election 2020')).slice(0,4).map((item, i) => (
                           item.node.hero ? (
                             <div key={i}>
                               <Card to={item.node.slug}>
@@ -131,12 +131,53 @@ function Election2020({ location }) {
                 position: 'relative',
                 display: 'flex',
                 }}>
-                <Label id="thoughts">CD-4</Label><SeeAll to='/category/thoughts'>See All →</SeeAll>
+                <Label id="national-news">National News</Label><SeeAll to='/tag/national-news'>See All →</SeeAll>
                 </div>
             
                 <StyledDiv> 
                 {
-                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('trump')).slice(0,4).map((item, i) => (
+                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('national news')).slice(0,4).map((item, i) => (
+                    item.node.hero ? (
+                    <div key={i}>
+                        <Item to={item.node.slug}>
+                    
+                        <ImageContainer>
+                            <Image
+                            fluid={item.node.hero.sizes}
+                            />
+                        </ImageContainer>
+                            <TextContainer>
+                            <Slogan>
+                                <p>{item.node.slogan}</p>
+                            </Slogan>
+                            
+                            <Title>
+                                {item.node.title}
+                            </Title>
+                            <Excerpt>
+                                {item.node.excerpt}
+                            </Excerpt>
+                            <MetaData>
+                               <AuthorLink to={item.node.author[0].fields.slug}>{item.node.author[0].name}</AuthorLink> · {item.node.date}
+                           </MetaData>
+                            </TextContainer>
+                        </Item>
+                    </div>
+                    
+                    ) : (<div style={{ display: 'none'}}></div>)
+                ))
+                }
+                </StyledDiv>   
+            <div style={{ 
+                position: 'relative',
+                display: 'flex',
+                }}>
+                <Label id="nj-4">NJ-4</Label><SeeAll to='/tag/nj-4'>See All →</SeeAll>
+                </div>
+            
+                <StyledDiv> 
+                {
+                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('nj-4')).slice(0,4).map((item, i) => (
                     item.node.hero ? (
                     <div key={i}>
                         <Item to={item.node.slug}>

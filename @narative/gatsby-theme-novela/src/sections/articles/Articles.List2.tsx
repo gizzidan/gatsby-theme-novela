@@ -38,7 +38,7 @@ const ArticlesList2 = () => {
   const data = useStaticQuery(
     graphql`
       query { 
-        allContentfulArticle(filter: {category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
+        allContentfulArticle(filter: {title: {ne: "Learn More About the Candidates Running for Congress in NJ-4"}, category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
           edges {
             node {
               date(formatString: "MMM DD")
@@ -116,7 +116,7 @@ const ArticlesList2 = () => {
             </LargeDiv> 
           <Sidebar />
           </Main>
-          <Podcast />
+          {/* <Podcast /> */}
           <Subscription />
           <MidLeaderboard />
         <LabelContainer style={{ 
@@ -412,7 +412,7 @@ export const Excerpt = styled.div`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.45;
   margin-top: 0px;
   margin-bottom: 12px;
   color: ${p => p.theme.colors.articleText} !important;
@@ -433,7 +433,7 @@ export const Excerpt = styled.div`
 
 export const Title = styled(Headings.h2)`
   font-size: 22px;
-  line-height: 1.15 !important;
+  line-height: 1.2 !important;
   font-family: "Noe Text";
   font-weight: 700 !important;
   text-transform: none;

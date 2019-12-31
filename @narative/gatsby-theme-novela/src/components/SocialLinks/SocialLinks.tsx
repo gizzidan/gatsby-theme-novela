@@ -62,6 +62,7 @@ export default SocialLinks;
 const SocialIconContainer = styled.a`
   position: relative;
   margin-left: 2.2rem;
+  margin-top: 5px;
   text-decoration: none;
   max-width: 16px;
 
@@ -97,7 +98,7 @@ const SocialIconContainer = styled.a`
   }
 
   ${mediaqueries.tablet`
-    margin: 0 2.2rem;
+    margin: 0 1.2rem;
   `};
 `;
 

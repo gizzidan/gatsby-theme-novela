@@ -10,14 +10,14 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "Let's See How HTML Works in Markdown"}) {
+        contentfulArticle(title: {eq: "Learn More About the Candidates Running for Congress in NJ-4"}) {
           title
           date
           excerpt
           category
           slug
           hero {
-            sizes(quality: 100) {
+            sizes(maxWidth: 3000 quality: 100) {
               ...GatsbyContentfulSizes_withWebp
               }
             
@@ -73,7 +73,7 @@ const FeaturedContainer = styled("section")`
     
   `};
   ${mediaqueries.phablet`
-     height: 68vh;
+     height: 75vh;
   `};
 
   ${mediaqueries.phone_small`
@@ -92,10 +92,11 @@ const Overlay = styled("div")`
   position: absolute;
   top: 50%;
   left: 50%;
+  backdrop-filter: blur(10px);
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(to bottom, rgba(17, 17, 20, .1), rgba(3, 3, 3, 0.8));
-  width: 100%;
-  height: 100%;
+  background-image: ${p => p.theme.colors.featureBackground};
+  width: 101%;
+  height: 101%;
 `
 const TextContainer = styled("div") `
   position: absolute;
@@ -157,8 +158,8 @@ const Category = styled.p`
 const Title = styled("div")`
   font-family: "SangBleu Empire";
   color: white;
-  font-size: 48px;
-  line-height: 1.05;
+  font-size: 50px;
+  line-height: 1.15;
   text-transform: none;
   padding-bottom: 15px;
   font-weight: 900;
