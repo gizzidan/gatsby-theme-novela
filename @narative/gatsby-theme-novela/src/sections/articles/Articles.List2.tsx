@@ -43,7 +43,6 @@ const ArticlesList2 = () => {
             node {
               date(formatString: "MMM DD")
               excerpt
-              slogan
               slug
               title
               category 
@@ -93,9 +92,7 @@ const ArticlesList2 = () => {
                         />
                       </ImageContainer>            
                         <TextContainer>
-                        <Slogan>
-                            <p>{item.node.slogan}</p>
-                          </Slogan>
+                    
 
                           <Title>
                             {item.node.title}
@@ -144,10 +141,7 @@ const ArticlesList2 = () => {
                     />
                   </ImageContainer>
                     <TextContainer>
-                    <Slogan>
-                        <p>{item.node.slogan}</p>
-                      </Slogan>
-                     
+                
                       <Title>
                         {item.node.title}
                       </Title>
@@ -191,9 +185,7 @@ const ArticlesList2 = () => {
                     />
                   </ImageContainer>
                     <TextContainer>
-                    <Slogan>
-                        <p>{item.node.slogan}</p>
-                      </Slogan>
+                
                       
                       <Title>
                         {item.node.title}
@@ -237,9 +229,7 @@ const ArticlesList2 = () => {
                     />
                   </ImageContainer>
                     <TextContainer>
-                    <Slogan>
-                        <p>{item.node.slogan}</p>
-                      </Slogan>
+            
                       
                       <Title>
                         {item.node.title}

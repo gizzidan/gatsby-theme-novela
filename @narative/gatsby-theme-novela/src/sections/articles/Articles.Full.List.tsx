@@ -19,7 +19,6 @@ const ArticlesFullList = () => {
             node {
               date(formatString: "MMM DD")
               excerpt
-              slogan
               slug
               title
               category 
@@ -62,7 +61,7 @@ const ArticlesFullList = () => {
                 <Item to={item.node.slug}>  
                     <ImageContainer fixed={item.node.hero.fixed}></ImageContainer> 
                     <TextContainer>
-                      <Slogan>{item.node.slogan}</Slogan>
+                      
                     <Title>
                         {item.node.title}
                     </Title>

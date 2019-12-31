@@ -20,7 +20,6 @@ const Sidebar = () => {
             node {
               date(formatString: "MMM DD")
               excerpt
-              slogan
               slug
               title
               category 
@@ -57,7 +56,7 @@ const Sidebar = () => {
 								<SidebarItem to={item.node.slug}>
 									<STextContainer>
 										<InnerContainer>
-											<SSlogan>{item.node.slogan}</SSlogan>
+											
 											<STitle>{item.node.title}</STitle>
 											<SMetaData><span style={{ opacity: '0.8', }}>{item.node.author[0].name} in </span><CatLink  to={"/category/" + item.node.category.toString().replace(/\s+/g, '-')}>{item.node.category}</CatLink>
 												

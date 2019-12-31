@@ -31,7 +31,6 @@ const Podcast = () => {
               node {
                 date(fromNow: true)
                 excerpt
-                slogan
                 slug
                 title
                 category 

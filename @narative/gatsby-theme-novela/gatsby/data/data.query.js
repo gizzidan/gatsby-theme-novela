@@ -28,7 +28,6 @@ module.exports.local = {
           author
           category
           tags
-          slogan
           date(formatString: "MMM DD")
           dateForSEO: date
           timeToRead
@@ -114,7 +113,6 @@ module.exports.contentful = {
           }
           excerpt
           title
-          slogan
           category
           tags
           slug

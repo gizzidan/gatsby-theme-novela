@@ -34,9 +34,6 @@ const ArticleHero = ({ article, authors }: ArticleHeroProps) => {
   return (
     <Hero>
       <Header>
-        <Slogan>
-            {article.slogan}
-        </Slogan>
         <HeroHeading>{article.title}</HeroHeading>
         <HeroExcerpt>{article.excerpt}</HeroExcerpt>
         <Meta>

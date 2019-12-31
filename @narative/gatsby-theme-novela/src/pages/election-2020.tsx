@@ -42,7 +42,6 @@ function Election2020({ location }) {
                 node {
                   date(formatString: "MMM DD")
                   excerpt
-                  slogan
                   slug
                   title
                   category
@@ -147,9 +146,7 @@ function Election2020({ location }) {
                             />
                         </ImageContainer>
                             <TextContainer>
-                            <Slogan>
-                                <p>{item.node.slogan}</p>
-                            </Slogan>
+                         
                             
                             <Title>
                                 {item.node.title}
@@ -188,9 +185,7 @@ function Election2020({ location }) {
                             />
                         </ImageContainer>
                             <TextContainer>
-                            <Slogan>
-                                <p>{item.node.slogan}</p>
-                            </Slogan>
+                           
                             
                             <Title>
                                 {item.node.title}

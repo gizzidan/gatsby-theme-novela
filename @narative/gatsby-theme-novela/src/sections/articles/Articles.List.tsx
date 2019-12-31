@@ -90,9 +90,6 @@ const ListItem = ({ article }: ArticlesListItemProps) => {
       <Item to={article.slug} data-a11y="false"> 
        <Image style={{ margin: '0 0 1em 1em', float: 'right', width: '90px', height: '90px'}} src={article.hero.regular}></Image>
         <TextContainer>
-          <Slogan>
-            <p>{article.slogan}</p>
-          </Slogan>
           <Title >
             {article.title}
           </Title>

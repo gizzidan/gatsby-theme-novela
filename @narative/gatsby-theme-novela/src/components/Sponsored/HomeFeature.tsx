@@ -33,7 +33,6 @@ const HomeFeature = () => {
               node {
                 date(formatString: "MMM DD")
                 excerpt
-                slogan
                 slug
                 title
                 category 
@@ -73,9 +72,7 @@ const HomeFeature = () => {
                       />
                     </Sponsored>            
                       <TextContainer>
-                      <Slogan>
-                          <p>{item.node.slogan}</p>
-                        </Slogan>
+                    
   
                         <Title>
                           {item.node.title}

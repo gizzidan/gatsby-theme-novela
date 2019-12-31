@@ -57,9 +57,7 @@ const GridItem = ({
         <ImageContainer>
           <Image src={imageSource} />
         </ImageContainer>
-        <Slogan>
-           <p>{article.slogan}</p>
-         </Slogan>
+       
         <Title dark hasOverflow={hasOverflow}>
           {article.title}
         </Title>

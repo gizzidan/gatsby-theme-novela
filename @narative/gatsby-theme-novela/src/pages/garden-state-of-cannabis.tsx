@@ -42,7 +42,6 @@ function Cannabis({ location }) {
                 node {
                   date(formatString: "MMM DD")
                   excerpt
-                  slogan
                   slug
                   title
                   category
@@ -146,9 +145,7 @@ function Cannabis({ location }) {
                             
                         </ImageContainer>
                             <TextContainer>
-                            <Slogan>
-                                <p>{item.node.slogan}</p>
-                            </Slogan>
+                           
                             
                             <Title>
                                 {item.node.title}
@@ -188,9 +185,7 @@ function Cannabis({ location }) {
                             />
                         </ImageContainer>
                             <TextContainer>
-                            <Slogan>
-                                <p>{item.node.slogan}</p>
-                            </Slogan>
+                           
                             
                             <Title>
                                 {item.node.title}
