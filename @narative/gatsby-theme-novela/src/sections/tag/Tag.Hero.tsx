@@ -20,20 +20,23 @@ const Label = styled.h2`
   color: ${p => p.theme.colors.primary};
   font-family: "Noe Display";
   font-weight: 500;
+  line-height: 1.01 !important;
   text-transform: capitalize;
   font-size: 180px;
   text-align: center;
   margin-top: 90px;
+  margin-bottom: 20px;
   ${mediaqueries.desktop`
     font-size: 100px;
+
   `};
 
   ${mediaqueries.phablet`
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     -webkit-text-stroke-width: 1px;
     font-size: 74px;
     font-weight: 500;
-    line-height: 1.3;
+
   `};
 `;
 
