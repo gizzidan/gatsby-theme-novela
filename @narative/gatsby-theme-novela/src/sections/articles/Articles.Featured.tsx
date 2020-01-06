@@ -10,7 +10,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "Learn More About the Candidates Running for Congress in NJ-4"}) {
+        contentfulArticle(title: {eq: "Why UBI Is Stupid for Now and You Should Feel Bad for Thinking It's a Good Idea"}) {
           title
           date
           excerpt
@@ -92,7 +92,7 @@ const Overlay = styled("div")`
   position: absolute;
   top: 50%;
   left: 50%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
   transform: translate(-50%, -50%);
   background-image: ${p => p.theme.colors.featureBackground};
   width: 101%;
