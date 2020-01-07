@@ -129,7 +129,7 @@ module.exports.contentful = {
             narrow: fluid(maxWidth: 457, quality: 100) {
               ${GatsbyFluid_withWebp}
             }
-            seo: fixed(width: 1200) {
+            seo: fixed(width: 1200, quality: 100) {
               src
             }
             title

@@ -50,7 +50,7 @@ function ArticleSEO({
       "@id": "${siteUrl + location.pathname}"
     },
     "headline": "${article.title}",
-    "image": "${'https:'+article.hero.seo.src}",
+    "image": "${'https:'+article.hero.src}",
     "datePublished": "${article.dateForSEO}",
     "dateModified": "${article.dateForSEO}",
     "author": ${JSON.stringify(authorsData)},
@@ -80,7 +80,7 @@ function ArticleSEO({
     <SEO
       title={article.title}
       description={article.excerpt}
-      image={article.hero.seo.src}
+      image={article.hero.full}
       timeToRead={article.timeToRead}
       published={article.date}
       pathname={location.href}
