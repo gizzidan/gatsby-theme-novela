@@ -43,6 +43,7 @@ export interface IArticle {
   body: string;
   id: string;
   hero: {
+    file: string;
     full: IGatsbyImageFluid;
     preview: IGatsbyImageFluid;
     regular: IGatsbyImageFluid;

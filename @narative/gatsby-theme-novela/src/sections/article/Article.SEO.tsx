@@ -80,7 +80,7 @@ function ArticleSEO({
     <SEO
       title={article.title}
       description={article.excerpt}
-      image={article.hero.seo.src}
+      image={article.hero.file.url}
       timeToRead={article.timeToRead}
       published={article.date}
       pathname={location.href}

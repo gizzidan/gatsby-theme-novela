@@ -120,6 +120,9 @@ module.exports.contentful = {
           date(formatString: "MMM DD")
           dateForSEO: date
           hero {
+            file {
+              url
+            }
             full: fluid(maxWidth: 944, quality: 100) {
               ${GatsbyFluid_withWebp}
             }
