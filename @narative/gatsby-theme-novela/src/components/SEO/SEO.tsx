@@ -111,19 +111,19 @@ function SEO({
     { itemprop: 'image', content: 'https:'+image+'?w=1200' },
     { name: 'description', content: description || site.description },
 
-    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:card', content: 'summary' },
     { name: 'twitter:site', content: site.name },
     { name: 'twitter:title', content: title || site.title },
     { name: 'twitter:description', content: description || site.description },
     { name: 'twitter:creator', content: twitter.url },
     {
       name: 'twitter:image',
-      content: 'https:'+image+'?w=1200',
+      content: 'https:'+image+'?w=300&h=300&fm=png&fit=thumb&f=face',
     },
 
     { property: 'og:title', content: title || site.title },
     { property: 'og:url', content: url },
-    { property: 'og:image', content: 'https:'+image+'?w=1200' },
+    { property: 'og:image', content: 'https:'+image+'?w=1200&h=630&q=90&fit=pad&fm=jpg&bg=rgb:E9EBEE'},
     { property: 'og:description', content: description || site.description },
     { property: 'og:site_name', content: site.name },
   ];
