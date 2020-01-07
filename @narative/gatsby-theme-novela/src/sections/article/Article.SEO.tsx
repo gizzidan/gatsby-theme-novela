@@ -50,7 +50,7 @@ function ArticleSEO({
       "@id": "${siteUrl + location.pathname}"
     },
     "headline": "${article.title}",
-    "image": "${'https:'+article.hero.src}",
+    "image": "${'https:'+article.hero.seo.src}",
     "datePublished": "${article.dateForSEO}",
     "dateModified": "${article.dateForSEO}",
     "author": ${JSON.stringify(authorsData)},
@@ -60,7 +60,7 @@ function ArticleSEO({
       "name": "${name}",
       "logo": {
         "@type": "ImageObject",
-        "url": "${siteUrl}/icons/icon-512x512.png"
+        "url": "${siteUrl}/avatar_holographic1.png"
       }
     }
   }
@@ -80,7 +80,7 @@ function ArticleSEO({
     <SEO
       title={article.title}
       description={article.excerpt}
-      image={article.hero.full}
+      image={article.hero.seo.src}
       timeToRead={article.timeToRead}
       published={article.date}
       pathname={location.href}
