@@ -118,12 +118,12 @@ function SEO({
     { name: 'twitter:creator', content: twitter.url },
     {
       name: 'twitter:image',
-      content: 'https:'+image+'?w=300&h=300&fm=png&fit=thumb&f=face',
+      content: 'https:'+image+'?w=300&h=300&fit=thumb&f=face',
     },
 
     { property: 'og:title', content: title || site.title },
     { property: 'og:url', content: url },
-    { property: 'og:image', content: 'https:'+image+'?w=1200&h=630&q=90&fit=pad&fm=jpg&bg=rgb:E9EBEE'},
+    { property: 'og:image', content: 'https:'+image+'?w=1200&h=630&q=90&fit=pad&bg=rgb:E9EBEE'},
     { property: 'og:description', content: description || site.description },
     { property: 'og:site_name', content: site.name },
   ];
