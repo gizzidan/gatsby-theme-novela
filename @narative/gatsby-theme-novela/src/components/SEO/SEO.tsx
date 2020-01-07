@@ -108,7 +108,7 @@ function SEO({
     },
     { itemprop: 'name', content: title || site.title },
     { itemprop: 'description', content: description || site.description },
-    { itemprop: 'image', content: 'https:'+ image },
+    { itemprop: 'image', content: 'https:'+image+'?w=1200' },
     { name: 'description', content: description || site.description },
 
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -118,12 +118,12 @@ function SEO({
     { name: 'twitter:creator', content: twitter.url },
     {
       name: 'twitter:image',
-      content: 'https:'+ image,
+      content: 'https:'+image+'?w=1200',
     },
 
     { property: 'og:title', content: title || site.title },
     { property: 'og:url', content: url },
-    { property: 'og:image', content: 'https:'+ image },
+    { property: 'og:image', content: 'https:'+image+'?w=1200' },
     { property: 'og:description', content: description || site.description },
     { property: 'og:site_name', content: site.name },
   ];
