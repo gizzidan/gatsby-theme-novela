@@ -4,9 +4,9 @@ const siteMetadata = {
   title: `The Hum`,
   name: `The Hum`,
   siteUrl: `https://thehum.co`,
-  description: `Bringing Sanity to the Jersey Shore: Your Local Source`,
+  description: `Politics, culture, and events today for the future. Bringing #CageFreeNews to the Jersey Shore, Monmouth County, and surrounding areas.`,
   hero: {
-    heading: `Bringing Sanity to the Jersey Shore: Your Local Source`,
+    heading: `Politics, culture, and events today for the future. Bringing #CageFreeNews to the Jersey Shore, Monmouth County, and surrounding areas.`,
     maxWidth: 652,
   },
   social: [
