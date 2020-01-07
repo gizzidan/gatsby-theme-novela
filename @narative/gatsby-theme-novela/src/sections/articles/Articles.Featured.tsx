@@ -62,14 +62,14 @@ const Arrow = styled.div`
 `
 const FeaturedContainer = styled("section")`
   overflow: hidden;
-  height: 52vh;
+  height: 56vh;
   position: relative;
   margin: -61px auto 0px auto;
   &:hover, &:focus {
     cursor: pointer;
   }
   ${mediaqueries.desktop_mediumlarge`
-    height: 66vh;
+    height: 70vh;
     
   `};
   ${mediaqueries.phablet`
