@@ -111,14 +111,14 @@ function SEO({
     { itemprop: 'image', content: 'https:'+image+'?w=1200' },
     { name: 'description', content: description || site.description },
 
-    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: site.name },
     { name: 'twitter:title', content: title || site.title },
     { name: 'twitter:description', content: description || site.description },
     { name: 'twitter:creator', content: twitter.url },
     {
       name: 'twitter:image',
-      content: 'https:'+image+'?w=300&h=300&fit=thumb&f=face',
+      content: 'https:'+image+'?w=1200',
     },
 
     { property: 'og:title', content: title || site.title },
