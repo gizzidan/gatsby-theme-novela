@@ -135,7 +135,7 @@ function Election2020({ location }) {
             
                 <StyledDiv> 
                 {
-                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('national news')).slice(0,4).map((item, i) => (
+                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('national news')).slice(0,6).map((item, i) => (
                     item.node.hero ? (
                     <div key={i}>
                         <Item to={item.node.slug}>
@@ -174,7 +174,7 @@ function Election2020({ location }) {
             
                 <StyledDiv> 
                 {
-                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('nj-4')).slice(0,4).map((item, i) => (
+                data.allContentfulArticle.edges.filter(c => c.node.tags.includes('nj-4')).slice(0,6).map((item, i) => (
                     item.node.hero ? (
                     <div key={i}>
                         <Item to={item.node.slug}>

@@ -113,7 +113,7 @@ const ArticlesList2 = () => {
             </LargeDiv> 
           <Sidebar />
           </Main>
-          {/* <Podcast /> */}
+          <Podcast />
           <Subscription />
           <MidLeaderboard />
         <LabelContainer style={{ 
@@ -130,7 +130,7 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allContentfulArticle.edges.filter(c=>c.node.category == 'thoughts').slice(0,4).map((item, i) => (
+          data.allContentfulArticle.edges.filter(c=>c.node.category == 'thoughts').slice(0,6).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
@@ -174,7 +174,7 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allContentfulArticle.edges.filter(c=>c.node.category == 'culture').slice(0,4).map((item, i) => (
+          data.allContentfulArticle.edges.filter(c=>c.node.category == 'culture').slice(0,6).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>
@@ -218,7 +218,7 @@ const ArticlesList2 = () => {
       }}> 
      
         {
-          data.allContentfulArticle.edges.filter(c=>c.node.category == 'goings on').slice(0,4).map((item, i) => (
+          data.allContentfulArticle.edges.filter(c=>c.node.category == 'goings on').slice(0,6).map((item, i) => (
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>

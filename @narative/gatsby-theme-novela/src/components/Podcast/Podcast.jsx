@@ -26,7 +26,7 @@ const Podcast = () => {
     const data = useStaticQuery(
       graphql`
         query { 
-          allContentfulArticle(filter: {category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 7) {
+          allContentfulArticle(filter: {category: {eq: "podcasts", ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 7) {
             edges {
               node {
                 date(fromNow: true)
@@ -58,7 +58,7 @@ const Podcast = () => {
           <div>
             <Header>Listen to The Hum Podcasts</Header>
             <SubHeader>Daily News & Commentary</SubHeader>
-            <SeeAll to='/'>All Podcasts →</SeeAll>
+            <SeeAll to='/category/podcasts'>All Podcasts →</SeeAll>
           </div>
 
 

@@ -50,7 +50,7 @@ const Sidebar = () => {
 			
 			<SidebarFeature />
 				{
-					data.allContentfulArticle.edges.slice(4,7).map((item, i) => (
+					data.allContentfulArticle.edges.slice(4,8).map((item, i) => (
 						item.node.hero ? (
 							<div key={i}>
 								<SidebarItem to={item.node.slug}>
