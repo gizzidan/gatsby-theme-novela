@@ -72,12 +72,14 @@ const FeaturedContainer = styled("section")`
     height: 70vh;
     
   `};
-  ${mediaqueries.phablet`
-     height: 75vh;
-  `};
+  
+  @media screen and (max-height: 415px) {
+    height: 103vh;
+  }
 
   ${mediaqueries.phone_small`
-     height: 101vh;
+     height: 102vh;
+     
   `};
 `
 const BgImg = styled(Img)`
@@ -122,11 +124,12 @@ const TextContainer = styled("div") `
   `}
 
   ${mediaqueries.tablet`
-    width: 85%;
+    width: 75%;
     bottom: 5px;
    
   `}
   ${mediaqueries.phablet`
+    width: 85%;
     padding: 0 0 0 0;
     
   `}
@@ -170,6 +173,12 @@ const Title = styled("div")`
     font-size: 38px;
     line-height: 1.2;
   `};
+
+  ${mediaqueries.tablet`
+    font-size: 30px;
+    line-height: 1.2;
+  `};
+
 
   ${mediaqueries.phablet`
     font-size: 30px;

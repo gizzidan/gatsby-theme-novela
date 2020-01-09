@@ -190,13 +190,14 @@ export const SMetaData = styled.div`
 	font-size: 14px;
 	font-weight: 400;
 	text-transform: none;
+	padding-top: 5px;
 	color: ${p => p.theme.colors.articleText} !important;
 	${mediaqueries.desktop`
 		font-size: 20px;
   `}
 
 	${mediaqueries.tablet`
-		font-size: 13px;
+		font-size: 12px;
 	`}
 	${mediaqueries.phone_small`
     font-size: 10px;

@@ -37,7 +37,7 @@ const Paragraph = styled.p`
 
   ${mediaqueries.phablet`
     line-height: 1.65;
-    font-size: 18px;
+    font-size: 17px;
     padding: 0 20px;
     margin: 0 auto 24px;
   `};

@@ -40,7 +40,7 @@ const OrderedList = styled.ol`
 
     ${mediaqueries.phablet`
       padding-left: 30px;
-      font-size: 18px;
+      font-size: 17px;
     `};
 
     p {

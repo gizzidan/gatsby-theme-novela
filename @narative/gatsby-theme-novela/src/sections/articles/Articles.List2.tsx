@@ -381,7 +381,7 @@ export const MetaData = styled.div`
     font-size: 17px;
   `}
   ${mediaqueries.phablet`
-    font-size: 16px;
+    font-size: 15px;
     max-width: 100%;
     padding:  0px 0px 10px;
   `}
@@ -595,7 +595,7 @@ export const ListItem = styled(Link)`
       margin-bottom: 5px;
     }
     & ${MetaData} {
-      font-size: 16px !important;
+      font-size: 15px !important;
     }
     & ${Excerpt} {
       font-size: 17px !important;

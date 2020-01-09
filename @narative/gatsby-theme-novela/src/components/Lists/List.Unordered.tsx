@@ -41,7 +41,7 @@ const UnorderedList = styled.ul`
 
     ${mediaqueries.phablet`
       padding-left: 0px;
-      font-size: 18px;
+      font-size: 17px;
     `};
 
     p {

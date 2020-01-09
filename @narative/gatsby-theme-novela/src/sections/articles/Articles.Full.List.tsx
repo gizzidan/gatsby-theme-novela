@@ -59,12 +59,14 @@ const ArticlesFullList = () => {
             item.node.hero ? (
               <div key={i}>
                 <Item to={item.node.slug}>  
-                    <ImageContainer fixed={item.node.hero.fixed}></ImageContainer> 
+                     
                     <TextContainer>
-                      
+                    <ImageContainer fixed={item.node.hero.fixed}></ImageContainer>
                     <Title>
                         {item.node.title}
                     </Title>
+                    
+                    
                     <Excerpt>
                       {item.node.excerpt}
                     </Excerpt>
@@ -210,7 +212,6 @@ const limitToTwoLines = css`
 
 
 const Title = styled(Headings.h2)`
- 
   font-size: 22px;
   line-height: 1.15 !important;
   font-family: "Noe Text";
