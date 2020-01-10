@@ -265,21 +265,19 @@ const HeroImage = styled.div`
   max-width: 1100px;
   overflow: hidden;
   margin: 0 auto;
-  margin-bottom: 23px;
-  box-shadow: 0 28px 58px -7px rgba(0, 0, 0, 0.18),
-  0 16px 32px -16px rgba(0, 0, 0, 0.20);
+  margin-bottom: 10px;
   
   ${mediaqueries.desktop`
 
   `}
   ${mediaqueries.tablet`
     max-width: 100vw;
-    margin-bottom: 30px;
+    margin-bottom: 8px;
   `}
 
   ${mediaqueries.phablet`
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 8px;
     width: 100vw;
     
 
