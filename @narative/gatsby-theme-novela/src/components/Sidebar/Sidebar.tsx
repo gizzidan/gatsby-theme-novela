@@ -15,7 +15,7 @@ const Sidebar = () => {
 	const data = useStaticQuery(
     graphql`
       query { 
-        allContentfulArticle(filter: {category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
+        allContentfulArticle(filter: {title: {ne: "Things to Do in Central New Jersey, January 2020"}, category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
           edges {
             node {
               date(formatString: "MMM DD")
@@ -50,7 +50,7 @@ const Sidebar = () => {
 			
 			<SidebarFeature />
 				{
-					data.allContentfulArticle.edges.slice(4,8).map((item, i) => (
+					data.allContentfulArticle.edges.slice(3,8).map((item, i) => (
 						item.node.hero ? (
 							<div key={i}>
 								<SidebarItem to={item.node.slug}>
