@@ -239,7 +239,7 @@ class DropdownMenu extends React.Component {
                   
     
                   <MenuHeader>Resources</MenuHeader>
-                  <MobileItem activeStyle={listActiveStyle} to="/calendar">Calendar</MobileItem>   
+                  <MobileItem activeStyle={listActiveStyle} to="/calendar">Things to Do</MobileItem>   
                   <ExternalLink href="mailto:team@thehum.co" target="_blank">Contact</ExternalLink>  
                   <ExternalLink href="https://airtable.com/shr48AjhpQwUjtfuf" target="_blank">Volunteer</ExternalLink>
                 </DropdownContent>
