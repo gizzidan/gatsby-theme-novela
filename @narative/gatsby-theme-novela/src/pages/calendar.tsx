@@ -15,7 +15,7 @@ function Calendar({ location }) {
     const articles = useStaticQuery(
         graphql`
           query { 
-            allContentfulArticle(filter: {category: {eq: "goings on"}}, sort: {fields: date, order: DESC}, limit: 60) {
+            allContentfulArticle(filter: {category: {eq: "things to do"}}, sort: {fields: date, order: DESC}, limit: 60) {
               edges {
                 node {
                   date(formatString: "MMM DD")
