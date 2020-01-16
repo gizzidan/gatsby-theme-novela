@@ -14,7 +14,7 @@ export default class InArticleOne extends Component {
         
          >
         <AdContainerOne>
-            <AdLabel>Advertisement</AdLabel>
+            <AdLabel style={{ display: 'none' }}>Advertisement</AdLabel>
             <div>
               <AdSlot sizes={[336, 280]} adUnit="in-article-1" />
             </div>        

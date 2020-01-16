@@ -14,7 +14,7 @@ export default class MidLeaderboard extends Component {
           { viewport: [980, 690], sizes: [[320, 50]] }]}
          >
         <MidContainer>
-        <AdLabel>Advertisement</AdLabel>
+        <AdLabel style={{ display: 'none' }}>Advertisement</AdLabel>
           <AdSlot sizes={[[320, 50]]} adUnit="home-middle-leaderboard" />
         </MidContainer>
       </DFPSlotsProvider>

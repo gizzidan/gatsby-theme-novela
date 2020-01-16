@@ -15,7 +15,7 @@ export default class FeatureOne extends Component {
           { viewport: [1024, 768], sizes: [[300, 250]] }]}
          >
         <FeatureOneContainer>
-        <AdLabel>Advertisement</AdLabel>
+        <AdLabel style={{ display: 'none' }}>Advertisement</AdLabel>
           <AdSlot sizes={[[300, 250]]} adUnit="feature-page-1" />
         </FeatureOneContainer>
       </DFPSlotsProvider>

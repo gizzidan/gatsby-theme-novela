@@ -13,7 +13,7 @@ export default class Leaderboard extends Component {
         
          >
         <LeaderboardContainer>
-        <AdLabel>Advertisement</AdLabel>
+        <AdLabel style={{ display: 'none' }}>Advertisement</AdLabel>
           <AdSlot sizes={[300, 250]} adUnit="home-top-sidebar" />
         </LeaderboardContainer>
       </DFPSlotsProvider>
