@@ -38,7 +38,7 @@ const siteQuery = graphql`
 `;
 
 function Article({ pageContext, location }) {
-  const sitePath = 'https://thehum.netlify.com'
+  const sitePath = 'https://thehum.co'
   const contentSectionRef = useRef<HTMLElement>(null);
 
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
@@ -48,10 +48,12 @@ function Article({ pageContext, location }) {
   const name = results.allSite.edges[0].node.siteMetadata.name;
 
   const { article, authors, mailchimp, next, category, tags } = pageContext;
+  const disqusShortname = 'shoreside';
   const disqusConfig = {
-    shortname: process.env.GATSBY_DISQUS_NAME,
-    config: { identifier: article.slug },
-  }
+      identifier: article.slug,
+      url: article.slug,
+      title: article.title,
+  };
 
   useEffect(() => {
     const calculateBodySize = throttle(() => {
@@ -120,7 +122,7 @@ function Article({ pageContext, location }) {
             <Facebook solid medium link={sitePath + '/' + article.slug}/>
             <Mail solid medium subject="Checkout this article from The Hum" link={sitePath + '/' + article.slug}/>
           </SocialContainer>
-          <DiscussionEmbed {...disqusConfig}/>
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
         </BottomContainer>
       </ArticleBody>
       {mailchimp && article.subscription && <Subscription />}
