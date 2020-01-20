@@ -8,6 +8,7 @@ const AdLabel = styled.p`
     text-transform: uppercase;
     font-size: 12px;
     padding-bottom: 4px;
+    padding-top: 5px;
     
 `
 export default AdLabel;
