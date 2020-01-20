@@ -38,7 +38,7 @@ const ArticlesList2 = () => {
   const data = useStaticQuery(
     graphql`
       query { 
-        allContentfulArticle(filter: {title: {ne: "Things to Do in Central New Jersey, January 2020"}, category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
+        allContentfulArticle(filter: {title: {ne: "The Bipartisan Case for Removing Chris Smith"}, category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
           edges {
             node {
               date(formatString: "MMM DD")
