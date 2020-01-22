@@ -30,7 +30,7 @@ export const Blockquote = styled.blockquote`
     margin: 0 auto;
     font-size: 19px;
     line-height: 1.618;
-    font-style: italic;
+    font-style: normal;
     font-weight: 300;
 
     ${mediaqueries.tablet`
