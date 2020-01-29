@@ -10,7 +10,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "The Bipartisan Case for Removing Chris Smith"}) {
+        contentfulArticle(title: {eq: "Jim Keady: Retrospective and Lessons Learned"}) {
           title
           date
           excerpt

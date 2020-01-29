@@ -17,7 +17,7 @@ export default {
   accent: "#4524EA",
   sponsored: "#131516",
   tagBackground: "#e1dfe6",
-  featureBackground: 'linear-gradient(to bottom, rgba(54, 28, 182, .8), rgba(168, 54, 92, 0.8))',
+  featureBackground: 'linear-gradient(to bottom, rgba(90, 90, 90, .4), rgba(5, 5, 9, .99))',
   outline: "#000",
   hover: "rgba(0, 0, 0, 0.07)",
   gradient: "linear-gradient(to bottom, #fff, #f6eafd)",
