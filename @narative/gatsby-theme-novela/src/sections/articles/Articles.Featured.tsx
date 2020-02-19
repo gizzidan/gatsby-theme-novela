@@ -10,7 +10,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "Jim Keady: Retrospective and Lessons Learned"}) {
+        contentfulArticle(title: {eq: "Together, We Win: Western Monmouth County Democrats Form a Coalition & Plan NJ-4 Candidates’ Forum"}) {
           title
           date
           excerpt
@@ -62,14 +62,14 @@ const Arrow = styled.div`
 `
 const FeaturedContainer = styled("section")`
   overflow: hidden;
-  height: 56vh;
+  height: 60vh;
   position: relative;
   margin: -61px auto 0px auto;
   &:hover, &:focus {
     cursor: pointer;
   }
   ${mediaqueries.desktop_mediumlarge`
-    height: 70vh;
+    height: 72vh;
     
   `};
   
