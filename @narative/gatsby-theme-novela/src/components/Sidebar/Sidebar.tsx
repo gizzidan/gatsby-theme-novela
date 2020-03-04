@@ -15,7 +15,7 @@ const Sidebar = () => {
 	const data = useStaticQuery(
     graphql`
       query { 
-        allContentfulArticle(filter: {title: {ne: "Together, We Win: Western Monmouth County Democrats Form a Coalition & Plan NJ-4 Candidates’ Forum"}, category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
+        allContentfulArticle(filter: {title: {ne: "The Voting Shell Game"}, category: {ne: "sponsor content"}}, sort: {fields: date, order: DESC}, limit: 30) {
           edges {
             node {
               date(formatString: "MMM DD")

@@ -10,7 +10,7 @@ const Featured = () => {
   const article = useStaticQuery(
     graphql`
       query        {
-        contentfulArticle(title: {eq: "Together, We Win: Western Monmouth County Democrats Form a Coalition & Plan NJ-4 Candidates’ Forum"}) {
+        contentfulArticle(title: {eq: "The Voting Shell Game"}) {
           title
           date
           excerpt
