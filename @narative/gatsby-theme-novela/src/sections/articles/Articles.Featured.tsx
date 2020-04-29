@@ -1,87 +1,88 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import styled from "@emotion/styled";
-import Img from "gatsby-image"
+import Img from "gatsby-image";
 import mediaqueries from "@styles/media";
-import { Link } from 'gatsby';
-import Section from '@components/Section';
+import { Link } from "gatsby";
+import Section from "@components/Section";
 
 const Featured = () => {
   const article = useStaticQuery(
     graphql`
-      query        {
-        contentfulArticle(title: {eq: "The Voting Shell Game"}) {
+      query {
+        contentfulArticle {
           title
           date
           excerpt
           category
           slug
           hero {
-            sizes(maxWidth: 3000 quality: 100) {
+            sizes(maxWidth: 3000, quality: 100) {
               ...GatsbyContentfulSizes_withWebp
-              }
-            
+            }
           }
         }
       }
     `
-  )
+  );
   return (
     <FeaturedContainer>
       <Link to={article.contentfulArticle.slug}>
-      <BgImg fluid={article.contentfulArticle.hero.sizes} />
-      <Overlay>
-      <Section>
-      <TextContainer>
-        <Sub>Featured Story</Sub>
-        <Title>
-          <p>{article.contentfulArticle.title}</p>
-        </Title>
-        <Excerpt>
-          <p>{article.contentfulArticle.excerpt}</p>
-          <p style={{ fontSize: '40px',}}><Arrow id="arrow">&rarr;</Arrow></p>
-        </Excerpt>
-      </TextContainer>
-      </Section>
-      </Overlay>
+        <BgImg fluid={article.contentfulArticle.hero.sizes} />
+        <Overlay>
+          <Section>
+            <TextContainer>
+              <Sub>Featured Story</Sub>
+              <Title>
+                <p>{article.contentfulArticle.title}</p>
+              </Title>
+              <Excerpt>
+                <p>{article.contentfulArticle.excerpt}</p>
+                <p style={{ fontSize: "40px" }}>
+                  <Arrow id="arrow">&rarr;</Arrow>
+                </p>
+              </Excerpt>
+            </TextContainer>
+          </Section>
+        </Overlay>
       </Link>
     </FeaturedContainer>
-  )
-}
+  );
+};
 
-export default Featured
+export default Featured;
 
 const Sub = styled.div`
   font-family: ${p => p.theme.fonts.monospace};
   color: white !important;
   padding-bottom: 15px;
-`
+`;
 const Arrow = styled.div`
   transition: all 0.1s linear;
-  
-`
+`;
 const FeaturedContainer = styled("section")`
   overflow: hidden;
   height: 60vh;
   position: relative;
   margin: -61px auto 0px auto;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     cursor: pointer;
   }
   ${mediaqueries.desktop_mediumlarge`
     height: 72vh;
-    
+
   `};
-  
+
   @media screen and (max-height: 415px) {
     height: 103vh;
   }
 
   ${mediaqueries.phone_small`
      height: 102vh;
-     
+
   `};
-`
+`;
 const BgImg = styled(Img)`
   position: absolute;
   top: 0;
@@ -89,7 +90,7 @@ const BgImg = styled(Img)`
   width: 100%;
   height: 100%;
   object-fit: cover;
-`
+`;
 const Overlay = styled("div")`
   position: absolute;
   top: 50%;
@@ -99,8 +100,8 @@ const Overlay = styled("div")`
   background-image: ${p => p.theme.colors.featureBackground};
   width: 101%;
   height: 101%;
-`
-const TextContainer = styled("div") `
+`;
+const TextContainer = styled("div")`
   position: absolute;
   width: 40%;
   bottom: 25px;
@@ -120,20 +121,20 @@ const TextContainer = styled("div") `
 
   ${mediaqueries.desktop`
     width: 60%;
-   
+
   `}
 
   ${mediaqueries.tablet`
     width: 75%;
     bottom: 5px;
-   
+
   `}
   ${mediaqueries.phablet`
     width: 85%;
     padding: 0 0 0 0;
-    
+
   `}
-`
+`;
 const Category = styled.p`
   font-family: ${p => p.theme.fonts.slogan};
   font-size: 16px;
@@ -143,7 +144,6 @@ const Category = styled.p`
   font-weight: ${p => p.theme.fontWeights.slogan};
   text-transform: uppercase;
   color: white;
-
 
   ${mediaqueries.desktop`
     display: -webkit-box;
@@ -168,7 +168,6 @@ const Title = styled("div")`
   font-weight: 900;
   transition: all 0.1s linear;
 
-
   ${mediaqueries.desktop`
     font-size: 38px;
     line-height: 1.2;
@@ -178,7 +177,6 @@ const Title = styled("div")`
     font-size: 30px;
     line-height: 1.2;
   `};
-
 
   ${mediaqueries.phablet`
     font-size: 30px;

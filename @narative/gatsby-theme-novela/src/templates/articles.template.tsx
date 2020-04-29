@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useEffect} from 'react';
+import React, { useEffect } from "react";
 import Section from "@components/Section";
 import SEO from "@components/SEO";
 import Layout from "@components/Layout";
@@ -10,7 +10,7 @@ import NavBar from "@components/NavBar";
 import ArticlesFeatured from "../sections/articles/Articles.Featured";
 import ArticlesHero from "../sections/articles/Articles.Hero";
 import ArticlesList2 from "../sections/articles/Articles.List2";
-import MobileNav from '@components/MobileNav';
+import MobileNav from "@components/MobileNav";
 
 function ArticlesPage({ location, pageContext }) {
   const articles = pageContext.group;
@@ -19,12 +19,13 @@ function ArticlesPage({ location, pageContext }) {
   return (
     <Layout>
       <NavBar />
-      <ArticlesFeatured /> 
+      {/* <ArticlesFeatured />
       <SEO pathname={location.pathname} />
       <Section>
            <ArticlesList2 />
-           <ArticlesGradient />   
+           <ArticlesGradient />
       </Section>
+      */}
     </Layout>
   );
 }
@@ -59,12 +60,12 @@ const MainGrid = styled.div`
         `}
   ${mediaqueries.phablet`
     max-width: 100%;
-    
+
   `};
   ${mediaqueries.phone_small`
     padding: 0 10px;
   `};
-`
+`;
 
 const ArticlesGradient = styled.div`
   position: absolute;
@@ -89,7 +90,7 @@ const Label = styled.h2`
   text-transform: none;
   font-size: 30px;
   padding-bottom: 20px;
-  text-align:left;
+  text-align: left;
   ${mediaqueries.desktop`
     font-size: 38px;
     line-height: 1.2;
